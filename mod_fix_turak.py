@@ -34,7 +34,7 @@ class ModulInit:
             if hasattr(self.main, 'a_b'):
                 parent_layout = self.main.a_b.parent().layout()
                 if parent_layout:
-                    parent_layout.insertWidget(0, self.sablon_btn)
+                    parent_layout.insertWidget(1, self.sablon_btn)
         except: pass
 
     def mentes_aktualis_kijelolt(self):
