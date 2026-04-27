@@ -3,8 +3,9 @@ import os
 import datetime
 from PyQt6.QtWidgets import (QPushButton, QMenu, QMessageBox, QInputDialog, 
                              QTreeWidgetItem, QVBoxLayout, QHBoxLayout, 
-                             QAbstractItemView, QDialog, QListWidget, QLabel, QLineEdit, QComboBox)
-from PyQt6.QtCore import Qt
+                             QDialog, QListWidget, QLabel)
+from PyQt6.QtCore import Qt, QTimer
+from PyQt6.QtGui import QColor, QFont
 
 class ModulInit:
     def __init__(self, main_app):
@@ -12,134 +13,222 @@ class ModulInit:
         self.sablon_fajl = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fix_turak_napi.json")
         self.napok = ["Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat", "Vasárnap"]
         self.het_tipusok = ["Páros hét", "Páratlan hét", "Minden héten"]
-        self.init_gomb()
-
-    def get_aktualis_het_tipus(self):
-        try:
-            het_szam = datetime.datetime.now().isocalendar()[1]
-            return "Páros hét" if het_szam % 2 == 0 else "Páratlan hét"
-        except: return "Minden héten"
+        
+        # Rövid várakozás az inicializáláshoz
+        QTimer.singleShot(500, self.init_gomb)
+        
+        if hasattr(self.main, 'right_tree'):
+            self.main.right_tree.itemChanged.connect(self.auto_mentes_esemeny)
 
     def init_gomb(self):
-        # Egyedi név: fix_tura_btn_obj, a jobb oldalra helyezve
-        self.main.fix_tura_btn_obj = QPushButton("📋 SABLONOK")
-        self.main.fix_tura_btn_obj.setStyleSheet("background-color: #f39c12; color: white; font-weight: bold; padding: 6px 12px; border-radius: 4px;")
-        
-        uj_menu = QMenu(self.main.fix_tura_btn_obj)
-        akt_het = self.get_aktualis_het_tipus()
-        
-        uj_menu.addAction(f"📂 MAI NAP betöltése ({akt_het})").triggered.connect(lambda: self.napi_osszes_betoltese(akt_het))
-        uj_menu.addSeparator()
-        uj_menu.addAction("📂 Választás kézzel...").triggered.connect(lambda: self.napi_osszes_betoltese(None))
-        uj_menu.addAction("💾 Kijelölt mentése sablonként").triggered.connect(self.mentes_aktualis_kijelolt)
-        uj_menu.addSeparator()
-        uj_menu.addAction("✍️ ÚJ TÚRA összeállítása (Interaktív)").triggered.connect(self.interaktiv_szerkeszto_ablak)
-        uj_menu.addSeparator()
-        uj_menu.addAction("🗑️ MENTETT TÚRÁK (Törlés / Megtekintés)").triggered.connect(self.sablonok_kezelese)
-        
-        self.main.fix_tura_btn_obj.setMenu(uj_menu)
+        if hasattr(self.main, 'fix_tura_btn_obj'):
+            return
 
+        # Gomb létrehozása narancssárga stílussal (hogy látványos legyen a jobb felsőben)
+        self.main.fix_tura_btn_obj = QPushButton("📋 SABLONOK")
+        self.main.fix_tura_btn_obj.setStyleSheet("""
+            QPushButton {
+                background-color: #f39c12; 
+                color: white; 
+                font-weight: bold; 
+                padding: 8px; 
+                border-radius: 4px;
+                margin-bottom: 2px;
+            }
+            QPushButton:hover {
+                background-color: #e67e22;
+            }
+        """)
+
+        # Elhelyezés a JOBB OLDALI PANEL tetején
         try:
             if hasattr(self.main, 'right_tree'):
-                jobb_layout = self.main.right_tree.parent().layout()
-                if jobb_layout:
-                    jobb_layout.insertWidget(1, self.main.fix_tura_btn_obj)
-        except: pass
+                # Megkeressük a jobb oldali fa szülőjének layoutját
+                jobb_panel_layout = self.main.right_tree.parent().layout()
+                if jobb_panel_layout:
+                    # A 0. indexre szúrjuk be, így minden felett, a jobb felső részen lesz
+                    jobb_panel_layout.insertWidget(1, self.main.fix_tura_btn_obj)
+        except Exception as e:
+            print(f"Sablon gomb elhelyezési hiba: {e}")
 
-    def interaktiv_szerkeszto_ablak(self):
+        # Menü felépítése
+        uj_menu = QMenu(self.main.fix_tura_btn_obj)
+        h_het, h_nap = self.get_holnapi_adatok()
+        
+        uj_menu.addAction(f"🚚 HOLNAPI NAP ({h_nap})").triggered.connect(lambda: self.napi_osszes_betoltese(h_het, h_nap))
+        uj_menu.addSeparator()
+        uj_menu.addAction("📅 VISSZAKERESÉS DÁTUM SZERINT").triggered.connect(self.kezi_valasztas_ablak)
+        uj_menu.addAction("💾 Kijelölt mentése sablonként").triggered.connect(self.mentes_aktualis_kijelolt)
+        uj_menu.addSeparator()
+        uj_menu.addAction("🗑️ MENTETT TÚRÁK (Törlés)").triggered.connect(self.sablonok_kezelese)
+        self.main.fix_tura_btn_obj.setMenu(uj_menu)
+
+    def get_holnapi_adatok(self):
+        holnap = datetime.datetime.now() + datetime.timedelta(days=1)
+        het_szam = holnap.isocalendar()[1]
+        het_tipus = "Páros hét" if het_szam % 2 == 0 else "Páratlan hét"
+        nap_hu = {"Monday": "Hétfő", "Tuesday": "Kedd", "Wednesday": "Szerda", "Thursday": "Csütörtök", "Friday": "Péntek", "Saturday": "Szombat", "Sunday": "Vasárnap"}
+        return het_tipus, nap_hu.get(holnap.strftime("%A"), "Hétfő")
+
+    def suly_ellenorzes(self):
+        if not hasattr(self.main, 'right_tree'):
+            return
+        for i in range(self.main.right_tree.topLevelItemCount()):
+            it = self.main.right_tree.topLevelItem(i)
+            if it.data(0, Qt.ItemDataRole.UserRole) == "TURA":
+                try:
+                    s_txt = it.text(4).replace(" kg", "").replace(",", ".").strip()
+                    s = float(s_txt) if s_txt else 0.0
+                    # Csak a súly oszlop (4-es index) legyen piros, ha > 2000
+                    it.setForeground(4, QColor("red") if s > 2000 else QColor("black"))
+                    f = QFont()
+                    if s > 2000:
+                        f.setBold(True)
+                    it.setFont(4, f)
+                except:
+                    pass
+
+    def kezi_valasztas_ablak(self):
+        ad = self.adatok_beolvasasa()
+        if not ad:
+            return
         dialog = QDialog(self.main)
-        dialog.setWindowTitle("Interaktív Túra Összeállító")
-        dialog.setMinimumSize(450, 550)
+        dialog.setWindowTitle("Visszakeresés dátum szerint")
+        dialog.setMinimumSize(400, 450)
         layout = QVBoxLayout(dialog)
-        layout.addWidget(QLabel("Túra neve:")); t_edit = QLineEdit(); layout.addWidget(t_edit)
-        hl = QHBoxLayout()
-        v1 = QVBoxLayout(); v1.addWidget(QLabel("Hét:")); h_c = QComboBox(); h_c.addItems(self.het_tipusok); v1.addWidget(h_c)
-        v2 = QVBoxLayout(); v2.addWidget(QLabel("Nap:")); n_c = QComboBox(); n_c.addItems(self.napok); v2.addWidget(n_c)
-        hl.addLayout(v1); hl.addLayout(v2); layout.addLayout(hl)
-        layout.addWidget(QLabel("Partnerek (Húzd ide balról):")); pl = QListWidget(); pl.setAcceptDrops(True); layout.addWidget(pl)
-        def mentes():
-            if not t_edit.text().strip() or pl.count() == 0: return
-            ad = self.adatok_beolvasasa(); h, n = h_c.currentText(), n_c.currentText()
-            if h not in ad: ad[h] = {}
-            if n not in ad[h]: ad[h][n] = {}
-            ad[h][n][t_edit.text().strip()] = [pl.item(i).text() for i in range(pl.count())]
-            with open(self.sablon_fajl, "w", encoding="utf-8") as f: json.dump(ad, f, ensure_ascii=False, indent=4)
-            dialog.accept()
-        sb = QPushButton("💾 SABLON MENTÉSE"); sb.setStyleSheet("background-color: #27ae60; color: white; font-weight: bold; height: 35px;")
-        sb.clicked.connect(mentes); layout.addWidget(sb); dialog.exec()
+        lista = QListWidget()
+        
+        bejegyzések = []
+        for het, napok in ad.items():
+            if isinstance(napok, dict):
+                for nap, adatok in napok.items():
+                    datum = adatok.get("_mentve", "Régi adat") if isinstance(adatok, dict) else "Régi adat"
+                    bejegyzések.append((datum, het, nap))
+        
+        for d, h, n in sorted(bejegyzések, reverse=True):
+            lista.addItem(f"{d} | {h} - {n}")
+            lista.item(lista.count()-1).setData(Qt.ItemDataRole.UserRole, [h, n])
 
-    def adatok_beolvasasa(self):
-        if not os.path.exists(self.sablon_fajl): return {}
-        try:
-            with open(self.sablon_fajl, "r", encoding="utf-8") as f: return json.load(f)
-        except: return {}
-
-    def sablonok_kezelese(self):
-        adatok = self.adatok_beolvasasa()
-        if not adatok: return
-        dialog = QDialog(self.main); dialog.setWindowTitle("Kezelés"); dialog.setMinimumSize(400, 400)
-        l = QVBoxLayout(dialog); lw = QListWidget(); l.addWidget(lw)
-        for h, ns in adatok.items():
-            for n, ts in ns.items():
-                for t in ts.keys():
-                    lw.addItem(f"{h} | {n} | {t}"); lw.item(lw.count()-1).setData(Qt.ItemDataRole.UserRole, [h, n, t])
-        def tor():
-            c = lw.currentItem()
-            if not c: return
-            h, n, t = c.data(Qt.ItemDataRole.UserRole)
-            del adatok[h][n][t]
-            if not adatok[h][n]: del adatok[h][n]
-            if not adatok[h]: del adatok[h]
-            with open(self.sablon_fajl, "w", encoding="utf-8") as f: json.dump(adatok, f, ensure_ascii=False, indent=4)
-            lw.takeItem(lw.row(c))
-        btn = QPushButton("Törlés"); btn.clicked.connect(tor); l.addWidget(btn); dialog.exec()
+        layout.addWidget(lista)
+        def betolt():
+            if lista.currentItem():
+                h, n = lista.currentItem().data(Qt.ItemDataRole.UserRole)
+                dialog.accept()
+                self.napi_osszes_betoltese(h, n)
+        
+        b = QPushButton("Kiválasztott nap betöltése")
+        b.clicked.connect(betolt)
+        layout.addWidget(b)
+        dialog.exec()
 
     def mentes_aktualis_kijelolt(self):
-        item = self.main.right_tree.currentItem()
-        if item:
-            while item.parent(): item = item.parent()
-            if item.data(0, Qt.ItemDataRole.UserRole) == "TURA": self.sablon_mentese(item); return
-        QMessageBox.warning(self.main, "Hiba", "Nincs kijelölt túra!")
+        it = self.main.right_tree.currentItem()
+        if it:
+            while it.parent():
+                it = it.parent()
+            if it.data(0, Qt.ItemDataRole.UserRole) == "TURA":
+                h, ok1 = QInputDialog.getItem(self.main, "Mentés", "Hét típusa:", self.het_tipusok, 2, False)
+                n, ok2 = QInputDialog.getItem(self.main, "Mentés", "Melyik nap?", self.napok, 0, False)
+                if ok1 and ok2:
+                    adat = self.adatok_beolvasasa()
+                    if h not in adat:
+                        adat[h] = {}
+                    if n not in adat[h]:
+                        adat[h][n] = {"_mentve": datetime.datetime.now().strftime("%Y-%m-%d %H:%M")}
+                    adat[h][n][it.text(0)] = [it.child(i).text(0) for i in range(it.childCount())]
+                    with open(self.sablon_fajl, "w", encoding="utf-8") as f:
+                        json.dump(adat, f, ensure_ascii=False, indent=4)
+                    QMessageBox.information(self.main, "Siker", "Mentve az archívumba.")
+                return
+        QMessageBox.warning(self.main, "Hiba", "Jelölj ki egy túrát a mentéshez!")
 
-    def sablon_mentese(self, tura_item):
-        het, ok1 = QInputDialog.getItem(self.main, "Mentés", "Hét:", self.het_tipusok, 2, False)
-        nap, ok2 = QInputDialog.getItem(self.main, "Mentés", "Nap:", self.napok, 0, False)
-        if ok1 and ok2:
-            p = [tura_item.child(i).text(0) for i in range(tura_item.childCount())]
-            ad = self.adatok_beolvasasa()
-            if het not in ad: ad[het] = {}
-            if nap not in ad[het]: ad[het][nap] = {}
-            ad[het][nap][str(tura_item.text(0))] = p
-            with open(self.sablon_fajl, "w", encoding="utf-8") as f: json.dump(ad, f, ensure_ascii=False, indent=4)
-
-    def napi_osszes_betoltese(self, het_pref=None):
-        adatok = self.adatok_beolvasasa()
-        if not adatok: return
-        if het_pref is None:
-            het_pref, ok = QInputDialog.getItem(self.main, "Betöltés", "Hét típusa:", list(adatok.keys()), 0, False)
-            if not ok: return
-        napok_ebben = list(adatok.get(het_pref, {}).keys())
-        if not napok_ebben: return
-        nap, ok = QInputDialog.getItem(self.main, "Betöltés", "Nap:", sorted(napok_ebben), 0, False)
-        if not ok: return
-        osszes_sablon = adatok.get(het_pref, {}).get(nap, {}).copy()
-        if "Minden héten" in adatok: osszes_sablon.update(adatok["Minden héten"].get(nap, {}))
-        for t_nev, p_nevek in osszes_sablon.items():
-            talalt = []
-            for i in range(self.main.left_tree.topLevelItemCount() - 1, -1, -1):
-                lp = self.main.left_tree.topLevelItem(i)
-                if lp.text(0) in p_nevek:
-                    p_ad = {'n': lp.text(0), 'k': lp.text(3), 'm': lp.text(4), 't': []}
-                    for j in range(lp.childCount()):
-                        c = lp.child(j); suly = c.text(4) if c.text(4) and c.text(4).strip() else "0"
-                        p_ad['t'].append({'n': c.text(1) or c.text(2), 'd': c.text(3), 'k': suly})
-                    talalt.append(p_ad); self.main.left_tree.takeTopLevelItem(i)
-            if talalt:
+    def napi_osszes_betoltese(self, het_pref, nap_pref):
+        ad = self.adatok_beolvasasa()
+        t_terv = ad.get(het_pref, {}).get(nap_pref, {}).copy()
+        if "Minden héten" in ad:
+            if nap_pref in ad["Minden héten"]:
+                t_terv.update(ad["Minden héten"][nap_pref])
+        
+        elerheto = {self.main.left_tree.topLevelItem(i).text(0): i for i in range(self.main.left_tree.topLevelItemCount())}
+        torlendo = []
+        
+        for t_nev, p_nevek in t_terv.items():
+            if t_nev == "_mentve":
+                continue
+            v_partnerek = [p for p in p_nevek if p in elerheto]
+            if v_partnerek:
                 ti = self.main.add_tura_item(t_nev)
-                for p in talalt:
-                    ex = QTreeWidgetItem(ti, [p['n'], "", "", "", p['k'], p['m'], "", ""])
+                for p_nev in v_partnerek:
+                    lp = self.main.left_tree.topLevelItem(elerheto[p_nev])
+                    ex = QTreeWidgetItem(ti, [lp.text(0), "", "", "", lp.text(3), lp.text(4), "", ""])
                     ex.setData(0, Qt.ItemDataRole.UserRole, "PARTNER")
-                    for t in p['t']:
-                        ki, be = (t['n'], "") if t['n'].startswith("K-") else ("", t['n'])
-                        QTreeWidgetItem(ex, ["", ki, be, t['d'], t['k'], "", "", ""])
-        if hasattr(self.main, 'recalculate'): self.main.recalculate()
+                    for j in range(lp.childCount()):
+                        c = lp.child(j)
+                        ki, be = (c.text(1), "") if c.text(1).startswith("K-") else ("", c.text(1))
+                        QTreeWidgetItem(ex, ["", ki, be, c.text(2), c.text(3), "", "", ""])
+                    torlendo.append(elerheto[p_nev])
+
+        for idx in sorted(list(set(torlendo)), reverse=True):
+            self.main.left_tree.takeTopLevelItem(idx)
+            
+        if hasattr(self.main, 'recalculate'):
+            self.main.recalculate()
+            self.suly_ellenorzes()
+
+    def auto_mentes_esemeny(self, item, column):
+        if hasattr(self.main, 'recalculate'):
+            self.main.recalculate()
+            self.suly_ellenorzes()
+        top = item
+        while top.parent():
+            top = top.parent()
+        if top.data(0, Qt.ItemDataRole.UserRole) == "TURA":
+            ad = self.adatok_beolvasasa()
+            for h in ad:
+                for n in ad[h]:
+                    if isinstance(ad[h][n], dict) and top.text(0) in ad[h][n]:
+                        ad[h][n][top.text(0)] = [top.child(i).text(0) for i in range(top.childCount())]
+                        with open(self.sablon_fajl, "w", encoding="utf-8") as f:
+                            json.dump(ad, f, ensure_ascii=False, indent=4)
+
+    def adatok_beolvasasa(self):
+        if not os.path.exists(self.sablon_fajl):
+            return {}
+        try:
+            with open(self.sablon_fajl, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except:
+            return {}
+
+    def sablonok_kezelese(self):
+        ad = self.adatok_beolvasasa()
+        if not ad:
+            return
+        d = QDialog(self.main)
+        d.setWindowTitle("Kezelés")
+        d.setMinimumSize(400, 400)
+        l = QVBoxLayout(d)
+        lw = QListWidget()
+        l.addWidget(lw)
+        for h, ns in ad.items():
+            for n, ts in ns.items():
+                if isinstance(ts, dict):
+                    for t in ts.keys():
+                        if t != "_mentve":
+                            lw.addItem(f"{h} | {n} | {t}")
+                            lw.item(lw.count()-1).setData(Qt.ItemDataRole.UserRole, [h, n, t])
+        def tor():
+            c = lw.currentItem()
+            if not c:
+                return
+            h, n, t = c.data(Qt.ItemDataRole.UserRole)
+            if h in ad and n in ad[h] and t in ad[h][n]:
+                del ad[h][n][t]
+                with open(self.sablon_fajl, "w", encoding="utf-8") as f:
+                    json.dump(ad, f, ensure_ascii=False, indent=4)
+                lw.takeItem(lw.row(c))
+        
+        btn = QPushButton("Törlés")
+        btn.clicked.connect(tor)
+        l.addWidget(btn)
+        d.exec()
