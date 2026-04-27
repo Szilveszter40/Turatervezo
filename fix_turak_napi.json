@@ -1,50 +1,25 @@
 {
-    "Minden héten": {
-        "Hétfő": {
-            "Buda Péntek Páros": [
-                "Admikor Kft. / Élelmiszer üzlet (6768 - Élelmiszer üzlet HU 6768 Baks, Fő utca 103.)",
-                "Alakszai Csaba EV. (3355 - Autós Vendéglő Kápolna HU 3355 Kápolna, Szabadság tér 2.)",
-                "Ambuya Kft./ East Port étterem (1191 - East Port Étterem HU 1191 Budapest, Üllői út 201.)",
-                "Antalfi Team Kft. (2700 - EURO PETROL Cegléd, Külső Kátai HU 2700 Cegléd, Ipari park 1.)",
-                "Annahegyi-Restaurant Kft./ ANNAHEGYI Restaurant Pihenő Törökbálint - 6 km (2045 - Annahegyi Restaurant M0 HU 2045 Törökbálint, M0 a)"
-            ],
-            "Békéscsaba Páros": []
-        },
+    "Minden h\u00e9ten": {
+        "H\u00e9tf\u0151": {},
         "Kedd": {
-            "Balton Nyugat - Győr": [
-                "Ádám - Go Kft. (2060 - Korona Étterem Pizzafaló Pizzéria HU 2060 Bicske, Szent István út 16)",
-                "AdReTu Kft. / Katedrális Étterem és Kávézó (6720 - Katedrális Étterem és Kávézó HU 6720 Szeged, Dóm tér 16.)",
-                "Amily Senairo Kft (1122 - Amily Senairo Kft HU 1122 Budapest, Krisztina körút 2-)",
-                "Andazit Kereskedelmi és Szolgáltató Bt. / Büfé Tószeg (5091 - Büfé Tószeg HU 5091 Tószeg, Parkoló tér 1.)",
-                "Apraja-Falva Óvoda és Bölcsőde (6795 - Óvoda HU 6795 Bordány, Rákóczi utca 32-)"
-            ],
-            "Buda Péntek Páros": [
-                "Admikor Kft. / Élelmiszer üzlet (6768 - Élelmiszer üzlet HU 6768 Baks, Fő utca 103.)",
-                "Alakszai Csaba EV. (3355 - Autós Vendéglő Kápolna HU 3355 Kápolna, Szabadság tér 2.)",
-                "Ambuya Kft./ East Port étterem (1191 - East Port Étterem HU 1191 Budapest, Üllői út 201.)",
-                "Antalfi Team Kft. (2700 - EURO PETROL Cegléd, Külső Kátai HU 2700 Cegléd, Ipari park 1.)",
-                "Annahegyi-Restaurant Kft./ ANNAHEGYI Restaurant Pihenő Törökbálint - 6 km (2045 - Annahegyi Restaurant M0 HU 2045 Törökbálint, M0 a)"
-            ],
             "Budapest - Buda": [
-                "Aranyhal Group Kereskedelmi és Szolgáltató Kft. (6723 - Aranyhal Étterem HU 6723 Szeged, Kálvéria tér 6.)",
-                "Bambara Hotel Kft. (3324 - Bambara Hotel Premium HU 3324 Felsőtárkány, Bükk-erdő sétány 2-)",
-                "Alice World-ker Kft. (6400 - Monkey Ételbár HU 6400 Kiskunhalas, Gyöngyvirág utca 30.)",
-                "ARANYKÉZ KFT (1046 - Aranytallér Étterem HU 1046 Budapest, Hajló u. 42.)",
-                "Attmag Gold Kft. / Duna Pálma Étterem (7030 - Duna Pálma Étterem HU 7030 Paks, Építők útja 1-)",
-                "ATAMEL BT (1078 - Don Corleone HU 1078 Budapest, Nefelejcs utca 27.)"
+                "Ag\u00e1rdy-mentor Kft. (6085 - SOF\u00d6R CS\u00c1RDA HU 6085 F\u00fcl\u00f6psz\u00e1ll\u00e1s, H\u00e1rmas puszta 9.)",
+                "AdReTu Kft. / Katedr\u00e1lis \u00c9tterem \u00e9s K\u00e1v\u00e9z\u00f3 (6720 - Katedr\u00e1lis \u00c9tterem \u00e9s K\u00e1v\u00e9z\u00f3 HU 6720 Szeged, D\u00f3m t\u00e9r 16.)",
+                "\u00c1d\u00e1m - Go Kft. (2060 - Korona \u00c9tterem Pizzafal\u00f3 Pizz\u00e9ria HU 2060 Bicske, Szent Istv\u00e1n \u00fat 16)",
+                "Ambuya Kft./ East Port \u00e9tterem (1191 - East Port \u00c9tterem HU 1191 Budapest, \u00dcll\u0151i \u00fat 201.)",
+                "Apraja-Falva \u00d3voda \u00e9s B\u00f6lcs\u0151de (6795 - \u00d3voda HU 6795 Bord\u00e1ny, R\u00e1k\u00f3czi utca 32-)"
+            ],
+            "Bp.Belv\u00e1ros P\u00e1ratlan": [
+                "Alice World-ker Kft. (6400 - Monkey \u00c9telb\u00e1r HU 6400 Kiskunhalas, Gy\u00f6ngyvir\u00e1g utca 30.)",
+                "AdReTu Kft. / Hotel Geradus (6728 - Hotel Geradus HU 6728 Szeged, Dorozsmai 2-)",
+                "Agro-world-hungary Kft. (5465 - Elizabeth \u00c9tterem HU 5465 Cserkesz\u0151l\u0151, F\u00fcrd\u0151 utca 616/)",
+                "Alm\u00e1si L\u00e1ngos Kft. (2545 - Alm\u00e1s L\u00e1ngos HU 2545 Dunaalm\u00e1s, \u00dajtelep utca 45.)",
+                "AmRest Kft. / KFC V\u00e1rpalota (8100 - KFC V\u00e1rpalota HU 8100 V\u00e1rpalota, Feh\u00e9rv\u00e1ri \u00fat 19.)",
+                "ARANYK\u00c9Z KFT (1046 - Aranytall\u00e9r \u00c9tterem HU 1046 Budapest, Hajl\u00f3 u. 42.)"
             ]
         }
     },
-    "Páros hét": {
-        "Hétfő": {
-            "Budapest - Buda": [
-                "Aranyhal Group Kereskedelmi és Szolgáltató Kft. (6723 - Aranyhal Étterem HU 6723 Szeged, Kálvéria tér 6.)",
-                "Bambara Hotel Kft. (3324 - Bambara Hotel Premium HU 3324 Felsőtárkány, Bükk-erdő sétány 2-)",
-                "Alice World-ker Kft. (6400 - Monkey Ételbár HU 6400 Kiskunhalas, Gyöngyvirág utca 30.)",
-                "ARANYKÉZ KFT (1046 - Aranytallér Étterem HU 1046 Budapest, Hajló u. 42.)",
-                "Attmag Gold Kft. / Duna Pálma Étterem (7030 - Duna Pálma Étterem HU 7030 Paks, Építők útja 1-)",
-                "ATAMEL BT (1078 - Don Corleone HU 1078 Budapest, Nefelejcs utca 27.)"
-            ]
-        }
+    "P\u00e1ros h\u00e9t": {
+        "H\u00e9tf\u0151": {}
     }
 }
