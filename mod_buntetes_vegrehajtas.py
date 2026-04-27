@@ -1,138 +1,201 @@
 import json
 import os
+import datetime
 from PyQt6.QtWidgets import (QPushButton, QDialog, QVBoxLayout, QHBoxLayout, 
                              QLabel, QMessageBox, QLineEdit, QComboBox, 
-                             QCheckBox, QTableWidget, QTableWidgetItem, QHeaderView)
-from PyQt6.QtCore import Qt
+                             QCheckBox, QTableWidget, QTableWidgetItem, QHeaderView, 
+                             QTreeWidgetItem, QListWidget, QFrame, QTabWidget, QWidget)
+from PyQt6.QtCore import Qt, QTimer
+from PyQt6.QtGui import QFont, QColor
 
 class ModulInit:
     def __init__(self, main_app):
         self.main = main_app
-        self.adat_fajl = os.path.join(os.path.dirname(os.path.abspath(__file__)), "bv_adatbazis.json")
+        self.mappa = os.path.dirname(os.path.abspath(__file__))
+        self.bv_adat_fajl = os.path.join(self.mappa, "bv_intezmenyek.json")
+        self.bv_tura_fajl = os.path.join(self.mappa, "bv_fix_turak.json")
         self.napok = ["Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat", "Vasárnap"]
-        self.betölt_adatok()
+        
+        self.betolt_minden_adatot()
         self.init_gomb()
+        QTimer.singleShot(3000, self.automatikus_inditas)
 
-    def betölt_adatok(self):
-        if os.path.exists(self.adat_fajl):
-            try:
-                with open(self.adat_fajl, "r", encoding="utf-8") as f:
-                    self.bv_lista = json.load(f)
-            except: self.bv_lista = []
-        else: self.bv_lista = []
+    def betolt_minden_adatot(self):
+        try:
+            if os.path.exists(self.bv_adat_fajl):
+                with open(self.bv_adat_fajl, "r", encoding="utf-8") as f: self.intezmenyek = json.load(f)
+            else: self.intezmenyek = []
+        except: self.intezmenyek = []
+        try:
+            if os.path.exists(self.bv_tura_fajl):
+                with open(self.bv_tura_fajl, "r", encoding="utf-8") as f: self.turak = json.load(f)
+            else: self.turak = []
+        except: self.turak = []
 
-    def mentes_adatok(self):
-        with open(self.adat_fajl, "w", encoding="utf-8") as f:
-            json.dump(self.bv_lista, f, ensure_ascii=False, indent=4)
+    def mentes_minden_adat(self):
+        with open(self.bv_adat_fajl, "w", encoding="utf-8") as f: json.dump(self.intezmenyek, f, indent=4)
+        with open(self.bv_tura_fajl, "w", encoding="utf-8") as f: json.dump(self.turak, f, indent=4)
 
     def init_gomb(self):
         if hasattr(self.main, 'bv_btn_obj'): return
-        self.main.bv_btn_obj = QPushButton("⚖️ BÜNTETÉS VÉGREHAJTÁS")
+        self.main.bv_btn_obj = QPushButton("⚖️ BV KEZELŐ")
         self.main.bv_btn_obj.setStyleSheet("background-color: #c0392b; color: white; font-weight: bold; padding: 6px; border-radius: 4px;")
         self.main.bv_btn_obj.clicked.connect(self.megjelenites)
         if hasattr(self.main, 'left_tree'):
             self.main.left_tree.parent().layout().insertWidget(1, self.main.bv_btn_obj)
 
+    def behelyez_tura_a_programba(self, tura_adat):
+        if not hasattr(self.main, 'add_tura_item'): return
+        
+        ti = self.main.add_tura_item(f"🚛 {tura_adat['nev']}")
+        ti.setData(0, Qt.ItemDataRole.UserRole, "TURA")
+        
+        for p_nev in tura_adat['tagok']:
+            adat = next((x for x in self.intezmenyek if x['nev'] == p_nev), None)
+            if not adat: continue
+            
+            for i in range(self.main.left_tree.topLevelItemCount() - 1, -1, -1):
+                varos_item = self.main.left_tree.topLevelItem(i)
+                for j in range(varos_item.childCount() - 1, -1, -1):
+                    lp = varos_item.child(j)
+                    if adat['nev'].upper() in lp.text(0).upper():
+                        varos_item.removeChild(lp)
+                        if varos_item.childCount() == 0:
+                            self.main.left_tree.takeTopLevelItem(i)
+                        break
+
+            suly_val = int(adat.get('e_db', 0)) * (29 if adat.get('e_m') == "30 L" else 57)
+            teljes_nev_cim = f"{adat['nev']} ({adat.get('cim','')})"
+            
+            # Partner sor: 0:Név(Cím), 1:KI, 2:BE, 3:Db, 4:Kg, 5:Megj, 6:Rendszám
+            partner_sor = [teljes_nev_cim, "", adat['tipus'], adat.get('e_db','0'), str(suly_val), "", ""]
+            ex = QTreeWidgetItem(ti, partner_sor)
+            ex.setData(0, Qt.ItemDataRole.UserRole, "PARTNER")
+            
+            # Stílus visszaállítása normál feketére, pipa nélkül
+            ex.setForeground(0, QColor("black"))
+            font = QFont(); font.setBold(False); ex.setFont(0, font)
+            ex.setFlags(Qt.ItemFlag.ItemIsSelectable | Qt.ItemFlag.ItemIsDragEnabled | Qt.ItemFlag.ItemIsDropEnabled | Qt.ItemFlag.ItemIsEnabled)
+            
+            # Tétel sor: normál megjelenés
+            tetel_sor = ["", "", adat['tipus'], adat.get('e_db','0'), str(suly_val), "", ""]
+            c_new = QTreeWidgetItem(ex, tetel_sor)
+            c_new.setFlags(Qt.ItemFlag.ItemIsSelectable | Qt.ItemFlag.ItemIsEnabled)
+
+        if hasattr(self.main, 'recalculate'):
+            self.main.recalculate()
+        ti.setExpanded(True)
+
     def megjelenites(self):
         self.dialog = QDialog(self.main)
-        self.dialog.setWindowTitle("BV Intézmények - Letisztult Nyilvántartás")
-        self.dialog.setMinimumSize(1000, 650)
+        self.dialog.setWindowTitle("BV Rendszer - Fix Túrák")
+        self.dialog.setMinimumSize(1000, 700)
         layout = QVBoxLayout(self.dialog)
-
-        self.tablazat = QTableWidget(0, 6)
-        self.tablazat.setHorizontalHeaderLabels(["Intézmény", "Cím", "Típus", "Üres kint", "Elhozandó", "Napok"])
-        self.tablazat.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
-        self.tablazat.setSelectionBehavior(QTableWidget.SelectionBehavior.SelectRows)
-        self.tablazat.itemDoubleClicked.connect(self.adat_betoltese_szerkesztesre)
-        layout.addWidget(self.tablazat)
-        self.frissit_tablazat()
-
-        # 1. sor: Alapadatok
-        l1 = QHBoxLayout()
-        self.nev_in = QLineEdit(); self.nev_in.setPlaceholderText("Börtön neve")
-        self.cim_in = QLineEdit(); self.cim_in.setPlaceholderText("Város, utca")
-        self.tipus_in = QComboBox(); self.tipus_in.addItems(["ÉH", "HSO", "ÉH+HSO"])
-        l1.addWidget(self.nev_in, 2); l1.addWidget(self.cim_in, 3); l1.addWidget(self.tipus_in, 1)
-        layout.addLayout(l1)
-
-        # 2. sor: Mennyiségek lenyílóval
-        l2 = QHBoxLayout()
-        l2.addWidget(QLabel("<b>Üres kint:</b>"))
-        self.u_db = QLineEdit(); self.u_db.setPlaceholderText("db"); self.u_db.setFixedWidth(50)
-        self.u_meret = QComboBox(); self.u_meret.addItems(["30 L", "60 L"])
-        l2.addWidget(self.u_db); l2.addWidget(self.u_meret)
+        tabs = QTabWidget()
         
-        l2.addSpacing(30)
-        l2.addWidget(QLabel("<b>Elhozandó:</b>"))
-        self.e_db = QLineEdit(); self.e_db.setPlaceholderText("db"); self.e_db.setFixedWidth(50)
-        self.e_meret = QComboBox(); self.e_meret.addItems(["30 L", "60 L"])
-        l2.addWidget(self.e_db); l2.addWidget(self.e_meret)
-        l2.addStretch()
-        layout.addLayout(l2)
+        tab1 = QWidget(); l1 = QVBoxLayout(tab1)
+        self.tablazat_int = QTableWidget(0, 5)
+        self.tablazat_int.setHorizontalHeaderLabels(["Név", "Cím", "Típus", "Üres db", "Elhozandó db"])
+        self.tablazat_int.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
+        self.tablazat_int.setSelectionBehavior(QTableWidget.SelectionBehavior.SelectRows)
+        l1.addWidget(self.tablazat_int)
+        
+        bev_l = QHBoxLayout()
+        self.i_nev = QLineEdit(); self.i_nev.setPlaceholderText("Név")
+        self.i_cim = QLineEdit(); self.i_cim.setPlaceholderText("Cím")
+        self.i_tip = QComboBox(); self.i_tip.addItems(["ÉH", "HSO", "ÉH+HSO"])
+        self.i_u_db = QLineEdit(); self.i_u_db.setFixedWidth(60); self.i_u_db.setPlaceholderText("Üres")
+        self.i_u_m = QComboBox(); self.i_u_m.addItems(["30 L", "60 L"])
+        self.i_e_db = QLineEdit(); self.i_e_db.setFixedWidth(60); self.i_e_db.setPlaceholderText("Teli")
+        self.i_e_m = QComboBox(); self.i_e_m.addItems(["30 L", "60 L"])
+        for w in [self.i_nev, self.i_cim, self.i_tip, self.i_u_db, self.i_u_m, self.i_e_db, self.i_e_m]: bev_l.addWidget(w)
+        l1.addLayout(bev_l)
+        
+        i_btns = QHBoxLayout()
+        m_btn = QPushButton("Mentés"); m_btn.clicked.connect(self.intezmeny_mentes)
+        t_btn = QPushButton("Törlés"); t_btn.clicked.connect(self.intezmeny_torles)
+        i_btns.addWidget(m_btn); i_btns.addWidget(t_btn); i_btns.addStretch(); l1.addLayout(i_btns)
+        
+        tab2 = QWidget(); l2 = QVBoxLayout(tab2)
+        self.tablazat_tura = QTableWidget(0, 3)
+        self.tablazat_tura.setHorizontalHeaderLabels(["Túra neve", "Napok", "Tagok"])
+        self.tablazat_tura.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
+        self.tablazat_tura.setSelectionBehavior(QTableWidget.SelectionBehavior.SelectRows)
+        l2.addWidget(self.tablazat_tura)
+        
+        t_form = QFrame(); t_form.setFrameShape(QFrame.Shape.StyledPanel); tf_l = QVBoxLayout(t_form)
+        self.t_nev = QLineEdit(); self.t_nev.setPlaceholderText("Túra neve")
+        tf_l.addWidget(QLabel("Túra neve:")); tf_l.addWidget(self.t_nev)
+        nap_l = QHBoxLayout()
+        self.t_napok = {n: QCheckBox(n) for n in self.napok}
+        for cb in self.t_napok.values(): nap_l.addWidget(cb)
+        tf_l.addLayout(nap_l)
+        
+        p_sel = QHBoxLayout(); self.p_combo = QComboBox(); self.p_list = QListWidget(); p_add = QPushButton("Hozzáad")
+        p_sel.addWidget(QLabel("Börtön:")); p_sel.addWidget(self.p_combo, 2); p_sel.addWidget(p_add); tf_l.addLayout(p_sel); tf_l.addWidget(self.p_list)
+        p_add.clicked.connect(lambda: self.p_list.addItem(self.p_combo.currentText()) if self.p_combo.currentText() else None)
+        
+        t_btn_l = QHBoxLayout()
+        tm_btn = QPushButton("Mentés"); tm_btn.clicked.connect(self.tura_mentes)
+        tl_btn = QPushButton("Betöltés MOST"); tl_btn.setStyleSheet("background-color: #27ae60; color: white; font-weight: bold;")
+        tl_btn.clicked.connect(self.manualis_inditas)
+        t_btn_l.addWidget(tm_btn); t_btn_l.addStretch(); t_btn_l.addWidget(tl_btn); tf_l.addLayout(t_btn_l)
+        l2.addWidget(t_form)
 
-        # Napok
-        napok_l = QHBoxLayout()
-        self.nap_boxok = {n: QCheckBox(n) for n in self.napok}
-        for cb in self.nap_boxok.values(): napok_l.addWidget(cb)
-        layout.addLayout(napok_l)
+        tabs.addTab(tab1, "1. Intézmények"); tabs.addTab(tab2, "2. Fix Túrák")
+        layout.addWidget(tabs); self.frissit_felulet(); self.dialog.exec()
 
-        # Gombok
-        btn_l = QHBoxLayout()
-        ment_btn = QPushButton("➕ Mentés / Frissítés"); ment_btn.setStyleSheet("height: 35px; font-weight: bold;")
-        ment_btn.clicked.connect(self.adat_hozzaadas)
-        torl_btn = QPushButton("🗑️ Törlés"); torl_btn.clicked.connect(self.adat_torles)
-        ell_btn = QPushButton("🔍 ELLENŐRZÉS"); ell_btn.setStyleSheet("background-color: #27ae60; color: white; font-weight: bold; height: 35px; padding: 0 20px;")
-        ell_btn.clicked.connect(self.ellenorzes)
-        btn_l.addWidget(ment_btn); btn_l.addWidget(torl_btn); btn_l.addStretch(); btn_l.addWidget(ell_btn)
-        layout.addLayout(btn_l)
+    def frissit_felulet(self):
+        self.tablazat_int.setRowCount(0); self.p_combo.clear()
+        for i, ad in enumerate(self.intezmenyek):
+            self.tablazat_int.insertRow(i)
+            self.tablazat_int.setItem(i, 0, QTableWidgetItem(ad['nev']))
+            self.tablazat_int.setItem(i, 1, QTableWidgetItem(ad['cim']))
+            self.tablazat_int.setItem(i, 2, QTableWidgetItem(ad['tipus']))
+            self.tablazat_int.setItem(i, 3, QTableWidgetItem(f"{ad['u_db']}x{ad['u_m']}"))
+            self.tablazat_int.setItem(i, 4, QTableWidgetItem(f"{ad['e_db']}x{ad['e_m']}"))
+            self.p_combo.addItem(ad['nev'])
+        self.tablazat_tura.setRowCount(0)
+        for i, t in enumerate(self.turak):
+            self.tablazat_tura.insertRow(i)
+            self.tablazat_tura.setItem(i, 0, QTableWidgetItem(t['nev']))
+            self.tablazat_tura.setItem(i, 1, QTableWidgetItem(", ".join(t['napok'])))
+            self.tablazat_tura.setItem(i, 2, QTableWidgetItem(str(len(t['tagok']))))
 
-        self.dialog.exec()
-
-    def frissit_tablazat(self):
-        self.tablazat.setRowCount(0)
-        for i, ad in enumerate(self.bv_lista):
-            self.tablazat.insertRow(i)
-            self.tablazat.setItem(i, 0, QTableWidgetItem(ad['nev']))
-            self.tablazat.setItem(i, 1, QTableWidgetItem(ad['cim']))
-            self.tablazat.setItem(i, 2, QTableWidgetItem(ad['tipus']))
-            self.tablazat.setItem(i, 3, QTableWidgetItem(f"{ad.get('u_db',0)} x {ad.get('u_m','30 L')}"))
-            # Súly kijelzése az elhozandónál
-            suly = int(ad.get('e_db',0)) * (29 if ad.get('e_m') == "30 L" else 57)
-            self.tablazat.setItem(i, 4, QTableWidgetItem(f"{ad.get('e_db',0)} x {ad.get('e_m','30 L')} ({suly} kg)"))
-            self.tablazat.setItem(i, 5, QTableWidgetItem(", ".join(ad['napok'])))
-
-    def adat_hozzaadas(self):
-        nev = self.nev_in.text().strip()
+    def intezmeny_mentes(self):
+        nev = self.i_nev.text().strip()
         if not nev: return
-        uj = {
-            "nev": nev, "cim": self.cim_in.text().strip(), "tipus": self.tipus_in.currentText(),
-            "u_db": self.u_db.text() or "0", "u_m": self.u_meret.currentText(),
-            "e_db": self.e_db.text() or "0", "e_m": self.e_meret.currentText(),
-            "napok": [n for n, cb in self.nap_boxok.items() if cb.isChecked()]
-        }
-        idx = next((i for i, item in enumerate(self.bv_lista) if item["nev"] == nev), None)
-        if idx is not None: self.bv_lista[idx] = uj
-        else: self.bv_lista.append(uj)
-        self.mentes_adatok(); self.frissit_tablazat()
+        uj = {"nev": nev, "cim": self.i_cim.text(), "tipus": self.i_tip.currentText(), "u_db": self.i_u_db.text() or "0", "u_m": self.i_u_m.currentText(), "e_db": self.i_e_db.text() or "0", "e_m": self.i_e_m.currentText()}
+        idx = next((i for i, x in enumerate(self.intezmenyek) if x['nev'] == nev), None)
+        if idx is not None: self.intezmenyek[idx] = uj
+        else: self.intezmenyek.append(uj)
+        self.mentes_minden_adat(); self.frissit_felulet()
 
-    def adat_betoltese_szerkesztesre(self, item):
-        ad = self.bv_lista[item.row()]
-        self.nev_in.setText(ad['nev']); self.cim_in.setText(ad['cim'])
-        self.tipus_in.setCurrentText(ad['tipus'])
-        self.u_db.setText(ad.get('u_db','')); self.u_meret.setCurrentText(ad.get('u_m','30 L'))
-        self.e_db.setText(ad.get('e_db','')); self.e_meret.setCurrentText(ad.get('e_m','30 L'))
-        for n, cb in self.nap_boxok.items(): cb.setChecked(n in ad['napok'])
+    def tura_mentes(self):
+        nev = self.t_nev.text().strip()
+        if not nev: return
+        uj_t = {"nev": nev, "napok": [n for n, cb in self.t_napok.items() if cb.isChecked()], "tagok": [self.p_list.item(i).text() for i in range(self.p_list.count())]}
+        idx = next((i for i, x in enumerate(self.turak) if x['nev'] == nev), None)
+        if idx is not None: self.turak[idx] = uj_t
+        else: self.turak.append(uj_t)
+        self.mentes_minden_adat(); self.frissit_felulet()
 
-    def adat_torles(self):
-        if self.tablazat.currentRow() >= 0:
-            self.bv_lista.pop(self.tablazat.currentRow())
-            self.mentes_adatok(); self.frissit_tablazat()
+    def manualis_inditas(self):
+        row = self.tablazat_tura.currentRow()
+        if row >= 0: self.behelyez_tura_a_programba(self.turak[row])
 
-    def ellenorzes(self):
-        from datetime import datetime
-        nap_hu = {"Monday": "Hétfő", "Tuesday": "Kedd", "Wednesday": "Szerda", "Thursday": "Csütörtök", "Friday": "Péntek", "Saturday": "Szombat", "Sunday": "Vasárnap"}
-        mai = nap_hu.get(datetime.now().strftime("%A"), "Hétfő")
-        bent = [self.main.right_tree.topLevelItem(i).child(j).text(0).upper() for i in range(self.main.right_tree.topLevelItemCount()) for j in range(self.main.right_tree.topLevelItem(i).childCount())]
-        hianyk = [f"🚨 {p['nev']} ({p['e_db']}x{p['u_m']})" for p in self.bv_lista if mai in p['napok'] and not any(p['nev'].upper() in b for b in bent)]
-        if hianyk: QMessageBox.critical(self.dialog, "Hiányzó fuvarok", f"Ma ({mai}) elmaradt:\n\n" + "\n".join(hianyk))
-        else: QMessageBox.information(self.dialog, "Rendben", "Minden mai BV fuvar betervezve!")
+    def automatikus_inditas(self):
+        nap_hu = {"Monday":"Hétfő","Tuesday":"Kedd","Wednesday":"Szerda","Thursday":"Csütörtök","Friday":"Péntek","Saturday":"Szombat","Sunday":"Vasárnap"}
+        holnap = (datetime.datetime.now() + datetime.timedelta(days=1)).strftime("%A")
+        cel_nap = nap_hu.get(holnap, "Hétfő")
+        for tura in self.turak:
+            if cel_nap in tura.get('napok', []):
+                self.behelyez_tura_a_programba(tura)
+
+    def intezmeny_torles(self):
+        if self.tablazat_int.currentRow() >= 0:
+            self.intezmenyek.pop(self.tablazat_int.currentRow()); self.mentes_minden_adat(); self.frissit_felulet()
+
+    def tura_torles(self):
+        if self.tablazat_tura.currentRow() >= 0:
+            self.turak.pop(self.tablazat_tura.currentRow()); self.mentes_minden_adat(); self.frissit_felulet()

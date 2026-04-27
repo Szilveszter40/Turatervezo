@@ -1,0 +1,33 @@
+[
+    {
+        "nev": "BV. Sopron",
+        "napok": [
+            "Kedd",
+            "Cs\u00fct\u00f6rt\u00f6k"
+        ],
+        "tagok": [
+            "Zala V\u00e1rmegyei BV Int\u00e9zet",
+            "Sopronk\u0151hidai Fegyh\u00e1z \u00e9s B\u00f6rt\u00f6n"
+        ]
+    },
+    {
+        "nev": "BV. Veszpr\u00e9m",
+        "napok": [
+            "Kedd",
+            "Cs\u00fct\u00f6rt\u00f6k"
+        ],
+        "tagok": [
+            "Veszpr\u00e9m V\u00e1rmegyei BV. Int\u00e9zet"
+        ]
+    },
+    {
+        "nev": "T\u00f6k\u00f6l",
+        "napok": [
+            "Kedd",
+            "Cs\u00fct\u00f6rt\u00f6k"
+        ],
+        "tagok": [
+            "T\u00f6k\u00f6l BV."
+        ]
+    }
+]

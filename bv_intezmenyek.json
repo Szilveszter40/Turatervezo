@@ -1,0 +1,38 @@
+[
+    {
+        "nev": "Veszpr\u00e9m V\u00e1rmegyei BV. Int\u00e9zet",
+        "cim": "Veszpr\u00e9m K\u00fcls\u0151 K\u00e1d\u00e1rtai \u00fat 12",
+        "tipus": "HSO",
+        "u_db": "10",
+        "u_m": "60 L",
+        "e_db": "7",
+        "e_m": "60 L"
+    },
+    {
+        "nev": "Sopronk\u0151hidai Fegyh\u00e1z \u00e9s B\u00f6rt\u00f6n",
+        "cim": "Sopronk\u0151hida Pesti Barnab\u00e1s utca 25",
+        "tipus": "HSO",
+        "u_db": "15",
+        "u_m": "60 L",
+        "e_db": "13",
+        "e_m": "60 L"
+    },
+    {
+        "nev": "Zala V\u00e1rmegyei BV Int\u00e9zet",
+        "cim": "Zalaegerszeg V\u00e1rk\u00f6r 4",
+        "tipus": "HSO",
+        "u_db": "3",
+        "u_m": "60 L",
+        "e_db": "3",
+        "e_m": "60 L"
+    },
+    {
+        "nev": "T\u00f6k\u00f6l BV.",
+        "cim": "T\u00f6k\u00f6l R\u00e1ckevei \u00fat 6.",
+        "tipus": "HSO",
+        "u_db": "34",
+        "u_m": "60 L",
+        "e_db": "20",
+        "e_m": "60 L"
+    }
+]
