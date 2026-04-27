@@ -1,0 +1,29 @@
+[
+    {
+        "nev": "Veszprém Vármegyei BV. Intézez",
+        "cim": "Veszprém Külső Kádártai út 12",
+        "tipus": "HSO",
+        "u_db": "10",
+        "u_m": "60 L",
+        "e_db": "7",
+        "e_m": "60 L",
+        "napok": [
+            "Hétfő",
+            "Szerda",
+            "Péntek"
+        ]
+    },
+    {
+        "nev": "Sopronkőhidai Fegyház és Börtön",
+        "cim": "Sopronkőhida Pesti Barnabás utca 25",
+        "tipus": "HSO",
+        "u_db": "15",
+        "u_m": "60 L",
+        "e_db": "13",
+        "e_m": "60 L",
+        "napok": [
+            "Kedd",
+            "Csütörtök"
+        ]
+    }
+]
