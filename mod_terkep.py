@@ -1,52 +1,101 @@
 import os
 import folium
 from folium import plugins
-import webbrowser
-import tempfile
 import time
 import re
+import io
 from PyQt6.QtWidgets import (QPushButton, QDialog, QVBoxLayout, QHBoxLayout, 
-                             QListWidget, QLabel, QWidget, QProgressBar, QMessageBox, QComboBox, QSizePolicy)
-from PyQt6.QtCore import Qt, QTimer
-from geopy.geocoders import ArcGIS
+                             QListWidget, QLabel, QWidget, QProgressBar, QMessageBox, QComboBox)
+from PyQt6.QtCore import Qt, QTimer, QThread, pyqtSignal
+from PyQt6.QtWebEngineWidgets import QWebEngineView
+from geopy.geocoders import Photon
 
+# --- 1. BELSŐ TÉRKÉP MEGJELENÍTŐ ABLAK ---
+class TerkepAblak(QDialog):
+    def __init__(self, html_content, parent=None):
+        super().__init__(parent)
+        self.setWindowTitle("Útvonal Terv - Belső Nézet")
+        self.setMinimumSize(1100, 800)
+        self.setWindowFlags(self.windowFlags() | Qt.WindowType.Window)
+        
+        layout = QVBoxLayout(self)
+        self.browser = QWebEngineView()
+        
+        # KIZÁRÓLAG MEMÓRIÁBÓL TÖLTÜNK
+        self.browser.setHtml(html_content)
+        
+        layout.addWidget(self.browser)
+        
+        btn_vissza = QPushButton("BEZÁRÁS")
+        btn_vissza.setFixedHeight(40)
+        btn_vissza.setStyleSheet("background-color: #e74c3c; color: white; font-weight: bold;")
+        btn_vissza.clicked.connect(self.close)
+        layout.addWidget(btn_vissza)
+
+# --- 2. HÁTTÉRSZÁL A GEOKÓDOLÁSHOZ ---
+class GeocodeWorker(QThread):
+    progress_update = pyqtSignal(int)
+    finished = pyqtSignal(list)
+
+    def __init__(self, partner_nevek, geocoder, tisztito_funkcio):
+        super().__init__()
+        self.partner_nevek = partner_nevek
+        self.geocoder = geocoder
+        self.tisztito = tisztito_funkcio
+
+    def run(self):
+        talalt_koordinatak = []
+        for i, teljes_szoveg in enumerate(self.partner_nevek):
+            tiszta_cim = self.tisztito(teljes_szoveg)
+            try:
+                location = self.geocoder.geocode(f"{tiszta_cim}, Hungary", timeout=10, language="hu")
+                if location:
+                    talalt_koordinatak.append((location.latitude, location.longitude, teljes_szoveg))
+            except:
+                pass
+            self.progress_update.emit(i + 1)
+        self.finished.emit(talalt_koordinatak)
+
+# --- 3. FŐ MODUL OSZTÁLY ---
 class ModulInit:
     def __init__(self, main_app):
         self.main = main_app
-        self.geocoder = ArcGIS(user_agent="FuvarTervezo_Final")
+        self.worker = None
+        self.terkep_megjelenito = None 
+        
+        if not hasattr(self.main, 'active_modules'):
+            self.main.active_modules = []
+        self.main.active_modules.append(self)
+
+        self.geocoder = Photon(user_agent="FuvarTervezo_Internal_Viewer_Final")
         self.telephelyek = {
             "Kecskemét": [46.9075, 19.6917],
             "Győr": [47.6875, 17.6504]
         }
-        # Kicsit többet várunk, hogy a fix_turak modul biztosan létrehozza a konténert
         QTimer.singleShot(1500, self.init_gomb)
 
     def init_gomb(self):
-        if hasattr(self.main, 'terkep_btn_obj'): return
-
-        self.main.terkep_btn_obj = QPushButton("🗺️ TÉRKÉP")
-        self.main.terkep_btn_obj.setStyleSheet("background-color: #3498db; color: white; font-weight: bold; padding: 6px; border-radius: 4px;")
-        self.main.terkep_btn_obj.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
-        self.main.terkep_btn_obj.clicked.connect(self.valaszto_ablak)
-
-        # Megkeressük a közös konténert
-        if hasattr(self.main, 'gomb_sor_kontener'):
-            self.main.gomb_sor_kontener.layout().addWidget(self.main.terkep_btn_obj, 1)
-        else:
-            # Ha nincs konténer, berakja magát külön (tartalék terv)
-            try:
-                self.main.right_tree.parent().layout().insertWidget(1, self.main.terkep_btn_obj)
+        if hasattr(self.main, 'terkep_btn_obj'):
+            try: self.main.terkep_btn_obj.clicked.disconnect()
             except: pass
+            self.main.terkep_btn_obj.clicked.connect(self.valaszto_ablak)
+            self.main.terkep_btn_obj.setText("🗺️ TÉRKÉP")
+        else:
+            self.main.terkep_btn_obj = QPushButton("🗺️ TÉRKÉP")
+            self.main.terkep_btn_obj.setStyleSheet("background-color: #3498db; color: white; font-weight: bold;")
+            self.main.terkep_btn_obj.clicked.connect(self.valaszto_ablak)
+            if hasattr(self.main, 'gomb_sor_kontener'):
+                self.main.gomb_sor_kontener.layout().addWidget(self.main.terkep_btn_obj, 1)
 
     def valaszto_ablak(self):
-        dialog = QDialog(self.main)
-        dialog.setWindowTitle("Térképes Útvonaltervező")
-        dialog.setMinimumSize(400, 500)
-        layout = QVBoxLayout(dialog)
+        self.dialog = QDialog(self.main)
+        self.dialog.setWindowTitle("Térképes Útvonaltervező")
+        self.dialog.setMinimumSize(400, 450)
+        layout = QVBoxLayout(self.dialog)
         
         layout.addWidget(QLabel("<b>Indulási telephely:</b>"))
         self.telep_combo = QComboBox()
-        self.telep_combo.addItems(["Kecskemét", "Győr"])
+        self.telep_combo.addItems(list(self.telephelyek.keys()))
         layout.addWidget(self.telep_combo)
         
         layout.addSpacing(10)
@@ -60,59 +109,71 @@ class ModulInit:
         self.progress.setVisible(False)
         layout.addWidget(self.progress)
 
-        def inditas():
-            if not self.lista.currentItem(): return
-            t_nev = self.lista.currentItem().text()
-            telep_nev = self.telep_combo.currentText()
-            p_nevek = [it.child(j).text(0) for i in range(self.main.right_tree.topLevelItemCount()) 
-                       for it in [self.main.right_tree.topLevelItem(i)] if it.text(0) == t_nev 
-                       for j in range(it.childCount())]
-            
-            if p_nevek:
-                self.progress.setVisible(True)
-                self.progress.setMaximum(len(p_nevek))
-                self.general_es_nyit(t_nev, p_nevek, telep_nev, self.progress)
-                dialog.accept()
-
-        btn_ok = QPushButton("🗺️ Útvonal generálása")
-        btn_ok.setFixedHeight(40)
-        btn_ok.setStyleSheet("background-color: #2ecc71; color: white; font-weight: bold;")
-        btn_ok.clicked.connect(inditas)
-        layout.addWidget(btn_ok)
-        dialog.exec()
+        self.btn_inditas = QPushButton("🗺️ Útvonal generálása")
+        self.btn_inditas.setFixedHeight(40)
+        self.btn_inditas.setStyleSheet("background-color: #2ecc71; color: white; font-weight: bold;")
+        self.btn_inditas.clicked.connect(self.folyamat_inditasa)
+        layout.addWidget(self.btn_inditas)
+        
+        self.dialog.exec()
 
     def szuper_tisztito(self, szoveg):
         match = re.search(r'\((.*?)\)', szoveg)
         if not match: return szoveg
-        belso = match.group(1)
-        if "HU " in belso: return belso.split("HU ", 1)[1].strip().rstrip(".")
-        parts = belso.split(" - ")
-        return parts[-1].strip().rstrip(".")
+        tiszta = match.group(1)
+        tiszta = tiszta.replace("HU ", "").replace(" - ", ", ")
+        return tiszta.strip().rstrip(".")
 
-    def general_es_nyit(self, t_nev, partner_nevek, telep_nev, progress_bar):
+    def folyamat_inditasa(self):
+        if not self.lista.currentItem(): return
+        
+        t_nev = self.lista.currentItem().text()
+        telep_nev = self.telep_combo.currentText()
+        p_nevek = []
+        
+        for i in range(self.main.right_tree.topLevelItemCount()):
+            it = self.main.right_tree.topLevelItem(i)
+            if it.text(0) == t_nev:
+                for j in range(it.childCount()):
+                    p_nevek.append(it.child(j).text(0))
+                break
+
+        if p_nevek:
+            self.btn_inditas.setEnabled(False)
+            self.progress.setVisible(True)
+            self.progress.setMaximum(len(p_nevek))
+            self.progress.setValue(0)
+            
+            self.worker = GeocodeWorker(p_nevek, self.geocoder, self.szuper_tisztito)
+            self.worker.progress_update.connect(self.progress.setValue)
+            self.worker.finished.connect(lambda coords: self.terkep_kesz(coords, telep_nev))
+            self.worker.start()
+
+    def terkep_kesz(self, talalt_pontok, telep_nev):
+        if hasattr(self, 'dialog'): self.dialog.accept()
+        
         start_coords = self.telephelyek[telep_nev]
         m = folium.Map(location=start_coords, zoom_start=8, tiles="cartodbpositron")
         points = [start_coords]
-
         folium.Marker(start_coords, popup=f"START: {telep_nev}", icon=folium.Icon(color='green', icon='home')).add_to(m)
 
-        for i, teljes_szoveg in enumerate(partner_nevek):
-            progress_bar.setValue(i + 1)
-            self.main.repaint()
-            tiszta_cim = self.szuper_tisztito(teljes_szoveg)
-            try:
-                time.sleep(0.2)
-                location = self.geocoder.geocode(f"{tiszta_cim}, Hungary")
-                if location:
-                    coords = [location.latitude, location.longitude]
-                    points.append(coords)
-                    folium.Marker(coords, popup=teljes_szoveg, icon=plugins.BeautifyIcon(number=i+1, border_color='blue')).add_to(m)
-            except: continue
+        for i, (lat, lon, nev) in enumerate(talalt_pontok):
+            coords = [lat, lon]
+            points.append(coords)
+            folium.Marker(coords, popup=nev, icon=plugins.BeautifyIcon(number=i+1, border_color='blue')).add_to(m)
 
         points.append(start_coords)
+        
         if len(points) > 1:
             plugins.AntPath(locations=points, color="blue", pulse_color="red", weight=5, opacity=0.6).add_to(m)
             m.fit_bounds(points)
-            temp_file = os.path.join(tempfile.gettempdir(), f"fuvar_{int(time.time())}.html")
-            m.save(temp_file)
-            webbrowser.open(temp_file)
+            
+            # --- NINCS FÁJLMENTÉS, NINCS WEBBROWSER ---
+            out = io.BytesIO()
+            m.save(out, close_file=False)
+            html_content = out.getvalue().decode()
+            
+            self.terkep_megjelenito = TerkepAblak(html_content, self.main)
+            self.terkep_megjelenito.show()
+        else:
+            QMessageBox.warning(self.main, "Hiba", "Nem találtam koordinátákat.")
