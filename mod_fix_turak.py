@@ -310,9 +310,13 @@ class ModulInit:
             self.suly_ellenorzes()
 
     def excel_import_hivas(self):
-        # Csak megkeresi az excel modult és elindítja
+        # Megkeressük az EVIR feldolgozó funkciót
+        found = False
         for m in self.main.active_modules:
-            if hasattr(m, 'excel_fajl_valasztas'):
-                m.excel_fajl_valasztas()
+            if hasattr(m, 'evir_adatok_feldolgozasa'):
+                m.evir_adatok_feldolgozasa()
+                found = True
                 break
- 
+    
+        if not found:
+            QMessageBox.critical(self.main, "Hiba", "Az Excel feldolgozó modul nem található!")
