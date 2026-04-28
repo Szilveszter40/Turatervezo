@@ -310,13 +310,14 @@ class ModulInit:
             self.suly_ellenorzes()
 
     def excel_import_hivas(self):
-        # Megkeressük az EVIR feldolgozó funkciót
-        found = False
+        # Teljesen új nevet keresünk, hogy véletlenül se a régi ablaknyitóst hívja meg
+        modul_megvan = False
         for m in self.main.active_modules:
-            if hasattr(m, 'evir_adatok_feldolgozasa'):
-                m.evir_adatok_feldolgozasa()
-                found = True
+            if hasattr(m, 'evir_gyors_masolas'): # <--- ÚJ NÉV
+                m.evir_gyors_masolas()           # <--- ÚJ NÉV
+                modul_megvan = True
                 break
     
-        if not found:
-            QMessageBox.critical(self.main, "Hiba", "Az Excel feldolgozó modul nem található!")
+        if not modul_megvan:
+            from PyQt6.QtWidgets import QMessageBox
+            QMessageBox.critical(self.main, "Hiba", "Az Excel modul (evir_gyors_masolas) nem található!")
