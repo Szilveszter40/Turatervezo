@@ -3,7 +3,7 @@ import os
 import datetime
 from PyQt6.QtWidgets import (QPushButton, QMenu, QMessageBox, QInputDialog, 
                              QTreeWidgetItem, QVBoxLayout, QHBoxLayout, QWidget, 
-                             QDialog, QListWidget, QSizePolicy)
+                             QDialog, QListWidget, QSizePolicy, QLabel)
 from PyQt6.QtCore import Qt, QTimer
 from PyQt6.QtGui import QColor, QFont
 
@@ -43,6 +43,7 @@ class ModulInit:
         self.menu = QMenu(self.main.fix_tura_btn_obj)
         self.menu.addAction("📅 Visszakeresés").triggered.connect(self.kezi_valasztas_ablak)
         self.menu.addAction("💾 Mentés sablonként").triggered.connect(self.mentes_aktualis_kijelolt)
+        self.menu.addAction("📂 Sablonok kezelése / Törlés").triggered.connect(self.sablon_kezelo_ablak)
         self.main.fix_tura_btn_obj.setMenu(self.menu)
 
         # --- HOLNAP GOMB ---
@@ -51,7 +52,7 @@ class ModulInit:
         self.main.holnap_btn_obj.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
         self.main.holnap_btn_obj.clicked.connect(self.holnapi_inditas_fix)
 
-        self.excel_btn = QPushButton("📊 HOLNAPI TÚRÁK EXCELBŐL")
+        self.excel_btn = QPushButton("📊 HOLNAPI TÚRÁK EVIR-BŐL")
         self.excel_btn.setStyleSheet("background-color: #27ae60; color: white; font-weight: bold; padding: 6px; border-radius: 4px;")
         self.excel_btn.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
         self.excel_btn.clicked.connect(self.excel_import_hivas)
@@ -215,6 +216,91 @@ class ModulInit:
                     QMessageBox.information(self.main, "Siker", "Mentve.")
                 except: pass
 
+    def sablon_kezelo_ablak(self):
+        # Új ablak a sablonok listázásához
+        self.kezelo_dialog = QDialog(self.main)
+        self.kezelo_dialog.setWindowTitle("Mentett Sablonok Karbantartása")
+        self.kezelo_dialog.setMinimumSize(400, 500)
+        layout = QVBoxLayout(self.kezelo_dialog)
+
+        layout.addWidget(QLabel("<b>Összes mentett sablon:</b>"))
+        
+        self.sablon_lista_widget = QListWidget()
+        self.sablon_lista_frissites() # Lista feltöltése a JSON-ből
+        layout.addWidget(self.sablon_lista_widget)
+
+        # Törlés gomb
+        btn_torles = QPushButton("🗑️ Kijelölt sablon végleges törlése")
+        btn_torles.setFixedHeight(40)
+        btn_torles.setStyleSheet("background-color: #c0392b; color: white; font-weight: bold; border-radius: 4px;")
+        btn_torles.clicked.connect(self.sablon_torles_vegrehajtas)
+        layout.addWidget(btn_torles)
+
+        self.kezelo_dialog.exec()
+
+    def sablon_lista_frissites(self):
+        self.sablon_lista_widget.clear()
+        json_fajl = "fix_turak_napi.json"
+        
+        if os.path.exists(json_fajl):
+            try:
+                with open(json_fajl, "r", encoding="utf-8") as f:
+                    adatok = json.load(f)
+                    
+                    # 1. szint: Hét (pl. Páros hét)
+                    for het, napok in adatok.items():
+                        if isinstance(napok, dict):
+                            # 2. szint: Nap (pl. Hétfő)
+                            for nap, turak in napok.items():
+                                if isinstance(turak, dict):
+                                    # 3. szint: A konkrét Túrák nevei
+                                    for tura_neve in turak.keys():
+                                        self.sablon_lista_widget.addItem(f"{het} -> {nap} -> {tura_neve}")
+                                else:
+                                    # Ha a nap alatt rögtön adatok vannak (nem több túra)
+                                    self.sablon_lista_widget.addItem(f"{het} -> {nap}")
+            except Exception as e:
+                print(f"Hiba a listázáskor: {e}")
+
+    def sablon_torles_vegrehajtas(self):
+        item = self.sablon_lista_widget.currentItem()
+        if not item: return
+        
+        szoveg = item.text()
+        parts = szoveg.split(" -> ")
+        
+        valasz = QMessageBox.question(self.kezelo_dialog, "Megerősítés", f"Törlöd a következőt?\n{szoveg}")
+        if valasz != QMessageBox.StandardButton.Yes: return
+
+        try:
+            json_fajl = "fix_turak_napi.json"
+            with open(json_fajl, "r", encoding="utf-8") as f:
+                adatok = json.load(f)
+
+            if len(parts) == 3: # Hét -> Nap -> Túra forma
+                het, nap, tura = parts
+                if het in adatok and nap in adatok[het] and tura in adatok[het][nap]:
+                    del adatok[het][nap][tura]
+                    
+                    # Takarítás: ha üres lett a nap vagy a hét
+                    if not adatok[het][nap]: del adatok[het][nap]
+                    if not adatok[het]: del adatok[het]
+
+            elif len(parts) == 2: # Csak Hét -> Nap forma
+                het, nap = parts
+                if het in adatok and nap in adatok[het]:
+                    del adatok[het][nap]
+                    if not adatok[het]: del adatok[het]
+
+            with open(json_fajl, "w", encoding="utf-8") as f:
+                json.dump(adatok, f, ensure_ascii=False, indent=4)
+            
+            self.sablon_lista_frissites()
+            QMessageBox.information(self.kezelo_dialog, "Siker", "Törölve.")
+        except Exception as e:
+            QMessageBox.critical(self.main, "Hiba", f"Hiba: {e}")
+
+    
     def auto_mentes_esemeny(self, item, column):
         if self.main.right_tree.signalsBlocked(): return
         if hasattr(self.main, 'recalculate'):
