@@ -36,8 +36,8 @@ class ModulInit:
         layout.setSpacing(4)
 
         # --- SABLON GOMB ---
-        self.main.fix_tura_btn_obj = QPushButton("📋 SABLON")
-        self.main.fix_tura_btn_obj.setStyleSheet("background-color: #f39c12; color: white; font-weight: bold; padding: 6px; border-radius: 3px;")
+        self.main.fix_tura_btn_obj = QPushButton("📋 SABLONOK KEZELÉSE")
+        self.main.fix_tura_btn_obj.setStyleSheet("background-color: #607D8B; color: white; font-weight: bold; padding: 6px; border-radius: 3px;")
         self.main.fix_tura_btn_obj.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
         
         self.menu = QMenu(self.main.fix_tura_btn_obj)
@@ -46,23 +46,29 @@ class ModulInit:
         self.main.fix_tura_btn_obj.setMenu(self.menu)
 
         # --- HOLNAP GOMB ---
-        self.main.holnap_btn_obj = QPushButton("🚚 HOLNAP")
-        self.main.holnap_btn_obj.setStyleSheet("background-color: #27ae60; color: white; font-weight: bold; padding: 6px; border-radius: 3px;")
+        self.main.holnap_btn_obj = QPushButton("🚚 HOLNAPI TÚRÁK SABLONBÓL")
+        self.main.holnap_btn_obj.setStyleSheet("background-color: #2980b9; color: white; font-weight: bold; padding: 6px; border-radius: 3px;")
         self.main.holnap_btn_obj.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
         self.main.holnap_btn_obj.clicked.connect(self.holnapi_inditas_fix)
+
+        self.excel_btn = QPushButton("📊 HOLNAPI TÚRÁK EXCELBŐL")
+        self.excel_btn.setStyleSheet("background-color: #27ae60; color: white; font-weight: bold; padding: 6px; border-radius: 4px;")
+        self.excel_btn.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
+        self.excel_btn.clicked.connect(self.excel_import_hivas)
 
         # --- TÉRKÉP GOMB ---
         if hasattr(self.main, 'terkep_btn_obj'):
             self.terkep_btn = self.main.terkep_btn_obj
         else:
             self.terkep_btn = QPushButton("🗺️ TÉRKÉP")
-            self.terkep_btn.setStyleSheet("background-color: #3498db; color: white; font-weight: bold; padding: 6px; border-radius: 3px;")
+            self.terkep_btn.setStyleSheet("background-color: #1a5276; color: white; font-weight: bold; padding: 6px; border-radius: 3px;")
             self.main.terkep_btn_obj = self.terkep_btn
         
         self.terkep_btn.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
 
         layout.addWidget(self.main.fix_tura_btn_obj, 1)
         layout.addWidget(self.main.holnap_btn_obj, 1)
+        layout.addWidget(self.excel_btn, 1)
         layout.addWidget(self.terkep_btn, 1)
 
         try:
@@ -216,3 +222,11 @@ class ModulInit:
             try: self.main.recalculate()
             finally: self.main.right_tree.blockSignals(False)
             self.suly_ellenorzes()
+
+    def excel_import_hivas(self):
+        # Csak megkeresi az excel modult és elindítja
+        for m in self.main.active_modules:
+            if hasattr(m, 'excel_fajl_valasztas'):
+                m.excel_fajl_valasztas()
+                break
+ 
