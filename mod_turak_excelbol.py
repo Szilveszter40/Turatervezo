@@ -12,30 +12,27 @@ class ModulInit:
         if self not in self.main.active_modules:
             self.main.active_modules.append(self)
         
-        # OKOSSÁG: Felülírjuk a főprogram recalculate függvényét, 
-        # hogy a színeket is kezelje vonszoláskor is!
+        # Globális recalculate felülírás a színezéshez (minden modulra hat!)
         if hasattr(self.main, 'recalculate'):
             self.original_recalculate = self.main.recalculate
             self.main.recalculate = self.patched_recalculate
 
     def patched_recalculate(self):
-        """ Ez a verzió lefut minden vonszolás és törlés után is """
-        # Előbb lefut az eredeti számítás, ami beírja a szöveget
-        self.original_recalculate()
+        """ Ez fut le minden változáskor, így a Fix Túrák színezése is megjavul """
+        self.original_recalculate() 
         
-        # Utána mi rögtön színezzük a friss súlyok alapján
         for i in range(self.main.right_tree.topLevelItemCount()):
             t = self.main.right_tree.topLevelItem(i)
             if t.data(0, Qt.ItemDataRole.UserRole) == "TURA":
                 try:
-                    # Kiolvassuk a frissen számolt súlyt
+                    # Súly kiolvasása és színezése (index 4)
                     s_text = t.text(4).replace(" kg", "").replace(",", ".")
                     suly = float(s_text)
                     
                     if suly > 2000:
                         t.setForeground(4, QColor("red"))
                     else:
-                        t.setForeground(4, QColor("black")) # Visszafeketedik, ha lecsökken
+                        t.setForeground(4, QColor("black"))
                 except:
                     pass
 
@@ -58,13 +55,17 @@ class ModulInit:
                     if p_n not in terv[t_n]: terv[t_n].append(p_n)
 
             for t_n, p_list in terv.items():
-                target = self._get_vagy_uj_tura(t_n)
+                # Ikon beillesztése: 🚛 + Túranév
+                ikonos_nev = f"🚛 {t_n}"
+                target = self._get_vagy_uj_tura(ikonos_nev)
                 target.setExpanded(False)
                 
                 for i in range(self.main.left_tree.topLevelItemCount() - 1, -1, -1):
                     p_it = self.main.left_tree.topLevelItem(i)
                     if p_it.text(0).strip() in p_list:
                         p = self.main.left_tree.takeTopLevelItem(i)
+                        
+                        # Partner létrehozása normál stílussal
                         uj_p = QTreeWidgetItem(target, [p.text(0), "", "", p.text(2), p.text(3), p.text(4), "", ""])
                         uj_p.setData(0, Qt.ItemDataRole.UserRole, "PARTNER")
                         
@@ -74,7 +75,6 @@ class ModulInit:
                             ki, be = (tt, "") if tt.startswith("K-") else ("", tt)
                             QTreeWidgetItem(uj_p, ["", ki, be, c.text(2), c.text(3), "", "", ""])
 
-            # Itt már a mi okosított recalculate-ünk fut le!
             self.main.recalculate()
             self.main.right_tree.update()
             QMessageBox.information(self.main, "Siker", "Excel túrák összeállítva!")
@@ -82,8 +82,12 @@ class ModulInit:
         except Exception as e:
             QMessageBox.critical(self.main, "Hiba", str(e))
 
-    def _get_vagy_uj_tura(self, t_n):
+    def _get_vagy_uj_tura(self, ikonos_nev):
         for i in range(self.main.right_tree.topLevelItemCount()):
             it = self.main.right_tree.topLevelItem(i)
-            if it.text(0).strip() == t_n: return it
-        return self.main.add_tura_item(t_n) if hasattr(self.main, 'add_tura_item') else None
+            if it.text(0).strip() == ikonos_nev:
+                return it
+        
+        if hasattr(self.main, 'add_tura_item'):
+            return self.main.add_tura_item(ikonos_nev)
+        return None

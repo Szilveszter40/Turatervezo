@@ -29,5 +29,26 @@
         "tagok": [
             "T\u00f6k\u00f6l BV."
         ]
+    },
+    {
+        "nev": "V\u00e1c",
+        "napok": [
+            "Szerda"
+        ],
+        "tagok": [
+            "Sopronk\u0151hidai Fegyh\u00e1z \u00e9s B\u00f6rt\u00f6n",
+            "Zala V\u00e1rmegyei BV Int\u00e9zet"
+        ]
+    },
+    {
+        "nev": "Zala",
+        "napok": [
+            "Szerda"
+        ],
+        "tagok": [
+            "Sopronk\u0151hidai Fegyh\u00e1z \u00e9s B\u00f6rt\u00f6n",
+            "Zala V\u00e1rmegyei BV Int\u00e9zet",
+            "Sopronk\u0151hidai Fegyh\u00e1z \u00e9s B\u00f6rt\u00f6n"
+        ]
     }
 ]

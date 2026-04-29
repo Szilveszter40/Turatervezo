@@ -1,0 +1,4714 @@
+[
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Eatrend Danubia Kft. / Hort, Benedek Elek Hagyományőrző és természetbarát Óvoda (3014 - Benedek Elek Hagyományőrző és természetbarát óvoda HU 3014 Hort, Iskola út 3.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 2.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Visegrád Páratlan",
+        "PartnerKulcs": "Kaszanyi István e.v. / Büfé Falatozó (2235 - Büfé Falatozó HU 2235 Mende, FŐ utca 24)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 2.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Visegrád Páratlan",
+        "PartnerKulcs": "Kaszanyi István e.v. / Büfé Falatozó (2235 - Büfé Falatozó HU 2235 Mende, FŐ utca 24)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Eatrend Danubia Kft. / Horti Batthyány József Általános Iskola (3014 - Horti Batthyány József Általános Iskola HU 3014 Hort, Bajcsy-Zsilinszky út 23.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Visegrád Páratlan",
+        "PartnerKulcs": "Farsang Attila e.v. / Pecsenyesütő (2230 - Farsang Attila e.v. HU 2230 Gyömrő, Fürdő utca 43.)",
+        "Megj": "1. Pecsenyesütő HU 2230 Gyömrő, Mendei út 2.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Visegrád Páratlan",
+        "PartnerKulcs": "Farsang Attila e.v. / Pecsenyesütő (2230 - Farsang Attila e.v. HU 2230 Gyömrő, Fürdő utca 43.)",
+        "Megj": "1. Pecsenyesütő HU 2230 Gyömrő, Mendei út 2.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Visegrád Páratlan",
+        "PartnerKulcs": "Farsang Attila e.v. / Pecsenyesütő (2230 - Farsang Attila e.v. HU 2230 Gyömrő, Fürdő utca 43.)",
+        "Megj": "1. Pecsenyesütő HU 2230 Gyömrő, Mendei út 2.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Főző Party Kft. / Malomudvar Panzió (3200 - Malomudvar Panzió HU 3200 Gyöngyös, Pesti út 57.)",
+        "Megj": "",
+        "Tetel": "K-PALMADB",
+        "Db": 1.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Visegrád Páratlan",
+        "PartnerKulcs": "MAGLÓD-GASZTROFOOD Kft. (2234 - Csibefaló Auchan HU 2234 Maglód, Eszterházy János utca 1)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Visegrád Páratlan",
+        "PartnerKulcs": "MAGLÓD-GASZTROFOOD Kft. (2234 - Csibefaló Auchan HU 2234 Maglód, Eszterházy János utca 1)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Visegrád Páratlan",
+        "PartnerKulcs": "MAGLÓD-GASZTROFOOD Kft. (2234 - Csibefaló Auchan HU 2234 Maglód, Eszterházy János utca 1)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 5.0,
+        "Kg": 100.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "KING VENDÉGLÁTÓ Kft. (3200 - Kavalkád Étterem HU 3200 Gyöngyös, Püspöki utca 2.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 4.0,
+        "Kg": 80.0
+    },
+    {
+        "Tura": "Visegrád Páratlan",
+        "PartnerKulcs": "KG.Rákos Kft./ Rákos Vendégház (2013 - Rákos Vendégház HU 2013 Pomáz, Ipartelep Céhmester 2)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 30.0,
+        "Kg": 300.0
+    },
+    {
+        "Tura": "Visegrád Páratlan",
+        "PartnerKulcs": "KG.Rákos Kft./ Rákos Vendégház (2013 - Rákos Vendégház HU 2013 Pomáz, Ipartelep Céhmester 2)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Patócs Corso Étterem Kft. (3200 - Corso Ételbár HU 3200 Gyöngyös, Arany János 13)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 4.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Patócs Corso Étterem Kft. (3200 - Corso Ételbár HU 3200 Gyöngyös, Arany János 13)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Patócs Corso Étterem Kft. (3200 - Corso Ételbár HU 3200 Gyöngyös, Arany János 13)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Visegrád Páratlan",
+        "PartnerKulcs": "EX-FŐNIX Kft. (2011 - Lakoma Étterem Budakalász HU 2011 Budakalász, Omszk park 1.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 10.0,
+        "Kg": 200.0
+    },
+    {
+        "Tura": "Visegrád Páratlan",
+        "PartnerKulcs": "EX-FŐNIX Kft. (2011 - Lakoma Étterem Budakalász HU 2011 Budakalász, Omszk park 1.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Visegrád Páratlan",
+        "PartnerKulcs": "EX-FŐNIX Kft. (2011 - Lakoma Étterem Budakalász HU 2011 Budakalász, Omszk park 1.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Borvital Kft. (3200 - Gyros Box Borvital HU 3200 Gyöngyös, Kossuth Lajos utca 5.)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 2.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Visegrád Páratlan",
+        "PartnerKulcs": "MARTON IMRE (2000 - Parola HU 2000 Szentendre, Ungvári 14.)",
+        "Megj": "2762/1",
+        "Tetel": "K-K10DB",
+        "Db": 1.0,
+        "Kg": 10.0
+    },
+    {
+        "Tura": "Visegrád Páratlan",
+        "PartnerKulcs": "MARTON IMRE (2000 - Parola HU 2000 Szentendre, Ungvári 14.)",
+        "Megj": "2762/1",
+        "Tetel": "K-SPECDB",
+        "Db": 2.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Visegrád Páratlan",
+        "PartnerKulcs": "Szamárfül Bisztro Kft/ Dalmát Szamárfül Bisztro (2000 - Dalmát Szamár HU 2000 Szentendre, Bartók Béla utca 8.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 2.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Eatrend Danubia Kft. / B.Braun Gyöngyös (3200 - B. Braun HU 3200 Gyöngyös, Déli Külhatár út 2-)",
+        "Megj": "4.",
+        "Tetel": "K-K20DB",
+        "Db": 3.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Eatrend Danubia Kft. / B.Braun Gyöngyös (3200 - B. Braun HU 3200 Gyöngyös, Déli Külhatár út 2-)",
+        "Megj": "4.",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Dobó úti Bölcsőde (3200 - Dobó úti Bölcsőde HU 3200 Gyöngyös, Dobó utca 2.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Visegrád Páratlan",
+        "PartnerKulcs": "MOLNÁR TRAJÁN TAMÁSNÉ (2000 - Határcsárda HU 2000 Szentendre, Ady Endre út 43)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Visegrád Páratlan",
+        "PartnerKulcs": "MOLNÁR TRAJÁN TAMÁSNÉ (2000 - Határcsárda HU 2000 Szentendre, Ady Endre út 43)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 7.0,
+        "Kg": 140.0
+    },
+    {
+        "Tura": "Visegrád Páratlan",
+        "PartnerKulcs": "MOLNÁR TRAJÁN TAMÁSNÉ (2000 - Határcsárda HU 2000 Szentendre, Ady Endre út 43)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Visegrád Páratlan",
+        "PartnerKulcs": "Maestro-Kor Kft. (2000 - From Sea Szentendre HU 2000 Szentendre, Duna korzó 5.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 2.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Visegrád Páratlan",
+        "PartnerKulcs": "Maestro-Kor Kft. (2000 - From Sea Szentendre HU 2000 Szentendre, Duna korzó 5.)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 3.0,
+        "Kg": 30.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "GYÖNGYÖS VÁROS ÓVODÁI / (3200 - Jeruzsálem Óvoda HU 3200 Gyöngyös, Jeruzsálem utca 3.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "GYÖNGYÖS VÁROS ÓVODÁI / FECSKE úti Tagóvoda (3200 - Fecske úti tag óvoda HU 3200 Gyöngyös, FECSKE ÚT 28)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "GYÖNGYÖS VÁROS ÓVODÁI / PLATÁN Tagóvoda (3200 - Platán Tag Óvoda HU 3200 Gyöngyös, Platán utca 1/)",
+        "Megj": "2.",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "PIZZA DOKTOR Kft. (3200 - Capri Pizzéria HU 3200 Gyöngyös, Vértanúk tere 2)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "PIZZA DOKTOR Kft. (3200 - Capri Pizzéria HU 3200 Gyöngyös, Vértanúk tere 2)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "PIZZA DOKTOR Kft. (3200 - Capri Pizzéria HU 3200 Gyöngyös, Vértanúk tere 2)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "PIZZA DOKTOR Kft. (3200 - Capri Pizzéria HU 3200 Gyöngyös, Vértanúk tere 2)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "PIZZA DOKTOR Kft. (3200 - Capri Pizzéria HU 3200 Gyöngyös, Vértanúk tere 2)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Eatrend Danubia Kft. / Gyöngyös, 3. Tálaló Arany János Általános Iskola (3200 - Gyöngyös, 3. Tálaló Arany János Általános Iskola HU 3200 Gyöngyös, Jeruzsálem utca 1.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Eatrend Danubia Kft. / Gyöngyös 6.Tálaló Egressy Béni Két Tanítási Nyelvű Általános Iskola (3200 - Egressy Béni Két Tanítási Nyelvű Általános Iskola HU 3200 Gyöngyös, Iskola utca 1.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Eatrend Danubia Kft. / Gyöngyös, 4. Tálaló Gyöngyösi Felsővárosi Álatalános Iskola (3200 - Gyöngyösi Felsővárosi Általános Iskola (tartalékkonyha) 4-es tálaló HU 3200 Gyöngyös, Martinovics Ignác utca 2.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Eatrend Danubia Kft. / Gyöngyösi Petőfi Sándor Gyógypedagógiai Intézmény (3200 - Gyöngyösi Petőfi Sándor Egységes Gyógypedagógiai Módszertani Intézmény HU 3200 Gyöngyös, Petőfi Sándor utca 67.)",
+        "Megj": "!!!10 UTÁN LESZ OTT, HÍVNI ELŐTTE:0630/387-5095!!!!!",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Eatrend Danubia Kft. / Gyöngyösi Berze Nagy János Gimnázium (3200 - Gyöngyösi Berze Nagy János Gimnázium HU 3200 Gyöngyös, Kossuth Lajos utca 33.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 2.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Eatrend Danubia Kft. / 7. Tálaló Heves megyei Szakképzési Centrum (3200 - 7. Tálaló Heves megyei Szakképzési Centrum HU 3200 Gyöngyös, Kócsag utca 40.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 6.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Eatrend Danubia Kft. / 7. Tálaló Heves megyei Szakképzési Centrum (3200 - 7. Tálaló Heves megyei Szakképzési Centrum HU 3200 Gyöngyös, Kócsag utca 40.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Eatrend Danubia Kft. / 7. Tálaló Heves megyei Szakképzési Centrum (3200 - 7. Tálaló Heves megyei Szakképzési Centrum HU 3200 Gyöngyös, Kócsag utca 40.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Gyöngyös Város Óvodái / EPRESKERT utcai Tagóvoda (3200 - Epreskerti Tag Óvoda HU 3200 Gyöngyös, Epreskert út 8.)",
+        "Megj": "1.",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Három Pallér Kft. (3200 - Max Pizzéria HU 3200 Gyöngyös, Orczy út 1)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Három Pallér Kft. (3200 - Max Pizzéria HU 3200 Gyöngyös, Orczy út 1)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Balla Imre e.v. / Külső Lángossütő Tesco (3200 - Külső Lángossütő Tesco HU 3200 Gyöngyös, Vásár út 2.)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 4.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Nagy Imre Attila (3200 - Lángos Büfé Piac HU 3200 Gyöngyös, Köztársaság 2088/5/B/)",
+        "Megj": "1",
+        "Tetel": "K-PALMADB",
+        "Db": 1.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Sestertius KFT (3200 - Maxi büfé HU 3200 Gyöngyös, Köztársaság tér 1)",
+        "Megj": "csak kis edeny fer el",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "KIS CSABA (3200 - Hal-Lak Piac HU 3200 Gyöngyös, Köztársaság 1)",
+        "Megj": "",
+        "Tetel": "K-PALMADB",
+        "Db": 1.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Mátra Meszi Kft (3200 - La Maria Étterem HU 3200 Gyöngyös, Móricz Zsigmond Út 3.)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 2.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "GYÖNGYÖS VÁROS ÓVODÁI / KATONA úti tagóvoda (3200 - Katona úti Tag Óvoda HU 3200 Gyöngyös, KATONA József út 5)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Mvm Mátra Energia Zrt./ Szerződés sz.:4600002544 (3271 - Erőmű Étterem HU 3271 Visonta, Erőmű utca 11.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 3.0,
+        "Kg": 180.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Alakszai Csaba EV. (3355 - Autós Vendéglő Kápolna HU 3355 Kápolna, Szabadság tér 2.)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 6.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Alakszai Csaba EV. (3355 - Autós Vendéglő Kápolna HU 3355 Kápolna, Szabadság tér 2.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Alakszai Csaba EV. (3355 - Autós Vendéglő Kápolna HU 3355 Kápolna, Szabadság tér 2.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Gyöngyös",
+        "PartnerKulcs": "Mátra-Hunting Kft. (3261 - HU 3261 Abasár, Vörösmarty Mihály út 82.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Matkói 99 Holding Kft. (6000 - Glória Étterem HU 6000 Kecskemét, Matkói 99)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 3.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Maci Car Kft. (6900 - Zabálda Makó HU 6900 Makó, Csanád Vezér tér 24.)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 8.0,
+        "Kg": 80.0
+    },
+    {
+        "Tura": "Eatrend - Kiskőrös",
+        "PartnerKulcs": "Szentkúti Dinasztia Kft. (6078 - Nádas Vendéglő Jakabszállás HU 6078 Jakabszállás, Körzet tanya 97/A.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 45.0,
+        "Kg": 450.0
+    },
+    {
+        "Tura": "Eatrend - Kiskőrös",
+        "PartnerKulcs": "Szentkúti Dinasztia Kft. (6078 - Nádas Vendéglő Jakabszállás HU 6078 Jakabszállás, Körzet tanya 97/A.)",
+        "Megj": "",
+        "Tetel": "ZSÍR",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Eatrend - Kiskőrös",
+        "PartnerKulcs": "Szentkúti Dinasztia Kft. (6078 - Nádas Vendéglő Jakabszállás HU 6078 Jakabszállás, Körzet tanya 97/A.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Eatrend - Kiskőrös",
+        "PartnerKulcs": "Szentkúti Dinasztia Kft. (6078 - Nádas Vendéglő Jakabszállás HU 6078 Jakabszállás, Körzet tanya 97/A.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Eatrend - Kiskőrös",
+        "PartnerKulcs": "Szentkúti Dinasztia Kft. (6078 - Nádas Vendéglő Jakabszállás HU 6078 Jakabszállás, Körzet tanya 97/A.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Eatrend - Kiskőrös",
+        "PartnerKulcs": "Szentkúti Dinasztia Kft. (6078 - Nádas Vendéglő Jakabszállás HU 6078 Jakabszállás, Körzet tanya 97/A.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Eatrend - Kiskőrös",
+        "PartnerKulcs": "Szentkúti Dinasztia Kft. (6078 - Nádas Vendéglő Jakabszállás HU 6078 Jakabszállás, Körzet tanya 97/A.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Eatrend - Kiskőrös",
+        "PartnerKulcs": "Szentkúti Dinasztia Kft. (6078 - Nádas Vendéglő Jakabszállás HU 6078 Jakabszállás, Körzet tanya 97/A.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Eatrend - Kiskőrös",
+        "PartnerKulcs": "Szentkúti Dinasztia Kft. (6078 - Nádas Vendéglő Jakabszállás HU 6078 Jakabszállás, Körzet tanya 97/A.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Buda Péntek Páratlan",
+        "PartnerKulcs": "Lángos Páros Kft (1117 - Vásárcsarnok Lángossütő HU 1117 Budapest, Kőrösi József 7-)",
+        "Megj": "9.",
+        "Tetel": "K-K20DB",
+        "Db": 1.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Sopron Eatrend csüt",
+        "PartnerKulcs": "Foodlike Hungary Kft. / 8 konyha (9444 - 8. Konyha HU 9444 Fertőszentmiklós, Szent István utca 42.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Prizma - Dévaványa",
+        "PartnerKulcs": "Prizma-junior Zrt. / Ötvös Konyha Békés (5630 - Ötvös Konyha HU 5630 Békés, Jantyik Mátyás utca 21-)",
+        "Megj": "25.",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "Agárdy-mentor Kft. (6085 - SOFÖR CSÁRDA HU 6085 Fülöpszállás, Hármas puszta 9.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "Agárdy-mentor Kft. (6085 - SOFÖR CSÁRDA HU 6085 Fülöpszállás, Hármas puszta 9.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "Agárdy-mentor Kft. (6085 - SOFÖR CSÁRDA HU 6085 Fülöpszállás, Hármas puszta 9.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "NapiTop Kft. (6900 - Csillag Falatozó HU 6900 Makó, Nagycsillag utca 47)",
+        "Megj": "",
+        "Tetel": "K-PALMADB",
+        "Db": 2.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "Biczó Food Kft. (6085 - Biczó Csárda & Lovaspanzió HU 6085 Fülöpszállás, Hármaspuszta tanya 11.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "Biczó Food Kft. (6085 - Biczó Csárda & Lovaspanzió HU 6085 Fülöpszállás, Hármaspuszta tanya 11.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pécs Páratlan",
+        "PartnerKulcs": "Kígyós Csárda Kft. (6085 - Kígyósi Csárda és Panzió HU 6085 Fülöpszállás, Székek puszta 23/A.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 5.0,
+        "Kg": 100.0
+    },
+    {
+        "Tura": "Pécs Páratlan",
+        "PartnerKulcs": "Kígyós Csárda Kft. (6085 - Kígyósi Csárda és Panzió HU 6085 Fülöpszállás, Székek puszta 23/A.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pécs Páratlan",
+        "PartnerKulcs": "Kígyós Csárda Kft. (6085 - Kígyósi Csárda és Panzió HU 6085 Fülöpszállás, Székek puszta 23/A.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pécs Páratlan",
+        "PartnerKulcs": "Kígyós Csárda Kft. (6085 - Kígyósi Csárda és Panzió HU 6085 Fülöpszállás, Székek puszta 23/A.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "Tanya Csárda Kft. / Öreg Tanyacsárda (6050 - Öreg Tanyacsárda HU 6050 Lajosmizse, Bene 625.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 2.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Eatrend - Kiskőrös",
+        "PartnerKulcs": "Eatrend Kft. / Kiskőrös, Batthyányi Óvoda (6200 - Batthyányi Óvoda HU 6200 Kiskőrös, Batthyány utca 2.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 2.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Sopron Eatrend csüt",
+        "PartnerKulcs": "Eatrend Arrabona Zrt. / Sopron Deák téri tálaló (9400 - Sopron Deák téri tálaló HU 9400 Sopron, Deák tér 78.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 7.0,
+        "Kg": 420.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "Kiad-food Vendéglátó és Szolgáltató Kft./ Viktória Önkiszolgáló étterem (8500 - Viktória Önkiszolgáló étterem HU 8500 Pápa, Vízmű utca 7. C.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 8.0,
+        "Kg": 80.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "Kiad-food Vendéglátó és Szolgáltató Kft./ Viktória Önkiszolgáló étterem (8500 - Viktória Önkiszolgáló étterem HU 8500 Pápa, Vízmű utca 7. C.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Prizma - Dévaványa",
+        "PartnerKulcs": "Prizma-junior Zrt. / Dr. Hepp Ferenc Iskola Békés (5630 - Dr. Hepp Ferenc Iskola HU 5630 Békés, József Attila utca 12.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Vintage Bistro Kft./ Homály Grill & bár (2060 - Homály Grill&bár HU 2060 Bicske, Kossuth Lajos utca 3.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 10.0,
+        "Kg": 100.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Vintage Bistro Kft./ Homály Grill & bár (2060 - Homály Grill&bár HU 2060 Bicske, Kossuth Lajos utca 3.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "Kurta Food Kft. (6320 - Kurta Kocsma HU 6320 Solt, Kecskeméti 72)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "Kurta Food Kft. (6320 - Kurta Kocsma HU 6320 Solt, Kecskeméti 72)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "Kurta Food Kft. (6320 - Kurta Kocsma HU 6320 Solt, Kecskeméti 72)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "Kurta Food Kft. (6320 - Kurta Kocsma HU 6320 Solt, Kecskeméti 72)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Buda Péntek Páratlan",
+        "PartnerKulcs": "Marika Tradicionális Ételbár Kft. (1117 - Vásárcsarnok Ricsi HU 1117 Budapest, Kőrösi József 7-)",
+        "Megj": "9.",
+        "Tetel": "K-K20DB",
+        "Db": 2.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Dudás András e.v. (6000 - AFIT Büfé HU 6000 Kecskemét, Mindszenti krt. 30.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Helembai Tímea (6900 - Ételbár Makó HU 6900 Makó, Deák Ferenc utca 16.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 10.0,
+        "Kg": 100.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Ádám - Go Kft. (2060 - Korona Étterem Pizzafaló Pizzéria HU 2060 Bicske, Szent István út 16)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Ádám - Go Kft. (2060 - Korona Étterem Pizzafaló Pizzéria HU 2060 Bicske, Szent István út 16)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Ádám - Go Kft. (2060 - Korona Étterem Pizzafaló Pizzéria HU 2060 Bicske, Szent István út 16)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Ádám - Go Kft. (2060 - Korona Étterem Pizzafaló Pizzéria HU 2060 Bicske, Szent István út 16)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Ádám - Go Kft. (2060 - Korona Étterem Pizzafaló Pizzéria HU 2060 Bicske, Szent István út 16)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 11.0,
+        "Kg": 220.0
+    },
+    {
+        "Tura": "Eatrend - Kiskőrös",
+        "PartnerKulcs": "Eatrend Kft. / Kiskőrös,Erdőteleki Óvoda (6200 - Erdőtelki Óvoda HU 6200 Kiskőrös, Nyárfa utca 35.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 2.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Sopron Eatrend csüt",
+        "PartnerKulcs": "Eatrend Arrabona Zrt. / Sopron, 38. Főzőkonyha (9400 - Szent Orsolya főzőkonyha HU 9400 Sopron, Széchenyi tér 21.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 23.0,
+        "Kg": 1380.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "Kiad-food Vendéglátó és Szolgáltató Kft./ Korvin Étterem (8500 - Korvin Étterem HU 8500 Pápa, Korvin utca 16-)",
+        "Megj": "18.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "Kiad-food Vendéglátó és Szolgáltató Kft./ Korvin Étterem (8500 - Korvin Étterem HU 8500 Pápa, Korvin utca 16-)",
+        "Megj": "18.",
+        "Tetel": "ÉH",
+        "Db": 2.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Prizma - Dévaványa",
+        "PartnerKulcs": "Prizma-junior Zrt. / Kisegítő Iskola Békés (5630 - Kisegítő Iskola HU 5630 Békés, Szántó Albert utca 10.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szekszárd",
+        "PartnerKulcs": "Attmag Gold Kft. / Duna Pálma Pecsenyesütő (7030 - Duna Pálma Pecsenyesütő HU 7030 Paks, Villány utca 2.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szekszárd",
+        "PartnerKulcs": "Attmag Gold Kft. / Duna Pálma Pecsenyesütő (7030 - Duna Pálma Pecsenyesütő HU 7030 Paks, Villány utca 2.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szekszárd",
+        "PartnerKulcs": "Attmag Gold Kft. / Duna Pálma Pecsenyesütő (7030 - Duna Pálma Pecsenyesütő HU 7030 Paks, Villány utca 2.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 9.0,
+        "Kg": 180.0
+    },
+    {
+        "Tura": "Szekszárd",
+        "PartnerKulcs": "Attmag Gold Kft. / Duna Pálma Pecsenyesütő (7030 - Duna Pálma Pecsenyesütő HU 7030 Paks, Villány utca 2.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "Meggyes-Tóth Gabriella (6000 - Viola Presszó HU 6000 Kecskemét, Talfája 50/A.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 2.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Baja",
+        "PartnerKulcs": "Lehoczki Klára Rozália (6235 - Pipagyújtó Csárda HU 6235 Bócsa, Kecskeméti utca 9/A.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 5.0,
+        "Kg": 100.0
+    },
+    {
+        "Tura": "Baja",
+        "PartnerKulcs": "Lehoczki Klára Rozália (6235 - Pipagyújtó Csárda HU 6235 Bócsa, Kecskeméti utca 9/A.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Baja",
+        "PartnerKulcs": "Lehoczki Klára Rozália (6235 - Pipagyújtó Csárda HU 6235 Bócsa, Kecskeméti utca 9/A.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Buda Péntek Páratlan",
+        "PartnerKulcs": "M Club Kft. (1116 - Vásárcsarnok Faloda HU 1116 Budapest, Kőrösy József 7-)",
+        "Megj": "9",
+        "Tetel": "K-K20DB",
+        "Db": 5.0,
+        "Kg": 100.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "VM Gasztro Kft. / Vincotech üzem (2060 - Vincotech HU 2060 Bicske, Kossuth Lajos 59.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Eatrend - Kiskőrös",
+        "PartnerKulcs": "Eatrend Kft. / Kiskőrös, Harangvirág Óvoda (6200 - Harangvirág Óvoda HU 6200 Kiskőrös, Árpád utca 6.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 2.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Sopron Eatrend csüt",
+        "PartnerKulcs": "Eatrend Arrabona Zrt. / Sopron, Szent Orsolya Általános Iskola tálaló (9400 - Szent Orsolya Általános Iskola tálaló HU 9400 Sopron, Deák tér 32.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 11.0,
+        "Kg": 660.0
+    },
+    {
+        "Tura": "Prizma - Dévaványa",
+        "PartnerKulcs": "Prizma-junior Zrt. / Gál Ferenc Egyetem Békés (5630 - Gál Ferenc Egyetem HU 5630 Békés, Hőzső utca 35.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Eatrend Kft. / 41. Főzőkonyha Makó (6900 - 41. főzőkonyha Makó HU 6900 Makó, Posta utca 4-)",
+        "Megj": "6.",
+        "Tetel": "K-K10DB",
+        "Db": 40.0,
+        "Kg": 400.0
+    },
+    {
+        "Tura": "Szekszárd",
+        "PartnerKulcs": "Attmag Gold Kft. / Duna Pálma Étterem (7030 - Duna Pálma Étterem HU 7030 Paks, Építők útja 1-)",
+        "Megj": "5.",
+        "Tetel": "K-K20DB",
+        "Db": 7.0,
+        "Kg": 140.0
+    },
+    {
+        "Tura": "Szekszárd",
+        "PartnerKulcs": "Attmag Gold Kft. / Duna Pálma Étterem (7030 - Duna Pálma Étterem HU 7030 Paks, Építők útja 1-)",
+        "Megj": "5.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szekszárd",
+        "PartnerKulcs": "Attmag Gold Kft. / Duna Pálma Étterem (7030 - Duna Pálma Étterem HU 7030 Paks, Építők útja 1-)",
+        "Megj": "5.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Baja",
+        "PartnerKulcs": "Venyige Vadkert Kft. (6230 - Venyige Étterem HU 6230 Soltvadkert, Szentháromság utca 31.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 5.0,
+        "Kg": 100.0
+    },
+    {
+        "Tura": "Pécs Páratlan",
+        "PartnerKulcs": "MARKÓ CSÁRDA KFT (7675 - Markó Csárda HU 7675 Bakonya, hrsz. 045/)",
+        "Megj": "6.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pécs Páratlan",
+        "PartnerKulcs": "MARKÓ CSÁRDA KFT (7675 - Markó Csárda HU 7675 Bakonya, hrsz. 045/)",
+        "Megj": "6.",
+        "Tetel": "K-SPECDB",
+        "Db": 6.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "VM Gasztro Kft. / A Fogadó (2060 - A Fogadó HU 2060 Bicske, Szent László út 43)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 3.0,
+        "Kg": 180.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Balkan Delivery Kft. (6000 - Gourman Balkan Grill HU 6000 Kecskemét, Csográdi utca 4.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szekszárd",
+        "PartnerKulcs": "Investrest 2009 Kereskedelmi és Szolgáltató Kereskedelmi Kft. (7100 - Pizzama Étterem HU 7100 Szekszárd, Agusz I. utca 9-)",
+        "Megj": "11",
+        "Tetel": "K-K20DB",
+        "Db": 6.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Szekszárd",
+        "PartnerKulcs": "Investrest 2009 Kereskedelmi és Szolgáltató Kereskedelmi Kft. (7100 - Pizzama Étterem HU 7100 Szekszárd, Agusz I. utca 9-)",
+        "Megj": "11",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Eatrend - Kiskőrös",
+        "PartnerKulcs": "Eatrend Kft. / Kiskőrösi Bölcsőde (6200 - Kiskőrös Bölcsőde HU 6200 Kiskőrös, Árpád utca 6.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Sopron Eatrend csüt",
+        "PartnerKulcs": "Eatrend Arrabona Zrt. / Sopron Besenyő főzőkonyha (9400 - Sopron főzőkonyha HU 9400 Sopron, Besenyő utca 13.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 3.0,
+        "Kg": 180.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "SZÉL-CSÁRDA Kft./ Szél Csárda Étterem (6050 - Szél Csárda HU 6050 Lajosmizse, M5 a)",
+        "Megj": "utópálya 67-es km",
+        "Tetel": "K-K20DB",
+        "Db": 3.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "SZÉL-CSÁRDA Kft./ Szél Csárda Étterem (6050 - Szél Csárda HU 6050 Lajosmizse, M5 a)",
+        "Megj": "utópálya 67-es km",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "SZÉL-CSÁRDA Kft./ Szél Csárda Étterem (6050 - Szél Csárda HU 6050 Lajosmizse, M5 a)",
+        "Megj": "utópálya 67-es km",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Prizma - Dévaványa",
+        "PartnerKulcs": "Prizma-junior Zrt. / 56. Általános Iskola Mezőberény (5650 - 56. Általános Iskola HU 5650 Mezőberény, Luther utca 1.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 3.0,
+        "Kg": 180.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "Földvár Gasztro Kft. / Kele Csárda (7020 - Kele Csárda HU 7020 Dunaföldvár, Paksi utca 68.)",
+        "Megj": "Ha kérhetnénk egyben a 3db edényzet elszállítását, megköszönnénk. 1 db 2025.03.12-én esedékes és 2db 03.13.-án esedékes. Köszönjük!",
+        "Tetel": "K-K20DB",
+        "Db": 10.0,
+        "Kg": 200.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "Földvár Gasztro Kft. / Kele Csárda (7020 - Kele Csárda HU 7020 Dunaföldvár, Paksi utca 68.)",
+        "Megj": "Ha kérhetnénk egyben a 3db edényzet elszállítását, megköszönnénk. 1 db 2025.03.12-én esedékes és 2db 03.13.-án esedékes. Köszönjük!",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "Földvár Gasztro Kft. / Kele Csárda (7020 - Kele Csárda HU 7020 Dunaföldvár, Paksi utca 68.)",
+        "Megj": "Ha kérhetnénk egyben a 3db edényzet elszállítását, megköszönnénk. 1 db 2025.03.12-én esedékes és 2db 03.13.-án esedékes. Köszönjük!",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "Földvár Gasztro Kft. / Kele Csárda (7020 - Kele Csárda HU 7020 Dunaföldvár, Paksi utca 68.)",
+        "Megj": "Ha kérhetnénk egyben a 3db edényzet elszállítását, megköszönnénk. 1 db 2025.03.12-én esedékes és 2db 03.13.-án esedékes. Köszönjük!",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Bambara Hotel Kft. (3324 - Bambara Hotel Premium HU 3324 Felsőtárkány, Bükk-erdő sétány 2-)",
+        "Megj": "4.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Bambara Hotel Kft. (3324 - Bambara Hotel Premium HU 3324 Felsőtárkány, Bükk-erdő sétány 2-)",
+        "Megj": "4.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Bambara Hotel Kft. (3324 - Bambara Hotel Premium HU 3324 Felsőtárkány, Bükk-erdő sétány 2-)",
+        "Megj": "4.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Bambara Hotel Kft. (3324 - Bambara Hotel Premium HU 3324 Felsőtárkány, Bükk-erdő sétány 2-)",
+        "Megj": "4.",
+        "Tetel": "ÉH",
+        "Db": 25.0,
+        "Kg": 1500.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Bambara Hotel Kft. (3324 - Bambara Hotel Premium HU 3324 Felsőtárkány, Bükk-erdő sétány 2-)",
+        "Megj": "4.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Diegofood Kft. (6900 - Pipi Pont Makó HU 6900 Makó, Megyeház utca 9)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pécs Páratlan",
+        "PartnerKulcs": "Aksu Kebap Kft. (7621 - Best Food Grill Pécs HU 7621 Pécs, Széchenyi tér 8.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 3.0,
+        "Kg": 180.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "Mizse Motel Kft. (6050 - Mizse Motel HU 6050 Lajosmizse, Mizse tanya 158. a.)",
+        "Megj": "ép.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "Mizse Motel Kft. (6050 - Mizse Motel HU 6050 Lajosmizse, Mizse tanya 158. a.)",
+        "Megj": "ép.",
+        "Tetel": "K-K20DB",
+        "Db": 3.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Eatrend - Kiskőrös",
+        "PartnerKulcs": "Eatrend Kft. / Kiskőrösi főzőkonyha - tálaló (6200 - Kiskőrös főzőkonyha/ tálaló HU 6200 Kiskőrös, Árpád utca 18.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 10.0,
+        "Kg": 100.0
+    },
+    {
+        "Tura": "Eatrend - Kiskőrös",
+        "PartnerKulcs": "Eatrend Kft. / Kiskőrösi főzőkonyha - tálaló (6200 - Kiskőrös főzőkonyha/ tálaló HU 6200 Kiskőrös, Árpád utca 18.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 2.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Szekszárd",
+        "PartnerKulcs": "Eatrend Kft. / Bonyhád főzőkonyha (7150 - Bonyhád főzőkonyha HU 7150 Bonyhád, Fáy lakótelep 36.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 3.0,
+        "Kg": 180.0
+    },
+    {
+        "Tura": "Szekszárd",
+        "PartnerKulcs": "Eatrend Kft. / Bonyhád főzőkonyha (7150 - Bonyhád főzőkonyha HU 7150 Bonyhád, Fáy lakótelep 36.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 5.0,
+        "Kg": 50.0
+    },
+    {
+        "Tura": "Sopron Eatrend csüt",
+        "PartnerKulcs": "Eatrend Arrabona Zrt. / Ágfalva, Tálalókonyha (9423 - Ágfalva tálalókonyha HU 9423 Ágfalva, Soproni utca 1.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 3.0,
+        "Kg": 180.0
+    },
+    {
+        "Tura": "Prizma - Dévaványa",
+        "PartnerKulcs": "Prizma-junior Zrt. / 56. Üzem Mezőberény (5650 - 56. Üzem HU 5650 Mezőberény, Tavasz utca 7.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 10.0,
+        "Kg": 600.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "Földvár Gasztro Kft. / Aranyfácán Étterem (7020 - Aranyfácán Étterem HU 7020 Dunaföldvár, Paksi utca 113.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "Földvár Gasztro Kft. / Aranyfácán Étterem (7020 - Aranyfácán Étterem HU 7020 Dunaföldvár, Paksi utca 113.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 2.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Makó Város Önkormányzata / Kozmutza Flóra Ált.Isk. (6900 - Kozmutza Flóra Általános Iskola HU 6900 Makó, Vásárhelyi u. 1-)",
+        "Megj": "3",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Eatrend - Kiskőrös",
+        "PartnerKulcs": "Eatrend Kft. / Kiskőrös, Idősek Otthona (6200 - Idősek Otthona HU 6200 Kiskőrös, Sárkány József utca 13.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 3.0,
+        "Kg": 180.0
+    },
+    {
+        "Tura": "Sopron Eatrend csüt",
+        "PartnerKulcs": "Eatrend Arrabona Zrt. / Sopron Gárdonyi tálaló (9400 - Sopron Gárdonyi tálaló HU 9400 Sopron, Táncsics Mihály utca 2.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 9.0,
+        "Kg": 540.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "Kerék Balázs e.v. / Ludas Matyi Ételfutár/Ispán Étterem (8400 - Ludas Matyi Ételfutár HU 8400 Ajka, Petőfi Sándor)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "Kerék Balázs e.v. / Ludas Matyi Ételfutár/Ispán Étterem (8400 - Ludas Matyi Ételfutár HU 8400 Ajka, Petőfi Sándor)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "Kerék Balázs e.v. / Ludas Matyi Ételfutár/Ispán Étterem (8400 - Ludas Matyi Ételfutár HU 8400 Ajka, Petőfi Sándor)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 10.0,
+        "Kg": 200.0
+    },
+    {
+        "Tura": "Buda Péntek Páratlan",
+        "PartnerKulcs": "Varga-Marton Kft. (2040 - Budaörs Kínai Szabadság utca HU 2040 Budaörs, Szabadság utca 72.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 4.0,
+        "Kg": 80.0
+    },
+    {
+        "Tura": "Buda Péntek Páratlan",
+        "PartnerKulcs": "Varga-Marton Kft. (2040 - Budaörs Kínai Szabadság utca HU 2040 Budaörs, Szabadság utca 72.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Eatrend - Kiskőrös",
+        "PartnerKulcs": "Eatrend Kft. / Kiskőrös, Kőrisfa Óvoda (6200 - Kőrisfa Óvoda HU 6200 Kiskőrös, Kőrisfa utca 1.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Sopron Eatrend csüt",
+        "PartnerKulcs": "Eatrend Arrabona Zrt. / Sopron Lackner tálaló (9400 - Sopron Lackner tálaló HU 9400 Sopron, Révai Miklós utca 2.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 5.0,
+        "Kg": 300.0
+    },
+    {
+        "Tura": "Prizma - Dévaványa",
+        "PartnerKulcs": "Prizma-junior Zrt. / Gólyahír Bölcsőde Dévaványa (5510 - Gólyahír Bölcsőde HU 5510 Dévaványa, Hunyadi János utca 17.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Nagy László János (6900 - Gyöngy Cukrászda Makó HU 6900 Makó, Csanád vezér tér 29)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 2.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Balu Project Kft. / DOBOS Pub & Pizzéria (9012 - DOBOS Pub HU 9012 Győr, Sokorópátkai út 33.)",
+        "Megj": "Nyitvatartás: 8-18-ig Nyitvatartás: 8-18-ig",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Balu Project Kft. / DOBOS Pub & Pizzéria (9012 - DOBOS Pub HU 9012 Győr, Sokorópátkai út 33.)",
+        "Megj": "Nyitvatartás: 8-18-ig Nyitvatartás: 8-18-ig",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Balu Project Kft. / DOBOS Pub & Pizzéria (9012 - DOBOS Pub HU 9012 Győr, Sokorópátkai út 33.)",
+        "Megj": "Nyitvatartás: 8-18-ig Nyitvatartás: 8-18-ig",
+        "Tetel": "K-K20DB",
+        "Db": 6.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Balu Project Kft. / DOBOS Pub & Pizzéria (9012 - DOBOS Pub HU 9012 Győr, Sokorópátkai út 33.)",
+        "Megj": "Nyitvatartás: 8-18-ig Nyitvatartás: 8-18-ig",
+        "Tetel": "K-P10DB",
+        "Db": 3.0,
+        "Kg": 30.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "Kézér Tibor Gáborné (6050 - Árkád Büfé HU 6050 Lajosmizse, Városház 9)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 5.0,
+        "Kg": 50.0
+    },
+    {
+        "Tura": "Eatrend - Kiskőrös",
+        "PartnerKulcs": "Eatrend Kft. / Kiskőrös, Szűcsi Óvoda (6200 - Szűcsi Óvoda HU 6200 Kiskőrös, Rákóczi utca 146.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szekszárd",
+        "PartnerKulcs": "Eatrend Kft. / Bonyhád Tolna Bartók tálaló (7130 - Bonyhád Tolna Bartók tálaló HU 7130 Tolna, Bartók Béla utca 23.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 2.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Sopron Eatrend csüt",
+        "PartnerKulcs": "Eatrend Arrabona Zrt./ Sopron, Petőfi tálaló (9400 - Petőfi tálaló HU 9400 Sopron, Halász utca 25.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 12.0,
+        "Kg": 720.0
+    },
+    {
+        "Tura": "Prizma - Dévaványa",
+        "PartnerKulcs": "Prizma-junior Zrt. / Tündérkert Óvoda Dévaványa (5510 - Tündérkert Óvoda HU 5510 Dévaványa, Eötvös József utca 1.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "BAMBI 13 Kft. / Sport Étterem (2840 - Sport Étterem HU 2840 Oroszlány, Táncsics Mihály utca 66.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 8.0,
+        "Kg": 160.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Fan-fru Kft. (6900 - Kisbagoly Vendéglő HU 6900 Makó, Petőfi park 16.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Bodorné Puskás Éva (6000 - Lángos Büfé Műkert sétány 49. HU 6000 Kecskemét, Műkerti sétány 49.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Buda Péntek Páratlan",
+        "PartnerKulcs": "Buja Disznók Piac Kft (1024 - Buja Disznó(k) Buda HU 1024 Budapest, Lövőház utca 12.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Buda Péntek Páratlan",
+        "PartnerKulcs": "Buja Disznók Piac Kft (1024 - Buja Disznó(k) Buda HU 1024 Budapest, Lövőház utca 12.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pécs Páratlan",
+        "PartnerKulcs": "Maszler-Gasztro Kft. (7625 - TETTYE Vendéglő HU 7625 Pécs, Tettye tér 4.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 14.0,
+        "Kg": 140.0
+    },
+    {
+        "Tura": "Pécs Páratlan",
+        "PartnerKulcs": "Maszler-Gasztro Kft. (7625 - TETTYE Vendéglő HU 7625 Pécs, Tettye tér 4.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "Dream-Corso Éttermi Szolgáltató Kft. (2400 - Corso Étterem Dunaújváros HU 2400 Dunaújváros, Derkovits utca 10.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 3.0,
+        "Kg": 30.0
+    },
+    {
+        "Tura": "Eatrend - Kiskőrös",
+        "PartnerKulcs": "Eatrend Kft. / Kiskőrös, Bem József Ált. Iskola (6200 - Bem József Ált. Iskola HU 6200 Kiskőrös, Vasvári Pál utca 2.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 8.0,
+        "Kg": 480.0
+    },
+    {
+        "Tura": "Szekszárd",
+        "PartnerKulcs": "Eatrend Kft. / Bonyhád Tolna Eötvös tálaló (7130 - Bonyhád Tolna Eötvös tálaló HU 7130 Tolna, Ötvös utca 7.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 3.0,
+        "Kg": 180.0
+    },
+    {
+        "Tura": "Baja",
+        "PartnerKulcs": "PROFA STUDIÓ Kft. (6448 - Texas Étterem Csávoly HU 6448 Csávoly, Széchenyi utca 2.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 5.0,
+        "Kg": 50.0
+    },
+    {
+        "Tura": "Baja",
+        "PartnerKulcs": "PROFA STUDIÓ Kft. (6448 - Texas Étterem Csávoly HU 6448 Csávoly, Széchenyi utca 2.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 7.0,
+        "Kg": 420.0
+    },
+    {
+        "Tura": "Baja",
+        "PartnerKulcs": "PROFA STUDIÓ Kft. (6448 - Texas Étterem Csávoly HU 6448 Csávoly, Széchenyi utca 2.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "Food Service Kft./ Devi-Go ételfutár (8460 - Devi-Go HU 8460 Devecser, Miskei utca 49.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 24.0,
+        "Kg": 480.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "Food Service Kft./ Devi-Go ételfutár (8460 - Devi-Go HU 8460 Devecser, Miskei utca 49.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "Food Service Kft./ Devi-Go ételfutár (8460 - Devi-Go HU 8460 Devecser, Miskei utca 49.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "Food Service Kft./ Devi-Go ételfutár (8460 - Devi-Go HU 8460 Devecser, Miskei utca 49.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "Food Service Kft./ Devi-Go ételfutár (8460 - Devi-Go HU 8460 Devecser, Miskei utca 49.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Prizma - Dévaványa",
+        "PartnerKulcs": "Prizma-junior Zrt. / Szivárvány Óvoda Dévaványa (5510 - Szivárvány Óvoda HU 5510 Dévaványa, Hajós utca 24.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "BAMBI 13 Kft. / Bambi Gyorsétkezde (2840 - Bambi Gyorsétkezde - Lukoil Benzinkút mellett HU 2840 Oroszlány, Bánki Donát utca 2/C)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 12.0,
+        "Kg": 240.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Fliegl Abda Gépgyártó Kft./ Hotel Bavaria (9151 - Hotel Bavaria HU 9151 Abda, Bécsi út 186.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 2.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Bogasow Gábor Andor (6000 - SÜLTES'M Büfé HU 6000 Kecskemét, Gizella tér 3.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 4.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Csengelei Szivárvány Óvoda és Mini Bölcsőde (6765 - Csengelei Szivárvány Óvoda és Mini Bölcsőde HU 6765 Csengele, Deák Ferenc utca 23.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 2.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Baja",
+        "PartnerKulcs": "ERD-GASZTRO Kft. (6239 - Dönci Vendéglő Császártöltés HU 6239 Császártöltés, Sport tér 1.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 5.0,
+        "Kg": 50.0
+    },
+    {
+        "Tura": "Baja",
+        "PartnerKulcs": "ERD-GASZTRO Kft. (6239 - Dönci Vendéglő Császártöltés HU 6239 Császártöltés, Sport tér 1.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Baja",
+        "PartnerKulcs": "ERD-GASZTRO Kft. (6239 - Dönci Vendéglő Császártöltés HU 6239 Császártöltés, Sport tér 1.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pécs Páratlan",
+        "PartnerKulcs": "Havivár Kft. (7627 - Bagolyvár Étterem Pécs HU 7627 Pécs, Felsőhavi dűlő 6.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pécs Páratlan",
+        "PartnerKulcs": "Havivár Kft. (7627 - Bagolyvár Étterem Pécs HU 7627 Pécs, Felsőhavi dűlő 6.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pécs Páratlan",
+        "PartnerKulcs": "Havivár Kft. (7627 - Bagolyvár Étterem Pécs HU 7627 Pécs, Felsőhavi dűlő 6.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 8.0,
+        "Kg": 160.0
+    },
+    {
+        "Tura": "Eatrend - Kiskőrös",
+        "PartnerKulcs": "Eatrend Kft. / Kiskőrös, Petőfi Sándor Ált. Iskola (6200 - Petőfi Sándor Ált. Iskola HU 6200 Kiskőrös, Petőfi út 7.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 5.0,
+        "Kg": 300.0
+    },
+    {
+        "Tura": "Szekszárd",
+        "PartnerKulcs": "Eatrend Kft. / Bogyiszló tálaló (7132 - Bonyhád Bogyiszló tálaló HU 7132 Bogyiszló, Kossuth utca 30.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 3.0,
+        "Kg": 180.0
+    },
+    {
+        "Tura": "Prizma - Dévaványa",
+        "PartnerKulcs": "Prizma-junior Zrt. / Gyulai Szakképzési Centrum Dévaványa (5510 - Gyulai Szakképzési Centrum HU 5510 Dévaványa, Mezőtúri utca 2.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "Boldogságbót Kft. (2400 - Oázis Étterem Dunaújváros HU 2400 Dunaújváros, Építők útja 7/A)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 4.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Szekszárd",
+        "PartnerKulcs": "ATS-GASTRO HUNGARY Kft. (7100 - Aranykulacs Kisvendéglő HU 7100 Szekszárd, Nefelejcs köz 653.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szekszárd",
+        "PartnerKulcs": "ATS-GASTRO HUNGARY Kft. (7100 - Aranykulacs Kisvendéglő HU 7100 Szekszárd, Nefelejcs köz 653.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szekszárd",
+        "PartnerKulcs": "ATS-GASTRO HUNGARY Kft. (7100 - Aranykulacs Kisvendéglő HU 7100 Szekszárd, Nefelejcs köz 653.)",
+        "Megj": "",
+        "Tetel": "K-PALMADB",
+        "Db": 2.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Szekszárd",
+        "PartnerKulcs": "ATS-GASTRO HUNGARY Kft. (7100 - Aranykulacs Kisvendéglő HU 7100 Szekszárd, Nefelejcs köz 653.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 2.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "Road Garden Kft. (2370 - All in Food Services & Catering HU 2370 Dabas, Szent István út 48.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 1.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "Road Garden Kft. (2370 - All in Food Services & Catering HU 2370 Dabas, Szent István út 48.)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 2.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Tasiné Kucsora Eszter (6760 - Pálma cukrászda HU 6760 Kistelek, Jókai utca 2.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 2.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Eatrend - Kiskőrös",
+        "PartnerKulcs": "Eatrend Kft. / Kiskőrös, EGYMI Intézmény (6200 - EGYMI intézmény HU 6200 Kiskőrös, Hrúz Mária utca 2/)",
+        "Megj": "1",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "Gasztro-Betyár 2020 Szolgáltató Kft. / Gasztro Betyár Csárda (8330 - Gasztro Betyár HU 8330 Sümeg, Baglyas tér 1.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 10.0,
+        "Kg": 200.0
+    },
+    {
+        "Tura": "Prizma - Dévaványa",
+        "PartnerKulcs": "Prizma-junior Zrt. / Széchenyi Napközi Konyha - 44 üzemDévaványa (5510 - Széchenyi Napközi Konyha HU 5510 Dévaványa, Széchenyi út 1.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Csibeprofil Kft / Csibefaló Ételbár (3300 - Csibefaló Ételbár HU 3300 Eger, Törvényház utca 4.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Csibeprofil Kft / Csibefaló Ételbár (3300 - Csibefaló Ételbár HU 3300 Eger, Törvényház utca 4.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Baja",
+        "PartnerKulcs": "STE-SZA TEAM Bt. (7140 - Talizmán Vendéglő HU 7140 Bátaszék, Garay utca 149.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Baja",
+        "PartnerKulcs": "STE-SZA TEAM Bt. (7140 - Talizmán Vendéglő HU 7140 Bátaszék, Garay utca 149.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 2.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Szekszárd",
+        "PartnerKulcs": "ZEVIMEX Kft. (7100 - Toscana Étterem HU 7100 Szekszárd, Szent István tér 3-)",
+        "Megj": "5",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Buda Péntek Páratlan",
+        "PartnerKulcs": "Számalk-Szalézi Technikum és Szakgimnázium (1119 - Margit Mama büféje és Étterem HU 1119 Budapest, Mérnök utca 39.)",
+        "Megj": "épület bal oldala",
+        "Tetel": "ÉH",
+        "Db": 2.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Prizma - Dévaványa",
+        "PartnerKulcs": "Prizma-junior Zrt. / Margaréta Idősek Otthona Dévaványa (5510 - Margaréta Idősek Otthona HU 5510 Dévaványa, Jéggyár utca 47.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 10.0,
+        "Kg": 600.0
+    },
+    {
+        "Tura": "Szekszárd",
+        "PartnerKulcs": "BN-Ristorante Kft. (7100 - Bella Napoli Pizzéria HU 7100 Szekszárd, Szent László utca 19.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Buda Péntek Páratlan",
+        "PartnerKulcs": "Arany Hordó Vendéglő Kft. / Maison Bistro & Hotel (1014 - Maison Bistro & Hotel HU 1014 Budapest, Országház u. 17.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Pastronomia Szolgáltató Kft. (6000 - Zéro Bistro HU 6000 Kecskemét, Rákóczi 32)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Prizma - Dévaványa",
+        "PartnerKulcs": "Prizma-Junior Zrt. / Napsugár Óvoda Dévaványa (5510 - Napsugár Óvoda HU 5510 Dévaványa, Kossuth utca 3.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Baja",
+        "PartnerKulcs": "S&S GASTRO Kft. (6500 - Tanyacsárda Baja HU 6500 Baja, Tanya I.körzet 7.)",
+        "Megj": "",
+        "Tetel": "K-PALMADB",
+        "Db": 2.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Baja",
+        "PartnerKulcs": "S&S GASTRO Kft. (6500 - Tanyacsárda Baja HU 6500 Baja, Tanya I.körzet 7.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Baja",
+        "PartnerKulcs": "S&S GASTRO Kft. (6500 - Tanyacsárda Baja HU 6500 Baja, Tanya I.körzet 7.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Baja",
+        "PartnerKulcs": "S&S GASTRO Kft. (6500 - Tanyacsárda Baja HU 6500 Baja, Tanya I.körzet 7.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Tröszti 2001 Kft. / Tröszti Klub Étterem (2800 - Tröszti Klub Étterem HU 2800 Tatabánya, Belterület)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 10.0,
+        "Kg": 200.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "GYEVITUR Nonprofit Kft. / Levendula Hotel (6750 - Levendula Hotel HU 6750 Algyő, Téglás utca 151.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 2.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "Kulipintyó Kft. / Dabróka csárda (8469 - Dabróka csárda HU 8469 Kamond, Parkoló Hrsz. 0292.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 6.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Laczó István (2800 - Stúdium Kifőzde HU 2800 Tatabánya, Stúdium 1)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Laczó István (2800 - Stúdium Kifőzde HU 2800 Tatabánya, Stúdium 1)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Baja",
+        "PartnerKulcs": "Mexikó food'19 Kft. (6500 - Mexikó Food Gyorsétterem HU 6500 Baja, Tóth Kálmán 8)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Maruzs Csilla / Express Étterem (3300 - Express Önkiszolgáló Étterem HU 3300 Eger, Barkóczy utca 4)",
+        "Megj": "60 literes hordó cserét kérek: 1 darab",
+        "Tetel": "K-PALMADB",
+        "Db": 1.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Maruzs Csilla / Express Étterem (3300 - Express Önkiszolgáló Étterem HU 3300 Eger, Barkóczy utca 4)",
+        "Megj": "60 literes hordó cserét kérek: 1 darab",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "Hunguest Szálláshelyszolgáltató Zrt. / Hotel Pelion (8300 - Hotel Pelion HU 8300 Tapolca, Köztársaság tér 10.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 8.0,
+        "Kg": 80.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "Hunguest Szálláshelyszolgáltató Zrt. / Hotel Pelion (8300 - Hotel Pelion HU 8300 Tapolca, Köztársaság tér 10.)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 15.0,
+        "Kg": 150.0
+    },
+    {
+        "Tura": "Prizma - Dévaványa",
+        "PartnerKulcs": "Prizma-junior Zrt. / Könyves Kálmán úti óvoda Dévaványa (5510 - Könyves Kálmán úti óvoda HU 5510 Dévaványa, Könyves utca 13.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "Eatrend Kft. / Ócsa 19. Főzőkonyha (2364 - Ócsa 19.Főzőkonyha HU 2364 Ócsa, Baross utca 14.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 6.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "GYEVITUR Nonprofit Kft. / Fehér Ignác Általános Iskola (6750 - Fehér Ignác Általános Iskola HU 6750 Algyő, Sport utca 5.)",
+        "Megj": "[Nyitva tartás: 7:00-14:30]",
+        "Tetel": "ÉH",
+        "Db": 4.0,
+        "Kg": 240.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "EQUITA Kft. (6000 - Olivolá Étterem Kecskemét HU 6000 Kecskemét, Rákóczi út 26.)",
+        "Megj": "I.em. 3.ajtó",
+        "Tetel": "K-SPECDB",
+        "Db": 2.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "GASTROYAL Kft. (2400 - DunaGyöngye HalászCsárda HU 2400 Dunaújváros, Szigeti út 2.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 15.0,
+        "Kg": 150.0
+    },
+    {
+        "Tura": "Prizma - Dévaványa",
+        "PartnerKulcs": "Gunda Dávid (5510 - Lángosozó Dévaványa HU 5510 Dévaványa, Árpád u. 38/)",
+        "Megj": "2. Reggel 5-11óra között.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "KÉSZ Vendéglátóipari Korlátolt Felelősségű Társaság (8200 - Fejes Völgyi vendéglő HU 8200 Veszprém, Vámosi utca 2.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "KÉSZ Vendéglátóipari Korlátolt Felelősségű Társaság (8200 - Fejes Völgyi vendéglő HU 8200 Veszprém, Vámosi utca 2.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "Nyeső Zsolt e.v. (2347 - Zsolti Konyha HU 2347 Bugyi, Erzsébet királyné utca 50.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 6.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Baja",
+        "PartnerKulcs": "Baráth és Társai KFT. (6500 - Korona Étterem Baja HU 6500 Baja, Szent Jánosi utca 3.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 5.0,
+        "Kg": 100.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Eatrend Kft. / Eger, 23. Bem Főzőkonyha (3300 - Eger, 23. Bem Főzőkonyha HU 3300 Eger, Bem Tábornok tér 3.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 30.0,
+        "Kg": 300.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Földeáki Gyermekmosoly Óvoda/ Gyermekmosoly Óvoda konyhája Földeák (6922 - Gyermekmosoly Óvoda konyhája Földeák HU 6922 Földeák, Gagarin u. 18.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Baja",
+        "PartnerKulcs": "PIZZA HÉT Bt. (6500 - Korzó Étterem HU 6500 Baja, Bartók Béla 2)",
+        "Megj": "1 db hordó",
+        "Tetel": "K-K20DB",
+        "Db": 1.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Baja",
+        "PartnerKulcs": "PIZZA HÉT Bt. (6500 - Korzó Étterem HU 6500 Baja, Bartók Béla 2)",
+        "Megj": "1 db hordó",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "GASTRO-KÁVÉ Bt. (9241 - HU 9241 Jánossomorja, Szabadság út 1.)",
+        "Megj": "Nyitvatartás: 9-23-ig Nyitvatartás: 9-23-ig",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "GASTRO-KÁVÉ Bt. (9241 - HU 9241 Jánossomorja, Szabadság út 1.)",
+        "Megj": "Nyitvatartás: 9-23-ig Nyitvatartás: 9-23-ig",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Spaletta Gasztro Kft./ Spaletta Étterem (6000 - HU 6000 Kecskemét, Jókai 15)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 3.0,
+        "Kg": 180.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Spaletta Gasztro Kft./ Spaletta Étterem (6000 - HU 6000 Kecskemét, Jókai 15)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Spaletta Gasztro Kft./ Spaletta Étterem (6000 - HU 6000 Kecskemét, Jókai 15)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Spaletta Gasztro Kft./ Spaletta Étterem (6000 - HU 6000 Kecskemét, Jókai 15)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Spaletta Gasztro Kft./ Spaletta Étterem (6000 - HU 6000 Kecskemét, Jókai 15)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 2.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Prizma - Dévaványa",
+        "PartnerKulcs": "Prizma-junior Zrt. / Ványai Ambrus Ált. Iskola Ecsegfalva (5515 - Ványai Ambrus Ált. Iskola HU 5515 Ecsegfalva, Árpád út 17.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szekszárd",
+        "PartnerKulcs": "Hepp Péter (7100 - KOI Sushi Room HU 7100 Szekszárd, Fürdőház u. 1.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Greenfield-Credit Kft. / Trója Ételbár Kölcsey (6720 - Trója Ételbár Kölcsey HU 6720 Szeged, Kölcsey utca 4.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Greenfield-Credit Kft. / Trója Ételbár Kölcsey (6720 - Trója Ételbár Kölcsey HU 6720 Szeged, Kölcsey utca 4.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 6.0,
+        "Kg": 360.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Greenfield-Credit Kft. / Trója Ételbár Kölcsey (6720 - Trója Ételbár Kölcsey HU 6720 Szeged, Kölcsey utca 4.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Greenfield-Credit Kft. / Trója Ételbár Kölcsey (6720 - Trója Ételbár Kölcsey HU 6720 Szeged, Kölcsey utca 4.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Greenfield-Credit Kft. / Trója Ételbár Kölcsey (6720 - Trója Ételbár Kölcsey HU 6720 Szeged, Kölcsey utca 4.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Greenfield-Credit Kft. / Trója Ételbár Kölcsey (6720 - Trója Ételbár Kölcsey HU 6720 Szeged, Kölcsey utca 4.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Greenfield-Credit Kft. / Trója Ételbár Kölcsey (6720 - Trója Ételbár Kölcsey HU 6720 Szeged, Kölcsey utca 4.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Greenfield-Credit Kft. / Trója Ételbár Kölcsey (6720 - Trója Ételbár Kölcsey HU 6720 Szeged, Kölcsey utca 4.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Csaplár Sándorné (6000 - CSAPLÁR VENDÉGLŐ HU 6000 Kecskemét, Vacsi köz 21.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 6.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Csaplár Sándorné (6000 - CSAPLÁR VENDÉGLŐ HU 6000 Kecskemét, Vacsi köz 21.)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 1.0,
+        "Kg": 10.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Szarvasvadász Kft. (3300 - HBH Étterem HU 3300 Eger, Bajcsy Zsilinszky utca 19.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 3.0,
+        "Kg": 180.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "Új Pajtakert Kereskedelmi és Szolgáltató Kft. (8200 - Hotel Historia Malomkert - Veszprém HU 8200 Veszprém, Fenyves u. 15.)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 6.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "Forster Rendezvény Kft./ Forster Vadászkastély és Szálloda (2347 - Forster Vadászkastély és Szálloda HU 2347 Bugyi, Külterület)",
+        "Megj": "",
+        "Tetel": "K-PALMADB",
+        "Db": 3.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "Forster Rendezvény Kft./ Forster Vadászkastély és Szálloda (2347 - Forster Vadászkastély és Szálloda HU 2347 Bugyi, Külterület)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 2.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Prizma - Dévaványa",
+        "PartnerKulcs": "Prizma-junior Zrt. / Ecsegfalvi Óvoda (5515 - Ecsegfalvi Óvoda HU 5515 Ecsegfalva, Hunyadi János utca 3.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Greenfield-Credit Kft. / REÖK Cukrászda (6720 - REÖK Cukrászda HU 6720 Szeged, Magyar Ede tér 2.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 3.0,
+        "Kg": 180.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Hevi Mesterkonyha Kft./ Kühne Étterem (9246 - Kühne Étterem HU 9246 Mosonmagyaróvár, Kühne Ede tér 2.)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 2.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Hevi Mesterkonyha Kft./ Kühne Étterem (9246 - Kühne Étterem HU 9246 Mosonmagyaróvár, Kühne Ede tér 2.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 4.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Hevi Mesterkonyha Kft./ Kühne Étterem (9246 - Kühne Étterem HU 9246 Mosonmagyaróvár, Kühne Ede tér 2.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Hevi Mesterkonyha Kft./ Kühne Étterem (9246 - Kühne Étterem HU 9246 Mosonmagyaróvár, Kühne Ede tér 2.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Buda Péntek Páratlan",
+        "PartnerKulcs": "BORPATIKA Kkt. (1111 - Borpatika HU 1111 Budapest, Bertalan Lajos utca 26.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 2.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Pécs Páratlan",
+        "PartnerKulcs": "ANTAL TAMÁS (7833 - Kastélypark Vendéglő HU 7833 Görcsöny, Hársfa u. 19.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pécs Páratlan",
+        "PartnerKulcs": "ANTAL TAMÁS (7833 - Kastélypark Vendéglő HU 7833 Görcsöny, Hársfa u. 19.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 1.0,
+        "Kg": 10.0
+    },
+    {
+        "Tura": "Szekszárd",
+        "PartnerKulcs": "Diákétkeztetési Kft. / PTE KPVK Étterem (7100 - PTE KPVK Étterem HU 7100 Szekszárd, Rákóczi utca 1.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Baja",
+        "PartnerKulcs": "Bosnyák Erika e.v. (6500 - Háziasízek Vendéglő HU 6500 Baja, Attila utca 5.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 8.0,
+        "Kg": 80.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "S I 55 Kereskedelmi és Szolgáltató Kft./ Hangvilla (8200 - Hangvilla Multifunkcionális Közösségi Tér HU 8200 Veszprém, Brusznyai Árpád utca 2.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "S I 55 Kereskedelmi és Szolgáltató Kft./ Hangvilla (8200 - Hangvilla Multifunkcionális Közösségi Tér HU 8200 Veszprém, Brusznyai Árpád utca 2.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "S I 55 Kereskedelmi és Szolgáltató Kft./ Hangvilla (8200 - Hangvilla Multifunkcionális Közösségi Tér HU 8200 Veszprém, Brusznyai Árpád utca 2.)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 6.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Csibeprofil Kft / Bár-Itália Étterem (3300 - Bár-Itália Étterem HU 3300 Eger, Érsek utca 14.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 2.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Sóti Média Marketing- Kereskedelmi és Szolgáltató Kft (6723 - Mars téri Halüzlet HU 6723 Szeged, Mars tér K1-)",
+        "Megj": "10 üzlet",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "CORNER TRADE KFT (2400 - Corner Hotel és Kávéház HU 2400 Dunaújváros, Dózsa György tér 2.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "CORNER TRADE KFT (2400 - Corner Hotel és Kávéház HU 2400 Dunaújváros, Dózsa György tér 2.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Monster Gastro Kereskedelmi és Szolgáltató Kft. / PIZZA Monster Étterem (6724 - PIZZA Monster Étterem HU 6724 Szeged, Sárosi utca 2.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Monster Gastro Kereskedelmi és Szolgáltató Kft. / PIZZA Monster Étterem (6724 - PIZZA Monster Étterem HU 6724 Szeged, Sárosi utca 2.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 3.0,
+        "Kg": 180.0
+    },
+    {
+        "Tura": "Baja",
+        "PartnerKulcs": "REVITAL Kft. / VIZAFOGÓ Étterem (6500 - VIZAFOGÓ Étterem HU 6500 Baja, Március 15)",
+        "Megj": "sétány 27.",
+        "Tetel": "K-K20DB",
+        "Db": 5.0,
+        "Kg": 100.0
+    },
+    {
+        "Tura": "Baja",
+        "PartnerKulcs": "REVITAL Kft. / VIZAFOGÓ Étterem (6500 - VIZAFOGÓ Étterem HU 6500 Baja, Március 15)",
+        "Megj": "sétány 27.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Elifood Kft. / ELI konyhája (2800 - ELI konyhája Tatbánya HU 2800 Tatabánya, Felsőgallai út 40.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 4.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Bográcskert Kft. / MÁKOS Guba Étterem (9246 - MÁKOS Guba Étterem HU 9246 Mosonmagyaróvár, Partos út 64)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Bográcskert Kft. / MÁKOS Guba Étterem (9246 - MÁKOS Guba Étterem HU 9246 Mosonmagyaróvár, Partos út 64)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Bográcskert Kft. / MÁKOS Guba Étterem (9246 - MÁKOS Guba Étterem HU 9246 Mosonmagyaróvár, Partos út 64)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Bográcskert Kft. / MÁKOS Guba Étterem (9246 - MÁKOS Guba Étterem HU 9246 Mosonmagyaróvár, Partos út 64)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 7.0,
+        "Kg": 140.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Jozsobe Kereskedelmi és Vendéglátóipari Kft. (2800 - Pomodor Étterem HU 2800 Tatabánya, Győri út 27.)",
+        "Megj": "Nyitvatartás: 6-16-ig",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Jozsobe Kereskedelmi és Vendéglátóipari Kft. (2800 - Pomodor Étterem HU 2800 Tatabánya, Győri út 27.)",
+        "Megj": "Nyitvatartás: 6-16-ig",
+        "Tetel": "K-SPECDB",
+        "Db": 12.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Jozsobe Kereskedelmi és Vendéglátóipari Kft. (2800 - Pomodor Étterem HU 2800 Tatabánya, Győri út 27.)",
+        "Megj": "Nyitvatartás: 6-16-ig",
+        "Tetel": "K-K10DB",
+        "Db": 4.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Szekszárd",
+        "PartnerKulcs": "Eatrend Kft. / Fadd főzőkonyha (7133 - Fadd főzőkonyha HU 7133 Fadd, Templom utca 5.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 3.0,
+        "Kg": 30.0
+    },
+    {
+        "Tura": "Szekszárd",
+        "PartnerKulcs": "Eatrend Kft. / Fadd főzőkonyha (7133 - Fadd főzőkonyha HU 7133 Fadd, Templom utca 5.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 3.0,
+        "Kg": 180.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Berényi Gabriella (6000 - Kelesztő Kecskemét HU 6000 Kecskemét, Budai 2/A)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "Comitate Gast Kft./ Kékfény étterem (8200 - Kékfény Étterem HU 8200 Veszprém, Bajcsy-Zsilinszky utca 2.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 2.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Monster Gastro Kereskedelmi és Szolgáltató Kft. / KISKAKAS Bisztró (6724 - KISKAKA Bisztró HU 6724 Szeged, Püspök utca 11. A.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 2.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "M.D.N. Food Kft. (2459 - Kiskakas Vendéglő HU 2459 Rácalmás, Hóvirág 1)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "M.D.N. Food Kft. (2459 - Kiskakas Vendéglő HU 2459 Rácalmás, Hóvirág 1)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "M.D.N. Food Kft. (2459 - Kiskakas Vendéglő HU 2459 Rácalmás, Hóvirág 1)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 15.0,
+        "Kg": 300.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Angyalkert Magán Óvoda (6000 - Magán Óvoda HU 6000 Kecskemét, Bánk bán utca 5.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 2.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "SARLÓSPUSZTA Zrt. (2375 - Sarlóspuszta Club Hotel HU 2375 Tatárszentgyörgy, Sarlóspuszta)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 4.0,
+        "Kg": 80.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Brand Fast Food Kft. / Pipipont Falatozó (6726 - Pipi szendvicsező HU 6726 Szeged, Temesvári krt. 44.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "UNIÓ 2365 Kft. (2365 - Bagolyvár Étterem HU 2365 Inárcs, Honvéd utca 73.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "UNIÓ 2365 Kft. (2365 - Bagolyvár Étterem HU 2365 Inárcs, Honvéd utca 73.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "UNIÓ 2365 Kft. (2365 - Bagolyvár Étterem HU 2365 Inárcs, Honvéd utca 73.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Buda Péntek Páratlan",
+        "PartnerKulcs": "Arany Hordó Vendéglő Kft. / Arany Hordó Étterem (1014 - Arany Hordó Étterem HU 1014 Budapest, Tárnok utca 16.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 2.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Buda Péntek Páratlan",
+        "PartnerKulcs": "Arany Hordó Vendéglő Kft. / Arany Hordó Étterem (1014 - Arany Hordó Étterem HU 1014 Budapest, Tárnok utca 16.)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 4.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Buda Péntek Páratlan",
+        "PartnerKulcs": "Arany Hordó Vendéglő Kft. / Arany Hordó Étterem (1014 - Arany Hordó Étterem HU 1014 Budapest, Tárnok utca 16.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 3.0,
+        "Kg": 180.0
+    },
+    {
+        "Tura": "Buda Péntek Páratlan",
+        "PartnerKulcs": "Arany Hordó Vendéglő Kft. / Arany Hordó Étterem (1014 - Arany Hordó Étterem HU 1014 Budapest, Tárnok utca 16.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Buda Péntek Páratlan",
+        "PartnerKulcs": "Arany Hordó Vendéglő Kft. / Arany Hordó Étterem (1014 - Arany Hordó Étterem HU 1014 Budapest, Tárnok utca 16.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Ízgyár Kft./ AGC Üzemi Étterem (2851 - AGC Üzemi Étterem HU 2851 Környe, Üveggyár utca 1.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 18.0,
+        "Kg": 180.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Brand Fast Food Kft. / Pipipont Szendvicsező (6726 - Pipipont Makkosháza HU 6726 Szeged, Makkosházi krt. 27/A.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "Kispad Kft./ Prézli Konyha (8000 - Prézli Konyha HU 8000 Székesfehérvár, Nagyszombati 66.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 2.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Epic Kebab Kft. (6000 - Nagymama Konyhája HU 6000 Kecskemét, Kossuth 6-)",
+        "Megj": "7. Nagymama Konhája üzlet Üzletvezető telefonszáma: +3670/4187241",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Brand Fast Food Kft. / Pipitér Szendvicsező (6722 - Pipitér Szendvicsező HU 6722 Szeged, Tisza Lajos krt. 65.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "Fail Mihályné e.v. (2367 - Music Bowling HU 2367 Újhartyán, Pipacs utca 35.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "Fail Mihályné e.v. (2367 - Music Bowling HU 2367 Újhartyán, Pipacs utca 35.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Bácsmetál Kft. / Kishomok Bisztró (6000 - Kishomok Bisztró HU 6000 Kecskemét, Kossuth 3.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 6.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Mindig Fincsi Kft (2890 - Mindig Fincsi Büfé HU 2890 Tata, Kocsi utca 7)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 2.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Baja",
+        "PartnerKulcs": "Taner-Han Kft./ Duna Döner (6500 - Duna Döner HU 6500 Baja, Eötvös József utca 4.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Földeáki Egyesített Egészségügyi és Szociális Intézmény (6922 - Szociális Intézmény és Bölcsőde HU 6922 Földeák, Vásárhelyi utca 4)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "P Dussmann Szolgáltato Kft / Emerson Étterem (8000 - Emerson Étterem HU 8000 Székesfehérvár, Holland fasor 6.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 10.0,
+        "Kg": 100.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Hírös Perfekt Kft. / Aranyhomok gyorsétterem (6000 - Aranyhomok Gyorsétterem HU 6000 Kecskemét, Kossuth 3.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Hírös Perfekt Kft. / Aranyhomok gyorsétterem (6000 - Aranyhomok Gyorsétterem HU 6000 Kecskemét, Kossuth 3.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Hírös Perfekt Kft. / Aranyhomok gyorsétterem (6000 - Aranyhomok Gyorsétterem HU 6000 Kecskemét, Kossuth 3.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Pikante-Gasztro Vendéglátóipari Szolgáltató Kft./ Pikante Étterem (2890 - Pikante Étterem HU 2890 Tata, Tópart sétány 13.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Pikante-Gasztro Vendéglátóipari Szolgáltató Kft./ Pikante Étterem (2890 - Pikante Étterem HU 2890 Tata, Tópart sétány 13.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Pikante-Gasztro Vendéglátóipari Szolgáltató Kft./ Pikante Étterem (2890 - Pikante Étterem HU 2890 Tata, Tópart sétány 13.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Pikante-Gasztro Vendéglátóipari Szolgáltató Kft./ Pikante Étterem (2890 - Pikante Étterem HU 2890 Tata, Tópart sétány 13.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 7.0,
+        "Kg": 70.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Pikante-Gasztro Vendéglátóipari Szolgáltató Kft./ Pikante Étterem (2890 - Pikante Étterem HU 2890 Tata, Tópart sétány 13.)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 17.0,
+        "Kg": 170.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "Főzzünk Jót Kft. (8412 - Valeo Étterem HU 8412 Veszprém, Szőlőhegy utca 10)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 6.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "EGAL-TEAM Kft. / Logisztikai Központ (1203 - Logisztikai Központ HU 1203 Budapest, Zodony utca 4. B.)",
+        "Megj": "28.",
+        "Tetel": "K-K20DB",
+        "Db": 2.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "EGAL-TEAM Kft. / Logisztikai Központ (1203 - Logisztikai Központ HU 1203 Budapest, Zodony utca 4. B.)",
+        "Megj": "28.",
+        "Tetel": "ÉH",
+        "Db": 3.0,
+        "Kg": 180.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "MAGNUS PELSO Kft./ Aranyhomok Szálloda (6000 - Aranyhomok szálloda HU 6000 Kecskemét, Kossuth tér 3)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 4.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "ORFEUM 93. Kft. (2890 - Kalóz Fregatt Pub HU 2890 Tata, Almási utca 2.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "Gavallér 2003 Bt. (8100 - Múzeumkert Étterem HU 8100 Várpalota, Szent István út 1.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 8.0,
+        "Kg": 80.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "Gavallér 2003 Bt. (8100 - Múzeumkert Étterem HU 8100 Várpalota, Szent István út 1.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 2.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Makói Óvoda / Erdélyi Püspük u. (6900 - Erdélyi Püspök u. HU 6900 Makó, Erdélyi Püspök u. 8.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "SMARTPLUS.H.U. Kft. (6000 - MY Thai Ázsiai Étterem és Sushi Bár HU 6000 Kecskemét, Dobó krt. 1.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "MÉLYVÖLGY 2000 Kft. (9174 - La Curia Kemencés Étterem HU 9174 Dunaszeg, Somosalja 1)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 4.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "UPSWING Kft. (6000 - Kebab Factory HU 6000 Kecskemét, Petőfi Sándor 10.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Németh Andor (2890 - Mamma Mia Étterem HU 2890 Tata, Bacsó Béla utca 64/)",
+        "Megj": "b",
+        "Tetel": "K-PALMADB",
+        "Db": 1.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "P Dussmann Szolgáltato Kft / Grundfos Székesfehérvár (8000 - Grundfos Székesfehérvár HU 8000 Székesfehérvár, Holland fasor 15.)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 10.0,
+        "Kg": 100.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "P Dussmann Szolgáltato Kft / Grundfos Székesfehérvár (8000 - Grundfos Székesfehérvár HU 8000 Székesfehérvár, Holland fasor 15.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 4.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "ÉTELBÁR-KIFŐZDE Kft. (1239 - Ételbár-Kifőzde Gyorsétterem HU 1239 Budapest, Hősök tere 10.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "ÉTELBÁR-KIFŐZDE Kft. (1239 - Ételbár-Kifőzde Gyorsétterem HU 1239 Budapest, Hősök tere 10.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 2.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Konkoly Zsigmondné e.v./ Marika konyhája Tatabánya (2800 - Marika konyhája Tatabánya HU 2800 Tatabánya, Baross Gábor út 6.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 2.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "P Dussmann Szolgáltato Kft / Mondelez Kantin (8000 - Mondelez Kantin HU 8000 Székesfehérvár, Holland fasor 8.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 5.0,
+        "Kg": 50.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "DIXI-GYORSÉTTEREM Kft. (6000 - Dixie Gyorsétterem HU 6000 Kecskemét, Dobó körút 1.)",
+        "Megj": "",
+        "Tetel": "K-PALMADB",
+        "Db": 1.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "NIMIKE Ételbár Kft. (1201 - Nimike Ételbár HU 1201 Budapest, Kossuth Lajos utca 30.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 3.0,
+        "Kg": 30.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "NIMIKE Ételbár Kft. (1201 - Nimike Ételbár HU 1201 Budapest, Kossuth Lajos utca 30.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Randevú Gaszt Kft. (6922 - Randevú étterem és konyha HU 6922 Földeák, Bajcsy Zsilinszky utca 42/A.)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 1.0,
+        "Kg": 10.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Maruzs Csilla / Express Önkiszolgáló Étterem (3300 - Express Önkiszolgáló Étterem HU 3300 Eger, Foglár György utca 18.)",
+        "Megj": "60 literes hordó cserét kérek: 2 darab 60 literes hordó cserét kérek: 2 darab",
+        "Tetel": "K-PALMADB",
+        "Db": 1.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Koczkásné Kovács Andrea e.v./ Andi Csárda (6931 - Andi Csárda HU 6931 Apátfalva, Széchenyi utca 96)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "MA + AN Bt. / El Bandi Dobó u. (6000 - El Bandi Dobó u. HU 6000 Kecskemét, Dobó István krt. 1.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 10.0,
+        "Kg": 100.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "EXIT-Food Kft. (1239 - Csibafaló Auchan Soroksár HU 1239 Budapest, Bevásárló 2)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "EXIT-Food Kft. (1239 - Csibafaló Auchan Soroksár HU 1239 Budapest, Bevásárló 2)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "EXIT-Food Kft. (1239 - Csibafaló Auchan Soroksár HU 1239 Budapest, Bevásárló 2)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 4.0,
+        "Kg": 80.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "Prizma-Junior Zrt. / 67. Üzem Kápolnásnyék (2475 - 67. üzem HU 2475 Kápolnásnyék, Bartók Béla út 30.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 12.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "BARNER-FOOD Kft. (1237 - Burger Konyha HU 1237 Budapest, Bevásárló utca 2.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 2.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "BARNER-FOOD Kft. (1237 - Burger Konyha HU 1237 Budapest, Bevásárló utca 2.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Bácsmetál Kft./ Buborék Söröző és Étterem (6000 - Buborék Söröző és Étterem HU 6000 Kecskemét, Pákozdi csata 12/B)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 3.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Péczeli István Tiborné (6000 - Anna Mama konyhája HU 6000 Kecskemét, Aradi Vértanúk tere 1.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Makói Óvoda / Kassai utcai Tagintézmény (6900 - Kassai utcai Tagintézmény HU 6900 Makó, Kassai u. 3.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Inmenso Kft./ Vincent Étterem (6000 - Vincent Étterem HU 6000 Kecskemét, Izsáki 3)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Inmenso Kft./ Vincent Étterem (6000 - Vincent Étterem HU 6000 Kecskemét, Izsáki 3)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Inmenso Kft./ Vincent Étterem (6000 - Vincent Étterem HU 6000 Kecskemét, Izsáki 3)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 3.0,
+        "Kg": 180.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Hunguest Szálláshelyszolgáltató Zrt. / Hotel Eger & Park (3300 - Hotel Eger & Park HU 3300 Eger, Szálloda út 1-)",
+        "Megj": "3.",
+        "Tetel": "K-SPECDB",
+        "Db": 8.0,
+        "Kg": 80.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Hunguest Szálláshelyszolgáltató Zrt. / Hotel Eger & Park (3300 - Hotel Eger & Park HU 3300 Eger, Szálloda út 1-)",
+        "Megj": "3.",
+        "Tetel": "K-K10DB",
+        "Db": 6.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Hunguest Szálláshelyszolgáltató Zrt. / Hotel Flóra (3300 - Hotel Flóra HU 3300 Eger, Fürdő utca 5.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 4.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Hunguest Szálláshelyszolgáltató Zrt. / Hotel Flóra (3300 - Hotel Flóra HU 3300 Eger, Fürdő utca 5.)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 6.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Makói Óvoda / Makói Óvoda Kálvin téri Tagintézmény (6900 - Kálvin téri Tagintézmény HU 6900 Makó, Kálvin tér 6.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 3.0,
+        "Kg": 180.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Tibai Józsefné (6724 - Tibai Halsütöde Szeged Mars téri piac Nagycsarnok N1-04 HU 6724 Szeged, Mars tér 1)",
+        "Megj": "Irén csarnok K1-23 címről a Nagycsarnok N1-04 címre változott-költözött",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Piarista Gimnázium Kollégium Általános Iskola és Óvoda/ Piarista Gimnázium konyha (6000 - Piarista Gimnázium konyha HU 6000 Kecskemét, Piaristák tere 5.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 4.0,
+        "Kg": 240.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Büntetés-Végrehajtás Gazdasági Ellátó Intézete / Mátyási utca (6000 - Büntetés-Végrehajtás Gazdasági Ellátó Intézete/ Mátyási HU 6000 Kecskemét, Mátyási utca 2.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 3.0,
+        "Kg": 180.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Gasztrió2009 Kft. (6000 - Eszem Megáll Gyorsétkező HU 6000 Kecskemét, Könyves Kálmán körút 59.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 4.0,
+        "Kg": 80.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Shiraz Hotel Kft./ Shiráz Hotel (3394 - Shiraz Hotel HU 3394 Egerszalók, Széchenyi István út 31.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 6.0,
+        "Kg": 360.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Shiraz Hotel Kft./ Shiráz Hotel (3394 - Shiraz Hotel HU 3394 Egerszalók, Széchenyi István út 31.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Kecskeméti Református Egyházközség / Református Egyház Tálaló - (Szabadság tér) (6000 - Református Konyha Kecskemét HU 6000 Kecskemét, Piaristák tere 3.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 3.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Balaton Dél",
+        "PartnerKulcs": "Kovács-Bőr Zoltán e.v. / Muskátli Vendéglő (8617 - Muskátli Vendéglő HU 8617 Kőröshegy, Petőfi Sándor 90)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 5.0,
+        "Kg": 100.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "ÖRDÖGKONYHA Kft. (9021 - Városház Étterem HU 9021 Győr, Városház tér 1)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 10.0,
+        "Kg": 100.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "ÖRDÖGKONYHA Kft. / Audi Iskola (9026 - Audi Iskola HU 9026 Győr, Bácsai utca 55)",
+        "Megj": "1",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "KHAMZARGAR Kft./ Kebab House Express (1157 - HU 1157 Budapest, Fő tér 2)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pécs Páratlan",
+        "PartnerKulcs": "SER 2015 Kft. / Odeon Ételbár (7815 - Odeon Ételbár HU 7815 Harkány, Kossuth Lajos 7)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pécs Páratlan",
+        "PartnerKulcs": "SER 2015 Kft. / Odeon Ételbár (7815 - Odeon Ételbár HU 7815 Harkány, Kossuth Lajos 7)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pécs Páratlan",
+        "PartnerKulcs": "SER 2015 Kft. / Odeon Ételbár (7815 - Odeon Ételbár HU 7815 Harkány, Kossuth Lajos 7)",
+        "Megj": "",
+        "Tetel": "K-PALMADB",
+        "Db": 6.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Balaton Dél",
+        "PartnerKulcs": "Kovács János (8600 - Fapuma Büfé HU 8600 Siófok, Szent László 192)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Balaton Dél",
+        "PartnerKulcs": "Kovács János (8600 - Fapuma Büfé HU 8600 Siófok, Szent László 192)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Balaton Dél",
+        "PartnerKulcs": "Kovács János (8600 - Fapuma Büfé HU 8600 Siófok, Szent László 192)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Balaton Dél",
+        "PartnerKulcs": "Kovács János (8600 - Fapuma Büfé HU 8600 Siófok, Szent László 192)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Monster Gastro Kereskedelmi és Szolgáltató Kft. /KISKAKAS Csárda (6722 - KISKAKAS Csárda HU 6722 Szeged, Sándor utca utca 60. B.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Monster Gastro Kereskedelmi és Szolgáltató Kft. /KISKAKAS Csárda (6722 - KISKAKAS Csárda HU 6722 Szeged, Sándor utca utca 60. B.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Monster Gastro Kereskedelmi és Szolgáltató Kft. /KISKAKAS Csárda (6722 - KISKAKAS Csárda HU 6722 Szeged, Sándor utca utca 60. B.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 4.0,
+        "Kg": 240.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Szlama Rajmund e.v. / Mr. Gusto - Tesco (2200 - Mr. Gusto - Tesco HU 2200 Monor, 4-)",
+        "Megj": "es Fő út 33,9 Szeretném ha már február 27.én elvinnék az olajat. De ha ezen a héten járnak felénk akkor az segítség lenne. Szeretném ha már február 27.én elvinnék az olajat. De ha ezen a héten járnak felénk akkor az segítség lenne. Szeretném ha már február 27.én elvinnék az olajat. De ha ezen a héten járnak felénk akkor az segítség lenne. Szeretném ha már február 27.én elvinnék az olajat. De ha ezen a héten járnak felénk akkor az segítség lenne.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Szlama Rajmund e.v. / Mr. Gusto - Tesco (2200 - Mr. Gusto - Tesco HU 2200 Monor, 4-)",
+        "Megj": "es Fő út 33,9 Szeretném ha már február 27.én elvinnék az olajat. De ha ezen a héten járnak felénk akkor az segítség lenne. Szeretném ha már február 27.én elvinnék az olajat. De ha ezen a héten járnak felénk akkor az segítség lenne. Szeretném ha már február 27.én elvinnék az olajat. De ha ezen a héten járnak felénk akkor az segítség lenne. Szeretném ha már február 27.én elvinnék az olajat. De ha ezen a héten járnak felénk akkor az segítség lenne.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Szlama Rajmund e.v. / Mr. Gusto - Tesco (2200 - Mr. Gusto - Tesco HU 2200 Monor, 4-)",
+        "Megj": "es Fő út 33,9 Szeretném ha már február 27.én elvinnék az olajat. De ha ezen a héten járnak felénk akkor az segítség lenne. Szeretném ha már február 27.én elvinnék az olajat. De ha ezen a héten járnak felénk akkor az segítség lenne. Szeretném ha már február 27.én elvinnék az olajat. De ha ezen a héten járnak felénk akkor az segítség lenne. Szeretném ha már február 27.én elvinnék az olajat. De ha ezen a héten járnak felénk akkor az segítség lenne.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Szlama Rajmund e.v. / Mr. Gusto - Tesco (2200 - Mr. Gusto - Tesco HU 2200 Monor, 4-)",
+        "Megj": "es Fő út 33,9 Szeretném ha már február 27.én elvinnék az olajat. De ha ezen a héten járnak felénk akkor az segítség lenne. Szeretném ha már február 27.én elvinnék az olajat. De ha ezen a héten járnak felénk akkor az segítség lenne. Szeretném ha már február 27.én elvinnék az olajat. De ha ezen a héten járnak felénk akkor az segítség lenne. Szeretném ha már február 27.én elvinnék az olajat. De ha ezen a héten járnak felénk akkor az segítség lenne.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "LANZS 2013 Kft. /Bora Bora Lounge Étterem és Kávéház Dunaújváros (2400 - Bora Bora HU 2400 Dunaújváros, Kenyérgyári út 2)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "LANZS 2013 Kft. /Bora Bora Lounge Étterem és Kávéház Dunaújváros (2400 - Bora Bora HU 2400 Dunaújváros, Kenyérgyári út 2)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "LANZS 2013 Kft. /Bora Bora Lounge Étterem és Kávéház Dunaújváros (2400 - Bora Bora HU 2400 Dunaújváros, Kenyérgyári út 2)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 6.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Székesfehér.Páratlan",
+        "PartnerKulcs": "LANZS 2013 Kft. /Bora Bora Lounge Étterem és Kávéház Dunaújváros (2400 - Bora Bora HU 2400 Dunaújváros, Kenyérgyári út 2)",
+        "Megj": "",
+        "Tetel": "K-PALMADB",
+        "Db": 1.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Péter Jozsa Dalma e.v. / Liget Bistro Café & Étterem (2112 - Liget Bistro Café & Étterem HU 2112 Veresegyház, Erkel Ferenc utca 4)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Péter Jozsa Dalma e.v. / Liget Bistro Café & Étterem (2112 - Liget Bistro Café & Étterem HU 2112 Veresegyház, Erkel Ferenc utca 4)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Péter Jozsa Dalma e.v. / Liget Bistro Café & Étterem (2112 - Liget Bistro Café & Étterem HU 2112 Veresegyház, Erkel Ferenc utca 4)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Péter Jozsa Dalma e.v. / Liget Bistro Café & Étterem (2112 - Liget Bistro Café & Étterem HU 2112 Veresegyház, Erkel Ferenc utca 4)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Péter Jozsa Dalma e.v. / Liget Bistro Café & Étterem (2112 - Liget Bistro Café & Étterem HU 2112 Veresegyház, Erkel Ferenc utca 4)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Péter Jozsa Dalma e.v. / Liget Bistro Café & Étterem (2112 - Liget Bistro Café & Étterem HU 2112 Veresegyház, Erkel Ferenc utca 4)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Péter Jozsa Dalma e.v. / Liget Bistro Café & Étterem (2112 - Liget Bistro Café & Étterem HU 2112 Veresegyház, Erkel Ferenc utca 4)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Péter Jozsa Dalma e.v. / Liget Bistro Café & Étterem (2112 - Liget Bistro Café & Étterem HU 2112 Veresegyház, Erkel Ferenc utca 4)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Misto Trade Kft./ Napsugár Étterem (2100 - Napsugár Étterem Gödöllő HU 2100 Gödöllő, Rét utca 1)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 4.0,
+        "Kg": 80.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Szalai Balázs (2213 - Autós Csárda HU 2213 Monorierdő, Barátság 1/A)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Szalai Balázs (2213 - Autós Csárda HU 2213 Monorierdő, Barátság 1/A)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Szalai Balázs (2213 - Autós Csárda HU 2213 Monorierdő, Barátság 1/A)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Szalai Balázs (2213 - Autós Csárda HU 2213 Monorierdő, Barátság 1/A)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Balaton Dél",
+        "PartnerKulcs": "Vincze Zsolt (8640 - Gyöngyhalász Étterem HU 8640 Fonyód, Vígadó 3)",
+        "Megj": "",
+        "Tetel": "K-PALMADB",
+        "Db": 5.0,
+        "Kg": 100.0
+    },
+    {
+        "Tura": "Balaton Dél",
+        "PartnerKulcs": "Vincze Zsolt (8640 - Gyöngyhalász Étterem HU 8640 Fonyód, Vígadó 3)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Balaton Dél",
+        "PartnerKulcs": "Vincze Zsolt (8640 - Gyöngyhalász Étterem HU 8640 Fonyód, Vígadó 3)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Kis Piac Gastrobár Kft. (2200 - Gastrobár Kis Piac HU 2200 Monor, Piac tér 4)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Kis Piac Gastrobár Kft. (2200 - Gastrobár Kis Piac HU 2200 Monor, Piac tér 4)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Kis Piac Gastrobár Kft. (2200 - Gastrobár Kis Piac HU 2200 Monor, Piac tér 4)",
+        "Megj": "",
+        "Tetel": "ZSÍR",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Kis Piac Gastrobár Kft. (2200 - Gastrobár Kis Piac HU 2200 Monor, Piac tér 4)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 1.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "SZALAJKA-VIK Kft./ Vonat büfé (3348 - Vonat Büfé HU 3348 Szilvásvárad, Szalajka fatelep 1)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 4.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Baja",
+        "PartnerKulcs": "AERO HOTEL Kft. (6078 - Aero Hotel & Étterem HU 6078 Jakabszállás, Külterület hrsz 035/)",
+        "Megj": "102.",
+        "Tetel": "ÉH",
+        "Db": 2.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Barta László (6750 - Algyői Halászcsárda HU 6750 Algyő, Vásárhelyi út 53.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 5.0,
+        "Kg": 300.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Best Melora Kft. (3394 - Piroska Étterem Egerszalók HU 3394 Egerszalók, Ady Endre u. 42.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 6.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Best Melora Kft. (3394 - Piroska Étterem Egerszalók HU 3394 Egerszalók, Ady Endre u. 42.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 5.0,
+        "Kg": 300.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Best Melora Kft. (3394 - Piroska Étterem Egerszalók HU 3394 Egerszalók, Ady Endre u. 42.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "California Burger Kft (2151 - California Burger HU 2151 Fót, Vörösmarty tér 15.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "California Burger Kft (2151 - California Burger HU 2151 Fót, Vörösmarty tér 15.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "California Burger Kft (2151 - California Burger HU 2151 Fót, Vörösmarty tér 15.)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 10.0,
+        "Kg": 100.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "EL-PATIO Kft. (9021 - Patio Étterem HU 9021 Győr, Baross Gábor út 11 -)",
+        "Megj": "13.",
+        "Tetel": "K-K20DB",
+        "Db": 2.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Buda Péntek Páratlan",
+        "PartnerKulcs": "Ezüst Kanál Kft. (6050 - Ezüst Kanál Vendéglő HU 6050 Lajosmizse, 0347/7/B.)",
+        "Megj": "hrsz. Mizse G/ Ezüst.k.",
+        "Tetel": "ÉH",
+        "Db": 2.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Buda Péntek Páratlan",
+        "PartnerKulcs": "Fehérvári úti Lacikonyha Bt. (1117 - Vásárcsarnok Lacikonyha HU 1117 Budapest, Fehérvári út 22.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 4.0,
+        "Kg": 80.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "GREENHORN Kft. (2100 - Yellow Pub Gödöllő HU 2100 Gödöllő, Dózsa György út 64.)",
+        "Megj": "2025-ben az első elszállítást január 2-re kérjük, köszönjük.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "GREENHORN Kft. (2100 - Yellow Pub Gödöllő HU 2100 Gödöllő, Dózsa György út 64.)",
+        "Megj": "2025-ben az első elszállítást január 2-re kérjük, köszönjük.",
+        "Tetel": "K-K20DB",
+        "Db": 1.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "GREENHORN Kft. (2100 - Yellow Pub Gödöllő HU 2100 Gödöllő, Dózsa György út 64.)",
+        "Megj": "2025-ben az első elszállítást január 2-re kérjük, köszönjük.",
+        "Tetel": "K-SPECDB",
+        "Db": 8.0,
+        "Kg": 80.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Gyarmati Lászlóné (6900 - Gyarmati Cukrászda Makó HU 6900 Makó, Rákóczi utca 22.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "Marton Zsuzsa (9028 - Kalapos Vendéglő HU 9028 Győr, József Attila utca 15/A..)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 3.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "Marton Zsuzsa (9028 - Kalapos Vendéglő HU 9028 Győr, József Attila utca 15/A..)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Ószentiván Start Szociális Szövetkezet (6756 - Ószentiván konyha HU 6756 Tiszasziget, Szent Antal tér 10.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Ószentiván Start Szociális Szövetkezet (6756 - Ószentiván konyha HU 6756 Tiszasziget, Szent Antal tér 10.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Ószentiván Start Szociális Szövetkezet (6756 - Ószentiván konyha HU 6756 Tiszasziget, Szent Antal tér 10.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 10.0,
+        "Kg": 100.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Pap és Társa Kft (2111 - A SZŰCS FOGADÓJA HU 2111 Szada, Dózsa György út 19.)",
+        "Megj": "",
+        "Tetel": "ZSÍR",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Pap és Társa Kft (2111 - A SZŰCS FOGADÓJA HU 2111 Szada, Dózsa György út 19.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Pap és Társa Kft (2111 - A SZŰCS FOGADÓJA HU 2111 Szada, Dózsa György út 19.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Pap és Társa Kft (2111 - A SZŰCS FOGADÓJA HU 2111 Szada, Dózsa György út 19.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Pap és Társa Kft (2111 - A SZŰCS FOGADÓJA HU 2111 Szada, Dózsa György út 19.)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 8.0,
+        "Kg": 80.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "STOP KÁVÉZÓ Kft. (9028 - Süllőház Halsütöde HU 9028 Győr, Szent Imre út 107.)",
+        "Megj": "Nyitvatartás: 8-17-ig Nyitvatartás: 8-17-ig",
+        "Tetel": "K-K10DB",
+        "Db": 1.0,
+        "Kg": 10.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "STOP KÁVÉZÓ Kft. (9028 - Süllőház Halsütöde HU 9028 Győr, Szent Imre út 107.)",
+        "Megj": "Nyitvatartás: 8-17-ig Nyitvatartás: 8-17-ig",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "STOP KÁVÉZÓ Kft. (9028 - Süllőház Halsütöde HU 9028 Győr, Szent Imre út 107.)",
+        "Megj": "Nyitvatartás: 8-17-ig Nyitvatartás: 8-17-ig",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pécs Páratlan",
+        "PartnerKulcs": "Tankó Ferenc (7800 - VASÚT ÉTTEREM Siklós HU 7800 Siklós, Vasút utca 9.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 8.0,
+        "Kg": 160.0
+    },
+    {
+        "Tura": "Pécs Páratlan",
+        "PartnerKulcs": "Tankó Ferenc (7800 - VASÚT ÉTTEREM Siklós HU 7800 Siklós, Vasút utca 9.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Pécs Páratlan",
+        "PartnerKulcs": "Tankó Ferenc (7800 - VASÚT ÉTTEREM Siklós HU 7800 Siklós, Vasút utca 9.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Uni-Grek Kft (2200 - Op-Art Étterem HU 2200 Monor, Ady Endre utca 87-)",
+        "Megj": "89.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Uni-Grek Kft (2200 - Op-Art Étterem HU 2200 Monor, Ady Endre utca 87-)",
+        "Megj": "89.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Uni-Grek Kft (2200 - Op-Art Étterem HU 2200 Monor, Ady Endre utca 87-)",
+        "Megj": "89.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Uni-Grek Kft (2200 - Op-Art Étterem HU 2200 Monor, Ady Endre utca 87-)",
+        "Megj": "89.",
+        "Tetel": "K-K20DB",
+        "Db": 11.0,
+        "Kg": 220.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Várkanyar Gasztro Kft (2890 - Várkanyar vendéglő HU 2890 Tata, Váralja út 20.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Várkanyar Gasztro Kft (2890 - Várkanyar vendéglő HU 2890 Tata, Váralja út 20.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Várkanyar Gasztro Kft (2890 - Várkanyar vendéglő HU 2890 Tata, Váralja út 20.)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 4.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Várkanyar Gasztro Kft (2890 - Várkanyar vendéglő HU 2890 Tata, Váralja út 20.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 2.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Termál-Bowling Kereskedelmi és Szolgáltató Kft. (2112 - Thermál Veresegyháza HU 2112 Veresegyház, Találkozók útja 2)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 10.0,
+        "Kg": 200.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Winkler Anita (9086 - Fehér Akác Étterem Pér HU 9086 Pér, Fehérvári út 86/)",
+        "Megj": "13 hrsz",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Winkler Anita (9086 - Fehér Akác Étterem Pér HU 9086 Pér, Fehérvári út 86/)",
+        "Megj": "13 hrsz",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Winkler Anita (9086 - Fehér Akác Étterem Pér HU 9086 Pér, Fehérvári út 86/)",
+        "Megj": "13 hrsz",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Winkler Anita (9086 - Fehér Akác Étterem Pér HU 9086 Pér, Fehérvári út 86/)",
+        "Megj": "13 hrsz",
+        "Tetel": "NAN",
+        "Db": 1.0,
+        "Kg": 0.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Winkler Anita (9086 - Fehér Akác Étterem Pér HU 9086 Pér, Fehérvári út 86/)",
+        "Megj": "13 hrsz",
+        "Tetel": "K-K20DB",
+        "Db": 18.0,
+        "Kg": 360.0
+    },
+    {
+        "Tura": "Balaton Dél",
+        "PartnerKulcs": "Sh-Fejlesztő Kft. (8600 - Yacht Hotel HU 8600 Siófok, Vitorlás utca 12-)",
+        "Megj": "14.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Balaton Dél",
+        "PartnerKulcs": "Sh-Fejlesztő Kft. (8600 - Yacht Hotel HU 8600 Siófok, Vitorlás utca 12-)",
+        "Megj": "14.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Balaton Dél",
+        "PartnerKulcs": "Sh-Fejlesztő Kft. (8600 - Yacht Hotel HU 8600 Siófok, Vitorlás utca 12-)",
+        "Megj": "14.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Balaton Dél",
+        "PartnerKulcs": "Sh-Fejlesztő Kft. (8600 - Yacht Hotel HU 8600 Siófok, Vitorlás utca 12-)",
+        "Megj": "14.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Kék Galamb Bt. (9222 - Határ Étterem - Hegyeshalom Közúti határátkelő HU 9222 Hegyeshalom, K-I 13)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Kék Galamb Bt. (9222 - Határ Étterem - Hegyeshalom Közúti határátkelő HU 9222 Hegyeshalom, K-I 13)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Kék Galamb Bt. (9222 - Határ Étterem - Hegyeshalom Közúti határátkelő HU 9222 Hegyeshalom, K-I 13)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Kristály Étterem 2008. Kereskedelmi és Szolgáltató Kft. (9024 - Kristály Étterem HU 9024 Győr, Bartók Béla u. 9.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 10.0,
+        "Kg": 200.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Kristály Étterem 2008. Kereskedelmi és Szolgáltató Kft. (9024 - Kristály Étterem HU 9024 Győr, Bartók Béla u. 9.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Kristály Étterem 2008. Kereskedelmi és Szolgáltató Kft. (9024 - Kristály Étterem HU 9024 Győr, Bartók Béla u. 9.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Kristály Étterem 2008. Kereskedelmi és Szolgáltató Kft. (9024 - Kristály Étterem HU 9024 Győr, Bartók Béla u. 9.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Kristály Étterem 2008. Kereskedelmi és Szolgáltató Kft. (9024 - Kristály Étterem HU 9024 Győr, Bartók Béla u. 9.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 2.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "V.i.c. Kereskedelmi és Szolgáltató Kft. (9025 - Amstel Hattyú Fogadó HU 9025 Győr, Töltésszer út 18.)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 1.0,
+        "Kg": 10.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "V.i.c. Kereskedelmi és Szolgáltató Kft. (9025 - Amstel Hattyú Fogadó HU 9025 Győr, Töltésszer út 18.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Sun City System Kft. (6772 - Club 43 Pizzéria HU 6772 Deszk, Alkotmány u. 47)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Sun City System Kft. (6772 - Club 43 Pizzéria HU 6772 Deszk, Alkotmány u. 47)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Balaton Dél",
+        "PartnerKulcs": "Belügyminisztérium Országos Katasztrófavédelmi Főigazgatóság G.E.K / Jogar Hotel (8623 - Belügyminisztérium HU 8623 Balatonföldvár, Spúr István utca 18.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Balaton Dél",
+        "PartnerKulcs": "Belügyminisztérium Országos Katasztrófavédelmi Főigazgatóság G.E.K / Jogar Hotel (8623 - Belügyminisztérium HU 8623 Balatonföldvár, Spúr István utca 18.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Balaton Dél",
+        "PartnerKulcs": "Reménység Gyermeksegély és Rehabilitációs Alapitvány (8674 - HU 8674 Nágocs, Rákócz Ferenc 1/a)",
+        "Megj": "Elérhetőség, amin lehet egyeztetni az elszállítással kapcsolatban: Kiss Szilveszterné Zsuzsa 20-379-6106",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Balaton Dél",
+        "PartnerKulcs": "Reménység Gyermeksegély és Rehabilitációs Alapitvány (8674 - HU 8674 Nágocs, Rákócz Ferenc 1/a)",
+        "Megj": "Elérhetőség, amin lehet egyeztetni az elszállítással kapcsolatban: Kiss Szilveszterné Zsuzsa 20-379-6106",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Buda Péntek Páratlan",
+        "PartnerKulcs": "Hotel Nádas Szálloda és Vendéglátó Kft. / The Spot (1011 - The Spot Budapest HU 1011 Budapest, Batthyány tér 7.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 12.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Buda Péntek Páratlan",
+        "PartnerKulcs": "Hotel Nádas Szálloda és Vendéglátó Kft. / The Spot (1011 - The Spot Budapest HU 1011 Budapest, Batthyány tér 7.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 6.0,
+        "Kg": 360.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "Kávé Bár Bt. (9021 - SZOMSZÉD Bár HU 9021 Győr, Kisfaludy utca 26.)",
+        "Megj": "Nyitvatartás: 10-től Nyitvatartás: 10-től",
+        "Tetel": "K-K20DB",
+        "Db": 4.0,
+        "Kg": 80.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "Kávé Bár Bt. (9021 - SZOMSZÉD Bár HU 9021 Győr, Kisfaludy utca 26.)",
+        "Megj": "Nyitvatartás: 10-től Nyitvatartás: 10-től",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "Kávé Bár Bt. (9021 - SZOMSZÉD Bár HU 9021 Győr, Kisfaludy utca 26.)",
+        "Megj": "Nyitvatartás: 10-től Nyitvatartás: 10-től",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Buda Péntek Páratlan",
+        "PartnerKulcs": "4-G Consulting Kft. (1025 - Hello Buda HU 1025 Budapest, Törökvész utca 93.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Buda Péntek Páratlan",
+        "PartnerKulcs": "4-G Consulting Kft. (1025 - Hello Buda HU 1025 Budapest, Törökvész utca 93.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "Eatrend Arrabona Zrt. / Győr, Szabadhegyi 18. Konyha (9000 - Szabadhegyi 18. Konyha HU 9000 Győr, Konini út 2-)",
+        "Megj": "4",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "Eatrend Arrabona Zrt. / Győr, Szabadhegyi 18. Konyha (9000 - Szabadhegyi 18. Konyha HU 9000 Győr, Konini út 2-)",
+        "Megj": "4",
+        "Tetel": "K-K10DB",
+        "Db": 20.0,
+        "Kg": 200.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "Eatrend Arrabona Zrt. / Győr, Szabadhegyi 18. Konyha (9000 - Szabadhegyi 18. Konyha HU 9000 Győr, Konini út 2-)",
+        "Megj": "4",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "Eatrend Arrabona Zrt. / Győr, Szabadhegyi 18. Konyha (9000 - Szabadhegyi 18. Konyha HU 9000 Győr, Konini út 2-)",
+        "Megj": "4",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Annahegyi-Restaurant Kft./ ANNAHEGYI Restaurant Pihenő Törökbálint - 6 km (2045 - Annahegyi Restaurant M0 HU 2045 Törökbálint, M0 a)",
+        "Megj": "utópálya Annahegyi pihenő 6-os kilométer szelvény",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "Annahegyi-Restaurant Kft./ ANNAHEGYI Restaurant Pihenő Törökbálint - 6 km (2045 - Annahegyi Restaurant M0 HU 2045 Törökbálint, M0 a)",
+        "Megj": "utópálya Annahegyi pihenő 6-os kilométer szelvény",
+        "Tetel": "K-K20DB",
+        "Db": 4.0,
+        "Kg": 80.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "Eatrend Kft. / Batthyány Kázmér Gimnázium - főzőkonyha (2310 - Batthyány Kázmér Gimnázium HU 2310 Szigetszentmiklós, Csokonai utca 6)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 3.0,
+        "Kg": 180.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "Eatrend Kft. / Bíró Lajos tálalókonyha (2310 - BÍRÓ LAJOS tálalókonyha HU 2310 Szigetszentmiklós, Kossuth Lajos utca 11.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "Eatrend Kft. / Bíró Lajos tálaló (2310 - BÍRÓ LAJOS tálaló HU 2310 Szigetszentmiklós, Petőfi utca 13.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Lajosmizse Páratlan",
+        "PartnerKulcs": "Eatrend Kft. / Kardos István Általános Iskola (2310 - Kardos István Ált. Iskola HU 2310 Szigetszentmiklós, Tököli út 30 a)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 5.0,
+        "Kg": 300.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "Eatrend Arrabona Zrt. / Ács, Tálaló (2941 - Ács tálaló HU 2941 Ács, Fő utca 98.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 4.0,
+        "Kg": 240.0
+    },
+    {
+        "Tura": "Tata Páratlan",
+        "PartnerKulcs": "P Dussmann Szolgáltato Kft / Grundfos Tatabánya (2800 - Grundfos Tatabánya HU 2800 Tatabánya, Búzavirág utca 14.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 15.0,
+        "Kg": 150.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "P Dussmann Szolgáltato Kft /Balluf (8200 - Balluf HU 8200 Veszprém, Pápai út 55.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 10.0,
+        "Kg": 100.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "P Dussmann Szolgáltato Kft /Balluf (8200 - Balluf HU 8200 Veszprém, Pápai út 55.)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 10.0,
+        "Kg": 100.0
+    },
+    {
+        "Tura": "Buda Péntek Páratlan",
+        "PartnerKulcs": "Búsuló Juhász Étterem Kft. / Búsuló Juhász Étterem (1118 - Búsuló Juhász Étterem HU 1118 Budapest, Kelenhegyi út 58.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 2.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Buda Péntek Páratlan",
+        "PartnerKulcs": "Búsuló Juhász Étterem Kft. / Búsuló Juhász Étterem (1118 - Búsuló Juhász Étterem HU 1118 Budapest, Kelenhegyi út 58.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 1.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Hunguest Szálláshelyszolgáltató Zrt. / Saliris Fürdő (3394 - Saliris Fürdő HU 3394 Egerszalók, Forrás utca 6)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 6.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Hunguest Szálláshelyszolgáltató Zrt. / Saliris Fürdő (3394 - Saliris Fürdő HU 3394 Egerszalók, Forrás utca 6)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 2.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Hunguest Szálláshelyszolgáltató Zrt. / Saliris Szálloda (3394 - Saliris Szálloda HU 3394 Egerszalók, Forrás utca 6)",
+        "Megj": "(6. emelet alagút)",
+        "Tetel": "K-K10DB",
+        "Db": 9.0,
+        "Kg": 90.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Hunguest Szálláshelyszolgáltató Zrt. / Saliris Szálloda (3394 - Saliris Szálloda HU 3394 Egerszalók, Forrás utca 6)",
+        "Megj": "(6. emelet alagút)",
+        "Tetel": "K-SPECDB",
+        "Db": 9.0,
+        "Kg": 90.0
+    },
+    {
+        "Tura": "Buda Péntek Páratlan",
+        "PartnerKulcs": "Kisbig Trio Kft. / Kisbig Bisztro (1117 - KISBIG Kifőzde HU 1117 Budapest, Budafoki út 70.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 3.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Buda Péntek Páratlan",
+        "PartnerKulcs": "FAR-EAST West Kft. (2040 - Budaörs Kínai Auchan HU 2040 Budaörs, Sport u. 2-)",
+        "Megj": "4.",
+        "Tetel": "K-P10DB",
+        "Db": 10.0,
+        "Kg": 100.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "Ízes Sziget Kft./ SZIGET Bisztro (9025 - SZIGET Bisztro HU 9025 Győr, Híd utca 7.)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 2.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "Eatrend Arrabona Zrt. / Győr, Váci Mihály 22. Konyha (9024 - Váci Mihály 22. Konyha HU 9024 Győr, Váci Mihály út 3.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 4.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "Eatrend Arrabona Zrt. / Győr, Kodály Zoltán 20. Konyha (9024 - Kodály Zoltán 20. Konyha HU 9024 Győr, Tárogató utca 18.)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 6.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "Eatrend Arrabona Zrt. / Győr, Kodály Zoltán 20. Konyha (9024 - Kodály Zoltán 20. Konyha HU 9024 Győr, Tárogató utca 18.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 4.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "Eatrend Arrabona Zrt. / Győr, Krúdy 24. Konyha (9024 - Krúdy 24. Konyha HU 9024 Győr, Örkény István utca 10.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 18.0,
+        "Kg": 180.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "Eatrend Arrabona Zrt. / Győr, Kossuth Zsuzsa 26. Konyha (9024 - Kossuth Zsuzsa 26. Konyha HU 9024 Győr, Szigethy Attila utca 65-)",
+        "Megj": "67.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "Eatrend Arrabona Zrt. / Győr, Kossuth Zsuzsa 26. Konyha (9024 - Kossuth Zsuzsa 26. Konyha HU 9024 Győr, Szigethy Attila utca 65-)",
+        "Megj": "67.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "Eatrend Arrabona Zrt. / Győr, Kossuth Zsuzsa 26. Konyha (9024 - Kossuth Zsuzsa 26. Konyha HU 9024 Győr, Szigethy Attila utca 65-)",
+        "Megj": "67.",
+        "Tetel": "K-K10DB",
+        "Db": 25.0,
+        "Kg": 250.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "Eatrend Arrabona Zrt. / Győr, Kovács Margit 16. Konyha (9024 - Kovács Margit 16. Konyha HU 9024 Győr, Répce utca 2.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 6.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Szeged ÉH-Makó-Plan",
+        "PartnerKulcs": "Zsoli-Tár 2012 Kft. / Pitypang Evangélikus Óvoda (6723 - Pitypang Evangélikus Óvoda HU 6723 Szeged, Szentháromság u. 47.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Eatrend Kft. / Albertirsa 3. Főzőkonyha (2730 - Albertirsa 3. Főzőkonyha HU 2730 Albertirsa, Győzelem utca 2.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 20.0,
+        "Kg": 200.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "Eatrend Arrabona Zrt. / Győr 4. Konyha (9025 - Győr 4. konyha HU 9025 Győr, Bercsényi Liget 24.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 40.0,
+        "Kg": 400.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "Kenyeres László (8400 - HU 8400 Ajka, Csingeri út 4/a)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 6.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Balaton Dél",
+        "PartnerKulcs": "Cserberger Kft./ Pincekert Étterem Balatonkeresztúr (8648 - Pincekert Étterem Balatonkeresztúr HU 8648 Balatonkeresztúr, Iskola utca 4.)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 4.0,
+        "Kg": 40.0
+    },
+    {
+        "Tura": "Balaton Dél",
+        "PartnerKulcs": "Cserberger Kft./ Pincekert Étterem Balatonkeresztúr (8648 - Pincekert Étterem Balatonkeresztúr HU 8648 Balatonkeresztúr, Iskola utca 4.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Balaton Dél",
+        "PartnerKulcs": "Cserberger Kft./ Pincekert Étterem Balatonkeresztúr (8648 - Pincekert Étterem Balatonkeresztúr HU 8648 Balatonkeresztúr, Iskola utca 4.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Balaton Dél",
+        "PartnerKulcs": "Cserberger Kft./ Pincekert Étterem Balatonkeresztúr (8648 - Pincekert Étterem Balatonkeresztúr HU 8648 Balatonkeresztúr, Iskola utca 4.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Balaton Dél",
+        "PartnerKulcs": "Cserberger Kft./ Pincekert Étterem Balatonkeresztúr (8648 - Pincekert Étterem Balatonkeresztúr HU 8648 Balatonkeresztúr, Iskola utca 4.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "Pizza Arrabona Kft. / Dobos Burger & Chicken (9022 - Dobos Burger & Chicken HU 9022 Győr, Vas Gereben 6)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "Pizza Arrabona Kft. / Dobos Burger & Chicken (9022 - Dobos Burger & Chicken HU 9022 Győr, Vas Gereben 6)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 12.0,
+        "Kg": 240.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "Pizza Arrabona Kft. / Dobos Burger & Chicken (9022 - Dobos Burger & Chicken HU 9022 Győr, Vas Gereben 6)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "Pizza Arrabona Kft. / Dobos Burger & Chicken (9022 - Dobos Burger & Chicken HU 9022 Győr, Vas Gereben 6)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "Pizza Arrabona Kft. / Dobos Burger & Chicken (9022 - Dobos Burger & Chicken HU 9022 Győr, Vas Gereben 6)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Visegrád Páratlan",
+        "PartnerKulcs": "Pomodor Kft./ Pomodor Nagytarcsa (2142 - Pomodor Nagytarcsa HU 2142 Nagytarcsa, Naplós út 16.)",
+        "Megj": "",
+        "Tetel": "K-P10DB",
+        "Db": 30.0,
+        "Kg": 300.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Hócza László (3348 - Fenyő Vendéglő Szilvásvárad HU 3348 Szilvásvárad, Szalajka út 2.)",
+        "Megj": "",
+        "Tetel": "K-SPECDB",
+        "Db": 8.0,
+        "Kg": 80.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "For-Bau 97 Bt. (2112 - Hamburger Mester HU 2112 Veresegyháza, Fő utca 53.)",
+        "Megj": "Veresegyház Fő 53 Veresegyház Fő 53 Veresegyház Fő 53",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "For-Bau 97 Bt. (2112 - Hamburger Mester HU 2112 Veresegyháza, Fő utca 53.)",
+        "Megj": "Veresegyház Fő 53 Veresegyház Fő 53 Veresegyház Fő 53",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "For-Bau 97 Bt. (2112 - Hamburger Mester HU 2112 Veresegyháza, Fő utca 53.)",
+        "Megj": "Veresegyház Fő 53 Veresegyház Fő 53 Veresegyház Fő 53",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Alkotmány 20 Kft./ Rub&Roll Villa - Gödöllő (2100 - RUB&ROLL Villa Gödöllő HU 2100 Gödöllő, Táncsis Mihály utca 5.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 4.0,
+        "Kg": 80.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Alkotmány 20 Kft./ Rub&Roll Villa - Gödöllő (2100 - RUB&ROLL Villa Gödöllő HU 2100 Gödöllő, Táncsis Mihály utca 5.)",
+        "Megj": "",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Veresegyh. Páratlan",
+        "PartnerKulcs": "Chiliburger Kft. (2170 - ChiliBurger pizza&gyros gyorsétterem HU 2170 Aszód, Szabadság utca 4-)",
+        "Megj": "5",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Újzöldfa Vendéglátó Kft. (9024 - Zöldfa Étterem HU 9024 Győr, Hunyadi utca 2.)",
+        "Megj": "Reggel 7 órától délután 14 óráig lehet elszállítani",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Újzöldfa Vendéglátó Kft. (9024 - Zöldfa Étterem HU 9024 Győr, Hunyadi utca 2.)",
+        "Megj": "Reggel 7 órától délután 14 óráig lehet elszállítani",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Újzöldfa Vendéglátó Kft. (9024 - Zöldfa Étterem HU 9024 Győr, Hunyadi utca 2.)",
+        "Megj": "Reggel 7 órától délután 14 óráig lehet elszállítani",
+        "Tetel": "ÉH",
+        "Db": 5.0,
+        "Kg": 300.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Újzöldfa Vendéglátó Kft. (9024 - Zöldfa Étterem HU 9024 Győr, Hunyadi utca 2.)",
+        "Megj": "Reggel 7 órától délután 14 óráig lehet elszállítani",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Győr Csüt Új",
+        "PartnerKulcs": "PANNON FAMULUS Kft. / Famulus Hotel (9022 - Famulus Hotel HU 9022 Győr, Budai út 4.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 12.0,
+        "Kg": 120.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Maren Gasztro Kft. (6000 - Donna Pizza HU 6000 Kecskemét, Dózsa György út 9.)",
+        "Megj": "Fsz. 1.",
+        "Tetel": "HSO",
+        "Db": 1.0,
+        "Kg": 60.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Maren Gasztro Kft. (6000 - Donna Pizza HU 6000 Kecskemét, Dózsa György út 9.)",
+        "Megj": "Fsz. 1.",
+        "Tetel": "K-K10DB",
+        "Db": 1.0,
+        "Kg": 10.0
+    },
+    {
+        "Tura": "Kkmét Péntek Páratl.",
+        "PartnerKulcs": "Maren Gasztro Kft. (6000 - Donna Pizza HU 6000 Kecskemét, Dózsa György út 9.)",
+        "Megj": "Fsz. 1.",
+        "Tetel": "K-PALMADB",
+        "Db": 1.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Buda Péntek Páratlan",
+        "PartnerKulcs": "EGAL-TEAM Kft. /BUDAWEST (1118 - HU 1118 Budapest, Rétközi utca 5.)",
+        "Megj": "Fsz. 2",
+        "Tetel": "K-K20DB",
+        "Db": 12.0,
+        "Kg": 240.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Egal- Catering Vendéglátó és Kereskedelmi Kft. / Maklár (RBAS) (3397 - Maklár (RBAS) HU 3397 Maklár, Havasi László utca 2.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 8.0,
+        "Kg": 160.0
+    },
+    {
+        "Tura": "Eger Páratlan",
+        "PartnerKulcs": "Egal- Catering Vendéglátó és Kereskedelmi Kft. / Maklár (RBAS) (3397 - Maklár (RBAS) HU 3397 Maklár, Havasi László utca 2.)",
+        "Megj": "",
+        "Tetel": "ÉH",
+        "Db": 5.0,
+        "Kg": 300.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Barlo Gastro Kft. (9028 - Kakas Étterem Győr HU 9028 Győr, Szent Imre út 105.)",
+        "Megj": "",
+        "Tetel": "K-K10DB",
+        "Db": 3.0,
+        "Kg": 30.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Barlo Gastro Kft. (9028 - Kakas Étterem Győr HU 9028 Győr, Szent Imre út 105.)",
+        "Megj": "",
+        "Tetel": "K-K20DB",
+        "Db": 1.0,
+        "Kg": 20.0
+    },
+    {
+        "Tura": "Pápa Páratlan",
+        "PartnerKulcs": "Amrest Vendéglátó Kft. / KFC Ajka (8400 - KFC Ajka HU 8400 Ajka, Fő út 66.)",
+        "Megj": "",
+        "Tetel": "NAN",
+        "Db": 5.0,
+        "Kg": 0.0
+    },
+    {
+        "Tura": "Mosonmagyaróvár",
+        "PartnerKulcs": "Fg-Wraps Kft. / KÖRÖS Ételbár (9021 - KÖRÖS Ételbár HU 9021 Győr, Tihanyi Árpád utca 29.)",
+        "Megj": "",
+        "Tetel": "NAN",
+        "Db": 1.0,
+        "Kg": 0.0
+    }
+]

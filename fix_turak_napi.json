@@ -1,25 +1,59 @@
 {
-    "Minden h\u00e9ten": {
-        "H\u00e9tf\u0151": {},
+    "Minden héten": {
+        "Hétfő": {},
         "Kedd": {
-            "Budapest - Buda": [
-                "Ag\u00e1rdy-mentor Kft. (6085 - SOF\u00d6R CS\u00c1RDA HU 6085 F\u00fcl\u00f6psz\u00e1ll\u00e1s, H\u00e1rmas puszta 9.)",
-                "AdReTu Kft. / Katedr\u00e1lis \u00c9tterem \u00e9s K\u00e1v\u00e9z\u00f3 (6720 - Katedr\u00e1lis \u00c9tterem \u00e9s K\u00e1v\u00e9z\u00f3 HU 6720 Szeged, D\u00f3m t\u00e9r 16.)",
-                "\u00c1d\u00e1m - Go Kft. (2060 - Korona \u00c9tterem Pizzafal\u00f3 Pizz\u00e9ria HU 2060 Bicske, Szent Istv\u00e1n \u00fat 16)",
-                "Ambuya Kft./ East Port \u00e9tterem (1191 - East Port \u00c9tterem HU 1191 Budapest, \u00dcll\u0151i \u00fat 201.)",
-                "Apraja-Falva \u00d3voda \u00e9s B\u00f6lcs\u0151de (6795 - \u00d3voda HU 6795 Bord\u00e1ny, R\u00e1k\u00f3czi utca 32-)"
-            ],
-            "Bp.Belv\u00e1ros P\u00e1ratlan": [
-                "Alice World-ker Kft. (6400 - Monkey \u00c9telb\u00e1r HU 6400 Kiskunhalas, Gy\u00f6ngyvir\u00e1g utca 30.)",
+            "Bp.Belváros Páratlan": [
+                "Alice World-ker Kft. (6400 - Monkey Ételbár HU 6400 Kiskunhalas, Gyöngyvirág utca 30.)",
                 "AdReTu Kft. / Hotel Geradus (6728 - Hotel Geradus HU 6728 Szeged, Dorozsmai 2-)",
-                "Agro-world-hungary Kft. (5465 - Elizabeth \u00c9tterem HU 5465 Cserkesz\u0151l\u0151, F\u00fcrd\u0151 utca 616/)",
-                "Alm\u00e1si L\u00e1ngos Kft. (2545 - Alm\u00e1s L\u00e1ngos HU 2545 Dunaalm\u00e1s, \u00dajtelep utca 45.)",
-                "AmRest Kft. / KFC V\u00e1rpalota (8100 - KFC V\u00e1rpalota HU 8100 V\u00e1rpalota, Feh\u00e9rv\u00e1ri \u00fat 19.)",
-                "ARANYK\u00c9Z KFT (1046 - Aranytall\u00e9r \u00c9tterem HU 1046 Budapest, Hajl\u00f3 u. 42.)"
+                "Agro-world-hungary Kft. (5465 - Elizabeth Étterem HU 5465 Cserkeszőlő, Fürdő utca 616/)",
+                "Almási Lángos Kft. (2545 - Almás Lángos HU 2545 Dunaalmás, Újtelep utca 45.)",
+                "AmRest Kft. / KFC Várpalota (8100 - KFC Várpalota HU 8100 Várpalota, Fehérvári út 19.)",
+                "ARANYKÉZ KFT (1046 - Aranytallér Étterem HU 1046 Budapest, Hajló u. 42.)"
+            ]
+        },
+        "Szerda": {
+            "Balaton Dél": [
+                "ABI HUNGARY Kft. (2030 - Vadász Pizzéria HU 2030 Érd, Bajcsy-Zsilinszky út 121)",
+                "Agárdy-mentor Kft. (6085 - SOFÖR CSÁRDA HU 6085 Fülöpszállás, Hármas puszta 9.)",
+                "Alice World-ker Kft. (6400 - Monkey Ételbár HU 6400 Kiskunhalas, Gyöngyvirág utca 30.)",
+                "Amily Senairo Kft (1122 - Amily Senairo Kft HU 1122 Budapest, Krisztina körút 2-)",
+                "Andazit Kereskedelmi és Szolgáltató Bt. / Büfé Tószeg (5091 - Büfé Tószeg HU 5091 Tószeg, Parkoló tér 1.)",
+                "Aquaticum Debrecen Kft./ Hotel Aquaticum (4032 - Aquaticium Hotel HU 4032 Debrecen, Nagyerdei park 1.)"
+            ],
+            "Budapest és Üllői út": [
+                "AdReTu Kft. / Hotel Geradus (6728 - Hotel Geradus HU 6728 Szeged, Dorozsmai 2-)",
+                "Agro-world-hungary Kft. (5465 - Elizabeth Étterem HU 5465 Cserkeszőlő, Fürdő utca 616/)",
+                "ATS-GASTRO HUNGARY Kft. (7100 - Aranykulacs Kisvendéglő HU 7100 Szekszárd, Nefelejcs köz 653.)",
+                "Antalfi Team Kft. (2700 - EURO PETROL Cegléd, Külső Kátai HU 2700 Cegléd, Ipari park 1.)",
+                "Annahegyi-Restaurant Kft./ ANNAHEGYI Restaurant Pihenő Petőfiszállás - 121 km (6113 - Annavölgyi Étterem HU 6113 Petőfiszállás, M5 a)",
+                "ATAMEL BT (1078 - Don Corleone HU 1078 Budapest, Nefelejcs utca 27.)"
+            ],
+            "Balton Nyugat - Győr": [
+                "Barta László (6750 - Algyői Halászcsárda HU 6750 Algyő, Vásárhelyi út 53.)",
+                "Bartók Tamás EV. (3213 - Corner Pizza HU 3213 Atkár, Széchenyi István út 1.)",
+                "BEM 15 Kft. (4026 - Calico Jack Pub HU 4026 Debrecen, Bem tér 15.)",
+                "Benedek Szabolcs e.v. (3200 - OBI Terasz Gyöngyös HU 3200 Gyöngyös, Juhász Gyula utca 8.)",
+                "Bertána Bt. (7953 - KIrályi Pokol Konyha HU 7953 Királyegyháza, Cementgyár Hrsz. 041/)"
+            ]
+        },
+        "Csütörtök": {
+            "Békéscsaba Páratlan": [
+                "Csaplár Sándorné (6000 - CSAPLÁR VENDÉGLŐ HU 6000 Kecskemét, Vacsi köz 21.)",
+                "Dudás András e.v. (6000 - AFIT Büfé HU 6000 Kecskemét, Mindszenti krt. 30.)",
+                "Epic Kebab Kft. (6000 - Nagymama Konyhája HU 6000 Kecskemét, Kossuth 6-)",
+                "EQUITA Kft. (6000 - Olivolá Étterem Kecskemét HU 6000 Kecskemét, Rákóczi út 26.)",
+                "Greenfield-Credit Kft. / Trója Ételbár Kölcsey (6720 - Trója Ételbár Kölcsey HU 6720 Szeged, Kölcsey utca 4.)",
+                "GYEVITUR Nonprofit Kft. / Fehér Ignác Általános Iskola (6750 - Fehér Ignác Általános Iskola HU 6750 Algyő, Sport utca 5.)",
+                "Eatrend Kft. / 41. Főzőkonyha Makó (6900 - 41. főzőkonyha Makó HU 6900 Makó, Posta utca 4-)",
+                "M Club Kft. (1116 - Vásárcsarnok Faloda HU 1116 Budapest, Kőrösy József 7-)",
+                "MA + AN Bt. / El Bandi Dobó u. (6000 - El Bandi Dobó u. HU 6000 Kecskemét, Dobó István krt. 1.)",
+                "Makó Város Önkormányzata / Kozmutza Flóra Ált.Isk. (6900 - Kozmutza Flóra Általános Iskola HU 6900 Makó, Vásárhelyi u. 1-)",
+                "GYEVITUR Nonprofit Kft. / Levendula Hotel (6750 - Levendula Hotel HU 6750 Algyő, Téglás utca 151.)",
+                "Koczkásné Kovács Andrea e.v./ Andi Csárda (6931 - Andi Csárda HU 6931 Apátfalva, Széchenyi utca 96)"
             ]
         }
     },
-    "P\u00e1ros h\u00e9t": {
-        "H\u00e9tf\u0151": {}
+    "Páros hét": {
+        "Hétfő": {}
     }
 }

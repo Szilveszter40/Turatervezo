@@ -7,13 +7,22 @@ import io
 from PyQt6.QtWidgets import (QPushButton, QDialog, QVBoxLayout, QHBoxLayout, 
                              QListWidget, QLabel, QWidget, QProgressBar, QMessageBox, QComboBox)
 from PyQt6.QtCore import Qt, QTimer, QThread, pyqtSignal
-from PyQt6.QtWebEngineWidgets import QWebEngineView
 from geopy.geocoders import Photon
 
 # --- 1. BELSŐ TÉRKÉP MEGJELENÍTŐ ABLAK ---
 class TerkepAblak(QDialog):
     def __init__(self, html_content, parent=None):
         super().__init__(parent)
+        
+        # --- KRITIKUS JAVÍTÁS: Késleltetett import ---
+        # Csak itt, az ablak létrehozásakor importáljuk a böngészőmotort.
+        # Ez megakadályozza az OpenGL hibaüzenetet a főprogram indításakor.
+        try:
+            from PyQt6.QtWebEngineWidgets import QWebEngineView
+        except ImportError:
+            QMessageBox.critical(self, "Hiba", "A PyQt6-WebEngine nincs telepítve!")
+            return
+
         self.setWindowTitle("Útvonal Terv - Belső Nézet")
         self.setMinimumSize(1100, 800)
         self.setWindowFlags(self.windowFlags() | Qt.WindowType.Window)
@@ -21,7 +30,7 @@ class TerkepAblak(QDialog):
         layout = QVBoxLayout(self)
         self.browser = QWebEngineView()
         
-        # KIZÁRÓLAG MEMÓRIÁBÓL TÖLTÜNK
+        # HTML tartalom betöltése a memóriából
         self.browser.setHtml(html_content)
         
         layout.addWidget(self.browser)
@@ -63,6 +72,7 @@ class ModulInit:
         self.worker = None
         self.terkep_megjelenito = None 
         
+        # Regisztráció az aktív modulok közé
         if not hasattr(self.main, 'active_modules'):
             self.main.active_modules = []
         self.main.active_modules.append(self)
@@ -72,15 +82,18 @@ class ModulInit:
             "Kecskemét": [46.9075, 19.6917],
             "Győr": [47.6875, 17.6504]
         }
+        # Időzített gomb-kapcsolódás a többi modul után
         QTimer.singleShot(1500, self.init_gomb)
 
     def init_gomb(self):
+        # Megpróbálunk a fix_turak által kezelt közös gombhoz csatlakozni
         if hasattr(self.main, 'terkep_btn_obj'):
             try: self.main.terkep_btn_obj.clicked.disconnect()
             except: pass
             self.main.terkep_btn_obj.clicked.connect(self.valaszto_ablak)
             self.main.terkep_btn_obj.setText("🗺️ TÉRKÉP")
         else:
+            # Ha nincs közös gomb, létrehozunk egyet a konténerbe
             self.main.terkep_btn_obj = QPushButton("🗺️ TÉRKÉP")
             self.main.terkep_btn_obj.setStyleSheet("background-color: #3498db; color: white; font-weight: bold;")
             self.main.terkep_btn_obj.clicked.connect(self.valaszto_ablak)
@@ -168,11 +181,12 @@ class ModulInit:
             plugins.AntPath(locations=points, color="blue", pulse_color="red", weight=5, opacity=0.6).add_to(m)
             m.fit_bounds(points)
             
-            # --- NINCS FÁJLMENTÉS, NINCS WEBBROWSER ---
+            # Mentés memóriába
             out = io.BytesIO()
             m.save(out, close_file=False)
             html_content = out.getvalue().decode()
             
+            # Megjelenítés a belső ablakban
             self.terkep_megjelenito = TerkepAblak(html_content, self.main)
             self.terkep_megjelenito.show()
         else:

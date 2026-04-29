@@ -1,0 +1,4712 @@
+[
+    {
+        "nev": "Ismeretlen",
+        "cim": "",
+        "tipus": "\u00c1RU",
+        "suly": "0"
+    },
+    {
+        "nev": "Zsoli-T\u00e1r 2012 Kft. / Szabad Waldorf \u00c1lt.Isk.",
+        "cim": "Szabad Waldorf \u00c1ltal\u00e1nos Iskola. HU 6723 Szeged, Kolozsv\u00e1ri t\u00e9r 1-2.      \n2025.02.17-\u00e9n z\u00e1rva s\u00edsz\u00fcnet miatt z\u00e1rva lesznek, nem k\u00e9rnek semmit, 2025.02.24-\u00e9n m\u00e1r nyitva vannak. - Szabina",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Kism\u00e9hecske Vend\u00e9gl\u00e1t\u00f3 \u00e9s Szolg\u00e1ltat\u00f3 Kft.",
+        "cim": "M\u00e9hecske Kif\u0151zde HU 2700 Cegl\u00e9d, Dessewffy utca 86.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Ag\u00e1rdy-mentor Kft.",
+        "cim": "SOF\u00d6R CS\u00c1RDA HU 6085 F\u00fcl\u00f6psz\u00e1ll\u00e1s, H\u00e1rmas puszta 9.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Vad\u00e1szcs\u00e1rda-2000 Bt.",
+        "cim": "Vad\u00e1sz Cs\u00e1rda HU 8782 Zalacs\u00e1ny, Arany J\u00e1nos u. 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Barlo Gastro Kft.",
+        "cim": "Kakas \u00c9tterem Gy\u0151r HU 9028 Gy\u0151r, Szent Imre \u00fat 105.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Les\u0151harcsa Kft.",
+        "cim": "\u00d6reg K\u0151r\u00f6ssy Hal\u00e1szcs\u00e1rda HU 6723 Szeged, S\u00e1rga \u00fcd\u00fcl\u0151telep 262.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Bicz\u00f3 Food Kft.",
+        "cim": "Bicz\u00f3 Cs\u00e1rda & Lovaspanzi\u00f3 HU 6085 F\u00fcl\u00f6psz\u00e1ll\u00e1s, H\u00e1rmaspuszta tanya 11.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Prizma-Junior Zrt. / 84. \u00dczem Ajka",
+        "cim": "84. \u00fczem HU 8400 Ajka, Kor\u00e1nyi Frigyes utca 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "MenDan Hotel Kft",
+        "cim": "MenDan Hotel HU 8749 Zalakaros, Gy\u00f3gyf\u00fcrd\u0151 t\u00e9r 8.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Investergom Kft.",
+        "cim": "\u00d6reghal\u00e1sz \u00c9tterem T\u00e1t HU 2534 T\u00e1t, F\u0151 \u00fat 2",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "STOP K\u00c1V\u00c9Z\u00d3 Kft.",
+        "cim": "S\u00fcll\u0151h\u00e1z Hals\u00fct\u00f6de HU 9028 Gy\u0151r, Szent Imre \u00fat 107.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Profit-Optima Kft",
+        "cim": "John Bull Pub HU 6720 Szeged, Dugonics t\u00e9r 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Gasztr\u00f3na 2001. Bt./ D\u00e9lib\u00e1b K\u00e1v\u00e9z\u00f3",
+        "cim": "D\u00e9lib\u00e1b K\u00e1v\u00e9z\u00f3 HU 2700 Cegl\u00e9d, Szabads\u00e1g t\u00e9r 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Kurta Food Kft.",
+        "cim": "Kurta Kocsma HU 6320 Solt, Kecskem\u00e9ti 72",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "B\u00d6D\u00d6R Kft.",
+        "cim": "V\u00e1ndor Vigad\u00f3 Fogad\u00f3 Panzi\u00f3 HU 8900 Zalaegerszeg, Egerszeghegyi utca 112    \n[Nyitva tart\u00e1s: 7:00-20:00]",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Kalm\u00e1r Zsanett",
+        "cim": "HU 8400 Ajka, Szabads\u00e1g t\u00e9r 6. Fszt. 3",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Malomv\u00f6lgy Patak kft / Malomv\u00f6lgy B\u00fcf\u00e9-Falatoz\u00f3",
+        "cim": "HU 2834 Tardos, Malomv\u00f6lgy",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Marton Zsuzsa",
+        "cim": "Kalapos Vend\u00e9gl\u0151 HU 9028 Gy\u0151r, J\u00f3zsef Attila  utca 15/A..",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "HOFFMANN SERVICE Kft.",
+        "cim": "HU 6320 Solt, F\u00f6ldv\u00e1ri \u00fat 108-110.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Collector Gastro Kft",
+        "cim": "Trattoria iL Divo HU 6720 Szeged, K\u00f6lcsey u. 8/A",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "GYURI-SZ\u00c1LL\u00c1S Kft.",
+        "cim": "Gyuri Cs\u00e1rda \u00e9s Panzi\u00f3 HU 8900 Zalaegerszeg, J\u00e1nkahegyi utca 27.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "LA TOSCANA Kft.",
+        "cim": "La Toscana Bisztr\u00f3 HU 2700 Cegl\u00e9d, Kossuth 8",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "\u00dajz\u00f6ldfa Vend\u00e9gl\u00e1t\u00f3 Kft.",
+        "cim": "Z\u00f6ldfa \u00c9tterem HU 9024 Gy\u0151r, Hunyadi utca 2.    \nReggel 7 \u00f3r\u00e1t\u00f3l d\u00e9lut\u00e1n 14 \u00f3r\u00e1ig lehet elsz\u00e1ll\u00edtani",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Amrest Vend\u00e9gl\u00e1t\u00f3 Kft. / KFC Ajka",
+        "cim": "KFC Ajka HU 8400 Ajka, F\u0151 \u00fat 66.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Bapetta 21 Kft.",
+        "cim": "Rocco Gyrosb\u00e1r HU 2700 Cegl\u00e9d, \u00c1rp\u00e1d utca 31.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "F\u00f6ldv\u00e1r Gasztro Kft. / Kele Cs\u00e1rda",
+        "cim": "Kele Cs\u00e1rda HU 7020 Dunaf\u00f6ldv\u00e1r, Paksi utca 68.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Szeged Megyei Jog\u00fa V\u00e1ros \u00d6nkorm\u00e1nyzata ESZI / Ac\u00e9l utcai Bentlak\u00e1sos Int\u00e9zm\u00e9ny",
+        "cim": "Ac\u00e9l utcai Bentlak\u00e1sos Int\u00e9zm\u00e9ny HU 6724 Szeged, Ac\u00e9l utca 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "MOLNI-ADRESZ Kft",
+        "cim": "Napf\u00e9ny \u00c9tterem Zalaegerszeg HU 8900 Zalaegerszeg, Pusk\u00e1s utca 1-3",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Alm\u00e1si L\u00e1ngos Kft.",
+        "cim": "Alm\u00e1s L\u00e1ngos HU 2545 Dunaalm\u00e1s, \u00dajtelep utca 45.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Krist\u00e1ly \u00c9tterem 2008. Kereskedelmi \u00e9s Szolg\u00e1ltat\u00f3 Kft.",
+        "cim": "Krist\u00e1ly \u00c9tterem HU 9024 Gy\u0151r, Bart\u00f3k B\u00e9la u. 9.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Arrabona Zrt. / P\u00e1pa, N\u00e1tus 30. Konyha",
+        "cim": "P\u00e1pa N\u00e1tus 30. Konyha HU 8500 P\u00e1pa, M\u00e1rcius 15. t\u00e9r 14.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "F\u00f6ldv\u00e1r Gasztro Kft. / Aranyf\u00e1c\u00e1n \u00c9tterem",
+        "cim": "Aranyf\u00e1c\u00e1n \u00c9tterem HU 7020 Dunaf\u00f6ldv\u00e1r, Paksi utca 113.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Szeged Megyei Jog\u00fa V\u00e1ros \u00d6nkorm\u00e1nyzata ESZI  / K\u00e1lv\u00e1ria 45. Bentlak\u00e1sos Int\u00e9zm\u00e9ny",
+        "cim": "K\u00e1lv\u00e1ria 45. Bentlak\u00e1sos Int\u00e9zm\u00e9ny HU 6724 Szeged, K\u00e1lv\u00e1ria sug\u00e1r\u00fat 45.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "\u0150ri Tours Idegenforgalmi \u00e9s Kereskedelmi Kft.",
+        "cim": "Bogn\u00e1r \u00c9tterem HU 9941 \u0150riszentp\u00e9ter, Kov\u00e1csszer utca 96.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "NAPF\u00c9NYES M\u00c1JUS Kft.",
+        "cim": "K\u00ednai HU 2700 Cegl\u00e9d, Pesti 27",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "V.i.c. Kereskedelmi \u00e9s Szolg\u00e1ltat\u00f3 Kft.",
+        "cim": "Amstel Hatty\u00fa Fogad\u00f3 HU 9025 Gy\u0151r, T\u00f6lt\u00e9sszer \u00fat 18.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Eatrend Arrabona Zrt. / P\u00e1pa \u00d3voda 32. Konyha",
+        "cim": "P\u00e1pa \u00d3voda 32. Konyha HU 8500 P\u00e1pa, F\u00e1y Andr\u00e1s ltp.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Kiad-food Vend\u00e9gl\u00e1t\u00f3 \u00e9s Szolg\u00e1ltat\u00f3 Kft./  Vikt\u00f3ria \u00d6nkiszolg\u00e1l\u00f3 \u00e9tterem",
+        "cim": "Vikt\u00f3ria \u00d6nkiszolg\u00e1l\u00f3 \u00e9tterem HU 8500 P\u00e1pa, V\u00edzm\u0171 utca 7. C.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Eatrend Kft. / Cegl\u00e9d 5. F\u0151z\u0151konyha",
+        "cim": "Cegl\u00e9d 5. F\u0151z\u0151konyha HU 2700 Cegl\u00e9d, J\u00e1szber\u00e9nyi \u00fat 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Szeged Megyei Jog\u00fa V\u00e1ros \u00d6nkorm\u00e1nyzata ESZI  / K\u00e1lv\u00e1ria 47. Bentlak\u00e1sos Int\u00e9zm\u00e9ny",
+        "cim": "K\u00e1lv\u00e1ria 47. Bentlak\u00e1sos Int\u00e9zm\u00e9ny HU 6724 Szeged, K\u00e1lv\u00e1ria sug\u00e1r\u00fat 47.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Kft. / S\u00e1rbog\u00e1rd",
+        "cim": "S\u00e1rbog\u00e1rd 27. F\u0151z\u0151konyha HU 7000 S\u00e1rbog\u00e1rd, Templom k\u00f6z 9.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "T\u00f3th \u00e9s T\u00f3th Vend\u00e9gl\u00e1t\u00f3 Bt.",
+        "cim": "V\u00c9NUSZ Vend\u00e9gl\u0151 HU 8992 Bagod, Sport utca 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Eatrend Arrabona Zrt. / Gy\u0151r,  V\u00e1ci Mih\u00e1ly 22. Konyha",
+        "cim": "V\u00e1ci Mih\u00e1ly 22. Konyha HU 9024 Gy\u0151r, V\u00e1ci Mih\u00e1ly \u00fat 3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Tavaszi Malom Kft./ K\u00cdNAI Tesco",
+        "cim": "K\u00ednai Tesco Cegl\u00e9d HU 2700 Cegl\u00e9d, Malomt\u00f3 sz\u00e9l utca 30.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "KACZ-TABA Kft.",
+        "cim": "Cosa Nostra Pizz\u00e9ria (TESCO) HU 7000 S\u00e1rbog\u00e1rd, Ady Endre \u00fat 19.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "S\u00c1NDOR & S\u00c1NDOR Kft.",
+        "cim": "Gambrinus \u00c9tterem HU 8500 P\u00e1pa, \u00c1rok utca 20.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Szeged Megyei Jog\u00fa V\u00e1ros \u00d6nkorm\u00e1nyzata ESZI  / D\u00e1ni utcai Id\u0151sek Nappali Ell\u00e1t\u00e1sa",
+        "cim": "D\u00e1ni utcai Id\u0151sek Nappali Ell\u00e1t\u00e1sa HU 6724 Szeged, D\u00e1ni J\u00e1nos utca 2-4.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Barab\u00e1s Csaba e.v. / Salla Gourmet \u00c9tterem",
+        "cim": "Salla Gourmet \u00c9tterem HU 8999 Zalal\u00f6v\u0151, Kossuth Lajos utca 8.    \n[Nyitva tart\u00e1s: H-V: 8.00-]",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Eatrend Arrabona Zrt. / Gy\u0151r, Kod\u00e1ly Zolt\u00e1n 20. Konyha",
+        "cim": "Kod\u00e1ly Zolt\u00e1n 20. Konyha HU 9024 Gy\u0151r, T\u00e1rogat\u00f3 utca 18.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "BIRUSZ KFT",
+        "cim": "Kiss \u00c9tterem HU 8591 P\u00e1pa, P\u00e1pai \u00fat 21.      \nNyitvatart\u00e1s: 7-11-ig",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Antalfi Team Kft.",
+        "cim": "EURO PETROL Cegl\u00e9d, K\u00fcls\u0151 K\u00e1tai HU 2700 Cegl\u00e9d, Ipari park 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Cserg\u0151 Adorj\u00e1n e.v./ Alfa Gyros Brand Pizza",
+        "cim": "Alfa Gyros Brand Pizza HU 2400 Duna\u00fajv\u00e1ros, Lobog\u00f3 \u00fat 1. a.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Famous Restaurants Hungary Kft./ Famous Steakhouse",
+        "cim": "Famous Steakhouse HU 6720 Szeged, Kelemen L\u00e1szl\u00f3  3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Simonics G\u00e9z\u00e1n\u00e9",
+        "cim": "Aut\u00f3s \u00c9telb\u00e1r \u00e9s Panzi\u00f3 Ozm\u00e1nb\u00fck HU 8998 Ozm\u00e1nb\u00fck, Ter\u00e9z utca 41.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Arrabona Zrt. / Gy\u0151r, Szabadhegyi 18. Konyha",
+        "cim": "Szabadhegyi 18. Konyha HU 9000 Gy\u0151r, Konini \u00fat 2-4",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Szab\u00f3 Antal S\u00e1ndorn\u00e9",
+        "cim": "R\u00f6fi Cs\u00e1rda HU 2740 Abony, T\u00e1borhegy d\u0171l\u0151 69/b",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "GASTROYAL Kft.",
+        "cim": "DunaGy\u00f6ngye Hal\u00e1szCs\u00e1rda HU 2400 Duna\u00fajv\u00e1ros, Szigeti \u00fat 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Gemma Fejleszt\u0151 Nevel\u00e9s-Oktat\u00e1st V\u00e9gz\u0151 Iskola",
+        "cim": "GEMMA Szoci\u00e1lis K\u00f6zpont Bakay HU 6724 Szeged, Bakay N\u00e1ndor utca 50.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Marcal Vend\u00e9gl\u00e1t\u00f3 Bt.",
+        "cim": "Marcall \u00c9tterem Gy\u0151r HU 9024 Gy\u0151r, D\u00e9ry T. utca 11/A.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Szvoboda L\u00e1szl\u00f3 J\u00e1nos",
+        "cim": "M\u00e1jus \u00c9tterem \u00e9s Rendezv\u00e9nyhelysz\u00edn HU 9700 Szombathely, Szent Istv\u00e1n park 9.    \n[Nyitva tart\u00e1s: 8.00-20.00]",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Hunguest Sz\u00e1ll\u00e1shelyszolg\u00e1ltat\u00f3 Zrt. / Hotel Pelion",
+        "cim": "Hotel Pelion HU 8300 Tapolca, K\u00f6zt\u00e1rsas\u00e1g t\u00e9r 10.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Vasi Gastro-Food Kft.",
+        "cim": "N\u00e1dasdy \u00c9tterem S\u00e1rv\u00e1r HU 9600 S\u00e1rv\u00e1r, N\u00e1dasdy Ferenc \u00fat 64.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Royal-Food Kft.",
+        "cim": "Royal Pizz\u00e9ria Cegl\u00e9d HU 2700 Cegl\u00e9d, K\u0151r\u00f6si \u00fat 61",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "K\u00e1d\u00e1r-Gastro Kft.",
+        "cim": "Legend\u00e1s Falatoz\u00f3 HU 2400 Duna\u00fajv\u00e1ros, B\u00e9ke t\u00e9r 3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "F\u00e9nysug\u00e1r Katolikus \u00d3voda / H\u00f3bi\u00e1rt Basa u.",
+        "cim": "\u00d3voda HU 6723 Szeged, H\u00f3bi\u00e1rt Basa u. 30.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "AmRest Kft. / KFC V\u00e1rpalota",
+        "cim": "KFC V\u00e1rpalota HU 8100 V\u00e1rpalota, Feh\u00e9rv\u00e1ri \u00fat 19.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Arrabona Zrt. / Gy\u0151r, Kr\u00fady 24. Konyha",
+        "cim": "Kr\u00fady 24. Konyha HU 9024 Gy\u0151r, \u00d6rk\u00e9ny Istv\u00e1n utca 10.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "PITYER-CS\u00c1RDA Kft.",
+        "cim": "Kis Pityer Cs\u00e1rda HU 9700 Szombathely, Rumi \u00fat 20.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Kapor \u00e9s Fia Kft.",
+        "cim": "Marica K\u00e1v\u00e9h\u00e1z HU 8200 Veszpr\u00e9m, Kossuth Lajos utca 5.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Kalocsa J\u00f3zsefn\u00e9 E.V.",
+        "cim": "Kalocs\u00e1\u00e9k Malom HU 2700 Cegl\u00e9d, K\u0151r\u00f6si 36",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Kispad Kft./ Pr\u00e9zli Konyha",
+        "cim": "Pr\u00e9zli Konyha HU 8000 Sz\u00e9kesfeh\u00e9rv\u00e1r, Nagyszombati 66.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Napsug\u00e1r Integr\u00e1lt Szoci\u00e1lis Int\u00e9zm\u00e9ny Csongr\u00e1d-Csan\u00e1d V\u00e1rmegye",
+        "cim": "Sz\u0151ke Tisza Otthon Szeged HU 6726 Szeged, Toront\u00e1l 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Arrabona Zrt. / Gy\u0151r, Kossuth Zsuzsa 26. Konyha",
+        "cim": "Kossuth Zsuzsa 26. Konyha HU 9024 Gy\u0151r, Szigethy Attila utca 65-67.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Hunguest Sz\u00e1ll\u00e1shelyszolg\u00e1ltat\u00f3 Zrt. / Hotel Aquarell",
+        "cim": "Hotel Aquarell HU 2700 Cegl\u00e9d, F\u00fcrd\u0151 \u00fat 24.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Prizma Food Kft. / 95. \u00dczem H\u00e9v\u00edz",
+        "cim": "95 \u00fczem HU 8380 H\u00e9v\u00edz, Ady Endre 31",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "NB-HAGA Kft. / Fanatic \u00c9telfut\u00e1r",
+        "cim": "Fanatic \u00c9telfut\u00e1r HU 8200 Veszpr\u00e9m, L\u0151por 7      \n#Van vissza kb.12 db kann\u00e1ja!!!!#",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "NAGY J\u00c1NOS e.v. / PLUT\u00d3 \u00d6nkiszolg\u00e1l\u00f3 \u00c9tterem",
+        "cim": "Pl\u00fat\u00f3 HU 8000 Sz\u00e9kesfeh\u00e9rv\u00e1r, Sarl\u00f3 utca 1",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Zubor P\u00e9ter",
+        "cim": "H\u00e1zias Kif\u0151zde HU 6791 Szeged, Tas utca 32.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Eatrend Arrabona Zrt. / Gy\u0151r, Kov\u00e1cs Margit 16. Konyha",
+        "cim": "Kov\u00e1cs Margit 16. Konyha HU 9024 Gy\u0151r, R\u00e9pce utca 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "ZiRoBeck11 Kft.",
+        "cim": "Ap\u00e1ti Bisztro HU 2712 Ny\u00e1rsap\u00e1t, J\u00f3zsef Attila \u00fat 12",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Prizma Food Kft. / 96. \u00dczem H\u00e9v\u00edz",
+        "cim": "96 \u00fczem HU 8380 H\u00e9v\u00edz, Kossuth Lajos 7/a",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "NB-HAGA Kft. / Fanatic Men\u00fcb\u00e1r",
+        "cim": "Fanatic Men\u00fcb\u00e1r HU 8200 Veszpr\u00e9m, \u00d3v\u00e1ri Ferenc u. 3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Collector Express Bt.",
+        "cim": "Borosty\u00e1n kif\u0151zde HU 6791 , Dorozsmai \u00fat 185.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "\u00d6RD\u00d6GKONYHA Kft.",
+        "cim": "V\u00e1rosh\u00e1z \u00c9tterem HU 9021 Gy\u0151r, V\u00e1rosh\u00e1z t\u00e9r 1",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "K-FOODS Kft.",
+        "cim": "K-foods Konyha HU 8000 Sz\u00e9kesfeh\u00e9rv\u00e1r, Ber\u00e9nyi 104",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "D\u00c9REX Kft.",
+        "cim": "Panor\u00e1ma Snack HU 8200 Veszpr\u00e9m, Cserh\u00e1t lak\u00f3telep 6",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Hunguest Sz\u00e1ll\u00e1shelyszolg\u00e1ltat\u00f3 Zrt. / Hotel Panor\u00e1ma",
+        "cim": "Hotel Panor\u00e1ma HU 8380 H\u00e9v\u00edz, Pet\u0151fi S\u00e1ndor utca 9.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "KEBAB \u00c9S M\u00c1S Kft./ Sempre \u00c9tterem",
+        "cim": "Sempre \u00c9tterem HU 8000 Sz\u00e9kesfeh\u00e9rv\u00e1r, Bregy\u00f3 k\u00f6z 6.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Bali Akt\u00edv Kft. / Bali 23 \u00c9tterem",
+        "cim": "Bali 23 \u00c9tterem HU 6794 \u00dcll\u00e9s, Dorozsmai \u00fat 23.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "\u00d6RD\u00d6GKONYHA Kft. / Audi Iskola",
+        "cim": "Audi Iskola HU 9026 Gy\u0151r, B\u00e1csai utca 55",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Abonyi Ildik\u00f3",
+        "cim": "Family Gyross HU 2750 Nagyk\u0151r\u00f6s, Cegl\u00e9di \u00fat 5.    \n#!!!!10-T\u0150L VANNAK OTT!!!!!",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Vo-pet Kft.",
+        "cim": "Sir\u00e1ly Pizz\u00e9ria \u00c9tterem HU 8200 Veszpr\u00e9m, Endr\u0151di utca 67.    \nNyitvatart\u00e1s: 10-18-ig\nNyitvatart\u00e1s: 10-18-ig",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Hunguest Sz\u00e1ll\u00e1shelyszolg\u00e1ltat\u00f3 Zrt. / Hotel Helios",
+        "cim": "Hotel Helios HU 8380 H\u00e9v\u00edz, V\u00f6r\u00f6smarty utca 91.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Komj\u00e1ti Zsuzsanna e.v./ Veg\u00e1n Bistro",
+        "cim": "Veg\u00e1n Bistro Sz\u00e9kesfeh\u00e9rv\u00e1r HU 8000 Sz\u00e9kesfeh\u00e9rv\u00e1r, J\u00f3kai utca 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Kft. / Nagyk\u0151r\u00f6s Iskola 29. f\u0151z\u0151konyha",
+        "cim": "29. F\u0151z\u0151konyha HU 2750 Nagyk\u0151r\u00f6s, Vadas utca 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Bali Akt\u00edv Kft. / Elixir \u00c9tterem",
+        "cim": "Elixir \u00c9tterem HU 6782 M\u00f3rahalom, Milleniumi  4",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Arrabona Zrt. / Gy\u0151r 4. Konyha",
+        "cim": "Gy\u0151r 4. B\u00e1zis konyha HU 9025 Gy\u0151r, Bercs\u00e9nyi Liget  24.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "\u00daj Pajtakert Kereskedelmi \u00e9s Szolg\u00e1ltat\u00f3 Kft.",
+        "cim": "Hotel Historia Malomkert - Veszpr\u00e9m HU 8200 Veszpr\u00e9m, Fenyves u. 15.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "SKULT\u00c9TI TEAM Kft.",
+        "cim": "Chicago Pizz\u00e9ria HU 2740 Abony, Bolyai J\u00e1nos 16",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "T-FOOD Kft.",
+        "cim": "Varga Cs\u00e1rda HU 6782 M\u00f3rahalom, Szegedi \u00fat 1/C.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "LANZS 2013 Kft. /Bora Bora Lounge \u00c9tterem \u00e9s K\u00e1v\u00e9h\u00e1z Duna\u00fajv\u00e1ros",
+        "cim": "Bora Bora HU 2400 Duna\u00fajv\u00e1ros, Keny\u00e9rgy\u00e1ri \u00fat 2",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "EL-PATIO Kft.",
+        "cim": "Patio \u00c9tterem HU 9021 Gy\u0151r, Baross G\u00e1bor \u00fat 11 -13.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "TAMARI HOST Kft.",
+        "cim": "Barna B\u00e1r HU 2745 K\u0151r\u00f6stet\u00e9tlen, Kocs\u00e9ri \u00fat 15.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "S I 55 Kereskedelmi \u00e9s Szolg\u00e1ltat\u00f3 Kft./ Hangvilla",
+        "cim": "Hangvilla Multifunkcion\u00e1lis K\u00f6z\u00f6ss\u00e9gi T\u00e9r HU 8200 Veszpr\u00e9m, Brusznyai \u00c1rp\u00e1d utca 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Magosi Tibor",
+        "cim": "Szoki Pizz\u00e9ria HU 6782 M\u00f3rahalom, Sz\u0151l\u0151 utca 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Pizza Arrabona Kft. / Dobos Burger & Chicken",
+        "cim": "Dobos Burger & Chicken HU 9022 Gy\u0151r, Vas Gereben  6",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Konkoly M\u00e1ria Eszter e.v./ Marika Konyh\u00e1ja",
+        "cim": "Marika Konyh\u00e1ja HU 8200 Veszpr\u00e9m, Kossuth Lajos utca 6.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "D\u00e9l-alf\u00f6ldi Kist\u00e9rs\u00e9g T\u00f6bbc\u00e9l\u00fa T\u00e1rsul\u00e1sa Koordin\u00e1ci\u00f3s K\u00f6zpont/ Szatymazi f\u0151z\u0151konyha",
+        "cim": "KOORDIN\u00c1CI\u00d3S K\u00d6ZPONT - Szatymaz HU 6763 Szatymaz, Pet\u0151fi utca 17.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Andazit Kereskedelmi \u00e9s Szolg\u00e1ltat\u00f3 Bt. / B\u00fcf\u00e9 T\u00f3szeg",
+        "cim": "B\u00fcf\u00e9 T\u00f3szeg HU 5091 T\u00f3szeg, Parkol\u00f3 t\u00e9r 1.    \nNyitva tart\u00e1s: 5:00-14:30",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Barta L\u00e1szl\u00f3",
+        "cim": "Algy\u0151i Hal\u00e1szcs\u00e1rda HU 6750 Algy\u0151, V\u00e1s\u00e1rhelyi \u00fat 53.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "ETERNAL GASTRONOMY & TRADING KFT.",
+        "cim": "Ol\u00fcmposz Gyros HU 8200 Veszpr\u00e9m, Tizenh\u00e1romv\u00e1sor t\u00e9r hrsz. 1155",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "EH-60l:1"
+    },
+    {
+        "nev": "Vinye-gasztro Kft. / Napk\u00f6zis Konyha",
+        "cim": "Napk\u00f6zis Konyha HU 8431 Bakonyszentl\u00e1szl\u00f3, Pet\u0151fi utca 5.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "NAHATI Szoci\u00e1lis Sz\u00f6vetkezet",
+        "cim": "J\u00f3bar\u00e1t Vend\u00e9gl\u0151 HU 6792 Zsomb\u00f3, Andr\u00e1ssy \u00fat 71.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "GOLDEN BALL CLUB Kft.",
+        "cim": "Golden Ball Club HU 9021 Gy\u0151r, Szent Istv\u00e1n \u00fat 4",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Vinye-gasztro Kft. / K\u0151pince Fogad\u00f3",
+        "cim": "K\u0151pince Fogad\u00f3 HU 8431 Bakonyszentl\u00e1szl\u00f3, Vinye utca 5    \nIskola Konyha Bakonyszentl\u00e1szl\u00f3 Pet\u0151fi u. 5. 1 hord\u00f3\nK\u0151pince \u00e9tterem Vinye 2 hord\u00f3\nH\u00f3dos\u00e9ri Vad\u00e1szh\u00e1z 1 hord\u00f3\nIskola Konyha Bakonyszentl\u00e1szl\u00f3 Pet\u0151fi u. 5. 1 hord\u00f3\nK\u0151pince \u00e9tterem Vinye 2 hord\u00f3\nH\u00f3dos\u00e9ri Vad\u00e1szh\u00e1z 1 hord\u00f3\nIskola Konyha Bakonyszentl\u00e1szl\u00f3 Pet\u0151fi u. 5. 1 hord\u00f3\nK\u0151pince \u00e9tterem Vinye 2 hord\u00f3\nH\u00f3dos\u00e9ri Vad\u00e1szh\u00e1z 1 hord\u00f3\nIskola Konyha Bakonyszentl\u00e1szl\u00f3 Pet\u0151fi u. 5. 1 hord\u00f3\nK\u0151pince \u00e9tterem Vinye 2 hord\u00f3\nH\u00f3dos\u00e9ri Vad\u00e1szh\u00e1z 1 hord\u00f3",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "\u00d6tt\u00f6m\u00f6s K\u00f6zs\u00e9gi \u00d6nkorm\u00e1nyzat / T\u00e1lal\u00f3 Konyha",
+        "cim": "T\u00e1lal\u00f3 Konyha HU 6784 \u00d6tt\u00f6m\u00f6s, F\u0151 utca 12.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "K\u00e1v\u00e9 B\u00e1r Bt.",
+        "cim": "SZOMSZ\u00c9D B\u00e1r HU 9021 Gy\u0151r, Kisfaludy utca 26.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "\u00d6tt\u00f6m\u00f6s K\u00f6zs\u00e9gi \u00d6nkorm\u00e1nyzat / SZENT \u00c1goston \u00d3voda Konyha",
+        "cim": "\u00d3voda Konyha HU 6784 \u00d6tt\u00f6m\u00f6s, Szabads\u00e1g u. 4-6.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Koronavars\u00e1ny Kft.",
+        "cim": "Korona Vend\u00e9gl\u0151 HU 8438 Veszpr\u00e9mvars\u00e1ny, Kossuth Lajos utca 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "F\u00e9lkrajc\u00e1ros \u00c9tterem \u00e9s F\u0151z\u0151konyha / \u00d3voda",
+        "cim": "\u00d3voda HU 6785 Pusztam\u00e9rges, M\u00f3ra t\u00e9r 4.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "F\u00e9lkrajc\u00e1ros \u00c9tterem \u00e9s F\u0151z\u0151konyha / \u00c1ltal\u00e1nos Iskola",
+        "cim": "\u00c1ltal\u00e1nos Iskola HU 6785 Pusztam\u00e9rges, F\u0151 u. 38.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Ruzsai H\u00e9tsz\u00ednvir\u00e1g \u00d3voda \u00e9s B\u00f6lcs\u0151de / Eb\u00e9dl\u0151",
+        "cim": "\u00d3voda HU 6786 Ruzsa, Alkotm\u00e1ny t\u00e9r 3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Ruzsai H\u00e9tsz\u00ednvir\u00e1g \u00d3voda \u00e9s B\u00f6lcs\u0151de / Konyha",
+        "cim": "\u00d3voda HU 6786 Ruzsa, Szent Istv\u00e1n \u00fat 6",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Apraja-Falva \u00d3voda \u00e9s B\u00f6lcs\u0151de",
+        "cim": "\u00d3voda HU 6795 Bord\u00e1ny, R\u00e1k\u00f3czi utca 32-36.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Zsomb\u00f3i B\u00f3bita B\u00f6lcs\u0151de",
+        "cim": "Zsomb\u00f3i B\u00f3bita B\u00f6lcs\u0151de HU 6792 Zsomb\u00f3, B\u00e9ke  utca 4.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Prizma-Junior Zrt. / 35. \u00dczem Budapest",
+        "cim": "35. \u00fczem HU 1065 Budapest, Hunyadv\u00e1r utca 2-4.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Csengelei Sziv\u00e1rv\u00e1ny \u00d3voda \u00e9s Mini B\u00f6lcs\u0151de",
+        "cim": "Csengelei Sziv\u00e1rv\u00e1ny \u00d3voda \u00e9s Mini B\u00f6lcs\u0151de HU 6765 Csengele, De\u00e1k Ferenc utca 23.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "EZERJ\u00d3 98 Kft.",
+        "cim": "Ezerj\u00f3 Falatoz\u00f3 HU 5300 Karcag, Szent Istv\u00e1n sug\u00e1r\u00fat 6.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "GYULAI KOML\u00d3 Kft.",
+        "cim": "Koml\u00f3 Hotel HU 5700 Gyula, B\u00e9ke sug\u00e1r\u00fat 8.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "KULMAN BT.",
+        "cim": "Mediterr\u00e1n Pizz\u00e9ria HU 6041 Kerekegyh\u00e1za, Arany J\u00e1nos  utca 24.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Szentk\u00fati Dinasztia Kft.",
+        "cim": "N\u00e1das Vend\u00e9gl\u0151 Jakabsz\u00e1ll\u00e1s HU 6078 Jakabsz\u00e1ll\u00e1s, K\u00f6rzet tanya 97/A.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Eatrend Arrabona Zrt. / Csorna 6. konyha",
+        "cim": "Csorna 6. konyha HU 9300 Csorna, \u00c1rp\u00e1d \u00fat 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Prizma-junior Zrt. / \u00d6tv\u00f6s Konyha B\u00e9k\u00e9s",
+        "cim": "\u00d6tv\u00f6s Konyha HU 5630 B\u00e9k\u00e9s, Jantyik M\u00e1ty\u00e1s utca 21-25.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "CORAZZA Kft",
+        "cim": "360 fok Gyors\u00e9tterem - Cora Bev\u00e1s\u00e1rl\u00f3k\u00f6zpont HU 6728 Szeged, Z\u00e1por \u00fat 4.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Szuper-Bowling Kft./ Station Bisztro",
+        "cim": "Station Bisztro HU 4025 Debrecen, Pet\u0151fi 10",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "K\u00e9ri Zolt\u00e1n",
+        "cim": "K\u00e9ri \u00c9tterem HU 6031 Szentkir\u00e1ly, Als\u00f3 tanya 254/A.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "K\u00dcRT\u00d6SI ISTV\u00c1NN\u00c9",
+        "cim": "Jakabsz\u00e1ll\u00e1s L\u00e1ngos HU 6078 Jakabsz\u00e1ll\u00e1s, Ady Endre 26",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Benedek Elek \u00d3voda \u00e9s B\u00f6lcs\u0151de",
+        "cim": "Benede Elek \u00d3voda HU 4211 Ebes, Ebes Ady Endre u. 9-11.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "C-UNIVERZ\u00c1L Kft.",
+        "cim": "C-Univerz\u00e1l ABC HU 6760 Kistelek, Kossuth u. 103.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Dud\u00e1s Andr\u00e1s e.v.",
+        "cim": "AFIT B\u00fcf\u00e9 HU 6000 Kecskem\u00e9t, Mindszenti krt. 30.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "EUR\u00d3 Kft.",
+        "cim": "Eur\u00f3 konyha HU 5300 Karcag, Sz\u00e9chenyi Istv\u00e1n sug\u00e1r\u00fat 52.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Gyulakonyha Nonprofit Kft.",
+        "cim": "Gyula Konyha N\u00fcnmbergi utca HU 5700 Gyula, N\u00fcrnbergi utca 8.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "K\u00edgy\u00f3s Cs\u00e1rda Kft.",
+        "cim": "K\u00edgy\u00f3si Cs\u00e1rda \u00e9s Panzi\u00f3 HU 6085 F\u00fcl\u00f6psz\u00e1ll\u00e1s, Sz\u00e9kek puszta 23/A.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "KunBety\u00e1r Kft.",
+        "cim": "Bety\u00e1r Cs\u00e1rda HU 5340 Kunhegyes, Kossuth Lajos utca 27/A.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "MUSZ\u00c1LY Kft.",
+        "cim": "Musz\u00e1ly vend\u00e9gl\u0151 HU 6000 Kecskem\u00e9t, \u00dajerd\u0151 utca 27.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Sz\u00e1vai & T\u00e1rsa Kft.",
+        "cim": "K\u00e9k Duna vend\u00e9gl\u0151 HU 6300 Kalocsa, HRSZ 0706",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "L\u00e1ngos P\u00e1ros Kft",
+        "cim": "V\u00e1s\u00e1rcsarnok L\u00e1ngoss\u00fct\u0151 HU 1117 Budapest, K\u0151r\u00f6si J\u00f3zsef  7-9.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Eatrend Kft. / Kisk\u0151r\u00f6s, Batthy\u00e1nyi \u00d3voda",
+        "cim": "Batthy\u00e1nyi \u00d3voda HU 6200 Kisk\u0151r\u00f6s, Batthy\u00e1ny utca 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Arrabona Zrt. / Sopron De\u00e1k t\u00e9ri t\u00e1lal\u00f3",
+        "cim": "Sopron De\u00e1k t\u00e9ri t\u00e1lal\u00f3 HU 9400 Sopron, De\u00e1k t\u00e9r 78.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Danubia Kft. / Horti Batthy\u00e1ny J\u00f3zsef \u00c1ltal\u00e1nos Iskola",
+        "cim": "Horti Batthy\u00e1ny J\u00f3zsef \u00c1ltal\u00e1nos Iskola HU 3014 Hort, Bajcsy-Zsilinszky \u00fat 23.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Hunguest Sz\u00e1ll\u00e1shelyszolg\u00e1ltat\u00f3 Zrt. / R\u00e9pce Gold B\u00fckf\u00fcrd\u0151",
+        "cim": "R\u00e9pce Gold B\u00fckf\u00fcrd\u0151 HU 9740 B\u00fck - B\u00fckf\u00fcrd\u0151, Eur\u00f3pa \u00fat 3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Corvinus 39. Gastro Kft. / A 39 INFO BISTRO",
+        "cim": "A 39 INFO Bisztro HU 1117 Budapest, Neumann J\u00e1nos u. 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Prizma-junior Zrt. / Dr. Hepp Ferenc Iskola B\u00e9k\u00e9s",
+        "cim": "Dr. Hepp Ferenc Iskola HU 5630 B\u00e9k\u00e9s, J\u00f3zsef Attila utca 12.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Gazs\u00f3 \u00e9s Niko Kft./ Kir\u00e1ly Pizza",
+        "cim": "Kir\u00e1ly Vend\u00e9gl\u0151 HU 5600 B\u00e9k\u00e9scsaba, Szab\u00f3 Dezs\u0151 utca 24",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "ERD\u0150SI \u00e9s T\u00c1RSAI Kft.",
+        "cim": "Pizza Fut\u00e1r HU 6723 Szeged, Budapesti krt. 37",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Vintage Bistro Kft./ Hom\u00e1ly Grill & b\u00e1r",
+        "cim": "Hom\u00e1ly Grill&b\u00e1r HU 2060 Bicske, Kossuth Lajos utca 3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Gesztenyeliget Integr\u00e1lt Szoci\u00e1lis Int\u00e9zm\u00e9ny / Holdk\u0151 Lak\u00f3otthon",
+        "cim": "Holdk\u0151 Lak\u00f3otthon HU 6621 Derekegyh\u00e1z, Pet\u0151fi utca 42.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "KOLL\u00c1R GYULA",
+        "cim": "Csemege Tanya HU 6328 Dunapataj, Hartai \u00fat 37",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "CSIPK\u00d3-VEND\u00c9GV\u00c1R\u00d3 Kft.",
+        "cim": "Csipk\u00f3 Vend\u00e9gl\u0151 HU 2700 Cegl\u00e9d, Budai \u00fat 18.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Ebesi Arany Oroszl\u00e1n Zrt.",
+        "cim": "Aranyoroszl\u00e1n \u00c9tterem-Panzi\u00f3 HU 4211 Ebes, Sz\u00e9chenyi t\u00e9r 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "H\u00e1rom Kard Kft.",
+        "cim": "RKG B\u00fcf\u00e9 Le\u00e1nyfalu HU 2106 le\u00e1nyfalu, M\u00f3ricz Zsigmond u. 140.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "K\u00f3kai G\u00e1bor EV",
+        "cim": "T\u00f6lgyes Cs\u00e1rda Szentm\u00e1rtonk\u00e1ta HU 2254 Szentm\u00e1rtonk\u00e1ta, Szecs\u0151i 2359/2",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "\u00c1d\u00e1m - Go Kft.",
+        "cim": "Korona \u00c9tterem Pizzafal\u00f3 Pizz\u00e9ria HU 2060 Bicske, Szent Istv\u00e1n \u00fat 16",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "VOZI TOURS Kft.",
+        "cim": "Vozi Burger&Pizza Benzink\u00fat HU 5600 B\u00e9k\u00e9scsaba, Bart\u00f3k B\u00e9la utca 42-44",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Eatrend Kft. / Kisk\u0151r\u00f6s,Erd\u0151teleki \u00d3voda",
+        "cim": "Erd\u0151telki \u00d3voda HU 6200 Kisk\u0151r\u00f6s, Ny\u00e1rfa utca 35.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Arrabona Zrt. / Sopron, 38. F\u0151z\u0151konyha",
+        "cim": "Szent Orsolya f\u0151z\u0151konyha HU 9400 Sopron, Sz\u00e9chenyi t\u00e9r 21.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "EGAL- CATERING Kft. / Unicredit R\u00f3bert K\u00e1roly krt.",
+        "cim": "Uicredit HU 1134 Budapest, R\u00f3bert K\u00e1roly krt. 61-65",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Nagyk\u0151r\u00f6si Hum\u00e1nszolg. K\u00f6zpont /Id\u0151sek Otthona",
+        "cim": "Id\u0151sek Otthona HU 2750 Nagyk\u0151r\u00f6s, Arany J\u00e1nos utca 35.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Prizma-junior Zrt. / Kiseg\u00edt\u0151 Iskola B\u00e9k\u00e9s",
+        "cim": "Kiseg\u00edt\u0151 Iskola HU 5630 B\u00e9k\u00e9s, Sz\u00e1nt\u00f3 Albert utca 10.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Attmag Gold Kft. / Duna P\u00e1lma Pecsenyes\u00fct\u0151",
+        "cim": "Duna P\u00e1lma Pecsenyes\u00fct\u0151 HU 7030 Paks, Vill\u00e1ny utca 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Tiszaparti Term\u00e1lf\u00fcrd\u0151 Kft. / Term\u00e1l \u00c9tterem",
+        "cim": "Term\u00e1l \u00c9tterem HU 6060 Tiszak\u00e9cske, R\u00f3zsabarack t\u00e9r 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Ban\u00f3 R\u00f3bert e.v./ S\u00e1rgakocsi Vend\u00e9gl\u0151 \u00e9s Pizz\u00e9ria",
+        "cim": "S\u00e1rgakocsi Vend\u00e9gl\u0151 \u00e9s Pizz\u00e9ria HU 6033 V\u00e1rosf\u00f6ld, F\u0151 utca 40.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Cukkini-Food Kft.",
+        "cim": "Cukkini Gyors\u00e9tterem - Tisza Center 1. em. HU 6723 Szeged, Etelka sor 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Gastro Werk Kft.",
+        "cim": "Motherson gy\u00e1r HU 6000 Kecskem\u00e9t, Bar\u00e9nyi B\u00e9la \u00fat 1.    \nE-MAILBEN ELK\u00dcLDENI A SZ\u00c1ML\u00c1T",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Gesztenyeliget Integr\u00e1lt Szoci\u00e1lis Int\u00e9zm\u00e9ny / Lilaak\u00e1c Lak\u00f3otthon",
+        "cim": "Lilaak\u00e1c Lak\u00f3otthon HU 6621 Derekegyh\u00e1z, R\u00e1k\u00f3czi utca 49.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Admikor Kft. / \u00c9lelmiszer \u00fczlet",
+        "cim": "\u00c9lelmiszer \u00fczlet HU 6768 Baks, F\u0151 utca 103.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "LCZ Enterprises Kft. / LACH\u00c1ZY Hotel \u00c9tterem",
+        "cim": "LACH\u00c1ZY Hotel \u00c9tterem HU 2911 Mocsa, K\u00fclter\u00fclet Hrsz. 0297/3/G Laczh\u00e1zy Hotel \u00c9tterem M1 aut\u00f3p\u00e1lya   \n[Nyitva tart\u00e1s: H-V: 8.00-]",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Matk\u00f3i 99 Holding Kft.",
+        "cim": "Gl\u00f3ria \u00c9tterem HU 6000 Kecskem\u00e9t, Matk\u00f3i 99",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Marika Tradicion\u00e1lis \u00c9telb\u00e1r Kft.",
+        "cim": "V\u00e1s\u00e1rcsarnok Ricsi HU 1117 Budapest, K\u0151r\u00f6si J\u00f3zsef  7-9.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "KOPIPIPI-TRANSZ Kft.",
+        "cim": "Pipacs \u00c9tterem J\u00e1szber\u00e9ny HU 5100 J\u00e1szber\u00e9ny, T\u00e1ncsics Mih\u00e1ly utca 10",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Galambos L\u00e1szl\u00f3 J\u00f3zsef",
+        "cim": "Aut\u00f3s Cs\u00e1rda Lakitelek HU 6065 Lakitelek, M\u00e1jus 1. utca 36.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "KOLA KONYHA Kft.",
+        "cim": "Kola konyha HU 5600 B\u00e9k\u00e9scsaba, Andr\u00e1ssy \u00fat 58.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Lehoczki Kl\u00e1ra Roz\u00e1lia",
+        "cim": "Pipagy\u00fajt\u00f3 Cs\u00e1rda HU 6235 B\u00f3csa, Kecskem\u00e9ti utca 9/A.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "SZ\u00c9LMALOM KFT.",
+        "cim": "Sz\u00e9lmalom Cs\u00e1rda HU 6000 Kecskem\u00e9t, Szent L\u00e1szl\u00f3 k\u00f6r\u00fat 39.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Tasin\u00e9 Kucsora Eszter",
+        "cim": "P\u00e1lma cukr\u00e1szda HU 6760 Kistelek, J\u00f3kai  utca 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "VM Gasztro Kft. / Vincotech \u00fczem",
+        "cim": "Vincotech HU 2060 Bicske, Kossuth Lajos 59.      \nNyitvatart\u00e1s: 6-14-ig",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Kft. / Kisk\u0151r\u00f6s, Harangvir\u00e1g \u00d3voda",
+        "cim": "Harangvir\u00e1g \u00d3voda HU 6200 Kisk\u0151r\u00f6s, \u00c1rp\u00e1d utca 6.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Arrabona Zrt. / Sopron, Szent Orsolya \u00c1ltal\u00e1nos Iskola t\u00e1lal\u00f3",
+        "cim": "Szent Orsolya \u00c1ltal\u00e1nos Iskola t\u00e1lal\u00f3 HU 9400 Sopron, De\u00e1k t\u00e9r 32.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Prizma-junior Zrt. / G\u00e1l Ferenc Egyetem B\u00e9k\u00e9s",
+        "cim": "G\u00e1l Ferenc Egyetem HU 5630 B\u00e9k\u00e9s, H\u0151zs\u0151 utca 35.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Attmag Gold  Kft. / Duna P\u00e1lma \u00c9tterem",
+        "cim": "Duna P\u00e1lma \u00c9tterem HU 7030 Paks, \u00c9p\u00edt\u0151k \u00fatja 1-5.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Csobog\u00f3 Udvarh\u00e1z Kft.",
+        "cim": "Udvarh\u00e1z \u00c9tterem HU 3000 Hatvan, Mad\u00e1ch u. 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Egal-Team Idegenforgalmi \u00e9s Vend\u00e9gl\u00e1t\u00f3 Kft. / N\u00e9pliget Center",
+        "cim": "N\u00e9pliget Center HU 1097 Budapest, K\u00f6nyves K\u00e1lm\u00e1n krt. 11. C.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Szarvas Endre Istv\u00e1n",
+        "cim": "XXL \u00c9telb\u00e1r HU 4031 Debrecen, V\u00e9rtesi \u00fat 1",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "BALERKA 2013 Kft.",
+        "cim": "Plat\u00e1n Gyors\u00e9tkezde HU 2541 L\u00e1batlan, R\u00e1k\u00f3czi Ferenc \u00fat 50/A.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Cegl\u00e9d Gastro Kft.",
+        "cim": "Kiskakas Vend\u00e9gl\u0151 Cegl\u00e9d/Casablanca HU 2700 Cegl\u00e9d, Sz\u00e9chenyi \u00fat 11.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "ENZO-GASZTRO BT",
+        "cim": "Kert Vend\u00e9gl\u0151 Csongr\u00e1d HU 6640 Csongr\u00e1d, D\u00f3zsa Gy\u00f6rgy t\u00e9r 6.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Fejedelmi P\u00e9ks\u00e9g Kft.",
+        "cim": "Fejedelmi P\u00e9ks\u00e9g HU 6060 Tiszak\u00e9cske, Erkel fasor 7.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "FULL PARTY SERVICE Kft.",
+        "cim": "Bajor \u00c9tterem \u00e9s Vend\u00e9gh\u00e1z HU 6000 Kecskem\u00e9t, Szent L\u00e1szl\u00f3 krt 19.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Guzsv\u00e1n Ferencn\u00e9",
+        "cim": "Di\u00f3fa \u00c9tterem Kalocsa HU 6300 Kalocsa, Pet\u0151fi S\u00e1ndor u. 67.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "OROS LAJOS",
+        "cim": "OROS Nappali B\u00e1r P\u00fcsp\u00f6klad\u00e1ny HU 4150 P\u00fcsp\u00f6klad\u00e1ny, Vajda utca 27.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Innoven Kft. / Necs\u0151 konyha",
+        "cim": "Necs\u0151 konyha HU 5100 J\u00e1szber\u00e9ny, Necs\u0151 telep 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Balf Panor\u00e1ma Kft.",
+        "cim": "Balf Panor\u00e1ma Kft. HU 9400 Sopron, F\u00fcrd\u0151 sor 25",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "VM Gasztro Kft. / A Fogad\u00f3",
+        "cim": "A Fogad\u00f3 HU 2060 Bicske, Szent L\u00e1szl\u00f3 \u00fat 43      \nNyitvatart\u00e1s: 10-18-ig",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Investrest 2009 Kereskedelmi \u00e9s Szolg\u00e1ltat\u00f3 Kereskedelmi Kft.",
+        "cim": "Pizzama \u00c9tterem HU 7100 Szeksz\u00e1rd, Agusz I. utca 9-11",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Eatrend Kft. / Kisk\u0151r\u00f6si B\u00f6lcs\u0151de",
+        "cim": "Kisk\u0151r\u00f6s B\u00f6lcs\u0151de HU 6200 Kisk\u0151r\u00f6s, \u00c1rp\u00e1d utca 6.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Arrabona Zrt. / Sopron Beseny\u0151 f\u0151z\u0151konyha",
+        "cim": "Sopron f\u0151z\u0151konyha HU 9400 Sopron, Beseny\u0151 utca 13.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Amily Senairo Kft",
+        "cim": "Amily Senairo Kft HU 1122 Budapest, Krisztina k\u00f6r\u00fat 2-4.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "F\u0151z\u0151 Party Kft. / Malomudvar Panzi\u00f3",
+        "cim": "Malomudvar Panzi\u00f3 HU 3200 Gy\u00f6ngy\u00f6s, Pesti \u00fat 57.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Hunguest Sz\u00e1ll\u00e1shelyszolg\u00e1ltat\u00f3 Zrt. / Millenium Hotel",
+        "cim": "Millenium Hotel HU 1087 Budapest, \u00dcll\u0151i \u00fat 94-98.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "M\u00c1TRA PARTY Kft. / HM1 Honv\u00e9d K\u00f3rh\u00e1z",
+        "cim": "HM1 Honv\u00e9d K\u00f3rh\u00e1z HU 1134 Budapest, R\u00f3bert K\u00e1roly krt. 44.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Nagyk\u0151r\u00f6si Hum\u00e1nszolg. K\u00f6zpont / V\u00e1rosi B\u00f6lcs\u0151de",
+        "cim": "V\u00e1rosi B\u00f6lcs\u0151de HU 2750 Nagyk\u0151r\u00f6s, K\u00e1r\u00e1sz utca 3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Prizma-junior Zrt. / 56. \u00c1ltal\u00e1nos Iskola Mez\u0151ber\u00e9ny",
+        "cim": "56. \u00c1ltal\u00e1nos Iskola HU 5650 Mez\u0151ber\u00e9ny, Luther utca 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "B\u00e9k\u00e9s Pizza Kft./ Stoons \u00c9tterem \u00e9s Pizz\u00e9ria",
+        "cim": "Stones \u00c9tterem \u00e9s Pizz\u00e9ria HU 5600 B\u00e9k\u00e9scsaba, Andr\u00e1ssy \u00fat 73/2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "LAKI-KONYHA Nonprofit Kft. / Laki Konyha",
+        "cim": "Laki Konyha HU 6065 Lakitelek, Sz\u00e9chenyi krt. 104.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "SZIA 2000 Bt.",
+        "cim": "Piroska \u00c9tterem HU 4150 P\u00fcsp\u00f6klad\u00e1ny, Debreceni 2",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Florisz-Gourmet Kft.",
+        "cim": "Grassalkovich \u00c9tterem HU 3000 Hatvan, Thurz\u00f3 u. 16.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "GOLDS\u00c9F-FOOD Kft.",
+        "cim": "Fornetti \u00d6nkiszolg\u00e1l\u00f3 \u00c9tterem HU 6100 Kiskunf\u00e9legyh\u00e1za, De\u00e1k Ferenc u. 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "KING VEND\u00c9GL\u00c1T\u00d3 Kft.",
+        "cim": "Kavalk\u00e1d \u00c9tterem HU 3200 Gy\u00f6ngy\u00f6s, P\u00fcsp\u00f6ki utca 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "KURTA KOCSMA Kft.",
+        "cim": "Kurta Kocsma Kisk\u0151r\u00f6s HU 6200 Kisk\u0151r\u00f6s, Csokonai Mih\u00e1ly utca 51.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "MARK\u00d3 CS\u00c1RDA KFT",
+        "cim": "Mark\u00f3 Cs\u00e1rda HU 7675 Bakonya, hrsz. 045/6.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Mizse Motel Kft.",
+        "cim": "Mizse Motel HU 6050 Lajosmizse, Mizse tanya  158. a.\u00e9p.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Petr\u00e1nyi Gy\u00f6rgy",
+        "cim": "\u00c1di B\u00fcf\u00e9 HU 5100 J\u00e1szber\u00e9ny, Kossuth 10-12",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Guido-gasztro Vend\u00e9gl\u00e1t\u00f3 Kft.",
+        "cim": "GUIDO Pizz\u00e9ria \u00e9s \u00c9tterem HU 6640 Csongr\u00e1d, Kossuth t\u00e9r 17",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Fogad\u00f3 A Feh\u00e9r R\u00f3zs\u00e1hoz Kft.",
+        "cim": "Feh\u00e9r R\u00f3zsa \u00e9tterem HU 9400 Sopron, P\u00f3csi utca 21.    \nNyitvatart\u00e1s: 10-18h",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Kft. / Kisk\u0151r\u00f6si f\u0151z\u0151konyha - t\u00e1lal\u00f3",
+        "cim": "Kisk\u0151r\u00f6s f\u0151z\u0151konyha/ t\u00e1lal\u00f3 HU 6200 Kisk\u0151r\u00f6s, \u00c1rp\u00e1d utca 18.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Eatrend Kft. / Bonyh\u00e1d f\u0151z\u0151konyha",
+        "cim": "Bonyh\u00e1d f\u0151z\u0151konyha HU 7150 Bonyh\u00e1d, F\u00e1y lak\u00f3telep 36.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Eatrend Arrabona Zrt. / Sopron, Szent Orsolya \u00d3voda t\u00e1lal\u00f3",
+        "cim": "Szent Orsolya \u00d3voda t\u00e1lal\u00f3 HU 9400 Sopron, Szent Margit \u00fat 12.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Arrabona Zrt. / \u00c1gfalva, T\u00e1lal\u00f3konyha",
+        "cim": "\u00c1gfalva t\u00e1lal\u00f3konyha HU 9423 \u00c1gfalva, Soproni utca 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Kisbig Trio Kft. / Kisbig Bisztro",
+        "cim": "KISBIG Kif\u0151zde HU 1117 Budapest, Budafoki \u00fat 70.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Prizma-junior Zrt. / 56. \u00dczem Mez\u0151ber\u00e9ny",
+        "cim": "56. \u00dczem HU 5650 Mez\u0151ber\u00e9ny, Tavasz utca 7.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Friends-Gastro Kft./  Lak-Coma Bisztro",
+        "cim": "Lak-Coma Bisztro HU 6300 Kalocsa, Tomori P\u00e1l u. 35.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "LAKI-KONYHA Nonprofit Kft. / Laki T\u00e1lal\u00f3",
+        "cim": "Laki T\u00e1lal\u00f3 HU 6065 Lakitelek, Sz\u00e9chenyi krt. 74.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Trojan Food Kft./ \tT\u00f3rja \u00c1rk\u00e1d",
+        "cim": "T\u00f3rja \u00c1rk\u00e1d HU 6724 Szeged, Londoni krt. 3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "F\u00fcrt-Trade Kft.",
+        "cim": "F\u00fcrt\u00f6s Vend\u00e9gl\u0151 Kecel HU 6237 Kecel, Cs\u00e1sz\u00e1rt\u00f6lt\u00e9si \u00fat 3",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "K\u0150R\u00d6SSZOLG Nonprofit Kft",
+        "cim": "R\u00f3nasz\u00e9ki Therm\u00e1l F\u00fcrd\u0151 HU 6200 Kisk\u0151r\u00f6s, Erd\u0151telki 17.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Bogasow G\u00e1bor Andor",
+        "cim": "S\u00dcLTES'M B\u00fcf\u00e9 HU 6000 Kecskem\u00e9t, Gizella t\u00e9r 3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "SESSANTA Kft.",
+        "cim": "Sessanta Pizz\u00e9ria HU 3000 Hatvan, M\u00e1rtirok \u00fatja 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Kft. / Kisk\u0151r\u00f6s, Id\u0151sek Otthona",
+        "cim": "Id\u0151sek Otthona HU 6200 Kisk\u0151r\u00f6s, S\u00e1rk\u00e1ny J\u00f3zsef utca 13.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Arrabona Zrt. / Sopron G\u00e1rdonyi t\u00e1lal\u00f3",
+        "cim": "Sopron G\u00e1rdonyi t\u00e1lal\u00f3 HU 9400 Sopron, T\u00e1ncsics Mih\u00e1ly utca 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "SZ\u00c9L-CS\u00c1RDA Kft./ Sz\u00e9l Cs\u00e1rda \u00c9tterem",
+        "cim": "Sz\u00e9l Cs\u00e1rda HU 6050 Lajosmizse, M5 aut\u00f3p\u00e1lya 67-es km",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Eatrend Danubia Kft. / J\u00e1szber\u00e9ny 37. konyha",
+        "cim": "J\u00e1szber\u00e9ny 37. konyha HU 5100 J\u00e1szber\u00e9ny, Horv\u00e1th P\u00e9ter utca 12.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Zubek S\u00e1ndor e.v. /  Agroker B\u00fcf\u00e9",
+        "cim": "Agroker b\u00fcf\u00e9 HU 6000 Kecskem\u00e9t, Halasi \u00fat 29. A.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Trojan-Pasta Kft./ \tRozmaring \u00c9tterem",
+        "cim": "Rozmaring \u00c9tterem Szeged Tr\u00f3ja Londoni krt. HU 6724 Szeged, Londoni K\u00f6r\u00fat 3.   1.em.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "GYEVITUR Nonprofit Kft. / Levendula Hotel",
+        "cim": "Levendula Hotel HU 6750 Algy\u0151, T\u00e9gl\u00e1s utca 151.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Bw Organization Kft.",
+        "cim": "J\u00e9gverem Fogad\u00f3 HU 9400 Sopron, J\u00e9gverem utca 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "T\u0150S-TISZA Kft.",
+        "cim": "T\u0151s Vend\u00e9gl\u0151 HU 6065 Lakitelek, Zal\u00e1n u. 2/a.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "P\u00fcsp\u00f6klad\u00e1nyi V\u00e1ros\u00fczemeltet\u0151 \u00e9s Gy\u00f3gyf\u00fcrd\u0151 Kft. / Katica Konyha",
+        "cim": "Katica Konyha HU 4150 P\u00fcsp\u00f6klad\u00e1ny, Bajcsy utca 8.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "KORREKT-SALD\u00d3 Kft./ PIZZABOX",
+        "cim": "Pizza Boksz HU 6065 Lakitelek, Dr. De\u00e1k Istv\u00e1n 8",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Lacz\u00f3 Istv\u00e1n",
+        "cim": "St\u00fadium Kif\u0151zde HU 2800 Tatab\u00e1nya, St\u00fadium 1",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "LEMPI GASTRO Kft. / G\u00f6sser F\u00f3rum S\u00f6r\u00f6z\u0151",
+        "cim": "G\u00f6sser F\u00f3rum S\u00f6r\u00f6z\u0151 HU 5100 J\u00e1szber\u00e9ny, B\u00e9rkocsis 1",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Kindeln\u00e9 B\u00f6rcs\u00f6k Zsuzsanna",
+        "cim": "Haraplak B\u00fcf\u00e9 HU 5600 B\u00e9k\u00e9scsaba, Trefort 5-7",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "ATAMEL BT",
+        "cim": "Don Corleone HU 1078 Budapest, Nefelejcs  utca 27.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "H\u00edr\u00f6s Vend\u00e9gl\u00e1t\u00f3 Kft./ Sport Hotel",
+        "cim": "H\u00edr\u00f6s HU 6000 Kecskem\u00e9t, Izs\u00e1ki \u00fat 15.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Varga-Marton Kft.",
+        "cim": "Buda\u00f6rs K\u00ednai Szabads\u00e1g utca HU 2040 Buda\u00f6rs, Szabads\u00e1g utca 72.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Two-Brothers-West Vend\u00e9gl\u00e1t\u00f3ipari \u00e9s Szolg\u00e1ltat\u00f3 Kft.",
+        "cim": "Kiss \u00c9tterem HU 9400 Sopron, Teleki P\u00e1l utca 24.    \nNyitvatart\u00e1s: 9-15-ig\nNyitvatart\u00e1s: 9-15-ig",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Kft. / Kisk\u0151r\u00f6s, K\u0151risfa \u00d3voda",
+        "cim": "K\u0151risfa \u00d3voda HU 6200 Kisk\u0151r\u00f6s, K\u0151risfa utca 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Arrabona Zrt. / Sopron Lackner t\u00e1lal\u00f3",
+        "cim": "Sopron Lackner t\u00e1lal\u00f3 HU 9400 Sopron, R\u00e9vai Mikl\u00f3s utca 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Hunguest Sz\u00e1ll\u00e1shelyszolg\u00e1ltat\u00f3 Zrt. / Hotel Erkel",
+        "cim": "Hotel Erkel HU 5701 Gyula, V\u00e1rkert utca 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Enn\u00e1k Kft.",
+        "cim": "N\u00e1das Beach B\u00fcf\u00e9 HU 6060 Tiszak\u00e9cske, Szabolcska Mih\u00e1ly utca 112.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Prizma-junior Zrt. / G\u00f3lyah\u00edr B\u00f6lcs\u0151de D\u00e9vav\u00e1nya",
+        "cim": "G\u00f3lyah\u00edr B\u00f6lcs\u0151de HU 5510 D\u00e9vav\u00e1nya, Hunyadi J\u00e1nos utca 17.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Grande Vita Kft.",
+        "cim": "Dolce Vita Pizz\u00e9ria \u00e9s \u00c9tterem HU 6237 Kecel, Szabads\u00e1g t\u00e9r 3",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "GYEVITUR Nonprofit Kft. / Feh\u00e9r Ign\u00e1c \u00c1ltal\u00e1nos Iskola",
+        "cim": "Feh\u00e9r Ign\u00e1c \u00c1ltal\u00e1nos Iskola HU 6750 Algy\u0151, Sport utca 5.    \n[Nyitva tart\u00e1s: 7:00-14:30]",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Horv\u00e1th P\u00e9ter e.v.",
+        "cim": "Buffalo \u00c9tkezde HU 9124 Gy\u00f6m\u00f6re, Sz\u00e9chenyi \u00fat 21.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Balu Project Kft. / DOBOS Pub & Pizz\u00e9ria",
+        "cim": "DOBOS Pub HU 9012 Gy\u0151r, Sokor\u00f3p\u00e1tkai \u00fat 33.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Cegl\u00e9di Reform\u00e1tus \u00c1ltal\u00e1nos Iskola \u00e9s \u00d3voda",
+        "cim": "Reform\u00e1tus Iskola HU 2700 Cegl\u00e9d, Bercs\u00e9nyi utca 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Gesztenyeliget Integr\u00e1lt Szoci\u00e1lis Int\u00e9zm\u00e9ny / Pacsirta Szolg\u00e1ltat\u00f3 K\u00f6zpont",
+        "cim": "Pacsirta Szolg\u00e1ltat\u00f3 K\u00f6zpont HU 6621 Derekegyh\u00e1z, Nagym\u00e1gocsi \u00fat 20.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "P\u00fcsp\u00f6klad\u00e1nyi V\u00e1ros\u00fczemeltet\u0151 \u00e9s Gy\u00f3gyf\u00fcrd\u0151 Kft. / Katica \u00d3voda t\u00e1lal\u00f3",
+        "cim": "Katica \u00d3voda t\u00e1lal\u00f3 HU 4150 P\u00fcsp\u00f6klad\u00e1ny, Bajcsy utca 3-5.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Romsics Aled\u00e1 Vend\u00e9gl\u00e1t\u00f3 \u00e9s Szolg\u00e1ltat\u00f3 Kft. / L\u00e1ngoss\u00fct\u0151 Kalocsa",
+        "cim": "L\u00e1ngoss\u00fct\u0151 Kalocsa b\u00faza t\u00e9ri piac HU 6300 Kalocsa, B\u00fazapiac 1-3",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "LEMPI GASTRO Kft. / ZOO B\u00fcf\u00e9",
+        "cim": "Zoo B\u00fcf\u00e9 \u00c1llatkert HU 5100 J\u00e1szber\u00e9ny, F\u00e9mnyom\u00f3 3",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Barna & Barna KFT.",
+        "cim": "Speed Pizza&Cafe HU 5600 B\u00e9k\u00e9scsaba, Justh Gyula utca 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Farkas L\u00e1szl\u00f3",
+        "cim": "Pompei Pizz\u00e9ria&Grill HU 6640 Csongr\u00e1d, Kis-Tisza u. 6.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "PIKANO-2000 Kft.",
+        "cim": "Club 75 \u00c9tterem Lajosmizse HU 6050 Lajosmizse, D\u00f3zsa Gy\u00f6rgy \u00fat 75.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "K\u00e1di S\u00e1ndor E.V.",
+        "cim": "Szamos Vend\u00e9gl\u0151 Halbolt HU 5600 B\u00e9k\u00e9scsaba, Szab\u00f3 Dezs\u0151 utca 4",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "M Club Kft.",
+        "cim": "V\u00e1s\u00e1rcsarnok Faloda HU 1116 Budapest, K\u0151r\u00f6sy J\u00f3zsef 7-9",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Eatrend Kft. / Cegl\u00e9d, K\u0151r\u00f6si t\u00e1lal\u00f3konyha",
+        "cim": "K\u0151r\u00f6si t\u00e1lal\u00f3konyha HU 2700 Cegl\u00e9d, K\u0151r\u00f6si \u00fat 6-8.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Kft. / Kisk\u0151r\u00f6s, Sz\u0171csi \u00d3voda",
+        "cim": "Sz\u0171csi \u00d3voda HU 6200 Kisk\u0151r\u00f6s, R\u00e1k\u00f3czi utca 146.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Kft. / Bonyh\u00e1d Tolna Bart\u00f3k t\u00e1lal\u00f3",
+        "cim": "Bonyh\u00e1d Tolna Bart\u00f3k t\u00e1lal\u00f3 HU 7130 Tolna, Bart\u00f3k B\u00e9la utca 23.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Arrabona Zrt./ Sopron,  Pet\u0151fi t\u00e1lal\u00f3",
+        "cim": "Pet\u0151fi t\u00e1lal\u00f3 HU 9400 Sopron, Hal\u00e1sz utca 25.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "FAR-EAST West Kft.",
+        "cim": "Buda\u00f6rs K\u00ednai Auchan HU 2040 Buda\u00f6rs, Sport u. 2-4.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "GUSTO-LOCO Kft. / SUGOVICA Hal\u00e1szcs\u00e1rda",
+        "cim": "SUGOVICA Hal\u00e1szcs\u00e1rda HU 6000 Kecskem\u00e9t, Izs\u00e1ki \u00fat 68.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Prizma-junior Zrt. / T\u00fcnd\u00e9rkert \u00d3voda D\u00e9vav\u00e1nya",
+        "cim": "T\u00fcnd\u00e9rkert \u00d3voda HU 5510 D\u00e9vav\u00e1nya, E\u00f6tv\u00f6s J\u00f3zsef utca 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "VIZSOVI Kft. / Nagykaland \u00c9tterem",
+        "cim": "Nagykaland \u00c9tterem HU 4030 Debrecen, Leiningen utca 6/c",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Farkasn\u00e9 \u00e9s T\u00e1rsai 2000 Bt.",
+        "cim": "Farkasn\u00e9 Konyh\u00e1ja Szeged (ir\u00e9n Csarnok) HU 6724 Szeged, Mars t\u00e9r K1/16",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Ristoretto Kft.",
+        "cim": "De\u00e1k \u00e9tterem HU 9400 Sopron, De\u00e1k t\u00e9r 27.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "P\u00fcsp\u00f6klad\u00e1nyi V\u00e1ros\u00fczemeltet\u0151 \u00e9s Gy\u00f3gyf\u00fcrd\u0151 Kft. / Koll\u00e9gium Konyha",
+        "cim": "Koll\u00e9gium Konyha HU 4150 P\u00fcsp\u00f6klad\u00e1ny, H\u0151s\u00f6k tere 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "SZEDIT Kft.",
+        "cim": "Fandango \u00c9tterem HU 4027 Debrecen, Ibolya utca 1",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "K\u00e9z\u00e9r Tibor G\u00e1born\u00e9",
+        "cim": "\u00c1rk\u00e1d B\u00fcf\u00e9 HU 6050 Lajosmizse, V\u00e1rosh\u00e1z 9",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Maszler-Gasztro Kft.",
+        "cim": "TETTYE Vend\u00e9gl\u0151 HU 7625 P\u00e9cs, Tettye t\u00e9r 4.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Sirius Food Service Kft.",
+        "cim": "Sirius \u00c9tterem HU 6100 Kiskunf\u00e9legyh\u00e1za, Kossuth Lajos utca 16.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Eatrend Kft. / Cegl\u00e9d, N\u00e9pk\u00f6r t\u00e1lal\u00f3konyha",
+        "cim": "N\u00e9pk\u00f6r t\u00e1lal\u00f3konyha HU 2700 Cegl\u00e9d, N\u00e9pk\u00f6r utca 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Kft. / Kisk\u0151r\u00f6s, Bem J\u00f3zsef \u00c1lt. Iskola",
+        "cim": "Bem J\u00f3zsef \u00c1lt. Iskola HU 6200 Kisk\u0151r\u00f6s, Vasv\u00e1ri P\u00e1l utca 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Kft. / Bonyh\u00e1d Tolna E\u00f6tv\u00f6s t\u00e1lal\u00f3",
+        "cim": "Bonyh\u00e1d Tolna E\u00f6tv\u00f6s t\u00e1lal\u00f3 HU 7130 Tolna, \u00d6tv\u00f6s utca 7.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "M\u00c1TRA PARTY Kft. / Arany F\u0151z\u0151konyha",
+        "cim": "Arany F\u0151z\u0151konyha HU 1124 Budapest, Meredek utca 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "B-Well Kft./ Granada Konferencia",
+        "cim": "Granada Konferencia, Wellness \u00e9s Sport Hotel HU 6000 Kecskem\u00e9t, Harm\u00f3nia u. 23.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "PROFA STUDI\u00d3 Kft.",
+        "cim": "Texas \u00c9tterem Cs\u00e1voly HU 6448 Cs\u00e1voly, Sz\u00e9chenyi utca 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Prizma-junior Zrt. / Sziv\u00e1rv\u00e1ny \u00d3voda D\u00e9vav\u00e1nya",
+        "cim": "Sziv\u00e1rv\u00e1ny \u00d3voda HU 5510 D\u00e9vav\u00e1nya, Haj\u00f3s utca 24.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Greenfield-Credit Kft. / Tr\u00f3ja \u00c9telb\u00e1r K\u00f6lcsey",
+        "cim": "Tr\u00f3ja \u00c9telb\u00e1r K\u00f6lcsey HU 6720 Szeged, K\u00f6lcsey utca 4.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Fliegl Abda G\u00e9pgy\u00e1rt\u00f3 Kft./ Hotel Bavaria",
+        "cim": "Hotel Bavaria HU 9151 Abda, B\u00e9csi \u00fat 186.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Gesztenyeliget Integr\u00e1lt Szoci\u00e1lis Int\u00e9zm\u00e9ny / Bodz\u00e1s Lak\u00f3otthon",
+        "cim": "Bodz\u00e1s Lak\u00f3otthon HU 6622 Nagym\u00e1gocs, J\u00f3kai M\u00f3r utca 53.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "P\u00fcsp\u00f6klad\u00e1nyi V\u00e1ros\u00fczemeltet\u0151 \u00e9s Gy\u00f3gyf\u00fcrd\u0151 Kft. / Napf\u00e9ny \u00d3voda t\u00e1lal\u00f3",
+        "cim": "Napf\u00e9ny \u00d3voda t\u00e1lal\u00f3 HU 4150 P\u00fcsp\u00f6klad\u00e1ny, Honv\u00e9d utca 16-18.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "R\u00f3zs\u00e1n\u00e9 Gombk\u00f6t\u0151 Betti Izabella e.v. / L\u00e1ngos V\u00e1rf\u00fcrd\u0151 Piac",
+        "cim": "L\u00e1ngos V\u00e1rf\u00fcrd\u0151 Piac HU 5700 Gyula, Okt\u00f3ber 6 t\u00e9r",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "SPECTRUM-2002 Kft./ CHICAGO Pizz\u00e9ria \u00e9s \u00c9tterem",
+        "cim": "CHICAGO Pizz\u00e9ria \u00e9s \u00c9tterem HU 6600 Szentes, Nagy Ferenc utca 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "BETHLEN 98 KFT",
+        "cim": "Szilfa Vend\u00e9gl\u0151 HU 4200 Hajd\u00faszoboszl\u00f3, J\u00f3zsef Attila utca 2-4.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "DIKORIKA Kft.",
+        "cim": "Postakocsi \u00c9tterem \u00e9s Pizz\u00e9ria HU 6400 Kiskunhalas, Kanizsa t\u00e9r 4/A.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "ERD-GASZTRO Kft.",
+        "cim": "D\u00f6nci Vend\u00e9gl\u0151 Cs\u00e1sz\u00e1rt\u00f6lt\u00e9s HU 6239 Cs\u00e1sz\u00e1rt\u00f6lt\u00e9s, Sport t\u00e9r 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Haviv\u00e1r Kft.",
+        "cim": "Bagolyv\u00e1r \u00c9tterem P\u00e9cs HU 7627 P\u00e9cs, Fels\u0151havi d\u0171l\u0151 6.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Horv\u00e1th J\u00e1nos",
+        "cim": "HORI-Food HU 6050 Lajosmizse, J\u00f3kai utca 6.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Eatrend Kft. / Cegl\u00e9d, E\u00f6tv\u00f6s t\u00e1lal\u00f3konyha",
+        "cim": "E\u00f6tv\u00f6s t\u00e1lal\u00f3konyha HU 2700 Cegl\u00e9d, E\u00f6tv\u00f6s t\u00e9r 8.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Kft. / Kisk\u0151r\u00f6s, Pet\u0151fi S\u00e1ndor \u00c1lt. Iskola",
+        "cim": "Pet\u0151fi S\u00e1ndor \u00c1lt. Iskola HU 6200 Kisk\u0151r\u00f6s, Pet\u0151fi \u00fat 7.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Kft. / Bogyiszl\u00f3 t\u00e1lal\u00f3",
+        "cim": "Bonyh\u00e1d Bogyiszl\u00f3 t\u00e1lal\u00f3 HU 7132 Bogyiszl\u00f3, Kossuth utca 30.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "M\u00c1TRA PARTY Kft. /  HM3 K\u00f3rh\u00e1z Szanat\u00f3rium",
+        "cim": "MH Eg\u00e9szs\u00e9g\u00fcgyi K\u00f6zpont 3. Telephelyi \u00c9tterem HU 1121 Budapest, Szanat\u00f3rium utca 2. A.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Eatrend Arrabona Zrt. / Sopron,  Szent Anna \u00d3voda",
+        "cim": "Szent Anna \u00d3voda HU 9400 Sopron, Hal\u00e1sz utca 38.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Horv\u00e1thn\u00e9 Zsig\u00f3 Katalin",
+        "cim": "Kulacs Vend\u00e9gl\u0151 HU 6100 Kiskunf\u00e9legyh\u00e1za, Sz\u00e9chenyi utca 39.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Prizma-junior Zrt. / Gyulai Szakk\u00e9pz\u00e9si Centrum D\u00e9vav\u00e1nya",
+        "cim": "Gyulai Szakk\u00e9pz\u00e9si Centrum HU 5510 D\u00e9vav\u00e1nya, Mez\u0151t\u00fari utca 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Diegofood Kft.",
+        "cim": "Pipi Pont B\u00e9k\u00e9scsaba HU 5600 B\u00e9k\u00e9scsaba, Gyulai utca 18.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Elifood Kft. / ELI konyh\u00e1ja",
+        "cim": "ELI konyh\u00e1ja Tatb\u00e1nya HU 2800 Tatab\u00e1nya, Fels\u0151gallai \u00fat 40.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Greenfield-Credit Kft. / RE\u00d6K Cukr\u00e1szda",
+        "cim": "RE\u00d6K Cukr\u00e1szda HU 6720 Szeged, Magyar Ede t\u00e9r 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Msf Hotel Management Kft.",
+        "cim": "HOTEL Szieszta HU 9400 Sopron, L\u0151v\u00e9r k\u00f6r\u00fat 37.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Gesztenyeliget Integr\u00e1lt Szoci\u00e1lis Int\u00e9zm\u00e9ny / Csipkebogy\u00f3 Lak\u00f3otthon",
+        "cim": "Csipkebogy\u00f3 Lak\u00f3otthon HU 6622 Nagym\u00e1gocs, J\u00f3kai M\u00f3r utca 67.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "P\u00fcsp\u00f6klad\u00e1nyi V\u00e1ros\u00fczemeltet\u0151 \u00e9s Gy\u00f3gyf\u00fcrd\u0151 Kft. / Nyitnik\u00e9k \u00d3voda t\u00e1lal\u00f3",
+        "cim": "Nyitnik\u00e9k \u00f3voda t\u00e1lal\u00f3 HU 4150 P\u00fcsp\u00f6klad\u00e1ny, Karcagi utca 37.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "SZUPER L\u00c1NGOS Kft.",
+        "cim": "Super L\u00e1ngos HU 6724 Szeged, Mars N/1/34/a",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Sz\u00f3r\u00e1t Menyh\u00e9rt",
+        "cim": "Borosty\u00e1n Pizz\u00e9ria HU 6060 Tiszak\u00e9cske, Kazinczy 16",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "EQUITA Kft.",
+        "cim": "Olivol\u00e1 \u00c9tterem Kecskem\u00e9t HU 6000 Kecskem\u00e9t, R\u00e1k\u00f3czi \u00fat 26.   I.em. 3.ajt\u00f3",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Alice World-ker Kft.",
+        "cim": "Monkey \u00c9telb\u00e1r HU 6400 Kiskunhalas, Gy\u00f6ngyvir\u00e1g utca 30.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "ATS-GASTRO HUNGARY Kft.",
+        "cim": "Aranykulacs Kisvend\u00e9gl\u0151 HU 7100 Szeksz\u00e1rd, Nefelejcs k\u00f6z 653.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Kudurlan Kft.",
+        "cim": "Divan T\u00f6r\u00f6k \u00c9tterem Budapest HU 1119 Budapest, Feh\u00e9rv\u00e1ri \u00fat  83.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Hotel Gyula Kft.",
+        "cim": "Wellnes Hotel Gyula HU 5700 Gyula, Part utca 5.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Jozsobe Kereskedelmi \u00e9s Vend\u00e9gl\u00e1t\u00f3ipari Kft.",
+        "cim": "Pomodor \u00c9tterem HU 2800 Tatab\u00e1nya, Gy\u0151ri \u00fat 27.      \nNyitvatart\u00e1s: 6-16-ig",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Haj\u00f3s V\u00e1ros Polg\u00e1rmesteri Hivatala",
+        "cim": "Iskola konyha HU 6344 Haj\u00f3s, J\u00f3kai 4      \nA konyha dolgoz\u00f3i p\u00e9nteki napon 13 \u00f3r\u00e1ig dolgoznak, k\u00e9relem vegy\u00e9k figyelembe az elsz\u00e1ll\u00edt\u00e1skor. K\u00f6sz\u00f6n\u00f6m!\nA konyha dolgoz\u00f3i p\u00e9nteki napon 13 \u00f3r\u00e1ig dolgoznak, k\u00e9relem vegy\u00e9k figyelembe az elsz\u00e1ll\u00edt\u00e1skor. K\u00f6sz\u00f6n\u00f6m!",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Annahegyi-Restaurant Kft./ ANNAHEGYI Restaurant  Pihen\u0151 Pet\u0151fisz\u00e1ll\u00e1s - 121 km",
+        "cim": "Annav\u00f6lgyi \u00c9tterem HU 6113 Pet\u0151fisz\u00e1ll\u00e1s, M5 aut\u00f3p\u00e1lya 121. kil\u00f3m\u00e9terszelv\u00e9ny",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Kft. / Cegl\u00e9d Losonczi t\u00e1lal\u00f3konyha",
+        "cim": "LOSONCZI t\u00e1lal\u00f3 HU 2700 Cegl\u00e9d, Buzug\u00e1ny utca 23.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Kft. / Kisk\u0151r\u00f6s, EGYMI Int\u00e9zm\u00e9ny",
+        "cim": "EGYMI int\u00e9zm\u00e9ny HU 6200 Kisk\u0151r\u00f6s, Hr\u00faz M\u00e1ria utca 2/1",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Prizma-junior Zrt. / Sz\u00e9chenyi Napk\u00f6zi Konyha - 44 \u00fczemD\u00e9vav\u00e1nya",
+        "cim": "Sz\u00e9chenyi Napk\u00f6zi Konyha HU 5510 D\u00e9vav\u00e1nya, Sz\u00e9chenyi \u00fat 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Kft. / \u00d6rk\u00e9ny 1. F\u0151z\u0151konyha",
+        "cim": "\u00d6rk\u00e9ny 1.F\u0151z\u0151konyha HU 2377 \u00d6rk\u00e9ny, Bart\u00f3k B\u00e9la utca 53.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Belv\u00e1rosi \u00c9tterem Vend\u00e9gl\u00e1t\u00f3ipari Kft.",
+        "cim": "Istv\u00e1n Pince HU 7632 P\u00e9cs, Kazinczy utca 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Ave Guest Kft. / Szieszta \u00dcd\u00fcl\u0151sz\u00e1ll\u00f3",
+        "cim": "Szieszta \u00dcd\u00fcl\u0151sz\u00e1ll\u00f3 HU 4200 Hajd\u00faszoboszl\u00f3, Szent Erzs\u00e9bet utca 9.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Aquaticum Debrecen Kft./ Hotel Aquaticum",
+        "cim": "Aquaticium Hotel HU 4032 Debrecen, Nagyerdei park 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Bambara Hotel Kft.",
+        "cim": "Bambara Hotel Premium HU 3324 Fels\u0151t\u00e1rk\u00e1ny, B\u00fckk-erd\u0151 s\u00e9t\u00e1ny 2-4.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Gesztenyeliget Integr\u00e1lt Szoci\u00e1lis Int\u00e9zm\u00e9ny / Cinege Szolg\u00e1ltat\u00f3 K\u00f6zpont",
+        "cim": "Cinege Szolg\u00e1ltat\u00f3 K\u00f6zpont HU 6622 Nagym\u00e1gocs, J\u00f3kai M\u00f3r utca 68.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "P\u00fcsp\u00f6klad\u00e1nyi V\u00e1ros\u00fczemeltet\u0151 \u00e9s Gy\u00f3gyf\u00fcrd\u0151 Kft. / K\u00e1lvin \u00c1ltal\u00e1nos Iskola t\u00e1lal\u00f3",
+        "cim": "K\u00e1lvin \u00c1ltal\u00e1nos Iskola t\u00e1lal\u00f3 HU 4150 P\u00fcsp\u00f6klad\u00e1ny, K\u00e1lvin t\u00e9r 8.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "STE-SZA TEAM Bt.",
+        "cim": "Talizm\u00e1n Vend\u00e9gl\u0151 HU 7140 B\u00e1tasz\u00e9k, Garay utca 149.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Petra Mineral Kft",
+        "cim": "HU 2521 Csolnok, Szondi",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "ZEVIMEX Kft.",
+        "cim": "Toscana \u00c9tterem HU 7100 Szeksz\u00e1rd, Szent Istv\u00e1n t\u00e9r 3-5",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "BEM 15 Kft.",
+        "cim": "Calico Jack Pub HU 4026 Debrecen, Bem t\u00e9r 15.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Wave Box Kft.",
+        "cim": "Club k\u00f3kusz pizz\u00e9ria HU 6060 Tiszak\u00e9cske, Tiszak\u00e9cske Kossuth u. 7.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Spaletta Gasztro Kft./ Spaletta \u00c9tterem",
+        "cim": "HU 6000 Kecskem\u00e9t, J\u00f3kai 15",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Eatrend Kft. / Cegl\u00e9d, Budai t\u00e1lal\u00f3konyha",
+        "cim": "Budai t\u00e1lal\u00f3konyha HU 2700 Cegl\u00e9d, Budai \u00fat 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Prizma Food Kft. / ANTENNA Hung\u00e1ria \u00c9tterem Budapest",
+        "cim": "ANTENNA Hung\u00e1ria \u00c9tterem HU 1117 Budapest, Petzv\u00e1l J\u00f3zsef utca 31-33.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Prizma-junior Zrt. / Margar\u00e9ta Id\u0151sek Otthona D\u00e9vav\u00e1nya",
+        "cim": "Margar\u00e9ta Id\u0151sek Otthona HU 5510 D\u00e9vav\u00e1nya, J\u00e9ggy\u00e1r utca 47.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Arrabona Zrt. / SOPRON K\u0150HIDAI \u00d3voda",
+        "cim": "K\u0151hida \u00d3voda HU 9400 Sopron, Pesti Barnab\u00e1s utca 32.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "FOOD HUNTER Kft. / Bistro and Cafe",
+        "cim": "Bistro and Cafe HU 1138 Budapest, V\u00e1ci u. 188.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Vill\u00e1ng Kft.",
+        "cim": "L\u00e1ngoss\u00fct\u0151 Piac HU 6400 Kiskunhalas, M\u00e1jus t\u00e9r 1",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "S\u00f3ti M\u00e9dia Marketing- Kereskedelmi \u00e9s Szolg\u00e1ltat\u00f3 Kft",
+        "cim": "Mars t\u00e9ri Hal\u00fczlet HU 6723 Szeged, Mars t\u00e9r K1-10 \u00fczlet",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Gesztenyeliget Integr\u00e1lt Szoci\u00e1lis Int\u00e9zm\u00e9ny / Galagonya Lak\u00f3otthon",
+        "cim": "Galagonya Lak\u00f3otthon HU 6622 Nagym\u00e1gocs, V\u00f6r\u00f6smarty utca 59.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Bacsa Erika",
+        "cim": "H\u00e1zias Konyha HU 6112 P\u00e1lmonostora, Pet\u0151fi S\u00e1ndor utca 129.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "P\u00fcsp\u00f6klad\u00e1nyi V\u00e1ros\u00fczemeltet\u0151 \u00e9s Gy\u00f3gyf\u00fcrd\u0151 Kft. / Pet\u0151fi S\u00e1ndor \u00c1ltal\u00e1nos Iskola t\u00e1lal\u00f3",
+        "cim": "Pet\u0151fi S\u00e1ndor \u00c1ltal\u00e1nos Iskola t\u00e1lal\u00f3 HU 4150 P\u00fcsp\u00f6klad\u00e1ny, Pet\u0151fi S\u00e1ndor utca 9.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "T.L.C. F\u0151nix Kft. / La Casa Ristorante Szentes",
+        "cim": "La Casa Ristorante Szentes HU 6600 Szentes, Horv\u00e1th Mih\u00e1ly utca 11",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "BN-Ristorante Kft.",
+        "cim": "Bella Napoli Pizz\u00e9ria HU 7100 Szeksz\u00e1rd, Szent L\u00e1szl\u00f3  utca 19.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Csapl\u00e1r S\u00e1ndorn\u00e9",
+        "cim": "CSAPL\u00c1R VEND\u00c9GL\u0150 HU 6000 Kecskem\u00e9t, Vacsi k\u00f6z 21.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "VEROTI GASZTRO Kft.",
+        "cim": "Tiszat\u00e1j Vend\u00e9gl\u0151 HU 6066 Tiszaalp\u00e1r, Alkotm\u00e1ny utca 8",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Bendorkor Kereskedelmi Kft.",
+        "cim": "Bendorkor -sz\u00e1ll\u00edt\u00e1s napj\u00e1n sof\u0151r h\u00edvja az \u00fcgyfelet! HU 7636 P\u00e9cs, Ak\u00e1cos sor 22",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Eatrend Kft. / Cegl\u00e9d,R\u00e1k\u00f3czi t\u00e1lal\u00f3konyha",
+        "cim": "R\u00e1k\u00f3czi t\u00e1lal\u00f3konyha HU 2700 Cegl\u00e9d, R\u00e1k\u00f3czi \u00fat 50-52.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Arrabona Zrt. / Csorna Csuk\u00e1s t\u00e1lal\u00f3",
+        "cim": "Csorna Csuk\u00e1s t\u00e1lal\u00f3 HU 9300 Csorna, K\u00f3rh\u00e1z utca 28.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Comp-let Party Service Kft. / Vasmacska Terasz",
+        "cim": "Comp-let Party Service Kft. HU 1037 Budapest, Sz\u00e9pv\u00f6lgyi \u00fat 33.    \nVasmacska Terasz HU 1222 Budapest, F\u00e9kez\u0151 utca 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Prizma-Junior Zrt. / Napsug\u00e1r \u00d3voda D\u00e9vav\u00e1nya",
+        "cim": "Napsug\u00e1r \u00d3voda HU 5510 D\u00e9vav\u00e1nya, Kossuth utca 3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Kft. / Cegl\u00e9dbercel 15. konyha",
+        "cim": "Cegl\u00e9dbercel 15. konyha HU 2737 Cegl\u00e9dbercel, Pet\u0151fi  6.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Gustorante Kft. / Gusto \u00c9tterem",
+        "cim": "Gusto \u00c9tterem HU 5700 Gyula, V\u00e1rosh\u00e1za utca 15.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "S&S GASTRO Kft.",
+        "cim": "Tanyacs\u00e1rda Baja HU 6500 Baja, Tanya I.k\u00f6rzet  7.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "\u00cdzgy\u00e1r Kft./ AGC \u00dczemi \u00c9tterem",
+        "cim": "AGC \u00dczemi \u00c9tterem HU 2851 K\u00f6rnye, \u00dcveggy\u00e1r utca 1.    \nNyitvatart\u00e1s: 6-22-ig\nNyitvatart\u00e1s: 6-22-ig",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Monster Gastro Kereskedelmi \u00e9s Szolg\u00e1ltat\u00f3 Kft. / PIZZA Monster \u00c9tterem",
+        "cim": "PIZZA Monster \u00c9tterem HU 6724 Szeged, S\u00e1rosi utca 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Dabasi Int\u00e9zm\u00e9nyfenntart\u00f3 K\u00f6zpont/ \tDabasi Int\u00e9zm\u00e9nyfenntart\u00f3 K\u00f6zpont",
+        "cim": "Dabasi Int\u00e9zm\u00e9nyfenntart\u00f3 K\u00f6zpont HU 2370 Dabas, Bart\u00f3k B\u00e9la utca 32.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Gesztenyeliget Integr\u00e1lt Szoci\u00e1lis Int\u00e9zm\u00e9ny / Bogl\u00e1rka Lak\u00f3otthon",
+        "cim": "Bogl\u00e1rka Lak\u00f3otthon HU 6622 Nagym\u00e1gocs, Szendrei Ign\u00e1c utca 50.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "P\u00fcsp\u00f6klad\u00e1nyi V\u00e1ros\u00fczemeltet\u0151 \u00e9s Gy\u00f3gyf\u00fcrd\u0151 Kft. / Mezei Vir\u00e1g \u00d3voda t\u00e1lal\u00f3",
+        "cim": "Mezei Vir\u00e1g \u00d3voda t\u00e1lal\u00f3 HU 4150 P\u00fcsp\u00f6klad\u00e1ny, G\u00e1rdonyi G\u00e9za utca 49.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Retro Kif\u0151zde Kft. / Retro kif\u0151zde 1.",
+        "cim": "Retro kif\u0151zde 1. HU 1116 Budapest, Vegy\u00e9sz u. 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Devils Kft.",
+        "cim": "Red Devils Pub & Pizz\u00e9ria HU 2713 Csem\u0151, Szent Istv\u00e1n \u00fat 37.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Dob\u00f3 \u00fati B\u00f6lcs\u0151de",
+        "cim": "Dob\u00f3 \u00fati B\u00f6lcs\u0151de HU 3200 Gy\u00f6ngy\u00f6s, Dob\u00f3 utca 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "ERD\u0150 VILLA Kft.",
+        "cim": "Kr\u00fady \u00c9tterem HU 4032 Debrecen, Medgyessy s\u00e9t\u00e1ny 4.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Kiskunhalas S\u00f3st\u00f3-F\u00fcrd\u0151 Idegenforgalmi Kft",
+        "cim": "S\u00f3st\u00f3 Cs\u00e1rda HU 6400 Kiskunhalas, K\u0151r\u00f6si \u00fat 28.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "VERHO Kft.",
+        "cim": "Aqua Term\u00e1l \u00c9tterem Cserkesz\u0151l\u0151 HU 5465 Cserkesz\u0151l\u0151, Beton \u00fat 10.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Kft. / Cegl\u00e9d, K\u00f6zg\u00e1z t\u00e1lal\u00f3konyha",
+        "cim": "K\u00f6zg\u00e1z t\u00e1lal\u00f3konyha HU 2700 Cegl\u00e9d, Kossuth Ferenc utca 32.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Arrabona Zrt. / Csorna, Arany J\u00e1nos EGYMI t\u00e1lal\u00f3konyha",
+        "cim": "Arany J\u00e1nos EGYMI, \u00d3voda, \u00c1ltal\u00e1nos Iskola, Speci\u00e1lis Szakiskola t\u00e1lal\u00f3konyha HU 9300 Csorna, Erzs\u00e9bet kir\u00e1lyn\u00e9 utca 64.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "\u00c9L-AUT\u00d3 Bt.",
+        "cim": "Maja Konyh\u00e1ja HU 1078 Budapest, Istv\u00e1n utca 28.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Prizma-junior Zrt. / K\u00f6nyves K\u00e1lm\u00e1n \u00fati \u00f3voda D\u00e9vav\u00e1nya",
+        "cim": "K\u00f6nyves K\u00e1lm\u00e1n \u00fati \u00f3voda HU 5510 D\u00e9vav\u00e1nya, K\u00f6nyves utca 13.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Zolgiz Vend\u00e9gl\u00e1t\u00f3 Kft.",
+        "cim": "Zolgiz \u00c9telb\u00e1r HU 9485 Nagycenk, Soproni \u00fat 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Gesztenyeliget Integr\u00e1lt Szoci\u00e1lis Int\u00e9zm\u00e9ny / Orgona Lak\u00f3otthon",
+        "cim": "Orgona Lak\u00f3otthon HU 6622 Nagym\u00e1gocs, Szendrei Ign\u00e1c utca 54.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "P\u00fcsp\u00f6klad\u00e1nyi V\u00e1ros\u00fczemeltet\u0151 \u00e9s Gy\u00f3gyf\u00fcrd\u0151 Kft. / \u00c1rp\u00e1d \u00d3voda t\u00e1lal\u00f3",
+        "cim": "\u00c1rp\u00e1d \u00d3voda t\u00e1lal\u00f3 HU 4150 P\u00fcsp\u00f6klad\u00e1ny, \u00c1rp\u00e1d utca 18.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Mindig Fincsi Kft",
+        "cim": "Mindig Fincsi B\u00fcf\u00e9 HU 2890 Tata, Kocsi utca 7",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "KISGY\u00d6RGY LAJOSN\u00c9",
+        "cim": "Zsuhuka falatoz\u00f3ja HU 7833 G\u00f6rcs\u00f6ny, R\u00e1k\u00f3czi utca 13",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Szilv\u00e1si Gasztro Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g",
+        "cim": "Sasf\u00e9szek HU 6000 Kecskem\u00e9t, Als\u00f3csal\u00e1nos 3",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Retro Kif\u0151zde Kft. / Retro 2 \u00c9tterem",
+        "cim": "Retro 2 \u00c9tterem HU 1119 Budapest, T\u00e9t\u00e9nyi \u00fat 63. I.emelet A.\u00e9p\u00fclet",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Becsey \u00e9s Bal\u00e1zs KFT.",
+        "cim": "Orhidea \u00c9tterem Bal\u00e1stya HU 6764 Bal\u00e1stya, Sz\u00e9chenyi  utca 14.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "CSABAI SZLOV\u00c1KOK Kft.",
+        "cim": "Szlov\u00e1k \u00c9tterem Kism\u00f3kus konyh\u00e1ja B\u00e9k\u00e9scsaba HU 5600 B\u00e9k\u00e9scsaba, Kossuth t\u00e9r 10.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Jeruzs\u00e1lem \u00fati B\u00f6lcs\u0151de",
+        "cim": "Jeruzs\u00e1lem \u00fati B\u00f6lcs\u0151de HU 3200 Gy\u00f6ngy\u00f6s, Jeruzs\u00e1lem u.3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Szab\u00f3 & Fertign\u00e9 Bt",
+        "cim": "\u00c9telb\u00e1r Piaccsarnok Budai utca HU 6000 Kecskem\u00e9t, Budai utca 2.      \nNyitva tart\u00e1s: 6-14",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Kant\u00e1r 98 Kft.",
+        "cim": "Kant\u00e1r Fogad\u00f3 HU 9371 Vitny\u00e9d, D\u00f3zsa Gy\u00f6rgy utca 2. n/a",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Forno Kft. / Pronto Pizza",
+        "cim": "Pronto Pizza HU 5000 Szolnok, Kossuth Lajos u. 6-8.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Kft. / Cegl\u00e9d, Sz\u00e9chenyi t\u00e1lal\u00f3konyha",
+        "cim": "Sz\u00e9chenyi t\u00e1lal\u00f3konyha HU 2700 Cegl\u00e9d, Sz\u00e9chenyi \u00fat 14 D",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "P Dussmann Szolg\u00e1ltato Kft / BMW CC \u00c9tterem \u00e9s K\u00e1v\u00e9z\u00f3",
+        "cim": "BMW CC \u00c9tterem \u00e9s K\u00e1v\u00e9z\u00f3 HU 4002 Debrecen, BMW krt. 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Bar\u00e1th \u00e9s T\u00e1rsai KFT.",
+        "cim": "Korona \u00c9tterem Baja HU 6500 Baja, Szent J\u00e1nosi utca 3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Agro-world-hungary Kft.",
+        "cim": "Elizabeth \u00c9tterem HU 5465 Cserkesz\u0151l\u0151, F\u00fcrd\u0151 utca 616/5.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Monster Gastro Kereskedelmi \u00e9s Szolg\u00e1ltat\u00f3 Kft. / KISKAKAS Bisztr\u00f3",
+        "cim": "KISKAKA Bisztr\u00f3 HU 6724 Szeged, P\u00fcsp\u00f6k utca 11. A.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Gesztenyeliget Integr\u00e1lt Szoci\u00e1lis Int\u00e9zm\u00e9ny / Nagym\u00e1gocs Kast\u00e9lyotthon",
+        "cim": "Nagym\u00e1gocs Kast\u00e9lyotthon HU 6622 Nagym\u00e1gocs, Szentesi \u00fat 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "P\u00fcsp\u00f6klad\u00e1nyi V\u00e1ros\u00fczemeltet\u0151 \u00e9s Gy\u00f3gyf\u00fcrd\u0151 Kft. / Sziv\u00e1rv\u00e1ny \u00d3voda t\u00e1lal\u00f3",
+        "cim": "Sziv\u00e1rv\u00e1ny \u00d3voda t\u00e1lal\u00f3 HU 4150 P\u00fcsp\u00f6klad\u00e1ny, Honv\u00e9d utca 12.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "TWO PIPI Kft. / Th\u00f6k\u00f6ly Hentes",
+        "cim": "Th\u00f6k\u00f6ly Hentes HU 1146 Budapest, Th\u00f6k\u00f6ly 104",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "G\u00e1l \u00e9s M\u00e1rta Kft.",
+        "cim": "Feh\u00e9r-t\u00f3 \u00c9tterem HU 5945 Kardosk\u00fat, \u00c1rp\u00e1d sor 5.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "KE-ZSO-LA Kft.",
+        "cim": "Csap\u00f3f\u0151zel\u00e9k HU 4029 Debrecen, Csap\u00f3 utca 66.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "KOV\u00c1CS \u00e9s T\u00c1RSA BT.",
+        "cim": "Tiszti Club \u00c9tterem HU 6400 Kiskunhalas, Pet\u0151fi S. 7-9.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Nyes\u0151 Zsolt e.v.",
+        "cim": "Zsolti Konyha HU 2347 Bugyi, Erzs\u00e9bet kir\u00e1lyn\u00e9  utca 50.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Pikante-Gasztro Vend\u00e9gl\u00e1t\u00f3ipari Szolg\u00e1ltat\u00f3 Kft./ Pikante \u00c9tterem",
+        "cim": "Pikante \u00c9tterem HU 2890 Tata, T\u00f3part s\u00e9t\u00e1ny 13.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Szent Erzs\u00e9bet Katolikus \u00c1ltal\u00e1nos Iskola \u00e9s \u00d3voda",
+        "cim": "Szent Erzs\u00e1bet Kat \u00c1lt Iskola HU 6600 Szentes, Erzs\u00e9bet t\u00e9r 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "GY\u00d6NGY\u00d6S V\u00c1ROS \u00d3VOD\u00c1I / FECSKE \u00fati Tag\u00f3voda",
+        "cim": "Fecske \u00fati tag \u00f3voda HU 3200 Gy\u00f6ngy\u00f6s, FECSKE \u00daT 28",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Kft. / Cegl\u00e9d, D\u00f3zsa koll\u00e9gium t\u00e1lal\u00f3konyha",
+        "cim": "D\u00f3zsa koll\u00e9gium t\u00e1lal\u00f3konyha HU 2700 Cegl\u00e9d, R\u00e1k\u00f3czi \u00fat 54-56.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Sz\u00e1malk-Szal\u00e9zi Technikum \u00e9s Szakgimn\u00e1zium",
+        "cim": "Margit Mama b\u00fcf\u00e9je \u00e9s \u00c9tterem HU 1119 Budapest, M\u00e9rn\u00f6k utca 39. \u00e9p\u00fclet bal oldala",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Retro Kif\u0151zde Kft. / Vud\u00edz Gyors\u00e9tterem",
+        "cim": "Vud\u00edz Gyors\u00e9tterem HU 1119 Budapest, T\u00e9t\u00e9nyi \u00fat 63. I.emelet B.\u00e9p\u00fclet   \n1 HO AMI A RETRO 2-N\u00c9L VAN AZ A VUDIZ \u00c9TTEREMHEZ TARTOZIK!!!",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Zsoli-t\u00e1r. 2012. Kft. / Clarisseum Reform\u00e1tus \u00d3voda",
+        "cim": "Clarisseum Reform\u00e1tus \u00d3voda HU 6723 Szeged, S\u00f3hord\u00f3 utca 13.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Prizma-junior Zrt. / V\u00e1nyai Ambrus \u00c1lt. Iskola Ecsegfalva",
+        "cim": "V\u00e1nyai Ambrus \u00c1lt. Iskola HU 5515 Ecsegfalva, \u00c1rp\u00e1d \u00fat 17.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Jamina-h\u00fas Kft.",
+        "cim": "Jobb mint Otthon HU 5600 B\u00e9k\u00e9scsaba, Orosh\u00e1zi utca 55.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Waldorf 2000. Kft. / V\u00e1rmegye \u00c9tterem Szeged",
+        "cim": "V\u00e1rmegye \u00c9tterem Szeged HU 6722 Szeged, R\u00e1k\u00f3czi t\u00e9r 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Kov\u00e1cs Patrik e.v./ Facsiga B\u00fcf\u00e9",
+        "cim": "Facsiga B\u00fcf\u00e9 HU 9371 Vitny\u00e9d, F\u0151 utca 1/A",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Gesztenyeliget Integr\u00e1lt Szoci\u00e1lis Int\u00e9zm\u00e9ny / F\u0171zfa",
+        "cim": "F\u0171zfa HU 6600 Szentes, Bereklapos utca 1/B",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "P\u00fcsp\u00f6klad\u00e1nyi V\u00e1ros\u00fczemeltet\u0151 \u00e9s Gy\u00f3gyf\u00fcrd\u0151 Kft. / Petritelepi \u00c1ltal\u00e1nos Iskola t\u00e1lal\u00f3",
+        "cim": "Petritelepi \u00c1ltal\u00e1nos Iskola t\u00e1lal\u00f3 HU 4150 P\u00fcsp\u00f6klad\u00e1ny, Karcagi utca 28.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Kriszland Kft.",
+        "cim": "ETELE Bisztro HU 1119 Budapest, Etele \u00fat 71.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "PRIV\u00c1T GASTRO Kft.",
+        "cim": "HU 4028 Debrecen, Kassai 37",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Karik\u00e1s Gasztroh\u00e1z Kft",
+        "cim": "Karik\u00e1s Cs\u00e1rda HU 4200 Hajd\u00faszoboszl\u00f3, H\u0151forr\u00e1s utca 33.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Magyar Zolt\u00e1n",
+        "cim": "S-\u00d6nt\u00e9s \u00c9tterem HU 9339 Kapuv\u00e1r, \u00d6nt\u00e9smajor R\u00e1k\u00f3czi F. u. 7.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "S\u00d3TART\u00d3 KFT.",
+        "cim": "Roosevelt Hal\u00e1szcs\u00e1rda Szeged HU 6720 Szeged, Roosevelt t\u00e9r 14.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "KAMUTI ERN\u0150N\u00c9",
+        "cim": "L\u00e1ngoss\u00fct\u0151 HU 6764 Bal\u00e1stya, Bart\u00f3k B\u00e9la \u00fat 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "GY\u00d6NGY\u00d6S V\u00c1ROS \u00d3VOD\u00c1I / PLAT\u00c1N Tag\u00f3voda",
+        "cim": "Plat\u00e1n Tag \u00d3voda HU 3200 Gy\u00f6ngy\u00f6s, Plat\u00e1n utca 1/2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Forster Rendezv\u00e9ny Kft./ Forster Vad\u00e1szkast\u00e9ly \u00e9s Sz\u00e1lloda",
+        "cim": "Forster Vad\u00e1szkast\u00e9ly \u00e9s Sz\u00e1lloda HU 2347 Bugyi, K\u00fclter\u00fclet",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Fels\u0151 Faktor 2007 Kft / F\u0151t\u00e9r Bisztr\u00f3",
+        "cim": "F\u0151t\u00e9r Bisztr\u00f3 P\u00e1szt\u00f3 HU 3060 P\u00e1szt\u00f3, F\u0151 utca 73 B.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Forno Kft. / Pizza Sprint, Tomori P\u00e1l u.",
+        "cim": "Pizza Sprint - Tomori HU 5000 Szolnok, Tomori P\u00e1l utca 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Prizma-junior Zrt. / Ecsegfalvi \u00d3voda",
+        "cim": "Ecsegfalvi \u00d3voda HU 5515 Ecsegfalva, Hunyadi J\u00e1nos utca 3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Brand Fast Food Kft. / Pipipont Falatoz\u00f3",
+        "cim": "Pipit\u00e9r Falatoz\u00f3 HU 6726 Szeged, Temesv\u00e1ri Krt. 44.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Hevi Mesterkonyha Kft./ K\u00fchne \u00c9tterem",
+        "cim": "K\u00fchne \u00c9tterem HU 9246 Mosonmagyar\u00f3v\u00e1r, K\u00fchne Ede t\u00e9r 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Gesztenyeliget Integr\u00e1lt Szoci\u00e1lis Int\u00e9zm\u00e9ny / K\u00f6zpont",
+        "cim": "K\u00f6zpont HU 6600 Szentes, Bereklapos utca 1/A",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Szegv\u00e1r Gasztro Bt.",
+        "cim": "Castellum \u00c9tterem HU 6635 Szegv\u00e1r, R\u00e9giposta utca 3",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Gy\u00e9m\u00e1nt \u00e9s T\u00e1rsa Kft.",
+        "cim": "Gy\u00e9m\u00e1nt HU 6728 Szeged, Vass M\u00e1ty\u00e1s \u00fat 3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Taban Food Kft/ Parsa Food \u00c9tterem",
+        "cim": "Parsa Food \u00c9tterem HU 1134 Budapest, Bulcs\u00fa utca 25.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Di\u00e1k\u00e9tkeztet\u00e9si Kft. / PTE KPVK \u00c9tterem",
+        "cim": "PTE KPVK \u00c9tterem HU 7100 Szeksz\u00e1rd, R\u00e1k\u00f3czi utca 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Arany Hord\u00f3 Vend\u00e9gl\u0151 Kft. / Maison Bistro & Hotel",
+        "cim": "Maison Bistro & Hotel HU 1014 Budapest, Orsz\u00e1gh\u00e1z u. 17.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Bosny\u00e1k Erika e.v.",
+        "cim": "H\u00e1zias\u00edzek Vend\u00e9gl\u0151 HU 6500 Baja, Attila utca 5.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Bugyi Nagyk\u00f6zs\u00e9gi Napk\u00f6ziotthonos \u00d3voda / Napk\u00f6ziotthonos \u00d3voda",
+        "cim": "Napk\u00f6ziotthonos \u00d3voda HU 2347 Bugyi, Sport u. 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Brand Fast Food Kft. / Pipipont Szendvicsez\u0151",
+        "cim": "Pipipont Makkosh\u00e1za HU 6726 Szeged, Makkosh\u00e1zi Krt. 27. A.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Dukai Norbert",
+        "cim": "Jam Restaurant & Cafe HU 9330 Kapuv\u00e1r, Piac t\u00e9r 4.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Gesztenyeliget Integr\u00e1lt Szoci\u00e1lis Int\u00e9zm\u00e9ny / Ak\u00e1cfa",
+        "cim": "Ak\u00e1cfa HU 6600 Szentes, R\u00e1k\u00f3czi Ferenc utca 110",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "B\u00fcntet\u00e9s-V\u00e9grehajt\u00e1s Gazdas\u00e1gi Ell\u00e1t\u00f3 Int\u00e9zete / M\u00e1ty\u00e1si utca",
+        "cim": "B\u00fcntet\u00e9s-V\u00e9grehajt\u00e1s Gazdas\u00e1gi Ell\u00e1t\u00f3 Int\u00e9zete/ M\u00e1ty\u00e1si HU 6000 Kecskem\u00e9t, M\u00e1ty\u00e1si utca 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Gemma Iskola Nonprofit K\u00f6zhaszn\u00fa Kft./ Gemma Iskola - Keny\u00e9rgy\u00e1ri \u00fat",
+        "cim": "Gemma Iskola HU 6724 Szeged, Keny\u00e9rgy\u00e1ri \u00fat 12.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "MX Gy\u00f6ngy Kft.",
+        "cim": "Mi \u00e9tterm\u00fcnk HU 3200 Gy\u00f6ngy\u00f6s, Sz\u00e9chenyi utca 7.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "LINEX PLUS Kft./ M\u00e1ty\u00e1s Vend\u00e9gl\u0151",
+        "cim": "M\u00e1ty\u00e1s Vend\u00e9gl\u0151 HU 4026 Debrecen, Ajt\u00f3 1",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Luximpex Kft.",
+        "cim": "HU 4200 Hajd\u00faszoboszl\u00f3, M\u00e1ty\u00e1s kir\u00e1ly s\u00e9t\u00e1ny 19.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "M\u00c9HES-M Kft.",
+        "cim": "Hotel N\u00e9gy \u00c9vszak HU 4200 Hajd\u00faszoboszl\u00f3, J\u00f3kai sor 13.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "MERKUR Bt.",
+        "cim": "Leg\u00e9nyfog\u00f3 \u00e9tterem Sz\u00e9passzonyv\u00f6lgy HU 3300 Eger, Diszn\u00f3f\u0151sor utca 1.      \nnyit\u00e1s 10 \u00f3ra\nnyit\u00e1s 10 \u00f3ra\nnyit\u00e1s 10 \u00f3ra\nnyit\u00e1s 10 \u00f3ra",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "NETT-MED Kft.",
+        "cim": "Halih\u00f3 L\u00e1ngos HU 4600 Kisv\u00e1rda, V\u00e1rosmajor utca 56.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Baji Polg\u00e1rmesteri hivatal - Baj k\u00f6zs\u00e9g konyh\u00e1ja",
+        "cim": "BAJI POLG\u00c1RMESTERI HIVATAL HU 2836 Baj, Pet\u0151fi S\u00e1ndor u. 52.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Lakjunk J\u00f3l Kft.",
+        "cim": "Garta Vend\u00e9gl\u0151 HU 9330 Kapuv\u00e1r, R\u00e1k\u00f3czi Ferenc \u00fat 32.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Don Quijote Pizza Kft. / Don Quijote Pizza Szolnok",
+        "cim": "Don Quijote Pizza Szolnok HU 5008 Szolnok, Kr\u00fady Gyula utca 108.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Herkonsult Kft. / B\u00e1csi Gourmet \u00c9tterem",
+        "cim": "B\u00e1csi Gourmet \u00c9tterem HU 6044 Kecskem\u00e9t, Het\u00e9ny vez\u00e9r utca 7.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Bugyi Nagyk\u00f6zs\u00e9gi Napk\u00f6ziotthonos \u00d3voda / Katica \u00d3voda",
+        "cim": "Katica \u00d3voda HU 2347 Bugyi, J\u00f3kai u. 11.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Piros Attila Kriszti\u00e1n",
+        "cim": "Kispiros Vend\u00e9gl\u0151 HU 6635 Szegv\u00e1r, Szentesi \u00fat 22.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Brand Fast Food Kft. / Pipit\u00e9r Szendvicsez\u0151",
+        "cim": "Pipit\u00e9r Szendvicsez\u0151 HU 6722 Szeged, Tisza Lajos Krt. 65.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Gesztenyeliget Integr\u00e1lt Szoci\u00e1lis Int\u00e9zm\u00e9ny / Szilfa",
+        "cim": "Szilfa HU 6600 Szentes, R\u00e1k\u00f3czi Ferenc utca 175",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "REVITAL Kft. / VIZAFOG\u00d3 \u00c9tterem",
+        "cim": "VIZAFOG\u00d3 \u00c9tterem HU 6500 Baja, M\u00e1rcius 15 s\u00e9t\u00e1ny 27.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Bart\u00f3k Tam\u00e1s EV.",
+        "cim": "Corner Pizza HU 3213 Atk\u00e1r, Sz\u00e9chenyi Istv\u00e1n \u00fat 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Geotherm \u00dcd\u00fcl\u0151 Kft.",
+        "cim": "SILVER HOTEL Hajd\u00faszoboszl\u00f3 HU 4200 Hajd\u00faszoboszl\u00f3, M\u00e1ty\u00e1s kir\u00e1ly s\u00e9t\u00e1ny 25.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Czig\u00e1ny M\u00e1rk J\u00e1nos",
+        "cim": "L\u00e1ngos B\u00fcf\u00e9 HU 6000 Kecskem\u00e9t, Lad\u00e1nybenei \u00fat 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "F\u00e9nysug\u00e1r Katolikus \u00d3voda / Avar u.",
+        "cim": "\u00d3voda HU 6723 Szeged, Avar u. 5.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Bugyi Nagyk\u00f6zs\u00e9gi Napk\u00f6ziotthonos \u00d3voda / B\u00f3bita \u00d3voda",
+        "cim": "B\u00f3bita \u00d3voda HU 2347 Bugyi, Sz\u00e9chenyi t\u00e9r 13.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Portakt\u00edvum Kft. / Kisg\u00f6mb\u00f6c \u00c9telb\u00e1r",
+        "cim": "HU 4027 Debrecen, F\u00fcredi 57-59",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Bogr\u00e1cskert Kft. / M\u00c1KOS Guba \u00c9tterem",
+        "cim": "M\u00c1KOS Guba \u00c9tterem HU 9246 Mosonmagyar\u00f3v\u00e1r, Partos \u00fat 64",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "A&B Trending Kft./ Beer&Burgers \u00e9tterem",
+        "cim": "Beer&Burgers HU 5000 Szolnok, M\u00e1rt\u00edrok \u00fatja 43",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "ALF\u00d6LD 92 Kft.",
+        "cim": "M\u00e1ty\u00e1s Kir\u00e1ly Gy\u00f3gy- \u00e9s Wellness Hotel HU 4200 Hajd\u00faszoboszl\u00f3, M\u00e1ty\u00e1s kir\u00e1ly  s\u00e9t\u00e1ny 17.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "T\u00f3th Istv\u00e1n e.v.",
+        "cim": "Aranypatk\u00f3 Cs\u00e1rda HU 5900 Orosh\u00e1za, Szentesi \u00fat 62/A.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Savany\u00fa Bt./ Lehel Vend\u00e9gl\u0151",
+        "cim": "HU 1134 Budapest, Lehel u. 17./D\nAmennyiben lehets\u00e9ges 8 hetente elegend\u0151 elsz\u00e1ll\u00edtani.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Gasztr\u00f3za-Team Kft. / R\u00f3za \u00c9tterem",
+        "cim": "R\u00f3za \u00c9tterem HU 5000 Szolnok, Konstantin utca 36",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Kft. / Fadd f\u0151z\u0151konyha",
+        "cim": "Fadd f\u0151z\u0151konyha HU 7133 Fadd, Templom utca 5.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Eatrend Danubia Kft. / Gy\u00f6ngy\u00f6s, 3. T\u00e1lal\u00f3 Arany J\u00e1nos \u00c1ltal\u00e1nos Iskola",
+        "cim": "Gy\u00f6ngy\u00f6s, 3. T\u00e1lal\u00f3 Arany J\u00e1nos \u00c1ltal\u00e1nos Iskola HU 3200 Gy\u00f6ngy\u00f6s, Jeruzs\u00e1lem utca 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Bert\u00e1na Bt.",
+        "cim": "KIr\u00e1lyi Pokol Konyha HU 7953 Kir\u00e1lyegyh\u00e1za, Cementgy\u00e1r Hrsz. 041/029.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Szarvas Lux Kft.",
+        "cim": "Szarvasi Hal\u00e1szcs\u00e1rda HU 5540 Szarvas, I. ker. 6.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "PENTASI Kft.",
+        "cim": "Kiskonyha Kiskunmajsa HU 6120 Kiskunmajsa, \u00c1rp\u00e1d utca 22.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Telegrill Kft.",
+        "cim": "Telegrill HU 9200 Mosonmagyar\u00f3v\u00e1r, Kert u. 21.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Cig\u00e1ny Vend\u00e9gl\u0151 Kft.",
+        "cim": "Kira Vend\u00e9gl\u0151 HU 5630 B\u00e9k\u00e9s, Dank\u00f3 Pista utca 24.      \nCsere ed\u00e9nyt k\u00e9rek\nCsere ed\u00e9nyt k\u00e9rek\nCsere ed\u00e9nyt k\u00e9rek\nCsere ed\u00e9nyt k\u00e9rek\nCsere ed\u00e9nyt k\u00e9rek\nCsere ed\u00e9nyt k\u00e9rek\nCsere ed\u00e9nyt k\u00e9rek\nCsere ed\u00e9nyt k\u00e9rek\nCsere ed\u00e9nyt k\u00e9rek\nCsere ed\u00e9nyt k\u00e9rek",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Orosh\u00e1zi Reform\u00e1tus K\u00e9t Tan\u00edt\u00e1si Nyelv\u0171 \u00c1ltal\u00e1nos Iskola",
+        "cim": "Reform\u00e1tus K\u00e9t Tan\u00edt\u00e1si Nyelv\u0171 \u00c1ltal\u00e1nos Iskola Orosh\u00e1za HU 5900 Orosh\u00e1za, El\u0151d u 17",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Konkoly Zsigmondn\u00e9 e.v./ Marika konyh\u00e1ja Tatab\u00e1nya",
+        "cim": "Marika konyh\u00e1ja Tatab\u00e1nya HU 2800 Tatab\u00e1nya, Baross G\u00e1bor \u00fat 6.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Prim L\u00e1szl\u00f3",
+        "cim": "Vikt\u00f3ria Pizz\u00e9ria & PUB HU 9343 Beled, K\u00f6z\u00e9p utca 23",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Corvinus 39. Gastro Kft. / K\u00faria \u00c9tterem",
+        "cim": "K\u00faria \u00c9tterem HU 1055 Budapest, Mark\u00f3  16.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Fresh Foodie Hungary Kft.",
+        "cim": "Pal\u00e1nta Sal\u00e1tab\u00e1r HU 6722 Szeged, Szenth\u00e1roms\u00e1g u. 13.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Lightning Profi Food Kft. / Aqua \u00c9tterem",
+        "cim": "Aqua \u00c9tterem HU 6000 Kecskem\u00e9t, Csabay G\u00e9za krt. 5.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "ILL\u00c9S \u00e9s ILL\u00c9S Kft.",
+        "cim": "St\u00fcszi Vad\u00e1sz Szeged HU 6721 Szeged, Maros utca 37.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "MUKI \u00e9s T\u00e1rsa Kft.",
+        "cim": "Szendvicsgy\u00e1rt\u00f3 (V\u00e1r \u00c9tkezde) HU 5071 Besenysz\u00f6g, Mih\u00e1lyi -lapos Anita utca",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Double Darida Kft.",
+        "cim": "Vad\u00e1szk\u00fcrt Vend\u00e9gl\u0151 \u00e9s Panzi\u00f3 HU 5540 Szarvas, De\u00e1k Ferenc utca 9.      \nDe ny\u00e1ron lehet,hogy heti",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "TAKEBAYASHI Kft.",
+        "cim": "Bambuszliget HU 1052 Budapest, Belgr\u00e1d rakpart 18.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Varga \u00c1rp\u00e1d J\u00f3zsefn\u00e9",
+        "cim": "HU 9353 Sz\u00e1rf\u00f6ld, Honv\u00e9d utca 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "PRO GREAT BONUS Kft",
+        "cim": "Hal Katlan b\u00fcf\u00e9 HU 3070 B\u00e1tonyterenye, \u00d3zdi \u00fat 220.      CSAK HORD\u00d3 KIHELYEZ\u00c9S!!!!!!!",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Danubia Kft. / Gy\u00f6ngy\u00f6s, 4. T\u00e1lal\u00f3 Gy\u00f6ngy\u00f6si Fels\u0151v\u00e1rosi \u00c1latal\u00e1nos Iskola",
+        "cim": "Gy\u00f6ngy\u00f6si Fels\u0151v\u00e1rosi \u00c1ltal\u00e1nos Iskola (tartal\u00e9kkonyha) 4-es t\u00e1lal\u00f3 HU 3200 Gy\u00f6ngy\u00f6s, Martinovics Ign\u00e1c utca 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "P Dussmann Szolg\u00e1ltato Kft / K\u00f6zponti Konyha - \u00dajfeh\u00e9rt\u00f3i \u00c9tterem",
+        "cim": "K\u00f6zponti Konyha - \u00dajfeh\u00e9rt\u00f3i \u00c9tterem HU 4244 \u00dajfeh\u00e9rt\u00f3, E\u00f6tv\u00f6s utca 25.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "B\u00e1csmet\u00e1l Kft. / Kishomok Bisztr\u00f3",
+        "cim": "Kishomok Bisztr\u00f3 HU 6000 Kecskem\u00e9t, Kossuth Lajos t\u00e9r 32.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Zsoli-T\u00e1r 2012 Kft. / Pitypang Evang\u00e9likus \u00d3voda",
+        "cim": "Pitypang Evang\u00e9likus \u00d3voda HU 6723 Szeged, Szenth\u00e1roms\u00e1g u. 47.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "AdReTu Kft. / Katedr\u00e1lis \u00c9tterem \u00e9s K\u00e1v\u00e9z\u00f3",
+        "cim": "Katedr\u00e1lis \u00c9tterem \u00e9s K\u00e1v\u00e9z\u00f3 HU 6720 Szeged, D\u00f3m t\u00e9r 16.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Kft. / Kiskunmjasa 33. konyha",
+        "cim": "Kiskunmajsa 33. konyha HU 6120 Kiskunmajsa, K\u00e1lv\u00e1ria utca 6.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Gastroller Kft.",
+        "cim": "Forst-H\u00e1z \u00c9tterem \u00e9s K\u00e1v\u00e9z\u00f3 HU 3300 Eger, Dob\u00f3 t\u00e9r 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "MIM Magyar Inkluz\u00edv Marketing Kft./ Di\u00f3fa Vend\u00e9gl\u0151",
+        "cim": "Di\u00f3fa Vend\u00e9gl\u0151 HU 6753 Szeged, Budai Nagy Antal utca 27",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "TURUL Bt.",
+        "cim": "Turul \u00c9tterem HU 5540 Szarvas, Pet\u0151fi utca 10/1.      \ned\u00e9nyzetet k\u00e9rek\ned\u00e9nyzetet k\u00e9rek",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "KENGURU GM Kereskedelmi KKT.",
+        "cim": "Kenguru Cs\u00e1rda HU 6800 H\u00f3dmez\u0151v\u00e1s\u00e1rhely, Sz\u00e1nt\u00f3 Kov\u00e1cs J\u00e1nos utca 78.      \n2 hord\u00f3",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "MAZATEC Kft.",
+        "cim": "Serrano Saloon HU 6500 Baja, Hal\u00e1szpart A. \u00c9p\u00fclet      \n2 hetente 2 hordo\n2 hetente 2 hordo",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "CSIZMADIA \u00c9S T\u00c1RSAI KFT",
+        "cim": "Csizmadia S\u00fct\u00f6get\u0151 HU 5903 Orosh\u00e1za, Lenkey utca 125.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "ZOLI \u00e9s ZOLI 98 Kft.",
+        "cim": "Gringos \u00c9tterem HU 6725 Szeged, Pet\u0151fi S\u00e1ndor sgt 81",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Vincze-Nagy Kft./ \tGAMF Konyha",
+        "cim": "GAMF Konyha HU 6000 Kecskem\u00e9t, Izs\u00e1ki \u00fat 10",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "VAS\u00daTI ALKALMAZOTTAK RUDOLF SEG\u00c9LYEGYES\u00dcLETE/ Rudolf Hotel",
+        "cim": "Rudolf Hotel HU 4200 Hajd\u00faszoboszl\u00f3, M\u00e1ty\u00e1s kir\u00e1ly s\u00e9t\u00e1ny  23",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Eatrend Danubia Kft. / Gy\u00f6ngy\u00f6si Pet\u0151fi S\u00e1ndor Gy\u00f3gypedag\u00f3giai Int\u00e9zm\u00e9ny",
+        "cim": "Gy\u00f6ngy\u00f6si Pet\u0151fi S\u00e1ndor Egys\u00e9ges Gy\u00f3gypedag\u00f3giai M\u00f3dszertani Int\u00e9zm\u00e9ny HU 3200 Gy\u00f6ngy\u00f6s, Pet\u0151fi S\u00e1ndor utca 67.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Comp-let Party Service Kft. / Frissens\u00fclt \u00c9tterem",
+        "cim": "Frissens\u00fclt \u00c9tterem / Frissens\u00fclt \u00c9tterem HU 1037 Budapest, Teve utca 1.  fsz",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Hunguest Sz\u00e1ll\u00e1shelyszolg\u00e1ltat\u00f3 Zrt. / Hotel S\u00f3st\u00f3 Aqua Bisztro",
+        "cim": "Hotel S\u00f3st\u00f3 Aqua Bisztro HU 4400 Ny\u00edregyh\u00e1za, F\u00fcrd\u0151h\u00e1z utca 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "H\u00edr\u00f6s Perfekt Kft. / Aranyhomok gyors\u00e9tterem",
+        "cim": "",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Term\u00e1l Bisztr\u00f3 Kft./ L\u00f3pofa Cs\u00e1rda",
+        "cim": "L\u00f3pofa Cs\u00e1rda HU 6120 Kiskunmajsa, K\u0151k\u00fat  26. B.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Eatrend Danubia Kft. / 7. T\u00e1lal\u00f3 Heves megyei Szakk\u00e9pz\u00e9si Centrum",
+        "cim": "7. T\u00e1lal\u00f3 Heves megyei Szakk\u00e9pz\u00e9si Centrum HU 3200 Gy\u00f6ngy\u00f6s, K\u00f3csag utca 40.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Far\u00e1di \u00e9s Bogyoszl\u00f3i Meseerd\u0151 \u00d3voda, Mini B\u00f6lcs\u00f6de Konyha",
+        "cim": "Far\u00e1di Meseerd\u0151 \u00d3voda HU 9321 Far\u00e1d, Feny\u0151 u. 5.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "MEN\u0150-H\u00daS KFT.",
+        "cim": "Dolce Vita Pizz\u00e9ria HU 5540 Szarvas, Szabads\u00e1g 54-56      \nAz \u00e9tterem 10:00-t\u00f3l nyit!\nAz \u00e9tterem 10:00-t\u00f3l nyit!\nAz \u00e9tterem 10:00-t\u00f3l nyit!",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Kisablak Kft.",
+        "cim": "Kisablak Burger HU 6720 Szeged, Somogyi utca 20",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "KDI Hungary Kft.",
+        "cim": "Bibimbap Koreai \u00c9tterem HU 1073 Budapest, Erzs\u00e9bet 37-39",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Sz\u00e1lka Gastro Kft",
+        "cim": "Sz\u00e1lka Hal\u00e1szcs\u00e1rda HU 6726 Szeged, K\u00f6z\u00e9p-Kik\u00f6t\u0151 sor 9/A.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "SZIESZTA PONT Kft.",
+        "cim": "Liliomfi \u00c9tterem HU 5000 Szolnok, T\u00e1ncsics Mih\u00e1ly utca 15.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "LEONE SPORT 2004 Kft. / Di\u00f3fa Cs\u00e1rda",
+        "cim": "Di\u00f3fa Cs\u00e1rda HU 5900 Orosh\u00e1za, Szentesi  \u00fat 30",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "4-G Consulting Kft. / Buja Diszn\u00f3k - pavilon",
+        "cim": "\u00c1llatkert HU 1146 Budapest, \u00c1llatkerti krt. 9. C.pavilon",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Szincs\u00e1k Attila E.V.",
+        "cim": "Cino Bella Pizza HU 6800 H\u00f3dmez\u0151v\u00e1s\u00e1rhely, Sz\u00e1nt\u00f3 Kov\u00e1cs J\u00e1nos utca 125.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Danubia Kft. / Gy\u00f6ngy\u00f6si Berze Nagy J\u00e1nos Gimn\u00e1zium",
+        "cim": "Gy\u00f6ngy\u00f6si Berze Nagy J\u00e1nos Gimn\u00e1zium HU 3200 Gy\u00f6ngy\u00f6s, Kossuth Lajos utca 33.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Hunguest Sz\u00e1ll\u00e1shelyszolg\u00e1ltat\u00f3 Zrt. / Hotel S\u00f3st\u00f3 Parkf\u00fcrd\u0151",
+        "cim": "Hotel S\u00f3st\u00f3 Parkf\u00fcrd\u0151 HU 4400 Ny\u00edregyh\u00e1za, Szindb\u00e1d s\u00e9t\u00e1ny 11.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Hunguest Sz\u00e1ll\u00e1shelyszolg\u00e1ltat\u00f3 Zrt. / Hotel Aqua-Sol",
+        "cim": "Hotel Aqua-Sol HU 4200 Hajd\u00faszoboszl\u00f3, G\u00e1bor \u00c1ron utca 7-9.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Imerk Hungary Kft.",
+        "cim": "Ferdin\u00e1nd Monarchia \u00c9tterem HU 1068 Budapest, Kir\u00e1ly u. 76.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "K\u00f6z\u00fati \u00e9s V\u00edzi Sz\u00e1ll\u00edt\u00f3 Kft.",
+        "cim": "Wernesgr\u00fcner \u00c9tterem HU 6000 Kecskem\u00e9t, Aradi V\u00e9rtan\u00fak 6",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "UPSWING Kft.",
+        "cim": "Kebab Factory HU 6000 Kecskem\u00e9t, Pet\u0151fi S\u00e1ndor 10.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Kis-h\u00f3docska Kft.",
+        "cim": "mokka&delik\u00e1t HU 5540 Szarvas, Szabads\u00e1g 16/2",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "LEONE SPORT 2004 Kft. / Mandula \u00c9tterem",
+        "cim": "Mandula \u00c9tterem HU 5900 Orosh\u00e1za, Bajcsy Zsilinszky 2",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Kr\u00e1nitz Attila e.v.",
+        "cim": "S\u00e1rk\u00e1ny \u00c9tterem - Csorna HU 9300 Csorna, Bart\u00f3k B\u00e9la \u00fat 69.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "PIZZATORONY Kft",
+        "cim": "Torony pizza HU 6723 Szeged, Szamos utca 4.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "VIKT\u00d3RIA ART Kft.",
+        "cim": "Burger Zone \u00c9tterem HU 1148 Budapest, Bagolyv\u00e1r  6-10",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Hello Kebab Kft./ Kebab-L\u00e1ngos B\u00fcf\u00e9",
+        "cim": "Kebab-L\u00e1ngos B\u00fcf\u00e9 HU 2800 Tatab\u00e1nya, Bl\u00e1thy Ott\u00f3 u. 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "MAKOLA Kereskedelmi \u00e9s Vend\u00e9gl\u00e1t\u00f3 K\u00f6zkereseti T\u00e1rsas\u00e1g / \tSaloon Pizz\u00e9ria",
+        "cim": "Saloon Pizz\u00e9ria HU 6000 Kecskem\u00e9t, Akad\u00e9mia 69",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "DIXI-GYORS\u00c9TTEREM Kft.",
+        "cim": "Dixie Gyors\u00e9tterem HU 6000 Kecskem\u00e9t, Dob\u00f3 k\u00f6r\u00fat 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "D\u00d6NER EUFR\u00c1TESZ Kft",
+        "cim": "Tibi Gyors HU 2890 Tata, F\u00e1klya utca 8.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Flamingo Food Fusion Kft.",
+        "cim": "Flamingo \u00c9tterem HU 6120 Kiskunmajsa, Zr\u00ednyi Mikl\u00f3s utca 31-2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "KATA \u00c9S L\u00c1NYA  BT",
+        "cim": "K\u00ednai Nagy Fal \u00c9tterem HU 6722 Szeged, Pet\u0151fi S\u00e1ndor sug\u00e1r\u00fat 3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Pepperoni Kft.",
+        "cim": "Pepper\u00f3ni H\u00f3dmez\u0151v\u00e1s\u00e1rhely HU 6800 H\u00f3dmez\u0151v\u00e1s\u00e1rhely, Andr\u00e1ssy \u00fat 10-12.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Szegedi Zsid\u00f3 Hitk\u00f6zs\u00e9g Szeretetotthona",
+        "cim": "Hitt K\u00f6zs\u00e9g Szeretetotthon SZEGED HU 6722 Szeged, Gutenberg  utca 20",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Regia Panzio Szolg\u00e1ltat\u00f3 Kft.",
+        "cim": "Regia Panzi\u00f3 \u00e9s \u00c9tterem HU 9228 Hal\u00e1szi, Kossuth Lajos utca 122",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "FOOD HUNTER Kft. / Food Hunter Caffe",
+        "cim": "Food Hunter Caffe HU 1143 Budapest, Hung\u00e1ria  128",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Danubia Kft. /  B.Braun Gy\u00f6ngy\u00f6s",
+        "cim": "B. Braun HU 3200 Gy\u00f6ngy\u00f6s, D\u00e9li K\u00fclhat\u00e1r \u00fat 2-4.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "AdReTu Kft. / Hotel Geradus",
+        "cim": "Hotel Geradus HU 6728 Szeged, Dorozsmai  2-4.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Gastro-president  Kft./  / M1 Bistro",
+        "cim": "M1 \u00c9tterem HU 5000 Szolnok, Baross G\u00e1bor utca 52.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Csibeprofil Kft / B\u00e1r-It\u00e1lia \u00c9tterem",
+        "cim": "B\u00e1r-It\u00e1lia \u00c9tterem HU 3300 Eger, \u00c9rsek utca 14.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Kozma Csaba",
+        "cim": "Z\u00f6ldfa Vend\u00e9gl\u0151 HU 9300 Csorna, Soproni \u00fat 52.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Fazekas Istv\u00e1n e.v./ Nincs Abrosz B\u00fcf\u00e9 - v\u00e1s\u00e1rcsarnok",
+        "cim": "Nincs Abrosz V\u00e1s\u00e1rcsarnok HU 1117 Budapest, K\u0151r\u00f6sy J\u00f3zsef 7-9",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "GAL\u00c9RIA GASZTRO Kft.",
+        "cim": "Gal\u00e9ria \u00c9tterem Szolnok HU 5000 Szolnok, Szap\u00e1ry utca 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "NIMIKE \u00c9telb\u00e1r Kft.",
+        "cim": "Nimike \u00c9telb\u00e1r HU 1201 Budapest, Kossuth Lajos utca 30.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "IFA Eat Point.hu Kft./ Aranyt\u00e1l \u00e9tterem",
+        "cim": "IFA Eat HU 1089 Budapest, Orczy \u00fat 43.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "M\u00c1TRA PARTY Kft. / K\u00e9pvisel\u0151 Irodah\u00e1z",
+        "cim": "K\u00e9pvisel\u0151 Irodah\u00e1z HU 1054 Budapest, Sz\u00e9chenyi rkp. 19.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Prizma Food Kft. / 70. \u00dczem H\u00f3dmez\u0151v\u00e1s\u00e1rhely",
+        "cim": "70 \u00fczem (K\u00f3rh\u00e1z utca sarok) HU 6800 H\u00f3dmez\u0151v\u00e1s\u00e1rhely, Hunyadi utca 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Fitfoodway Szgd Kft./ Campus Ell\u00e1t\u00f3",
+        "cim": "FitFoodWay HU 6722 Szeged, J\u00f3sika utca 4.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Dinasztia 2001 Kft. /Kisbugaci \u00c9tterem \u00e9s Rendezv\u00e9nyh\u00e1z",
+        "cim": "Kisbugaci \u00c9tterem \u00e9s Rendezv\u00e9nyh\u00e1z HU 6000 Kecskem\u00e9t, Munk\u00e1csy Mih\u00e1ly utca 10.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Aranyhal Group Kereskedelmi \u00e9s Szolg\u00e1ltat\u00f3 Kft.",
+        "cim": "Aranyhal \u00c9tterem HU 6723 Szeged, K\u00e1lv\u00e9ria t\u00e9r 6.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Gy\u00f6ngy\u00f6s V\u00e1ros \u00d3vod\u00e1i / EPRESKERT utcai Tag\u00f3voda",
+        "cim": "Epreskerti Tag \u00d3voda HU 3200 Gy\u00f6ngy\u00f6s, Epreskert \u00fat 8. 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "MA + AN Bt. / El Bandi Dob\u00f3 u.",
+        "cim": "El Bandi Dob\u00f3 u. HU 6000 Kecskem\u00e9t, Dob\u00f3 Istv\u00e1n krt. 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Fekete \u00e9s Ez\u00fcst Kft / Itt \u00e9s Most \u00c9tterem",
+        "cim": "Itt \u00e9s most \u00c9tterem HU 3300 Eger, Dob\u00f3 Istv\u00e1n t\u00e9r 3",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "BAMBI 13 Kft. / Sport \u00c9tterem",
+        "cim": "Sport \u00c9tterem HU 2840 Oroszl\u00e1ny, T\u00e1ncsics Mih\u00e1ly utca 66.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "LEONE SPORT 2004 Kft. /Alab\u00e1rdos K\u00f6z\u00e9pkori \u00c9tterem",
+        "cim": "Alab\u00e1rdos K\u00f6z\u00e9pkori \u00c9tterem HU 5932 G\u00e1doros, Kossuth utca 24",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "KEREKI FAKT\u00daRA Kft.",
+        "cim": "It\u00e1lia Pizz\u00e9ria HU 6000 Kecskem\u00e9t, Hornyik J\u00e1nos krt. 4.    \nIt\u00e1lia Pizz\u00e9ria (6000 Kecskem\u00e9t, Hornyik J\u00e1nos krt. 4.)",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "SZENT L\u00c1SZL\u00d3 ALAPSZOLG\u00c1LTAT\u00c1SI K\u00d6ZPONT",
+        "cim": "Jaszs Gyors\u00e9tterem HU 6133 J\u00e1szszentl\u00e1szl\u00f3, V\u00f6r\u00f6smarty 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Zsoli-T\u00e1r 2012 Kft. / K\u00f6ly\u00f6ksziget \u00d3voda",
+        "cim": "K\u00f6ly\u00f6ksziget \u00d3voda. HU 6723 Szeged, Szabadkai \u00fat 18.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "M\u00c1TRA PARTY Kft. / Parlament \u00c9tterem",
+        "cim": "Parlament \u00c9tterem HU 1055 Budapest, Kossuth Lajos t\u00e9r 1-3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Benev\u00e1r \u00c9tterem Kft.",
+        "cim": "Benev\u00e1r \u00c9tterem HU 3232 Gy\u00f6ngy\u00f6s, Par\u00e1di \u00fat 10",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "L\u00e1gym\u00e1nyosi17 Kft.",
+        "cim": "\u00cdzlel\u0151 \u00c9telb\u00e1r HU 1111 Budapest, L\u00e1gym\u00e1nyosi  17/A",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "FAJT-GASZTRO Kft.",
+        "cim": "Bety\u00e1r \u00c9tterem HU 2351 Als\u00f3n\u00e9medi, F\u0151 u. 62.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Dumabend\u0151 Bt./ Dumabend\u0151 konyh\u00e1ja",
+        "cim": "Nagybend\u0151 Konyh\u00e1ja Kecskem\u00e9t HU 6000 Kecskem\u00e9t, K\u0151h\u00edd u. 16.    \n30l HORD\u00d3",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Imola \u00c9p\u00edt\u0151 F\u0151v\u00e1llalkoz\u00f3 Szolg\u00e1ltat\u00f3 Kft. (HSO)",
+        "cim": "Imola Hotel Plat\u00e1n HU 3300 Eger, Cs\u00e1k\u00e1ny utca 7.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "BAMBI 13 Kft. / Bambi Gyors\u00e9tkezde",
+        "cim": "Bambi Gyors\u00e9tkezde - Lukoil Benzink\u00fat mellett HU 2840 Oroszl\u00e1ny, B\u00e1nki Don\u00e1t utca 2/C",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "R-Ing Ingatlanhasznos\u00edt\u00e1si Kft.",
+        "cim": "HU 2025 Visegr\u00e1d, F\u0151 utca 92.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Makola New Kft./ Max Pizz\u00e9ria",
+        "cim": "Max Pizz\u00e9ria HU 6000 Kecskem\u00e9t, Sz\u00e9chenyi 9",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "LOSPITI KFT.",
+        "cim": "GARDEN HOTEL HU 5000 Szolnok, Tiszaligeti s\u00e9t\u00e1ny 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "SZOTE \u00c9telb\u00e1r Kft",
+        "cim": "Szote \u00c9telb\u00e1r HU 6725 Szeged, Semmelweis utca 4.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "P Dussmann Szolg\u00e1ltato Kft / Becton Dickinson (BD \u00c9tterem)",
+        "cim": "Becton Dickinson (BD \u00c9tterem) HU 2851 K\u00f6rnye, \u00dcveggy\u00e1r utca 3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Waldorf 2000. Kft. / Kast\u00e9lykert Fogad\u00f3",
+        "cim": "Kast\u00e9lykert Fogad\u00f3 HU 6728 Szeged, ALGY\u0150I 118",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Nagy Imre Attila",
+        "cim": "L\u00e1ngos B\u00fcf\u00e9 Piac HU 3200 Gy\u00f6ngy\u00f6s, K\u00f6zt\u00e1rsas\u00e1g 2088/5/B/1",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "N\u00c9GY MUSK\u00c9T\u00c1S Korl\u00e1ltolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g",
+        "cim": "N\u00e9gy Musk\u00e9t\u00e1s \u00c9tterem HU 1115 Budapest, T\u00e9t\u00e9nyi \u00fat 18.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "B\u00c9-KO Kft",
+        "cim": "Kov\u00e1cs -Kert \u00c9tterem HU 2025 Visegr\u00e1d, R\u00e9v utca 4.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "F\u00fcge Food Kft",
+        "cim": "F\u00fcge HU 6800 H\u00f3dmez\u0151v\u00e1s\u00e1rhely, T\u00f3alj utca 5408/6 hrsz.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "B\u00e1csmet\u00e1l Kft./ Bubor\u00e9k S\u00f6r\u00f6z\u0151 \u00e9s \u00c9tterem",
+        "cim": "Bubor\u00e9k S\u00f6r\u00f6z\u0151 \u00e9s \u00c9tterem HU 6000 Kecskem\u00e9t, P\u00e1kozdi csata utca 12. B.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Egal Logisztika Kft. / LOGISZTIK K\u00f6zpont",
+        "cim": "LOGISZTIK K\u00f6zpont HU 1203 Budapest, Zodony utca 4. B.   28.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "NAGYI KONYH\u00c1JA Kft.",
+        "cim": "Nagyi Konyh\u00e1ja HU 6000 Kecskem\u00e9t, Korona 2",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Szarvasvad\u00e1sz Kft.",
+        "cim": "HBH \u00c9tterem HU 3300 Eger, Bajcsy Zsilinszky utca 19.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Tornyos 97 Kft.",
+        "cim": "Tornyos Panzi\u00f3 \u00e9s \u00c9tterem HU 3232 Gy\u00f6ngy\u00f6s, Par\u00e1di \u00fat 25.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Tr\u00f6szti 2001 Kft. / Tr\u00f6szti Klub \u00c9tterem",
+        "cim": "Tr\u00f6szti Klub \u00c9tterem HU 2800 Tatab\u00e1nya, Belter\u00fclet",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "VADOS B.T./ J\u00e1sz s\u00f6r\u00f6z\u0151",
+        "cim": "J\u00e1sz S\u00f6r\u00f6z\u0151 HU 6000 Kecskem\u00e9t, J\u00e1sz 32      H\u00cdVNI EL\u0150TTE",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Prizma Food Kft. / F\u0150G\u00c1Z \u00c9tterem Budapest",
+        "cim": "F\u0150G\u00c1Z \u00c9tterem HU 1081 Budapest, II. J\u00e1nos P\u00e1l P\u00e1pa t\u00e9r 20.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Finoms\u00e1g Kft.",
+        "cim": "Buffalo Steak House HU 1201 Budapest, T\u00f6r\u00f6k Fl\u00f3ris  217",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Csibeprofil Kft / Csibefal\u00f3 \u00c9telb\u00e1r",
+        "cim": "Csibefal\u00f3 \u00c9telb\u00e1r HU 3300 Eger, T\u00f6rv\u00e9nyh\u00e1z utca 4.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Visnyovszki Andr\u00e1s e.v. / Gond\u0171z\u0151 Pizz\u00e9ria",
+        "cim": "HU 2023 Dunabogd\u00e1ny, Kossuth Lajos 195",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "S\u00dcT\u0150 GERGELY",
+        "cim": "\u00c9deskert Kisvend\u00e9gl\u0151 Sz\u00e9passzonyv\u00f6lgy HU 3300 Eger, Diszn\u00f3f\u0151sor \u00fat 2.      \n2 tele ed\u00e9nyzet van\n2 tele ed\u00e9nyzet",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Hunguest Sz\u00e1ll\u00e1shelyszolg\u00e1ltat\u00f3 Zrt. / Hotel B\u00e9ke",
+        "cim": "Hotel B\u00e9ke HU 4200 Hajd\u00faszoboszl\u00f3, M\u00e1ty\u00e1s kir\u00e1ly s\u00e9t\u00e1ny 10.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "YourHotel Management Kft./ Bistorante \u00c9tterem",
+        "cim": "Bistorante \u00c9tterem HU 6720 Szeged, Kelemen L\u00e1szl\u00f3 7",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "EXIT-Food Kft.",
+        "cim": "Csibafal\u00f3 Auchan Soroks\u00e1r HU 1239 Budapest, Bev\u00e1s\u00e1rl\u00f3  2",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Inmenso Kft./ Vincent \u00c9tterem",
+        "cim": "Vincent \u00c9tterem HU 6000 Kecskem\u00e9t, Izs\u00e1ki  3",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "T\u00f6lt\u00f6tt R\u00e1ntott Kft.",
+        "cim": "B\u00e1lint Chef Bisztr\u00f3ja HU 6000 Kecskem\u00e9t, Hoffmann J.  15.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "New Qin Qin Kft.",
+        "cim": "K\u00ednai Pl\u00e1za Szolnok HU 5000 Szolnok, Ady Endre utca 28.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "BARNER-FOOD Kft.",
+        "cim": "Burger Konyha HU 1237 Budapest, Bev\u00e1s\u00e1rl\u00f3 utca 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "KEMENZA Kft",
+        "cim": "F\u0151zel\u00e9kh\u00e1z \u00c9tterem HU 6000 Kecskem\u00e9t, De\u00e1k Ferenc t\u00e9r 6.      \n1db hord\u00f3\n1db hord\u00f3",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Fasor M\u0171vek Kft",
+        "cim": "Fasor Vend\u00e9gl\u0151 HU 6726 Szeged, B\u00e9rkert utca 52.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Piarista Gimn\u00e1zium Koll\u00e9gium \u00c1ltal\u00e1nos Iskola \u00e9s \u00d3voda/ Piarista Gimn\u00e1zium konyha",
+        "cim": "Piarista Gimn\u00e1zium konyha HU 6000 Kecskem\u00e9t, Piarist\u00e1k tere 5.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Zatyk\u00f3n\u00e9 Zelei Anik\u00f3",
+        "cim": "Ag\u00f3ra B\u00fcf\u00e9 HU 5000 Szolnok, Ady Endre \u00fat 11.      \nCsere hord\u00f3",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "GY\u00d6NGY\u00d6S V\u00c1ROS \u00d3VOD\u00c1I / KATONA \u00fati tag\u00f3voda",
+        "cim": "Katona \u00fati Tag \u00d3voda HU 3200 Gy\u00f6ngy\u00f6s, KATONA J\u00f3zsef \u00fat 5",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Hunguest Sz\u00e1ll\u00e1shelyszolg\u00e1ltat\u00f3 Zrt. / Hotel Eger & Park",
+        "cim": "Hotel Eger & Park HU 3300 Eger, Sz\u00e1lloda \u00fat 1-3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Robinson 2005 Kft",
+        "cim": "ST.Hubertus Panzi\u00f3 HU 3242 Par\u00e1dsasv\u00e1r, II. R\u00e1k\u00f3czi Ferenc \u00fat 2.      \nH\u00cdVNI EL\u0150TTE! 06205504263!!!!",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Kolor Klub Kft./ Pozsonyi Kisvend\u00e9gl\u0151",
+        "cim": "Kispozsonyi Vend\u00e9gl\u0151 HU 1137 Budapest, Szent Istv\u00e1n  12.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "PASTALINE Kft.",
+        "cim": "Pizza Sprint Kecskem\u00e9t HU 6000 Kecskem\u00e9t, K\u00e9ttemplom 12",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "J\u00c9GFUT\u00c1R Szolg\u00e1ltat\u00f3 Kft.",
+        "cim": "Bigburger HU 6724 Szeged, R\u00f3kusi 19.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Csornai J\u00f3zsef S\u00e1ndor e.v./ La Viva Mexicana",
+        "cim": "La Viva Mexicana HU 1164 Budapest, Ostoros \u00fat 19.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Barta Istv\u00e1nn\u00e9",
+        "cim": "Tiszavir\u00e1g \u00c9tterem \u00e9s Pizz\u00e9ria HU 5085 R\u00e1k\u00f3czifalva, Szent L\u00e1szl\u00f3 Kir\u00e1ly utca 10.    \n3*60 L hord\u00f3\n3*60 L hord\u00f3\n3*60 L hord\u00f3",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Z\u00f6ldf\u0171szer \u00e9s Csemege Kft.",
+        "cim": "Berlin It\u00e1lia HU 6724 Szeged, R\u00f3kus krt. 42-46.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Gastro Live 21 Kft. / Galyatet\u0151 Turistacentrum",
+        "cim": "Galyatet\u0151i Turistacentrum \u00c9tterem \u00e9s K\u00e1v\u00e9z\u00f3 HU 3234 M\u00e1traszentimre, Kod\u00e1ly Zolt\u00e1n s\u00e9t\u00e1ny 19.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "FOOD MAYER Kft",
+        "cim": "Pr\u00e9zli Szeged HU 6720 Szeged, Sz\u00e9chenyi t\u00e9r 6.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Pal\u00f3c Sarok Kft. / PAL\u00d3C Sarok Konyha",
+        "cim": "PAL\u00d3C Sarok Konyha HU 3177 Rim\u00f3c, Hunyadi \u00fat 9.    \n[Nyitva Tart\u00e1s: 7:00-14:00]  CSAK HORD\u00d3 KIHELYEZ\u00c9S!!!!!!!",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "EH-30l:1"
+    },
+    {
+        "nev": "Energo-Haus Tourismus GmbH. Magyarorsz\u00e1gi Fi\u00f3ktelepe",
+        "cim": "Selfness Hotel Vadvir\u00e1g HU 3235 M\u00e1traszentimre, R\u00e1k\u00f3czi \u00fat 35-37.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "F\u00e1zis Group Kft.",
+        "cim": "F\u00e1zis Koszt&K\u00e1v\u00e9 HU 3300 Eger, Sas utca 5.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Gastro-T\u00e1t Kft / T\u00e1tika Bistro",
+        "cim": "T\u00e1tika Bistro HU 2534 T\u00e1t, T\u00e1tika t\u00e9r 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Gasztri\u00f32009 Kft.",
+        "cim": "Eszem Meg\u00e1ll Gyors\u00e9tkez\u0151 HU 6000 Kecskem\u00e9t, K\u00f6nyves K\u00e1lm\u00e1n k\u00f6r\u00fat 59.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Hunguest Sz\u00e1ll\u00e1shelyszolg\u00e1ltat\u00f3 Zrt. / Hotel Fl\u00f3ra",
+        "cim": "Hotel Fl\u00f3ra HU 3300 Eger, F\u00fcrd\u0151 utca 5.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Bir\u00f3 J\u00f3zsefn\u00e9",
+        "cim": "No. 1. \u00c9telb\u00e1r HU 3240 Par\u00e1d, K\u00f6zponti Parkol\u00f3 2-3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "RIZ BARNAB\u00c1S",
+        "cim": "\u00datkapar\u00f3 Cs\u00e1rda HU 6728 Szeged, Bajai \u00fat 22.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Ipolypart Integr\u00e1lt Szoci\u00e1lis Int\u00e9zm\u00e9ny N\u00f3gr\u00e1d V\u00e1rmegye",
+        "cim": "Ipolyparti Integr\u00e1lt Szoci\u00e1lis Int\u00e9zm\u00e9ny HU 3188 Lud\u00e1nyhal\u00e1szi, R\u00e1k\u00f3czi \u00fat 71-73.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "K\u00e1na\u00e1n Kisvend\u00e9gl\u0151 Bt.",
+        "cim": "K\u00e1na\u00e1n Bisztr\u00f3 & Caf\u00e9 HU 1132 Budapest, Csan\u00e1dy u. 18.    \nK\u00e1na\u00e1n Kisvend\u00e9gl\u0151 Bt. HU 1132 Budapest, Csan\u00e1dy u. 18.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Realvega4 Kft / Burrito Express",
+        "cim": "Burrito Express HU 6720 Szeged, J\u00f3kai 7",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Prizma Food Kft. /SAMSUNG \u00c9tterem J\u00e1szf\u00e9nyszaru",
+        "cim": "SAMSUNG HU 5126 J\u00e1szf\u00e9nyszaru, Samsung t\u00e9r 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Partiko Kft",
+        "cim": "Partik\u00f3 HU 6781 Domasz\u00e9k, B\u00e1lint S\u00e1ndor u. 22",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "CSISZ\u00c1R MESTERSZAK\u00c1CS Kft",
+        "cim": "R\u00f3zsakert Vend\u00e9gl\u0151 Domasz\u00e9k HU 6781 Domasz\u00e9k, De\u00e1k Ferenc u. 36.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Zsoli-T\u00e1r 2012 Kft. / Nagyi Kif\u0151zde",
+        "cim": "Nagyi Kif\u0151zde HU 6781 Domasz\u00e9k, D\u00f3zsa Gy\u00f6rgy u 22.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Bajnai Csicserg\u0151 \u00d3voda \u00e9s B\u00f6lcs\u0151de",
+        "cim": "Bajnai Napk\u00f6zi Otthonos \u00d3voda HU 2525 Bajna, \u00d3voda utca 16.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Gy\u00f6ngy\u00f6s V\u00e1ros \u00d3vod\u00e1i / MESEV\u00c1R Tag\u00f3voda",
+        "cim": "Mesev\u00e1r Tag\u00f3voda, Menh\u00e1z u. HU 3200 Gy\u00f6ngy\u00f6s, MENH\u00c1Z \u00daT 33/a",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Shiraz Hotel Kft./ Shir\u00e1z Hotel",
+        "cim": "Shiraz Hotel HU 3394 Egerszal\u00f3k, Sz\u00e9chenyi Istv\u00e1n \u00fat 31.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "NETTLE-GROUP Kft. / Csal\u00e1nosi Cs\u00e1rda",
+        "cim": "Csal\u00e1nosi Cs\u00e1rda HU 6000 Kecskem\u00e9t, Fels\u0151csal\u00e1nos 5",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "SZEM-MA Centrum Kft.",
+        "cim": "Alm\u00e1sy Vend\u00e9gh\u00e1z \u00e9s Texas BBQ \u00c9tterem HU 5200 T\u00f6r\u00f6kszentmikl\u00f3s, Batthy\u00e1ny 130",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Kecskem\u00e9ti Reform\u00e1tus Egyh\u00e1zk\u00f6zs\u00e9g / Reform\u00e1tus Egyh\u00e1z T\u00e1lal\u00f3 - (Szabads\u00e1g t\u00e9r)",
+        "cim": "Reform\u00e1tus Konyha Kecskem\u00e9t HU 6000 Kecskem\u00e9t, Piarist\u00e1k tere 3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Prizma-Junior Zrt. / 17. \u00dczem Budapest",
+        "cim": "17. \u00fczem HU 1135 Budapest, Reiter Ferenc utca 84.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Prizma-Junior Zrt. / 87. \u00dczem Budapest",
+        "cim": "87. \u00fczem HU 1214 Budapest, Simon Boliv\u00e1r s\u00e9t\u00e1ny 4-8.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Prizma-Junior Zrt. / 80. \u00dczem P\u00e9teri",
+        "cim": "80. \u00fczem HU 2209 P\u00e9teri, Bereki \u00fat 30.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Orosh\u00e1zi-So\u00f3s Kft. / Tiszakanyar \u00c9tterem",
+        "cim": "Tiszakanyar \u00c9tterem HU 6060 Tiszak\u00e9cske, Strand utca 34",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "KG.R\u00e1kos Kft./ R\u00e1kos Vend\u00e9gh\u00e1z",
+        "cim": "R\u00e1kos Vend\u00e9gh\u00e1z HU 2013 Pom\u00e1z, Ipartelep C\u00e9hmester 2",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Minorita Kft.",
+        "cim": "Did\u00e1k utcai Minorita Konyha HU 3525 Miskolc, Kelemen Did\u00e1k utca 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Somogyv\u00e1rin\u00e9 Ol\u00e1h Krisztina Gr\u00e9ta / Kisk\u0151r\u00f6ssy Hal\u00e1szcs\u00e1rda",
+        "cim": "Kisk\u0151r\u00f6si Hal\u00e1szcs\u00e1rda HU 6723 Szeged, Fels\u0151-Tisza 336",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Somogyv\u00e1rin\u00e9 Ol\u00e1h Krisztina Gr\u00e9ta / Jobb Mint Otthon Kisvend\u00e9gl\u0151",
+        "cim": "Jobb mint otthon HU 6728 Szeged, Lencs\u00e9s 4",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "P\u00c1LMAKERT \u00c9TTEREM Kft. /  Pizza Palazzo",
+        "cim": "Pizza Palazzo - H\u00e9v \u00e1llom\u00e1s HU 2100 G\u00f6d\u00f6ll\u0151, H\u00e9v \u00e1llom\u00e1s  412",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "P\u00c1LMAKERT \u00c9TTEREM Kft. / Smarni \u00c9tterem",
+        "cim": "Smarni \u00c9tterem HU 2100 G\u00f6d\u00f6ll\u0151, Szabads\u00e1g \u00fat 4",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "MAGL\u00d3D-GASZTROFOOD Kft.",
+        "cim": "Csibefal\u00f3 Auchan HU 2234 Magl\u00f3d, Eszterh\u00e1zy J\u00e1nos utca 1",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Kov\u00e1cs Gyula",
+        "cim": "Papa Giorgio HU 7632 P\u00e9cs, Krisztina t\u00e9r 10",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Vend\u00e9gv\u00e1r\u00f3 Vend\u00e9gfogad\u00f3 Kft / Gastland  Restaurant M0 aut\u00f3\u00fat 19. km",
+        "cim": "Gastland  Restaurant M0 aut\u00f3\u00fat 19. km HU 2310 Szigetszentmikl\u00f3s, hrsz 0179/11. 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "M.Zozi-Hajas Kft./ Strand Terasz - B\u00fcf\u00e9",
+        "cim": "MANDARIN K\u00d6KI Terminal HU 1195 Budapest, Vak Botty\u00e1n utca 75. A-C",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "PMAX FOOD HERO KFT",
+        "cim": "Pizza Max HU 2100 G\u00f6d\u00f6ll\u0151, D\u00f3zsa Gy\u00f6rgy \u00fat 36",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Kaduska Kft.",
+        "cim": "Kaduska HU 2030 \u00c9rd, Budai \u00fat 15.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "K\u00e1lm\u00e1n J\u00e1nos e.v./ L\u00e1ngos m\u00e1nia",
+        "cim": "L\u00e1ngos M\u00e1nia HU 1191 Budapest, Kossuth t\u00e9r 3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Monster Gastro Kereskedelmi \u00e9s Szolg\u00e1ltat\u00f3 Kft. /KISKAKAS Cs\u00e1rda",
+        "cim": "KISKAKAS Cs\u00e1rda HU 6722 Szeged, S\u00e1ndor utca utca 60. B.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Nini Catering Kft.",
+        "cim": "Nini Foodtruck Dunakeszi HU 2120 Dunakeszi, Pallag utca 3",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "P.S.S. CLUB Kft.",
+        "cim": "Impressz\u00f3 Club HU 3525 Miskolc, Sz\u00e9chenyi Istv\u00e1n utca 3.-9.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Prizma Food Kft. / ROIR \u00c9tterem \u00e9s K\u00e1v\u00e9z\u00f3 Budapest - R\u00f3mai Irodah\u00e1z",
+        "cim": "ROIR \u00c9tterem \u00e9s K\u00e1v\u00e9z\u00f3 HU 1031 Budapest, Szentendrei \u00fat 207-209.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "SAPEZOK Kft. / Sim\u00e1ndy J\u00f3zsef \u00c1ltal\u00e1nos Iskola",
+        "cim": "Sim\u00e1ndy J\u00f3zsef \u00c1ltal\u00e1nos Iskola HU 2143 Kistarcsa, Ifj\u00fas\u00e1g t\u00e9r 3",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "M\u00c1JGOMB\u00d3C Kft.",
+        "cim": "G\u00f6nci \u00c9tterem HU 1045 Budapest, Pozsonyi utca 4/F.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Balive-Food Kft/ ThakeThe Box",
+        "cim": "thake the box HU 2100 G\u00f6d\u00f6ll\u0151, D\u00f3zsa Gy\u00f6rgy \u00fat 4",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "MOLN\u00c1R TRAJ\u00c1N TAM\u00c1SN\u00c9",
+        "cim": "Hat\u00e1rcs\u00e1rda HU 2000 Szentendre, Ady Endre \u00fat 43",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Kolor Klub Kft./ Pozsonyi Vend\u00e9gl\u0151",
+        "cim": "Pozsonyi Vend\u00e9gl\u0151 HU 1137 Budapest, Radn\u00f3ti Mikl\u00f3s utca 38.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "MORKA \u00c9S RON Kft. / Bart\u00f3k B\u00e9la \u00c1ltal\u00e1nos Iskola",
+        "cim": "Bart\u00f3k B\u00e9la \u00c1ltal\u00e1nos Iskola HU 3070 B\u00e1tonyterenye, Iskola 8-10",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "MORKA \u00c9S RON Kft. / Szek\u00e9r Fogad\u00f3",
+        "cim": "Szek\u00e9r Fogad\u00f3 HU 3078 B\u00e1tonyterenye, Klapka Gy\u00f6rgy 1",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Misto Trade Kft./ Napsug\u00e1r \u00c9tterem",
+        "cim": "Napsug\u00e1r \u00c9tterem G\u00f6d\u00f6ll\u0151 HU 2100 G\u00f6d\u00f6ll\u0151, R\u00e9t utca 1",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "MARTON IMRE",
+        "cim": "Parola HU 2000 Szentendre, Ungv\u00e1ri 14. 2762/1",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Fish Market Kft.",
+        "cim": "HU 5200 T\u00f6r\u00f6kszentmikl\u00f3s, Kossuth Lajos \u00fat 294",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Alakszai Csaba EV.",
+        "cim": "Aut\u00f3s Vend\u00e9gl\u0151 K\u00e1polna HU 3355 K\u00e1polna, Szabads\u00e1g t\u00e9r 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "ARANYK\u00c9Z KFT",
+        "cim": "Aranytall\u00e9r \u00c9tterem HU 1046 Budapest, Hajl\u00f3 u. 42.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Bene Ildik\u00f3",
+        "cim": "Vadvir\u00e1g \u00c9tterem HU 3412 Bog\u00e1cs, T\u00e1ncsics u. 6.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Benedek Szabolcs e.v.",
+        "cim": "OBI Terasz Gy\u00f6ngy\u00f6s HU 3200 Gy\u00f6ngy\u00f6s, Juh\u00e1sz Gyula utca 8.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Best Melora Kft.",
+        "cim": "Piroska  \u00c9tterem Egerszal\u00f3k HU 3394 Egerszal\u00f3k, Ady Endre u. 42.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "BORA Hotel Kft./ Panor\u00e1ma \u00e9tterem",
+        "cim": "Panor\u00e1ma Hotel HU 5600 B\u00e9k\u00e9scsaba, Gyulai \u00fat 84.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Buda-B\u00fcro Bt.",
+        "cim": "Nagyi Konyh\u00e1ja Budapest Frankel Leo HU 1023 Budapest, Frankel Le\u00f3 utca 36.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Cecei-K\u00e9hli Kft.",
+        "cim": "K\u00e9hli Vend\u00e9gl\u0151 HU 1036 Budapest, M\u00f3kus utca 22.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Csernus Istv\u00e1n e.v.",
+        "cim": "Gy\u00fcmi Vend\u00e9gl\u0151 HU 6630 Mindszent, Szabads\u00e1g t\u00e9r 14.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Deutsch \u00e9s T\u00e1rsa Kft.",
+        "cim": "Calypso \u00c9tterem HU 3525 Miskolc, V\u00e1rosh\u00e1z t\u00e9r 7.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Duba G\u00e1bor J\u00f3zsef e.v.",
+        "cim": "Hentes Bolt, H\u00fas- \u00e9s hentes\u00e1ru \u00fczlet HU 1181 Budapest, Bartha L. u. 8/d.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "DUBARY Kft.",
+        "cim": "Hasp\u00f3k HU 1107 Budapest, Sz\u00e1va utca 5-7.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "EG\u00c9SZS\u00c9GKONYHA Kft.",
+        "cim": "EG\u00c9SZS\u00c9GKONYHA HU 1047 Budapest, F\u00f3ti \u00fat 56. G.\u00e9p. H\u00e9tf\u0151 - Cs\u00fct\u00f6rt\u00f6k 5:00-12:00 h-ig",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "EKOSZET Bt",
+        "cim": "Aranyfakan\u00e1l \u00c9telb\u00e1r HU 1043 Budapest, Berda J\u00f3zsef utca 48.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Ez\u00fcst Kan\u00e1l Kft.",
+        "cim": "Ez\u00fcst Kan\u00e1l Vend\u00e9gl\u0151 HU 6050 Lajosmizse, 0347/7/B. hrsz.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Feh\u00e9rv\u00e1ri \u00fati Lacikonyha Bt.",
+        "cim": "V\u00e1s\u00e1rcsarnok Lacikonyha HU 1117 Budapest, Feh\u00e9rv\u00e1ri  \u00fat 22.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Foodslager Kereskedelmi Kft.",
+        "cim": "Pizza Kir\u00e1ly Szeged HU 6726 Szeged, F\u0151 fasor 69.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Frank S\u00e1ndor ev. Feh\u00e9rt\u00f3i Hal\u00e1szcs\u00e1rda \u00e9s Sz\u00e1lloda",
+        "cim": "Feh\u00e9rt\u00f3i Hal\u00e1szcs\u00e1rda \u00e9s Sz\u00e1lloda HU 6728 Szeged, Budapesti \u00fat 41.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "GASTHAUS-GRILL Kft.",
+        "cim": "Gasthaus Panzi\u00f3 \u00e9s \u00c9tterem Szilv\u00e1sv\u00e1rad HU 3348 Szilv\u00e1sv\u00e1rad, Egri \u00fat 27.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "GASTROCONVOY Kft.",
+        "cim": "CONVOY CITY HU 5081 Szajol, Sz\u00e9chenyi Istv\u00e1n \u00fat 35.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "GREENHORN Kft.",
+        "cim": "Yellow Pub G\u00f6d\u00f6ll\u0151 HU 2100 G\u00f6d\u00f6ll\u0151, D\u00f3zsa Gy\u00f6rgy \u00fat 64.      \n2025-ben az els\u0151 elsz\u00e1ll\u00edt\u00e1st janu\u00e1r 2-re k\u00e9rj\u00fck, k\u00f6sz\u00f6nj\u00fck.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "GRILL-KERT Kft.",
+        "cim": "Krapaj Cs\u00e1rda HU 2049 Di\u00f3sd, Balatoni \u00fat 2/B.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Gyuris Istv\u00e1n e.v.",
+        "cim": "Vadliba Vend\u00e9gl\u0151 HU 6791 Szeged, Sz\u00e9chenyi utca 59",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "HEINRICH FAMILY Kft.",
+        "cim": "Fapados Bisztr\u00f3 HU 3525 Miskolc, Sz\u00e9chenyi Istv\u00e1n \u00fat 61.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Lecs\u00f3 & Cs\u00fcl\u00f6k Kft.",
+        "cim": "Nemes Vend\u00e9gl\u0151 HU 1188 Budapest, Nemes utca 6.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "M\u00e9sz\u00e1ros J\u00e1nos Istv\u00e1n",
+        "cim": "L\u00e1ngoss\u00fct\u0151, L\u00e1ngosos Kunszentm\u00e1rton HU 5440 Kunszentm\u00e1rton, Kossuth Lajos  \u00fat 14.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "NeSa-Du\u00f3 Kft.",
+        "cim": "NESA Szendvicsb\u00e1r HU 5540 Szarvas, Kossuth Lajos utca 60-62.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "NOVI-REX Kft.",
+        "cim": "FEKETE G\u00d3LYA VEND\u00c9GL\u0150 HU 6000 Kecskem\u00e9t, Borb\u00e1s utca 50.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Osv\u00e1th Tam\u00e1sn\u00e9",
+        "cim": "L\u00e1ngos B\u00e1tonyterenye HU 3078 B\u00e1tonyterenye, Mad\u00e1ch \u00fat 4/C.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "\u00d6rzsi Mama H\u00fas\u00e1rud\u00e1ja Bt",
+        "cim": "Lacika Konyh\u00e1ja HU 1041 Budapest, De\u00e1k Ferenc utca 17.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Pap \u00e9s T\u00e1rsa Kft",
+        "cim": "A SZ\u0170CS FOGAD\u00d3JA HU 2111 Szada, D\u00f3zsa Gy\u00f6rgy \u00fat 19.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Partner Sof\u0151r Szolg\u00e1lat Kft.",
+        "cim": "Partner Sof\u0151r Szolg. HU 1151 Budapest, Sz\u00e1nt\u00f3f\u00f6ld 1",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "R\u00e9t-Ing Kft.",
+        "cim": "Zulu Cafe HU 2651 R\u00e9ts\u00e1g, R\u00e1k\u00f3czi \u00fat 33.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "SPC-MARKET Kft.",
+        "cim": "Csibefalatoz\u00f3 HU 1225 Budapest, Nagyt\u00e9t\u00e9nyi \u00fat 344.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "TAMI16 Kft.",
+        "cim": "Erzs\u00e9bet \u00c9tterem S\u00f6rkert HU 2100 G\u00f6d\u00f6ll\u0151, T\u00e1ncsics Mih\u00e1ly utca 16.      \n1db 60 ed\u00e9nyzet haszn\u00e1ltolaj\n1db 60 ed\u00e9nyzet haszn\u00e1ltolaj\n1db 60 ed\u00e9nyzet haszn\u00e1ltolaj",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Tibai J\u00f3zsefn\u00e9",
+        "cim": "Tibai Hals\u00fct\u00f6de Szeged Mars t\u00e9ri piac  Nagycsarnok N1-04 HU 6724 Szeged, Mars t\u00e9r 1      \nIr\u00e9n csarnok K1-23 c\u00edmr\u0151l a Nagycsarnok N1-04 c\u00edmre v\u00e1ltozott-k\u00f6lt\u00f6z\u00f6tt\nPiac N1-04",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "T\u00f6r\u00f6k P\u00e9ter P\u00e1l",
+        "cim": "N\u00f3tafa Vend\u00e9gl\u0151 HU 1196 Budapest, Ady Endre utca 37.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "ZALUS Kft.",
+        "cim": "Hal\u00e1sz Vend\u00e9gl\u0151 HU 2220 Vecs\u00e9s, F\u0151 utca 86.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Ec-Gastro Kereskedelmi \u00e9s Szolg\u00e1ltat\u00f3 Kft.",
+        "cim": "Gemex konyha HU 1104 Budapest, Fogad\u00f3 utca 4.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Gulliver \u00c9tterem Vend\u00e9gl\u00e1t\u00f3 Kft.",
+        "cim": "Gulliver \u00c9tterem & Pizz\u00e9ria HU 1191 Budapest, \u00dcll\u0151i \u00fat 208.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Winkler Anita",
+        "cim": "Feh\u00e9r Ak\u00e1c \u00c9tterem P\u00e9r HU 9086 P\u00e9r, Feh\u00e9rv\u00e1ri \u00fat 86/13 hrsz",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "No\u00e9 B\u00e1rk\u00e1ja \u00d3voda",
+        "cim": "No\u00e9 B\u00e1rk\u00e1ja \u00d3voda HU 6000 Kecskem\u00e9t, Kisk\u0151r\u00f6si \u00fat 8",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "J\u00f3kai M\u00f3r Reform\u00e1tus Magyar-Angol K\u00e9t Tan\u00edt\u00e1si Nyelv\u0171  \u00c1ltal\u00e1nos Iskola,  Alapfok\u00fa M\u0171v\u00e9sze",
+        "cim": "HU 3525 Miskolc, Pallos utca 1",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Mikonosz Kereskedelmi Kft.",
+        "cim": "Pizza Karav\u00e1n HU 2100 G\u00f6d\u00f6ll\u0151, Arany J\u00e1nos  utca 35.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "ABI HUNGARY Kft.",
+        "cim": "Vad\u00e1sz Pizz\u00e9ria HU 2030 \u00c9rd, Bajcsy-Zsilinszky \u00fat 121",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "\u00daj S\u00f6rpince Kft.",
+        "cim": "Bem \u00c9tterem & S\u00f6r\u00f6z\u0151 HU 1027 Budapest, Bem t\u00e9r 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "NOA \u00d3voda",
+        "cim": "NOA \u00d3voda HU 1039 Budapest, Czetz J\u00e1nos utca 62-64.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Molo-Gaszt Kft./ S\u00e9f \u00c9tterem",
+        "cim": "S\u00e9f \u00c9tterem HU 2220 Vecs\u00e9s, F\u0151 \u00fat 246-248.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Z\u00f6ld King Holland Vend\u00e9gl\u00e1t\u00f3ipari Kft",
+        "cim": "King Shoarma Kom\u00e1rom HU 2900 Kom\u00e1rom, Arany J\u00e1nos utca 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Eatrend Kft. / Nagyk\u0151r\u00f6si Iskola Dalmady t\u00e1lal\u00f3",
+        "cim": "Nagyk\u0151r\u00f6si Iskola Dalmady t\u00e1lal\u00f3 HU 2750 Nagyk\u0151r\u00f6s, Kalocsa Bal\u00e1zs utca 3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Hotel N\u00e1das Sz\u00e1lloda \u00e9s Vend\u00e9gl\u00e1t\u00f3 Kft. / The Spot",
+        "cim": "The Spot Budapest HU 1011 Budapest, Batthy\u00e1ny t\u00e9r 7.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "GY\u00d6NGY\u00d6S V\u00c1ROS \u00d3VOD\u00c1I /",
+        "cim": "Jeruzs\u00e1lem \u00d3voda HU 3200 Gy\u00f6ngy\u00f6s, Jeruzs\u00e1lem utca 3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "4-G Consulting Kft.",
+        "cim": "Hello Buda HU 1025 Budapest, T\u00f6r\u00f6kv\u00e9sz utca 93.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "B\u00fasul\u00f3 Juh\u00e1sz \u00c9tterem Kft. / Promontor Kertvend\u00e9gl\u0151",
+        "cim": "Promontor Kertvend\u00e9gl\u0151 HU 1221 Budapest, Kossuth Lajos utca 28.    \nB\u00fasul\u00f3 Juh\u00e1sz \u00c9tterem Kft. / Promontor Kertvend\u00e9gl\u0151 HU 1221 Budapest, Kossuht Lajos utca 28.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Varga Gasztro Family Vend\u00e9gl\u00e1t\u00f3 Kft.",
+        "cim": "Term\u00e1l B\u00fcf\u00e9 \u00dajfeh\u00e9rt\u00f3 HU 4080 Hajd\u00fan\u00e1n\u00e1s, Ny\u00edregyh\u00e1zi utca 3",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Annahegyi-Restaurant Kft./ ANNAHEGYI Restaurant  Pihen\u0151 T\u00f6r\u00f6kb\u00e1lint  - 6 km",
+        "cim": "Annahegyi Restaurant M0 HU 2045 T\u00f6r\u00f6kb\u00e1lint, M0 aut\u00f3p\u00e1lya Annahegyi pihen\u0151 6-os kilom\u00e9ter szelv\u00e9ny",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Chesscom Kft./ Hotel Chesscom",
+        "cim": "Hotel Chesscom HU 1191 Budapest, Bart\u00f3k B\u00e9la utca 5.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Eatrend Kft. / Batthy\u00e1ny K\u00e1zm\u00e9r Gimn\u00e1zium - f\u0151z\u0151konyha",
+        "cim": "Batthy\u00e1ny K\u00e1zm\u00e9r Gimn\u00e1zium HU 2310 Szigetszentmikl\u00f3s, Csokonai utca 6",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Eatrend Kft. /  B\u00edr\u00f3 Lajos t\u00e1lal\u00f3konyha",
+        "cim": "B\u00cdR\u00d3 LAJOS t\u00e1lal\u00f3konyha HU 2310 Szigetszentmikl\u00f3s, Kossuth Lajos utca 11.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Kft. /  B\u00edr\u00f3 Lajos t\u00e1lal\u00f3",
+        "cim": "B\u00cdR\u00d3 LAJOS t\u00e1lal\u00f3 HU 2310 Szigetszentmikl\u00f3s, Pet\u0151fi utca 13.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Kft. / Kardos Istv\u00e1n \u00c1ltal\u00e1nos Iskola",
+        "cim": "Kardos Istv\u00e1n \u00c1lt. Iskola HU 2310 Szigetszentmikl\u00f3s, T\u00f6k\u00f6li \u00fat 30 a",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Kft. / Nagyk\u0151r\u00f6s Iskola Kossuth t\u00e1lal\u00f3",
+        "cim": "Nagyk\u0151r\u00f6s Iskola Kossuth t\u00e1lal\u00f3 HU 2750 Nagyk\u0151r\u00f6s, Kinizsi utca 4.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Kft. / Nagyk\u0151r\u00f6si Iskola R\u00e1k\u00f3czi t\u00e1lal\u00f3",
+        "cim": "Nagyk\u0151r\u00f6s Iskola R\u00e1k\u00f3czi t\u00e1lal\u00f3 HU 2750 Nagyk\u0151r\u00f6s, Kecskem\u00e9ti utca 39-41.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Arrabona Zrt. / \u00c1cs, T\u00e1lal\u00f3",
+        "cim": "\u00c1cs t\u00e1lal\u00f3 HU 2941 \u00c1cs, F\u0151 utca 98.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "EH-30l:1"
+    },
+    {
+        "nev": "Eatrend Danubia Kft. / Hort, Benedek Elek Hagyom\u00e1ny\u0151rz\u0151 \u00e9s term\u00e9szetbar\u00e1t \u00d3voda",
+        "cim": "Benedek Elek Hagyom\u00e1ny\u0151rz\u0151 \u00e9s term\u00e9szetbar\u00e1t \u00f3voda HU 3014 Hort, Iskola \u00fat 3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Egal-team Facility Kft. / BOSCH \u00c9tterem - 201. \u00dczem",
+        "cim": "Bosch \u00c9tterem-201 \u00fczem HU 1194 Budapest, R\u00f3bert K\u00e1roly k\u00f6r\u00fat 90-94",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Egal-team Facility Kft. / Budapest City - Irodah\u00e1z",
+        "cim": "Budapart City - Irodah\u00e1z HU 1117 Budapest, Domb\u00f3v\u00e1ri \u00fat 27.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Egal-team Facility Kft. / EWOSoft - INFO Park",
+        "cim": "EWOSoft - INFO Park HU 1117 Budapest, Magyar Tud\u00f3sok k\u00f6r\u00fatja 11.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Egal-team Facility Kft. / BOSCH Kantin - 105. \u00dczem",
+        "cim": "Gy\u00f6mr\u0151i \u00fat fel\u0151l BOSCH Kantin - 105 \u00fczem HU 1194 Budapest, R\u00f3bert K\u00e1roly k\u00f6r\u00fat 104.   Fszt 2",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "FH Gasztro Kft / MH Eg\u00e9szs\u00e9g\u00fcgyi K\u00f6zpont 2. Telephelyi \u00c9tterem",
+        "cim": "MH Eg\u00e9szs\u00e9g\u00fcgyi k\u00f6zpont 2. telephelyi \u00e9tterem HU 1062 Budapest, Podmaniczky utca 109-111.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "FH Gasztro Kft / Ceva Phylaxia Konyha",
+        "cim": "Ceva Phylaxia konyha HU 1107 Budapest, Sz\u00e1ll\u00e1s utca 5.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "F\u0151z\u0151 Party Kft. / Sztr\u00e1da Grill \u00c9tterem",
+        "cim": "Sztr\u00e1da Grill \u00c9tterem HU 3009 Kerekharaszti, K\u00fclter\u00fclet Hrsz. 037/2/B",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Impressio Magyarorsz\u00e1g Kft. / Rozmaring Kertvend\u00e9gl\u0151 \u00c9tterem",
+        "cim": "Rozmaring Kertvend\u00e9gl\u0151 \u00c9tterem HU 1036 Budapest, Slachta Margit rakpart",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "P Dussmann Szolg\u00e1ltato Kft / Uzsoki utcai K\u00f3rh\u00e1z",
+        "cim": "Uzsoki utcai K\u00f3rh\u00e1z HU 1145 Budapest, Uzsoki utca 29.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "P Dussmann Szolg\u00e1ltato Kft / Lenovo",
+        "cim": "Lenovo HU 2225 \u00dcll\u0151, K-Sped krt. 28.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "P Dussmann Szolg\u00e1ltato Kft / MOL MPK",
+        "cim": "MOL MPK HU 3580 Tisza\u00fajv\u00e1ros, Tiszai Vegyi Kombin\u00e1t K5 \u00fat",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Hunguest Sz\u00e1ll\u00e1shelyszolg\u00e1ltat\u00f3 Zrt. / Saliris F\u00fcrd\u0151",
+        "cim": "Saliris F\u00fcrd\u0151 HU 3394 Egerszal\u00f3k, Forr\u00e1s utca 6",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Hunguest Sz\u00e1ll\u00e1shelyszolg\u00e1ltat\u00f3 Zrt. / Saliris Sz\u00e1lloda",
+        "cim": "Saliris Sz\u00e1lloda HU 3394 Egerszal\u00f3k, Forr\u00e1s utca 6   (6. emelet alag\u00fat)",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "M\u00c1TRA PARTY Kft. / HM2 M\u00c1V K\u00f3rh\u00e1z",
+        "cim": "HM2 M\u00c1V K\u00f3rh\u00e1z HU 1062 Budapest, Podmaniczky utca 109-111.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "M\u00c1TRA PARTY Kft. / K\u00f6zponti f\u0151z\u0151konyha Csepeli M\u0171vek",
+        "cim": "K\u00f6zponti f\u0151z\u0151konyha Csepeli M\u0171vek HU 1211 Budapest, Terel\u0151 utca 1-17.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Internefro Kft.",
+        "cim": "Chef Szer\u00e9mi Irodah\u00e1z HU 1117 Budapest, Szer\u00e9mi  4.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "KISS-KRISZ Kft./ Boszork\u00e1ny konyha",
+        "cim": "Boszork\u00e1ny Konyha HU 1107 Budapest, Sz\u00e1va utca 9.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Ambuya Kft./ East Port \u00e9tterem",
+        "cim": "East Port \u00c9tterem HU 1191 Budapest, \u00dcll\u0151i \u00fat 201.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Kliner Kft./ \u00c9l\u00e9skamra \u00e9tterem",
+        "cim": "\u00c9l\u00e9skamra \u00c9tterem HU 1192 Budapest, Ko\u00f3s K\u00e1roly t\u00e9r 11.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Don Quijote Pizza Kft./ Don Quijote Pizza Szajol",
+        "cim": "Don Quijote Pizz\u00e9ria Szajol HU 5081 Szajol, Erkel Ferenc t\u00e9r 4-5.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Jobseuro Kft.",
+        "cim": "O\u00e1zis Food \u00c9tterem HU 5200 T\u00f6r\u00f6kszentmikl\u00f3s, Teny\u0151i \u00fat 6.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Eszmin Food Kft. / SPAR Togo \u00c9tterem (Spar Markt)",
+        "cim": "SPAR Togo \u00c9tterem (Spar Markt) HU 1073 Budapest, Erzs\u00e9bet krt. 25-27.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "M\u00e1tra Party Kft. / Bajcsy-Zsilinszky K\u00f3rh\u00e1z",
+        "cim": "Bajcsy-Zsilinszky K\u00f3rh\u00e1z HU 1106 Budapest, Magl\u00f3di \u00fat 89-91.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Eatrend Arrabona Zrt. / T\u00e9t 28. Konyha",
+        "cim": "T\u00e9t 28. Konyha HU 9100 T\u00e9t, Debreceni \u00fat 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Four Elements Kft.",
+        "cim": "Qpac Pizz\u00e9ria Pannonhalma HU 9090 Pannonhalma, Hunyadi utca 2. A",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "ILO-TEX Kft.",
+        "cim": "R\u00e1k\u00f3czi \u00c9tkezde HU 6000 Kecskem\u00e9t, R\u00e1k\u00f3czi  3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "GG Top Kft.",
+        "cim": "Hotel H\u00e1rom G\u00fan\u00e1r HU 6000 Kecskem\u00e9t, Batthy\u00e1ny  1-7.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "H\u00c9T VEZ\u00c9R FOGAD\u00d3 Kft.",
+        "cim": "H\u00e9t vez\u00e9r cs\u00e1rda HU 3374 Dorm\u00e1nd, D\u00f3zsa Gy\u00f6rgy \u00fat 1-3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "CET ITALIA Kft./ Lecs\u00f3 Magyaros",
+        "cim": "Lecs\u00f3 Magyaros HU 3516 Miskolc, Pesti Barnab\u00e1s utca 9.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "CET ITALIA Kft./ K\u00f6zponti Konyha",
+        "cim": "K\u00f6zponti Konyha HU 3508 Miskolc, S\u00fct\u0151 J\u00e1nos utca 44.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Gastlok\u00e1l Kft. / Sz\u00e9chenyi utcai Lokalista Bistro",
+        "cim": "Sz\u00e9chenyi utcai Lokalista Bistro HU 3530 Miskolc, Sz\u00e9chenyi utca 36.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Baranyi B\u00e9la",
+        "cim": "River Bisztro HU 5100 J\u00e1szber\u00e9ny, Lehel Vez\u00e9r utca 15.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "4 \u00c9vszak M\u00e1tra Kft./ Pal\u00f3c Bistorante",
+        "cim": "Pal\u00f3c Bistorante HU 3232 Gy\u00f6ngy\u00f6s, Par\u00e1di \u00fat 8.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "L\u00e9n\u00e1rt D\u00e1vid e.v./ Retro L\u00e1ngos",
+        "cim": "Retro L\u00e1ngos HU 3014 Hort, Ady Endre utca 16.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Eatrend Kft. / Domb\u00f3v\u00e1r 39. F\u0151z\u0151konyha",
+        "cim": "Domb\u00f3v\u00e1r 39.F\u0151z\u0151konyha HU 7200 Domb\u00f3v\u00e1r, F\u00f6lv\u00e1r utca 16.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Balla Imre e.v. / K\u00fcls\u0151 L\u00e1ngoss\u00fct\u0151 Tesco",
+        "cim": "K\u00fcls\u0151 L\u00e1ngoss\u00fct\u0151 Tesco HU 3200 Gy\u00f6ngy\u00f6s, V\u00e1s\u00e1r \u00fat 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Mvm M\u00e1tra Energia Zrt./  Szerz\u0151d\u00e9s sz.:4600002544",
+        "cim": "Er\u0151m\u0171 \u00c9tterem HU 3271 Visonta, Er\u0151m\u0171 utca 11.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Eatrend Kft. / Isaszeg 21. konyha",
+        "cim": "Isaszeg 21. konyha HU 2117 Isaszeg, Kossuth Lajos utca 85.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "\u00cdzes \u00c9lm\u00e9ny Szolg\u00e1ltat\u00f3 Kft.",
+        "cim": "Umami Konyha - Orvostudom\u00e1nyi Egyetem HU 7624 P\u00e9cs, Szigeti \u00fat 12.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Bir\u00f3 Krisztina",
+        "cim": "I LOVE L\u00e1ngos Szarvas HU 5540 Szarvas, Csabai \u00fat 1/2",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Isa-Paletta Bt. / Csata Vend\u00e9gl\u0151",
+        "cim": "Csata Vend\u00e9gl\u0151 HU 2117 Isaszeg, R\u00e1k\u00f3czi u. 8.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "EX-F\u0150NIX Kft.",
+        "cim": "Lakoma \u00c9tterem Budakal\u00e1sz HU 2011 Budakal\u00e1sz, Omszk park 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Benitrans Kft./ Hekk Terasz",
+        "cim": "Hekk Terasz HU 2600 V\u00e1c, S\u00e1nc d\u0171l\u0151",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Ferencz Mikl\u00f3s e.v. / Szomjas Csuka",
+        "cim": "Szomjas Csuka Vend\u00e9gl\u0151 HU 3346 B\u00e9lap\u00e1tfalva, hrsz. 1430/3.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Sales \u00e9s T\u00e1rsai Kft.",
+        "cim": "Campus Bisztro G\u00f6d\u00f6ll\u0151 HU 2100 G\u00f6d\u00f6ll\u0151, Pr\u00e1ter K\u00e1roly \u00fat 1.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Benkovits Invest Kft./ Szigeti Vend\u00e9gl\u0151",
+        "cim": "Szigeti Vend\u00e9gl\u0151 HU 2100 G\u00f6d\u00f6ll\u0151, Szabads\u00e1g \u00fat 139",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    },
+    {
+        "nev": "Coral Cafe Kft.",
+        "cim": "Coral Cafe Bistro HU 2100 G\u00f6d\u00f6ll\u0151, G\u00e1bor \u00c1ron utca 2-10",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Chiliburger Kft.",
+        "cim": "ChiliBurger pizza&gyros gyors\u00e9tterem HU 2170 Asz\u00f3d, Szabads\u00e1g utca 4-5",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Selby Food Kft.",
+        "cim": "Selby Food Kft. G\u00f6d\u00f6ll\u0151 HU 2100 G\u00f6d\u00f6ll\u0151, Thegze Lajos utca 2.",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": ""
+    },
+    {
+        "nev": "Korponai Magdolna",
+        "cim": "Kulacsos vend\u00e9gl\u0151 HU 5440 Kunszentm\u00e1rton, Szent Imre Herceg utca 43",
+        "tipus": "IMPORT\u00c1LT",
+        "suly": "0"
+    }
+]

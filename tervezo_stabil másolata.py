@@ -45,34 +45,70 @@ class AdatMotor:
 
     @staticmethod
     def nyers_adat_tisztitas(df):
-        df = df.dropna(how='all').copy(); col_cnt = len(df.columns)
+        import json
+        import pandas as pd
+        
+        df = df.dropna(how='all').copy()
+        col_cnt = len(df.columns)
+
         def tetel_tiszt(t):
             t = str(t).upper()
             if "HASZNÁLT SÜTŐOLAJ" in t or "HSO" in t: return "HSO"
             if "ÉTKEZÉSI" in t or "ÉH" in t: return "ÉH"
             if "VIZES ZSÍR" in t or "ZSÍR" in t: return "ZSÍR"
             return t
+
         feldolgozott = []
         for _, row in df.iterrows():
+            # ÚJ: Túranév kinyerése (Excel A oszlop = 0. index)
+            t_nev = AdatMotor.tiszta_sor(row.iloc[0]) if col_cnt > 0 else "ISMERETLEN"
+            
             cim, megj = AdatMotor.kinyer_cim_es_megj(str(row.iloc[3]) if col_cnt > 3 else "")
             p_nev = AdatMotor.tiszta_sor(row.iloc[2] if col_cnt > 2 else "Ismeretlen")
             tetel = tetel_tiszt(row.iloc[5] if col_cnt > 5 else "ISMERETLEN")
+            
             db, r_tal = 0.0, False
             for i in range(7, 11):
                 if col_cnt > i:
                     val = str(row.iloc[i])
                     if ":" in val:
-                        try: db += float(val.split(":")[-1]); r_tal = True
+                        try: 
+                            db += float(val.split(":")[-1])
+                            r_tal = True
                         except: pass
+            
             if not r_tal:
                 if col_cnt > 6:
-                    try: v = row.iloc[6]; db = float(v) if pd.notnull(v) and str(v).strip() != "" else 1.0
+                    try: 
+                        v = row.iloc[6]
+                        db = float(v) if pd.notnull(v) and str(v).strip() != "" else 1.0
                     except: db = 1.0
                 else: db = 1.0
+            
             kg = db * AdatMotor.SZORZOK.get(tetel, 0)
-            feldolgozott.append({'PartnerKulcs': f"{p_nev} ({cim})", 'Megj': str(megj), 'Tetel': tetel, 'Db': db, 'Kg': kg})
+            
+            # ÚJ: A 'Tura' mezőt is hozzáadjuk az adatokhoz
+            feldolgozott.append({
+                'Tura': t_nev,
+                'PartnerKulcs': f"{p_nev} ({cim})", 
+                'Megj': str(megj), 
+                'Tetel': tetel, 
+                'Db': db, 
+                'Kg': kg
+            })
+
+        # --- ÚJ: Mentés az ideiglenes JSON fájlba a mod_turak_excelbol számára ---
+        try:
+            with open("temp_excel_adatok.json", "w", encoding="utf-8") as f:
+                json.dump(feldolgozott, f, ensure_ascii=False, indent=4)
+        except Exception as e:
+            print(f"Hiba az ideiglenes mentésnél: {e}")
+        # -----------------------------------------------------------------------
+
         f_df = pd.DataFrame(feldolgozott)
+        # Megjegyzés: A visszatérési érték a GUI listához csoportosít, de a JSON-ban minden sor benne marad
         return f_df.groupby(['PartnerKulcs', 'Megj', 'Tetel'], as_index=False).agg({'Db':'sum', 'Kg':'sum'}) if not f_df.empty else f_df
+
 
 # --- FŐ ALKALMAZÁS ---
 class TuraApp(QMainWindow):
