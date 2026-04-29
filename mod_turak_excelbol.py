@@ -1,8 +1,6 @@
 import os
 import json
-import re
 from PyQt6.QtWidgets import QMessageBox, QTreeWidgetItem
-from PyQt6.QtGui import QFont
 from PyQt6.QtCore import Qt
 
 class ModulInit:
@@ -16,95 +14,63 @@ class ModulInit:
     def evir_gyors_masolas(self):
         fajlnev = "temp_excel_adatok.json"
         if not os.path.exists(fajlnev):
-            QMessageBox.warning(self.main, "Hiba", "Nincs adat! Töltsd be az Excelt a bal panelen.")
+            QMessageBox.warning(self.main, "Hiba", "Nincs betöltött Excel adat a memóriában!")
             return
-
-        ervenyes_turak = []
-        if os.path.exists("Turanevek.txt"):
-            with open("Turanevek.txt", "r", encoding="utf-8") as f:
-                ervenyes_turak = [line.strip() for line in f if line.strip()]
 
         try:
             with open(fajlnev, "r", encoding="utf-8") as f:
                 nyers_adatok = json.load(f)
 
-            # 1. ADATOK CSOPORTOSÍTÁSA
-            feldolgozott = {}
+            # 1. Térkép készítése (Túra -> Partnerek)
+            terv = {}
             for sor in nyers_adatok:
-                t_nev = sor.get("Tura", "ISMERETLEN")
-                if t_nev not in ervenyes_turak: continue
+                t_nev = str(sor.get("Tura", "")).strip()
+                p_nev = str(sor.get("PartnerKulcs", "")).strip()
+                if t_nev and p_nev:
+                    if t_nev not in terv: terv[t_nev] = []
+                    if p_nev not in terv[t_nev]: terv[t_nev].append(p_nev)
 
-                p_teljes = sor.get("PartnerKulcs", "Ismeretlen")
-                cim_match = re.search(r'\((.*?)\)', p_teljes)
-                p_cim = cim_match.group(1) if cim_match else p_teljes
-
-                tetel_nev = sor.get("Tetel", "ISMERETLEN")
-                megj_szoveg = str(sor.get("Megj", "")).strip()
+            # 2. Átrakás a bal oldalról (a főprogram logikájával)
+            for t_nev, partner_listaban in terv.items():
+                # TÚRA LÉTREHOZÁSA (A főprogram saját függvényével!)
+                # Ez rakja rá a ComboBox-okat és a színeket!
+                target_tura = self._get_vagy_uj_tura(t_nev)
                 
-                if t_nev not in feldolgozott: feldolgozott[t_nev] = {}
-                if p_cim not in feldolgozott[t_nev]:
-                    feldolgozott[t_nev][p_cim] = {'tetelek': {}, 'partner_megj': set()}
-                
-                if tetel_nev not in feldolgozott[t_nev][p_cim]['tetelek']:
-                    feldolgozott[t_nev][p_cim]['tetelek'][tetel_nev] = {'db': 0.0, 'kg': 0.0}
-
-                # Összesítés a tételen belül
-                d = feldolgozott[t_nev][p_cim]['tetelek'][tetel_nev]
-                d['db'] += float(sor.get("Db", 0) or 0)
-                d['kg'] += float(sor.get("Kg", 0) or 0)
-                
-                # Megjegyzés gyűjtése csak a partner szintjére
-                if megj_szoveg and megj_szoveg.lower() != "nan" and megj_szoveg != "":
-                    feldolgozott[t_nev][p_cim]['partner_megj'].add(megj_szoveg)
-
-            # 2. MEGJELENÍTÉS
-            font_bold = QFont(); font_bold.setBold(True)
-            self.main.right_tree.collapseAll()
-
-            for t_nev, partnerek in feldolgozott.items():
-                t_ossz_kg = sum(sum(t['kg'] for t in p['tetelek'].values()) for p in partnerek.values())
-
-                # I. SZINT: TÚRA
-                jobb_tura = self._get_or_create_tura(t_nev)
-                jobb_tura.setText(4, f"{t_ossz_kg:,.1f} kg")
-                for col in range(8): jobb_tura.setFont(col, font_bold)
-
-                for p_cim, p_adat in partnerek.items():
-                    p_ossz_kg = sum(t['kg'] for t in p_adat['tetelek'].values())
-                    p_megj_ossz = " | ".join(p_adat['partner_megj'])
-                    
-                    # II. SZINT: PARTNER (Megjegyzés itt jelenik meg)
-                    uj_partner = QTreeWidgetItem(jobb_tura)
-                    uj_partner.setText(0, p_cim)
-                    uj_partner.setText(4, f"{p_ossz_kg:,.1f}")
-                    uj_partner.setText(5, p_megj_ossz) 
-                    uj_partner.setToolTip(5, p_megj_ossz)
-
-                    # III. SZINT: TÉTELEK (Megjegyzés oszlop üresen marad)
-                    for t_nev, t_adat in p_adat['tetelek'].items():
-                        ki, be = ("", t_nev) if not t_nev.upper().startswith("K-") else (t_nev, "")
+                for i in range(self.main.left_tree.topLevelItemCount() - 1, -1, -1):
+                    p_item = self.main.left_tree.topLevelItem(i)
+                    if p_item.text(0).strip() in partner_listaban:
+                        # KIVESSZÜK balról
+                        p = self.main.left_tree.takeTopLevelItem(i)
                         
-                        tetel_elem = QTreeWidgetItem(uj_partner)
-                        tetel_elem.setText(1, ki)
-                        tetel_elem.setText(2, be)
-                        tetel_elem.setText(3, str(int(t_adat['db'])))
-                        tetel_elem.setText(4, f"{t_adat['kg']:,.1f}")
-                        tetel_elem.setText(5, "") # TÉTELEKNÉL ÜRES A MEGJEGYZÉS
+                        # LÉTREHOZZUK jobbra (Partner: 0:Név, 3:Db, 4:Súly, 5:Megj)
+                        uj_p = QTreeWidgetItem(target_tura, [p.text(0), "", "", p.text(2), p.text(3), p.text(4), "", ""])
+                        uj_p.setData(0, Qt.ItemDataRole.UserRole, "PARTNER")
                         
-                        for col in range(1, 5):
-                            tetel_elem.setTextAlignment(col, Qt.AlignmentFlag.AlignCenter)
+                        if hasattr(self.main, 'bold_f'):
+                            uj_p.setFont(0, self.main.bold_f)
+                        
+                        # TÉTELEK áthelyezése
+                        while p.childCount() > 0:
+                            c = p.takeChild(0)
+                            tt = c.text(1)
+                            ki, be = (tt, "") if tt.startswith("K-") else ("", tt)
+                            QTreeWidgetItem(uj_p, ["", ki, be, c.text(2), c.text(3), "", "", ""])
 
-                self.main.right_tree.collapseItem(jobb_tura)
-
-            QMessageBox.information(self.main, "Kész", "Importálás sikeres, a megjegyzések a partnerekhez rendelve.")
+            # 3. FRISSÍTÉS (Ez élesíti a súlyokat és a gombokat)
+            if hasattr(self.main, 'recalculate'):
+                self.main.recalculate()
+            
+            self.main.right_tree.update()
+            QMessageBox.information(self.main, "Siker", "Excel túrák összeállítva a jobb panelen!")
 
         except Exception as e:
-            QMessageBox.critical(self.main, "Hiba", f"Hiba: {e}")
+            QMessageBox.critical(self.main, "Hiba", f"Hiba az Excel feldolgozáskor: {str(e)}")
 
-    def _get_or_create_tura(self, nev):
+    def _get_vagy_uj_tura(self, t_nev):
         for i in range(self.main.right_tree.topLevelItemCount()):
-            if self.main.right_tree.topLevelItem(i).text(0).strip() == nev:
-                return self.main.right_tree.topLevelItem(i)
-        item = QTreeWidgetItem(self.main.right_tree)
-        item.setText(0, nev)
-        return item
+            it = self.main.right_tree.topLevelItem(i)
+            if it.text(0).strip() == t_nev: return it
+        
+        if hasattr(self.main, 'add_tura_item'):
+            return self.main.add_tura_item(t_nev)
+        return None
