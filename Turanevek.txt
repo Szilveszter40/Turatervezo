@@ -1,85 +1,86 @@
-Bp 13,14
-Kkmét Péntek Páratl.
-M0 Páratlan
-Szeged ÉH-Makó-Páros
-Gyula
-Pécs Páros
-Szeged ÉH-Makó-Plan
-Eatrend - Kiskőrös
-Szeged Hétfő Gyűjtős
-Kecskemét Hétfő
-Sopron Eatrend hétfő
-Gyöngyös
-Nyíregyháza
-Sopron Eatrend csüt
-Prizma - Dévaványa
-Gödöllő -  Páratlan
-Cegléd Páros
-Székesfehér.Páratlan
-Debrecen Páros
-Szeged Szerda Páros
-Győr Külterület
-Szilvásvárad
-Balton Nyugat - Győr
-Kalocsa Páratlan
-Jászberény
-Szigetszentmiklós
-Hódmezőv.Páratlan
-Debrecen Páratlan
-Szarvas Páros
-Kkmét Péntek Páros
-Salgótarján Páratlan
-Hajdúszobo Páratlan
-Cegléd Páratlan
-Salgótarján Páros
-Gödöllő -  Páros
-Tata Páratlan
-Szolnok
-Eatrend szerda Cegl
-Szekszárd
-Hódmezőv. Páros
-Pápa Páratlan
-Lajosmizse Páratlan
 Baja
+Balaton Dél
+Balaton Észak
+Balton Nyugat - Győr
+Bp 13,14
+Bp Szig
+Bp.  Belváros Páros
+Bp.Belváros Páratlan
+Buda Péntek Páratlan
+Buda Péntek Páros
+Buda kedd
+Budapest - Buda
+Budapest és Üllői út
+Békéscsaba Páratlan
+Békéscsaba Páros
+Cegléd Páratlan
+Cegléd Páros
+DEH
+Debrecen Páratlan
+Debrecen Páros
+Eatrend - Kiskőrös
+Eatrend szerda Cegl
+Eger Páratlan
+Eger Páros
+Gyula
+Gyöngyös
+Győr - Péntek
+Győr Csüt Új
+Győr Külterület
+Gödér Dunakanyar
+Gödér Miskolc
+Gödöllő -  Páratlan
+Gödöllő -  Páros
+Hajdúszobo Páratlan
+Hajdúszoboszló Páros
+Hódmezőv. Páros
+Hódmezőv.Páratlan
+Jászberény
+Kalocsa Páratlan
+Kalocsa Páros
+Kecskemét Hétfő
+Kkmét Péntek Páratl.
+Kkmét Péntek Páros
+Lajosmizse Páratlan
 Lajosmizse Páros
-Szentendre Páratlan
-Szentendre Páros
+M0 Páratlan
+M0 Páros
+Mosonmagyaróvár
+Nagymágocs
+Nyíregyháza
+Prizma - Dévaványa
+Pápa Páratlan
 Pápa Páros
 Pécs Páratlan
+Pécs Páros
+Salgótarján Páratlan
+Salgótarján Páros
+Sopron Eatrend csüt
+Sopron Eatrend hétfő
 Sopron kedd
-Eger Páratlan
-Bp.Belváros Páratlan
-Mosonmagyaróvár
-Bp.  Belváros Páros
-Zalaegerszeg Páratln
-Békéscsaba Páratlan
-Szeged Hétfő
-Békéscsaba Páros
-M0 Páros
-Zalaegerszeg Páros
-Budapest - Buda
-Nagymágocs
-Buda Péntek Páratlan
-Hajdúszoboszló Páros
-Győr - Péntek
-Buda kedd
-Gödér Dunakanyar
-Budapest és Üllői út
-Balaton Dél
-Visegrád Páratlan
-Buda Péntek Páros
 Szarvas Páratlan
-Kalocsa Páros
-Győr Csüt Új
-Bp Szig
-Gödér Miskolc
-Visegrád Páros
+Szarvas Páros
+Szeged Hétfő
+Szeged Hétfő Gyűjtős
 Szeged Szerd.Páratl.
+Szeged Szerda Páros
+Szeged ÉH-Makó-Plan
+Szeged ÉH-Makó-Páros
+Szekszárd
+Szentendre Páratlan
+Szentendre Páros
+Szigetszentmiklós
+Szilvásvárad
+Szolnok
+Székesfehér.Páratlan
+Székesfehérvár Páros
+Tata Páratlan
 Tata Páros
-Eger Páros
+Tiszanána
+Túrázandó
 Veresegyh. Páratlan
 Veresegyháza Páros
-DEH
-Székesfehérvár Páros
-Balaton Észak
-Tiszanána
+Visegrád Páratlan
+Visegrád Páros
+Zalaegerszeg Páratln
+Zalaegerszeg Páros
