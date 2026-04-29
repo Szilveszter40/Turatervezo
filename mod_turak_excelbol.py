@@ -12,34 +12,25 @@ class ModulInit:
         if self not in self.main.active_modules:
             self.main.active_modules.append(self)
         
-        # Globális recalculate felülírás a színezéshez (minden modulra hat!)
         if hasattr(self.main, 'recalculate'):
             self.original_recalculate = self.main.recalculate
             self.main.recalculate = self.patched_recalculate
 
     def patched_recalculate(self):
-        """ Ez fut le minden változáskor, így a Fix Túrák színezése is megjavul """
         self.original_recalculate() 
-        
         for i in range(self.main.right_tree.topLevelItemCount()):
             t = self.main.right_tree.topLevelItem(i)
             if t.data(0, Qt.ItemDataRole.UserRole) == "TURA":
                 try:
-                    # Súly kiolvasása és színezése (index 4)
                     s_text = t.text(4).replace(" kg", "").replace(",", ".")
                     suly = float(s_text)
-                    
-                    if suly > 2000:
-                        t.setForeground(4, QColor("red"))
-                    else:
-                        t.setForeground(4, QColor("black"))
+                    t.setForeground(4, QColor("red") if suly > 2000 else QColor("black"))
                 except:
                     pass
 
     def evir_gyors_masolas(self):
         fajlnev = "temp_excel_adatok.json"
         if not os.path.exists(fajlnev):
-            QMessageBox.warning(self.main, "Hiba", "Nincs betöltött Excel adat!")
             return
 
         try:
@@ -52,10 +43,9 @@ class ModulInit:
                 p_n = str(sor.get("PartnerKulcs", "")).strip()
                 if t_n and p_n:
                     if t_n not in terv: terv[t_n] = []
-                    if p_n not in terv[t_n]: terv[t_n].append(p_n)
+                    terv[t_n].append(p_n)
 
             for t_n, p_list in terv.items():
-                # Ikon beillesztése: 🚛 + Túranév
                 ikonos_nev = f"🚛 {t_n}"
                 target = self._get_vagy_uj_tura(ikonos_nev)
                 target.setExpanded(False)
@@ -65,9 +55,12 @@ class ModulInit:
                     if p_it.text(0).strip() in p_list:
                         p = self.main.left_tree.takeTopLevelItem(i)
                         
-                        # Partner létrehozása normál stílussal
-                        uj_p = QTreeWidgetItem(target, [p.text(0), "", "", p.text(2), p.text(3), p.text(4), "", ""])
+                        # MEGJEGYZÉS KEZELÉSE: A bal oldal 4. oszlopából (megj) a jobb oldal 5. oszlopába
+                        megj = p.text(4) 
+                        uj_p = QTreeWidgetItem(target, [p.text(0), "", "", p.text(2), p.text(3), megj, "", ""])
                         uj_p.setData(0, Qt.ItemDataRole.UserRole, "PARTNER")
+                        # Biztonsági mentés a UserRole+1-be, hogy a törlés/visszaküldés is lássa
+                        uj_p.setData(0, Qt.ItemDataRole.UserRole + 1, megj)
                         
                         while p.childCount() > 0:
                             c = p.takeChild(0)
@@ -85,9 +78,5 @@ class ModulInit:
     def _get_vagy_uj_tura(self, ikonos_nev):
         for i in range(self.main.right_tree.topLevelItemCount()):
             it = self.main.right_tree.topLevelItem(i)
-            if it.text(0).strip() == ikonos_nev:
-                return it
-        
-        if hasattr(self.main, 'add_tura_item'):
-            return self.main.add_tura_item(ikonos_nev)
-        return None
+            if it.text(0).strip() == ikonos_nev: return it
+        return self.main.add_tura_item(ikonos_nev) if hasattr(self.main, 'add_tura_item') else None
