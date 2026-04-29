@@ -2,6 +2,7 @@ import os
 import json
 from PyQt6.QtWidgets import QMessageBox, QTreeWidgetItem
 from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QColor
 
 class ModulInit:
     def __init__(self, main_app):
@@ -10,67 +11,79 @@ class ModulInit:
             self.main.active_modules = []
         if self not in self.main.active_modules:
             self.main.active_modules.append(self)
+        
+        # OKOSSÁG: Felülírjuk a főprogram recalculate függvényét, 
+        # hogy a színeket is kezelje vonszoláskor is!
+        if hasattr(self.main, 'recalculate'):
+            self.original_recalculate = self.main.recalculate
+            self.main.recalculate = self.patched_recalculate
+
+    def patched_recalculate(self):
+        """ Ez a verzió lefut minden vonszolás és törlés után is """
+        # Előbb lefut az eredeti számítás, ami beírja a szöveget
+        self.original_recalculate()
+        
+        # Utána mi rögtön színezzük a friss súlyok alapján
+        for i in range(self.main.right_tree.topLevelItemCount()):
+            t = self.main.right_tree.topLevelItem(i)
+            if t.data(0, Qt.ItemDataRole.UserRole) == "TURA":
+                try:
+                    # Kiolvassuk a frissen számolt súlyt
+                    s_text = t.text(4).replace(" kg", "").replace(",", ".")
+                    suly = float(s_text)
+                    
+                    if suly > 2000:
+                        t.setForeground(4, QColor("red"))
+                    else:
+                        t.setForeground(4, QColor("black")) # Visszafeketedik, ha lecsökken
+                except:
+                    pass
 
     def evir_gyors_masolas(self):
         fajlnev = "temp_excel_adatok.json"
         if not os.path.exists(fajlnev):
-            QMessageBox.warning(self.main, "Hiba", "Nincs betöltött Excel adat a memóriában!")
+            QMessageBox.warning(self.main, "Hiba", "Nincs betöltött Excel adat!")
             return
 
         try:
             with open(fajlnev, "r", encoding="utf-8") as f:
                 nyers_adatok = json.load(f)
 
-            # 1. Térkép készítése (Túra -> Partnerek)
             terv = {}
             for sor in nyers_adatok:
-                t_nev = str(sor.get("Tura", "")).strip()
-                p_nev = str(sor.get("PartnerKulcs", "")).strip()
-                if t_nev and p_nev:
-                    if t_nev not in terv: terv[t_nev] = []
-                    if p_nev not in terv[t_nev]: terv[t_nev].append(p_nev)
+                t_n = str(sor.get("Tura", "")).strip()
+                p_n = str(sor.get("PartnerKulcs", "")).strip()
+                if t_n and p_n:
+                    if t_n not in terv: terv[t_n] = []
+                    if p_n not in terv[t_n]: terv[t_n].append(p_n)
 
-            # 2. Átrakás a bal oldalról (a főprogram logikájával)
-            for t_nev, partner_listaban in terv.items():
-                # TÚRA LÉTREHOZÁSA (A főprogram saját függvényével!)
-                # Ez rakja rá a ComboBox-okat és a színeket!
-                target_tura = self._get_vagy_uj_tura(t_nev)
+            for t_n, p_list in terv.items():
+                target = self._get_vagy_uj_tura(t_n)
+                target.setExpanded(False)
                 
                 for i in range(self.main.left_tree.topLevelItemCount() - 1, -1, -1):
-                    p_item = self.main.left_tree.topLevelItem(i)
-                    if p_item.text(0).strip() in partner_listaban:
-                        # KIVESSZÜK balról
+                    p_it = self.main.left_tree.topLevelItem(i)
+                    if p_it.text(0).strip() in p_list:
                         p = self.main.left_tree.takeTopLevelItem(i)
-                        
-                        # LÉTREHOZZUK jobbra (Partner: 0:Név, 3:Db, 4:Súly, 5:Megj)
-                        uj_p = QTreeWidgetItem(target_tura, [p.text(0), "", "", p.text(2), p.text(3), p.text(4), "", ""])
+                        uj_p = QTreeWidgetItem(target, [p.text(0), "", "", p.text(2), p.text(3), p.text(4), "", ""])
                         uj_p.setData(0, Qt.ItemDataRole.UserRole, "PARTNER")
                         
-                        if hasattr(self.main, 'bold_f'):
-                            uj_p.setFont(0, self.main.bold_f)
-                        
-                        # TÉTELEK áthelyezése
                         while p.childCount() > 0:
                             c = p.takeChild(0)
                             tt = c.text(1)
                             ki, be = (tt, "") if tt.startswith("K-") else ("", tt)
                             QTreeWidgetItem(uj_p, ["", ki, be, c.text(2), c.text(3), "", "", ""])
 
-            # 3. FRISSÍTÉS (Ez élesíti a súlyokat és a gombokat)
-            if hasattr(self.main, 'recalculate'):
-                self.main.recalculate()
-            
+            # Itt már a mi okosított recalculate-ünk fut le!
+            self.main.recalculate()
             self.main.right_tree.update()
-            QMessageBox.information(self.main, "Siker", "Excel túrák összeállítva a jobb panelen!")
+            QMessageBox.information(self.main, "Siker", "Excel túrák összeállítva!")
 
         except Exception as e:
-            QMessageBox.critical(self.main, "Hiba", f"Hiba az Excel feldolgozáskor: {str(e)}")
+            QMessageBox.critical(self.main, "Hiba", str(e))
 
-    def _get_vagy_uj_tura(self, t_nev):
+    def _get_vagy_uj_tura(self, t_n):
         for i in range(self.main.right_tree.topLevelItemCount()):
             it = self.main.right_tree.topLevelItem(i)
-            if it.text(0).strip() == t_nev: return it
-        
-        if hasattr(self.main, 'add_tura_item'):
-            return self.main.add_tura_item(t_nev)
-        return None
+            if it.text(0).strip() == t_n: return it
+        return self.main.add_tura_item(t_n) if hasattr(self.main, 'add_tura_item') else None
