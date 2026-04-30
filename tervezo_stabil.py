@@ -200,12 +200,46 @@ class TuraApp(QMainWindow):
         return it
 
     def tura_val(self):
-        nevek = sorted(list(set([l.strip() for l in open(self.txt_p, "r", encoding="utf-8") if l.strip()]))) if os.path.exists(self.txt_p) else []
+        # 1. Beolvassuk a neveket a txt-ből
+        nevek = []
+        if os.path.exists(self.txt_p):
+           with open(self.txt_p, "r", encoding="utf-8") as f:
+               nevek = sorted(list(set([l.strip() for l in f if l.strip()])))
+
         d = TuraValasztoDialog(nevek, self)
         if d.exec():
+            # ÚJ TÚRA LÉTREHOZÁSA
             if d.valasztott == "__UJ__":
-                u, ok = QInputDialog.getText(self, "Új", "Név:"); (open(self.txt_p, "a", encoding="utf-8").write(u.strip() + "\n"), self.add_tura_item(u.strip())) if ok and u.strip() else None
-            elif d.valasztott: self.add_tura_item(d.valasztott)
+                u, ok = QInputDialog.getText(self, "Új túra", "Név:")
+                if ok and u.strip():
+                    nev = u.strip()
+                    if nev not in nevek:
+                       with open(self.txt_p, "a", encoding="utf-8") as f:
+                           f.write(nev + "\n")
+                self.add_tura_item(nev)
+        
+            # TÖRLÉS A LISTÁBÓL
+            elif d.muvelet == "TORLES" and d.valasztott:
+                valasz = QMessageBox.question(self, "Megerősítés", f"Biztosan törlöd a(z) '{d.valasztott}' túrát a listából?")
+                if valasz == QMessageBox.StandardButton.Yes:
+                   nevek.remove(d.valasztott)
+                   with open(self.txt_p, "w", encoding="utf-8") as f:
+                       f.write("\n".join(nevek) + "\n")
+                   QMessageBox.information(self, "Siker", "Túra törölve a listából.")
+
+            # ÁTNEVEZÉS A LISTÁBAN
+            elif d.muvelet == "ATNEVEZES" and d.valasztott:
+                u, ok = QInputDialog.getText(self, "Átnevezés", f"Új név a(z) '{d.valasztott}' helyett:", text=d.valasztott)
+                if ok and u.strip():
+                   uj_nev = u.strip()
+                   nevek = [uj_nev if n == d.valasztott else n for n in nevek]
+                   with open(self.txt_p, "w", encoding="utf-8") as f:
+                       f.write("\n".join(nevek) + "\n")
+                   QMessageBox.information(self, "Siker", "Túra átnevezve.")
+
+            # SIMA KIVÁLASZTÁS ÉS HOZZÁADÁS
+            elif d.valasztott:
+                self.add_tura_item(d.valasztott)
 
     def treeDrop(self, e):
         target = self.right_tree.itemAt(e.position().toPoint())
@@ -345,18 +379,58 @@ class TuraApp(QMainWindow):
 class TuraValasztoDialog(QDialog):
     def __init__(self, nevek, parent=None):
         super().__init__(parent)
-        self.setWindowTitle("Választás"); self.setMinimumSize(500, 600); self.valasztott = None; self.osszes = nevek
-        l = QVBoxLayout(self); self.ker = QLineEdit(); self.ker.setPlaceholderText("Keresés..."); self.ker.setFont(QFont("Arial", 12)); l.addWidget(self.ker)
-        self.lst = QListWidget(); self.lst.addItems(self.osszes); self.lst.setFont(QFont("Arial", 12)); l.addWidget(self.lst)
-        self.ker.textChanged.connect(lambda t: (self.lst.clear(), self.lst.addItems([n for n in self.osszes if t.lower() in n.lower()])))
-        b = QHBoxLayout(); u = QPushButton("+ Új"); k = QPushButton("Kiválaszt")
-        u.clicked.connect(lambda: (setattr(self, 'valasztott', '__UJ__'), self.accept()))
-        k.setStyleSheet("background-color: #3498db; color: white; font-weight: bold; min-height: 40px;")
-        k.clicked.connect(self.accept); b.addWidget(u); b.addStretch(); b.addWidget(k); l.addLayout(b)
-        self.lst.itemDoubleClicked.connect(self.accept)
+        self.setWindowTitle("Túra választása")
+        self.valasztott = None
+        self.muvelet = "HOZZAAD" # Alapértelmezett művelet
+        
+        layout = QVBoxLayout(self)
+        self.listbox = QListWidget()
+        self.listbox.addItems(nevek)
+        layout.addWidget(self.listbox)
+        
+        btn_layout = QHBoxLayout()
+        
+        # Hozzáadás gomb
+        ok_btn = QPushButton("Kiválasztás")
+        ok_btn.clicked.connect(self.accept)
+        
+        # Új gomb
+        uj_btn = QPushButton("+ Új")
+        uj_btn.clicked.connect(self.uj_tura)
+        
+        # Átnevezés gomb
+        atn_btn = QPushButton("✎")
+        atn_btn.clicked.connect(self.atnevezes)
+        
+        # Törlés gomb
+        del_btn = QPushButton("🗑")
+        del_btn.clicked.connect(self.torles)
+        
+        btn_layout.addWidget(ok_btn)
+        btn_layout.addWidget(uj_btn)
+        btn_layout.addWidget(atn_btn)
+        btn_layout.addWidget(del_btn)
+        layout.addLayout(btn_layout)
+
+    def uj_tura(self):
+        self.valasztott = "__UJ__"
+        self.accept()
+
+    def atnevezes(self):
+        if self.listbox.currentItem():
+            self.valasztott = self.listbox.currentItem().text()
+            self.muvelet = "ATNEVEZES"
+            self.accept()
+
+    def torles(self):
+        if self.listbox.currentItem():
+            self.valasztott = self.listbox.currentItem().text()
+            self.muvelet = "TORLES"
+            self.accept()
+
     def accept(self):
-        if not self.valasztott:
-            if self.lst.currentItem(): self.valasztott = self.lst.currentItem().text()
+        if not self.valasztott and self.listbox.currentItem():
+            self.valasztott = self.listbox.currentItem().text()
         super().accept()
 
 if __name__ == "__main__":
