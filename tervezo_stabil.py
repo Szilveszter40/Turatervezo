@@ -2,6 +2,17 @@ import pandas as pd
 import re
 import sys
 import os
+if getattr(sys, 'frozen', False):
+    # ELŐSZÖR: Adjuk hozzá a belső mappát a modulok miatt
+    if sys._MEIPASS not in sys.path:
+        sys.path.append(sys._MEIPASS)
+    
+    # MÁSODSZOR: Ugorjunk az EXE mellé a mentések miatt
+    os.chdir(os.path.dirname(sys.executable))
+else:
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
+# CSAK EZUTÁN jöhetnek a modulok és a PyQt6 importok!
 import importlib.util
 from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout, 
                              QHBoxLayout, QPushButton, QFileDialog, QMessageBox, 
@@ -114,10 +125,11 @@ class AdatMotor:
 class TuraApp(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("ProLog Tervező v38.1 - MODULÁRIS")
-        base_dir = os.path.dirname(os.path.abspath(__file__))
-        self.autok_p, self.sofor_p = os.path.join(base_dir, "autok.txt"), os.path.join(base_dir, "soforok.txt")
-        self.txt_p, self.alap_m = os.path.join(base_dir, "turanevek.txt"), r"C:\Users\User\Downloads"
+        self.setWindowTitle("ProLog Tervező v1.1 - MODULÁRIS")
+        self.autok_p = "autok.txt"
+        self.sofor_p = "soforok.txt"
+        self.txt_p = "turanevek.txt"
+        self.alap_m = r"C:\Users\User\Downloads"
         self.bold_f = QFont(); self.bold_f.setBold(True)
         
         self.setStyleSheet("""

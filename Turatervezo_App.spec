@@ -1,9 +1,9 @@
 # -*- mode: python ; coding: utf-8 -*-
 from PyInstaller.utils.hooks import collect_all
 
-datas = [('autok.txt', '.'), ('bv_adatbazis.json', '.'), ('bv_fix_turak.json', '.'), ('bv_intezmenyek.json', '.'), ('fix_turak_napi.json', '.'), ('mod_buntetes_vegrehajtas.py', '.'), ('mod_fix_turak.py', '.'), ('mod_karbantartas.py', '.'), ('mod_terkep.py', '.'), ('mod_tervezo.py', '.'), ('mod_turak_excelbol.py', '.'), ('soforok.txt', '.'), ('temp_excel_adatok.json', '.'), ('tervezo_partnerek.json', '.'), ('tervezo_turak.json', '.'), ('tervezo_turak_mentese.json', '.'), ('Turanevek.txt', '.')]
+datas = [('mod_buntetes_vegrehajtas.py', '.'), ('mod_fix_turak.py', '.'), ('mod_karbantartas.py', '.'), ('mod_terkep.py', '.'), ('mod_tervezo.py', '.'), ('mod_turak_excelbol.py', '.')]
 binaries = []
-hiddenimports = []
+hiddenimports = ['folium', 'geopy', 'geopy.geocoders.photon', 'branca', 'jinja2', 'openpyxl', 'pandas', 'streamlit', 'mod_buntetes_vegrehajtas', 'mod_fix_turak', 'mod_karbantartas', 'mod_terkep', 'mod_tervezo', 'mod_turak_excelbol']
 tmp_ret = collect_all('PyQt6')
 datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
 
@@ -26,13 +26,16 @@ pyz = PYZ(a.pure)
 exe = EXE(
     pyz,
     a.scripts,
+    a.binaries,
+    a.datas,
     [],
-    exclude_binaries=True,
     name='Turatervezo_App',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
     upx=True,
+    upx_exclude=[],
+    runtime_tmpdir=None,
     console=False,
     disable_windowed_traceback=False,
     argv_emulation=False,
@@ -40,13 +43,4 @@ exe = EXE(
     codesign_identity=None,
     entitlements_file=None,
     icon=['szallitas.ico'],
-)
-coll = COLLECT(
-    exe,
-    a.binaries,
-    a.datas,
-    strip=False,
-    upx=True,
-    upx_exclude=[],
-    name='Turatervezo_App',
 )

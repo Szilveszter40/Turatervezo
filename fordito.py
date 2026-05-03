@@ -11,57 +11,58 @@ DIST_MAPPA = "dist"
 
 def forditas():
     print("="*50)
-    print(f"[{APP_NEV}] FORDÍTÁS: MINDEN AZ EXE-BE + KÜLSŐ EXCEL")
+    print(f"[{APP_NEV}] FORDÍTÁS: MINDEN EGY MAPÁBA (HORDOZHATÓ)")
     print("="*50)
 
-    # 1. TAKARÍTÁS
+    # 1. RÉGI FÁJLOK TÖRLÉSE
     for folder in ["dist", "build"]:
         if os.path.exists(folder):
             shutil.rmtree(folder)
 
-    # 2. PARANCS ÖSSZEÁLLÍTÁSA
+    # 2. PYINSTALLER PARANCS
     cmd = [
         sys.executable, "-m", "PyInstaller",
         "--noconfirm",
-        "--onefile",           # Mindent egy fájlba
-        "--windowed",          # Nincs fekete ablak
+        "--onefile",
+        "--windowed",
         "--collect-all", "PyQt6",
         "--icon", IKON if os.path.exists(IKON) else "NONE",
-        "--name", APP_NEV
+        "--name", APP_NEV,
+        "--hidden-import", "folium",
+        "--hidden-import", "geopy",
+        "--hidden-import", "geopy.geocoders.photon",
+        "--hidden-import", "branca",
+        "--hidden-import", "jinja2",
+        "--hidden-import", "openpyxl",
+        "--hidden-import", "pandas",
+        "--hidden-import", "streamlit"
     ]
 
-    # 3. MODULOK ÉS ADATOK HOZZÁADÁSA (Bele az EXE-be)
+    # 3. MODULOK (.py) BEHELYEZÉSE AZ EXE-BE
     for f in os.listdir("."):
-        if f.lower().endswith((".json", ".txt", ".csv", ".kml")):
-            cmd.extend(["--add-data", f"{f};."])
-        
         if f.lower().startswith("mod_") and f.lower().endswith(".py"):
             if "másolata" not in f.lower():
+                # A kódot beletesszük az EXE-be
                 cmd.extend(["--add-data", f"{f};."])
                 cmd.extend(["--hidden-import", f[:-3]])
 
-    # AZ EXCELT IS BELETESSZÜK BELSŐ TARTALÉKNAK
-    if os.path.exists("iranyitoszamok.xlsx"):
-        cmd.extend(["--add-data", "iranyitoszamok.xlsx;."])
-
     cmd.append(FO_FAJL)
 
-    # 4. FORDÍTÁS INDÍTÁSA
+    # 4. FORDÍTÁS
     subprocess.run(cmd)
 
-    # 5. A KRITIKUS LÉPÉS: EXCEL KIMÁSOLÁSA AZ EXE MELLÉ
-    # Ha a programod nem találja meg belül, akkor kívülről fogja beolvasni.
-    print("\n[UTÓMUNKÁLATOK] Excel fájl elhelyezése az EXE mellé...")
-    exe_helye = os.path.join(DIST_MAPPA, f"{APP_NEV}.exe")
-    excel_cel = os.path.join(DIST_MAPPA, "iranyitoszamok.xlsx")
+    # 5. ADATOK MÁSOLÁSA AZ EXE MELLÉ
+    print("\n[UTÓMUNKÁLATOK] Adatfájlok másolása a dist mappába...")
+    adat_kiterjesztesek = (".json", ".txt", ".csv", ".kml", ".xlsx", ".xls")
     
-    if os.path.exists("iranyitoszamok.xlsx"):
-        shutil.copy2("iranyitoszamok.xlsx", excel_cel)
-        print(f"  -> SIKER: Az 'iranyitoszamok.xlsx' most már ott van a '{APP_NEV}.exe' mellett!")
+    if os.path.exists(DIST_MAPPA):
+        for f in os.listdir("."):
+            if f.lower().endswith(adat_kiterjesztesek):
+                shutil.copy2(f, os.path.join(DIST_MAPPA, f))
+                print(f"  -> Másolva: {f}")
 
     print("\n" + "="*50)
-    print("KÉSZ! Próbáld ki a dist mappában lévő programot.")
-    print("MINDIG tartsd az Excel fájlt az EXE mellett!")
+    print("SIKER! A 'dist' mappában lévő fájlokat együtt kell mozgatnod.")
     print("="*50)
 
 if __name__ == "__main__":

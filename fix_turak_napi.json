@@ -1,6 +1,25 @@
 {
     "Minden héten": {
-        "Hétfő": {},
+        "Hétfő": {
+            "Prizma - Dévaványa": [
+                "Prizma-junior Zrt. / Ványai Ambrus Ált. Iskola Ecsegfalva (5515 - Ványai Ambrus Ált. Iskola HU 5515 Ecsegfalva, Árpád út 17.)",
+                "Prizma-junior Zrt. / Tündérkert Óvoda Dévaványa (5510 - Tündérkert Óvoda HU 5510 Dévaványa, Eötvös József utca 1.)",
+                "Prizma-junior Zrt. / Szivárvány Óvoda Dévaványa (5510 - Szivárvány Óvoda HU 5510 Dévaványa, Hajós utca 24.)",
+                "Prizma-junior Zrt. / Széchenyi Napközi Konyha - 44 üzemDévaványa (5510 - Széchenyi Napközi Konyha HU 5510 Dévaványa, Széchenyi út 1.)",
+                "Prizma-Junior Zrt. / Napsugár Óvoda Dévaványa (5510 - Napsugár Óvoda HU 5510 Dévaványa, Kossuth utca 3.)",
+                "Prizma-junior Zrt. / Margaréta Idősek Otthona Dévaványa (5510 - Margaréta Idősek Otthona HU 5510 Dévaványa, Jéggyár utca 47.)",
+                "Prizma-junior Zrt. / Könyves Kálmán úti óvoda Dévaványa (5510 - Könyves Kálmán úti óvoda HU 5510 Dévaványa, Könyves utca 13.)",
+                "Prizma-junior Zrt. / Kisegítő Iskola Békés (5630 - Kisegítő Iskola HU 5630 Békés, Szántó Albert utca 10.)",
+                "Prizma-junior Zrt. / Gyulai Szakképzési Centrum Dévaványa (5510 - Gyulai Szakképzési Centrum HU 5510 Dévaványa, Mezőtúri utca 2.)",
+                "Prizma-junior Zrt. / Gólyahír Bölcsőde Dévaványa (5510 - Gólyahír Bölcsőde HU 5510 Dévaványa, Hunyadi János utca 17.)",
+                "Prizma-junior Zrt. / Gál Ferenc Egyetem Békés (5630 - Gál Ferenc Egyetem HU 5630 Békés, Hőzső utca 35.)",
+                "Prizma-junior Zrt. / Ecsegfalvi Óvoda (5515 - Ecsegfalvi Óvoda HU 5515 Ecsegfalva, Hunyadi János utca 3.)",
+                "Prizma-junior Zrt. / Dr. Hepp Ferenc Iskola Békés (5630 - Dr. Hepp Ferenc Iskola HU 5630 Békés, József Attila utca 12.)",
+                "Prizma-junior Zrt. / 56. Üzem Mezőberény (5650 - 56. Üzem HU 5650 Mezőberény, Tavasz utca 7.)",
+                "Prizma-junior Zrt. / 56. Általános Iskola Mezőberény (5650 - 56. Általános Iskola HU 5650 Mezőberény, Luther utca 1.)",
+                "Gunda Dávid (5510 - Lángosozó Dévaványa HU 5510 Dévaványa, Árpád u. 38/)"
+            ]
+        },
         "Kedd": {
             "Bp.Belváros Páratlan": [
                 "Alice World-ker Kft. (6400 - Monkey Ételbár HU 6400 Kiskunhalas, Gyöngyvirág utca 30.)",
@@ -52,8 +71,5 @@
                 "Koczkásné Kovács Andrea e.v./ Andi Csárda (6931 - Andi Csárda HU 6931 Apátfalva, Széchenyi utca 96)"
             ]
         }
-    },
-    "Páros hét": {
-        "Hétfő": {}
     }
 }

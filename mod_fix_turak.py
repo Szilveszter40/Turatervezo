@@ -14,7 +14,19 @@ class ModulInit:
             self.main.fix_tura_storage = []
         self.main.fix_tura_storage.append(self)
         
-        self.sablon_utvonal = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fix_turak_napi.json")
+        self.sablon_utvonal = "fix_turak_napi.json"
+        QTimer.singleShot(1200, self.init_gombok)
+
+    def takaritas(self):
+        old_objs = ['fix_tura_btn_obj', 'holnap_btn_obj', 'fix_kontener_obj', 'gomb_sor_kontener']
+        for obj_name in old_objs:
+            if hasattr(self.main, obj_name):
+                obj = getattr(self.main, obj_name)
+                try:
+                    obj.setParent(None)
+                    obj.deleteLater()
+                except: pass
+                setattr(self.main, obj_name, "fix_turak_napi.json")
         QTimer.singleShot(1200, self.init_gombok)
 
     def takaritas(self):
@@ -214,8 +226,8 @@ class ModulInit:
                     with open(self.sablon_utvonal, "w", encoding="utf-8") as f:
                         json.dump(ad, f, indent=4, ensure_ascii=False)
                     QMessageBox.information(self.main, "Siker", "Mentve.")
-                except: pass
-
+                except Exception as e:
+                    QMessageBox.critical(self.main, "Hiba", f"Mentési hiba: {e}")
     def sablon_kezelo_ablak(self):
         # Új ablak a sablonok listázásához
         self.kezelo_dialog = QDialog(self.main)
@@ -240,25 +252,18 @@ class ModulInit:
 
     def sablon_lista_frissites(self):
         self.sablon_lista_widget.clear()
-        json_fajl = "fix_turak_napi.json"
-        
-        if os.path.exists(json_fajl):
+        # Használjuk a központi változót!
+        if os.path.exists(self.sablon_utvonal):
             try:
-                with open(json_fajl, "r", encoding="utf-8") as f:
+                with open(self.sablon_utvonal, "r", encoding="utf-8") as f:
                     adatok = json.load(f)
-                    
-                    # 1. szint: Hét (pl. Páros hét)
                     for het, napok in adatok.items():
                         if isinstance(napok, dict):
-                            # 2. szint: Nap (pl. Hétfő)
                             for nap, turak in napok.items():
                                 if isinstance(turak, dict):
-                                    # 3. szint: A konkrét Túrák nevei
                                     for tura_neve in turak.keys():
+                                        # Ezt fogod látni a listában:
                                         self.sablon_lista_widget.addItem(f"{het} -> {nap} -> {tura_neve}")
-                                else:
-                                    # Ha a nap alatt rögtön adatok vannak (nem több túra)
-                                    self.sablon_lista_widget.addItem(f"{het} -> {nap}")
             except Exception as e:
                 print(f"Hiba a listázáskor: {e}")
 

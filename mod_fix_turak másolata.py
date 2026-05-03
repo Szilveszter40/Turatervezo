@@ -14,7 +14,7 @@ class ModulInit:
             self.main.fix_tura_storage = []
         self.main.fix_tura_storage.append(self)
         
-        self.sablon_utvonal = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fix_turak_napi.json")
+        self.sablon_utvonal = "fix_turak_napi.json"
         QTimer.singleShot(1200, self.init_gombok)
 
     def takaritas(self):

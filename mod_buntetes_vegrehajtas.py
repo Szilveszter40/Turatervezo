@@ -12,9 +12,8 @@ from PyQt6.QtGui import QFont, QColor
 class ModulInit:
     def __init__(self, main_app):
         self.main = main_app
-        self.mappa = os.path.dirname(os.path.abspath(__file__))
-        self.bv_adat_fajl = os.path.join(self.mappa, "bv_intezmenyek.json")
-        self.bv_tura_fajl = os.path.join(self.mappa, "bv_fix_turak.json")
+        self.bv_adat_fajl = "bv_intezmenyek.json"
+        self.bv_tura_fajl = "bv_fix_turak.json"
         self.napok = ["Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat", "Vasárnap"]
         
         self.betolt_minden_adatot()
