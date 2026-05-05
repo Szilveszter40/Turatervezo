@@ -8,6 +8,7 @@ import fixmod_irsz_szerkeszto
 import fixmod_nyomtatas
 import fixmod_uj_partnerek
 import fixmod_konfig
+import fixmod_szetosztas
 
 class FixTervezoApp(QWidget):
     def __init__(self):
@@ -34,7 +35,7 @@ class FixTervezoApp(QWidget):
         self.btn_uj = self.create_menu_button("👤 Új partnerek", "#2980b9")
         self.btn_irsz = self.create_menu_button("📝 IRSZ szerkesztő", "#8e44ad")
         self.btn_print = self.create_menu_button("🖨️ NYOMTATÁS", "#e67e22")
-        self.btn_osztas = self.create_menu_button("🚀 SZÉTOSZTÁS", "#27ae60")
+        self.btn_szetosztas = self.create_menu_button("🚀 SZÉTOSZTÁS", "#27ae60")
         self.btn_config = self.create_menu_button("⚙️ EXCEL LÉTREHOZÁS", "#7f8c8d")
 
         self.btn_regi.clicked.connect(lambda: fixmod_adatkezeles.partner_betoltes_regi(self))
@@ -42,6 +43,7 @@ class FixTervezoApp(QWidget):
         self.btn_print.clicked.connect(lambda: fixmod_nyomtatas.elonezet_es_nyomtatas(self.right_table))
         self.btn_uj.clicked.connect(lambda: fixmod_uj_partnerek.betoltes_es_feldolgozas(self))
         self.btn_config.clicked.connect(lambda: fixmod_konfig.indit_konfiguracio(self))
+        self.btn_szetosztas.clicked.connect(lambda: fixmod_szetosztas.szetosztas_ablak_megnyitasa(self))
 
         top_menu.addWidget(self.btn_regi)
         top_menu.addWidget(self.btn_uj)
@@ -49,7 +51,7 @@ class FixTervezoApp(QWidget):
         top_menu.addWidget(self.btn_config)
         top_menu.addStretch()
         top_menu.addWidget(self.btn_print)
-        top_menu.addWidget(self.btn_osztas)
+        top_menu.addWidget(self.btn_szetosztas)
         main_layout.addLayout(top_menu)
 
         self.splitter = QSplitter(Qt.Orientation.Horizontal)
