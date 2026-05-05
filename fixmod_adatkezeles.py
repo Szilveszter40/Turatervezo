@@ -10,52 +10,49 @@ def intenzitas_szamolo(datumok):
     m = np.median(diffs)
     if m <= 10: return "HETI"
     if m <= 22: return "2 HETI"
-    if m <= 35: return "HAVI"
-    return "RENDSZERTELEN"
+    return "HAVI"
 
 def partner_betoltes_regi(parent):
     if not hasattr(parent, 'df_regi_raw'): return
-    parent.left_tree.setUpdatesEnabled(False)
     parent.left_tree.clear()
-    
     c = parent.r_cols
     df = parent.df_regi_raw
     adatok = {} 
 
     for _, row in df.iterrows():
         p_nyers = str(row.iloc[c['p']])
-        v_nev = megjelenitesre_vago(p_nyers)
-        kulcs = szuper_tisztito(v_nev) # Kulcs a vágott név elejéből
+        v_n = megjelenitesre_vago(p_nyers)
+        kl = szuper_tisztito(v_n)
+        if not kl: continue
+        if kl not in adatok: adatok[kl] = {'n': v_n, 't': set(), 'napok': {}, 'dates': []}
         
-        if not kulcs: continue
-        if kulcs not in adatok:
-            adatok[kulcs] = {'nev': v_nev, 'turak': set(), 'napok': {}, 'd_list': []}
-        
-        adatok[kulcs]['turak'].add(str(row.iloc[c['t']]).replace('.0', ''))
-        datum = pd.to_datetime(row.iloc[c['d']], errors='coerce')
-        if pd.notnull(datum):
-            d_str = datum.strftime('%Y-%m-%d')
-            adatok[kulcs]['d_list'].append(datum)
-            if d_str not in adatok[kulcs]['napok']: adatok[kulcs]['napok'][d_str] = []
+        adatok[kl]['t'].add(str(row.iloc[c['t']]).replace('.0', ''))
+        dt = pd.to_datetime(row.iloc[c['d']], errors='coerce')
+        if pd.notnull(dt):
+            ds = dt.strftime('%Y-%m-%d')
+            adatok[kl]['dates'].append(dt)
+            if ds not in adatok[kl]['napok']: adatok[kl]['napok'][ds] = {}
             
-            t_nev, t_suly = suly_szamolo(row.iloc[c['f']])
-            adatok[kulcs]['napok'][d_str].append({'n': t_nev, 's': t_suly})
+            # Tétel és a mellette lévő DARABSZÁM oszlop használata
+            t_nev_nyers = row.iloc[c['f']]
+            db_nyers = row.iloc[c['m']]
+            t_n, t_db, t_s = suly_szamolo(t_nev_nyers, db_nyers)
+            
+            if t_n not in adatok[kl]['napok'][ds]: adatok[kl]['napok'][ds][t_n] = {'s': 0, 'd': 0}
+            adatok[kl]['napok'][ds][t_n]['s'] += t_s
+            adatok[kl]['napok'][ds][t_n]['d'] += t_db
 
     for k, v in adatok.items():
         p_item = QTreeWidgetItem(parent.left_tree)
-        p_item.setText(0, v['nev'])
-        p_item.setText(2, ", ".join(sorted(v['turak'])))
-        p_item.setText(3, intenzitas_szamolo(v['d_list']))
-        
-        for d_date in sorted(v['napok'].keys(), reverse=True):
-            napi_suly = sum(item['s'] for item in v['napok'][d_date])
+        p_item.setText(0, v['n'])
+        p_item.setText(2, ", ".join(sorted(v['t'])))
+        p_item.setText(3, intenzitas_szamolo(v['dates']))
+        for ds in sorted(v['napok'].keys(), reverse=True):
             d_item = QTreeWidgetItem(p_item)
-            d_item.setText(0, f"📅 {d_date}")
-            d_item.setText(1, f"{napi_suly} kg")
-            
-            for t in v['napok'][d_date]:
+            d_item.setText(0, f"📅 {ds}")
+            d_item.setText(1, f"{sum(i['s'] for i in v['napok'][ds].values())} kg")
+            for tn, info in v['napok'][ds].items():
                 t_item = QTreeWidgetItem(d_item)
-                t_item.setText(0, f"📦 {t['n']}")
-                t_item.setText(1, f"{t['s']} kg")
-
+                t_item.setText(0, f"📦 {tn} ({info['d']} DB)")
+                t_item.setText(1, f"{info['s']} kg")
     parent.left_tree.setUpdatesEnabled(True)

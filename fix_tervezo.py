@@ -35,7 +35,7 @@ class FixTervezoApp(QWidget):
         self.btn_irsz = self.create_menu_button("📝 IRSZ szerkesztő", "#8e44ad")
         self.btn_print = self.create_menu_button("🖨️ NYOMTATÁS", "#e67e22")
         self.btn_osztas = self.create_menu_button("🚀 SZÉTOSZTÁS", "#27ae60")
-        self.btn_config = self.create_menu_button("⚙️ OSZLOPOK", "#7f8c8d")
+        self.btn_config = self.create_menu_button("⚙️ EXCEL LÉTREHOZÁS", "#7f8c8d")
 
         self.btn_regi.clicked.connect(lambda: fixmod_adatkezeles.partner_betoltes_regi(self))
         self.btn_irsz.clicked.connect(lambda: fixmod_irsz_szerkeszto.indit_irsz_szerkeszto(self))
