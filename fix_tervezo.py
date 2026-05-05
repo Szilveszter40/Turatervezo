@@ -7,6 +7,7 @@ import fixmod_adatkezeles
 import fixmod_irsz_szerkeszto
 import fixmod_nyomtatas
 import fixmod_uj_partnerek
+import fixmod_konfig
 
 class FixTervezoApp(QWidget):
     def __init__(self):
@@ -16,6 +17,8 @@ class FixTervezoApp(QWidget):
         self.setStyleSheet("background-color: #f5f6fa;")
         self.regi_kapcsok = set()
         self.regi_nev_tar = {}
+        self.regi_oszlopok = {'tura': 0, 'datum': 1, 'partner': 3, 'tetel': 5}
+        self.uj_oszlopok = {'cim': 2, 'tetel': 5}
         self.initUI()
 
     def initUI(self):
@@ -32,15 +35,18 @@ class FixTervezoApp(QWidget):
         self.btn_irsz = self.create_menu_button("📝 IRSZ szerkesztő", "#8e44ad")
         self.btn_print = self.create_menu_button("🖨️ NYOMTATÁS", "#e67e22")
         self.btn_osztas = self.create_menu_button("🚀 SZÉTOSZTÁS", "#27ae60")
+        self.btn_config = self.create_menu_button("⚙️ OSZLOPOK", "#7f8c8d")
 
         self.btn_regi.clicked.connect(lambda: fixmod_adatkezeles.partner_betoltes_regi(self))
         self.btn_irsz.clicked.connect(lambda: fixmod_irsz_szerkeszto.indit_irsz_szerkeszto(self))
         self.btn_print.clicked.connect(lambda: fixmod_nyomtatas.elonezet_es_nyomtatas(self.right_table))
         self.btn_uj.clicked.connect(lambda: fixmod_uj_partnerek.betoltes_es_feldolgozas(self))
+        self.btn_config.clicked.connect(lambda: fixmod_konfig.indit_konfiguracio(self))
 
         top_menu.addWidget(self.btn_regi)
         top_menu.addWidget(self.btn_uj)
         top_menu.addWidget(self.btn_irsz)
+        top_menu.addWidget(self.btn_config)
         top_menu.addStretch()
         top_menu.addWidget(self.btn_print)
         top_menu.addWidget(self.btn_osztas)

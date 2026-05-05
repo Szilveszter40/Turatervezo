@@ -62,35 +62,64 @@ def intenzitas_szamolo(datumok):
 # --- FŐ FÜGGVÉNY ---
 
 def partner_betoltes_regi(parent):
-    path, _ = QFileDialog.getOpenFileName(parent, "Régi partnerek", "", "Excel (*.xlsx *.xlsb)")
-    if not path: return
+    """
+    Régi partnerek betöltése a beállított oszlopindexek alapján.
+    """
+    # Biztonsági ellenőrzés: ha még nincs beállítva, az eredeti alapértelmezetteket használjuk
+    if not hasattr(parent, 'regi_oszlopok'):
+        parent.regi_oszlopok = {'tura': 0, 'datum': 1, 'partner': 3, 'tetel': 5}
+
+    path, _ = QFileDialog.getOpenFileName(parent, "Régi partnerek betöltése", "", "Excel (*.xlsx *.xlsb)")
+    if not path:
+        return
+    
     try:
-        parent.status_label.setText("⏳ Feldolgozás...")
-        df = pd.read_excel(path, usecols=[0, 1, 3, 5], header=0)
+        parent.status_label.setText("⏳ Adatok feldolgozása...")
+        
+        # Oszlopindexek lekérése a szótárból
+        op = parent.regi_oszlopok
+        cols = [op['tura'], op['datum'], op['partner'], op['tetel']]
+        
+        # Beolvasás: először a teljes táblát, majd csak a kért oszlopokat tartjuk meg
+        df_raw = pd.read_excel(path, header=0)
+        
+        # Csak a kiválasztott oszlopokat választjuk ki az indexeik alapján
+        df = df_raw.iloc[:, cols].copy()
+        # Átnevezzük őket a belső logikánkhoz
         df.columns = ['Túra', 'Dátum', 'Partner', 'Tétel']
+        
+        # Dátum kényszerítése és tisztítás
         df['Dátum'] = pd.to_datetime(df['Dátum'], errors='coerce')
         df = df.dropna(subset=['Dátum', 'Partner'])
         
+        # Tisztított név (vágással) és párosító kulcs generálása
+        # Megjegyzés: A csak_utcanevig_vago és szuper_tisztito_kulcs függvényeknek is ebben a fájlban kell lenniük!
         df['P_MEGJELENIK'] = df['Partner'].apply(csak_utcanevig_vago)
         df['CK'] = df['Partner'].apply(szuper_tisztito_kulcs)
 
         parent.left_tree.setUpdatesEnabled(False)
         parent.left_tree.clear()
         
+        # Globális szótárak mentése a főablakba (párosításhoz)
         parent.regi_kapcsok = set(df['CK'].unique())
         parent.regi_nev_tar = df.drop_duplicates('CK').set_index('CK')['P_MEGJELENIK'].to_dict()
 
+        # Csoportosítás a tisztított kulcs alapján
         grouped = df.groupby('CK')
         for ck, p_data in grouped:
             megjelenitett_nev = p_data['P_MEGJELENIK'].iloc[0]
+            
+            # Túrák összesítése egy sorba
             egyedi_turak = p_data['Túra'].dropna().unique()
             tura_szoveg = ", ".join(sorted([str(t).replace('.0', '') for t in egyedi_turak]))
             
+            # Főelem létrehozása a fában
             p_item = QTreeWidgetItem(parent.left_tree)
             p_item.setText(0, megjelenitett_nev)
             p_item.setText(2, tura_szoveg)
             p_item.setText(3, intenzitas_szamolo(p_data['Dátum']))
             
+            # Dátumok szerinti bontás (gyerek elemek)
             d_grouped = p_data.groupby(p_data['Dátum'].dt.date)
             for d_date, d_data in sorted(d_grouped, key=lambda x: x[0], reverse=True):
                 d_item = QTreeWidgetItem(p_item)
@@ -108,17 +137,23 @@ def partner_betoltes_regi(parent):
                         napi_osszesito[t_n] = [db, s]
                     napi_teljes_suly += s
                 
+                # Napi tételek hozzáadása
                 for t_nev, adatok in napi_osszesito.items():
                     t_item = QTreeWidgetItem(d_item)
                     t_item.setText(0, f"📦 {t_nev} ({adatok[0]} DB)")
                     t_item.setText(1, f"{adatok[1]} kg")
                 
+                # A dátum sorába is beírjuk a napi összsúlyt
                 d_item.setText(1, f"{napi_teljes_suly} kg")
 
+        # Oszlopméretezés és frissítés
         parent.left_tree.header().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
         parent.left_tree.setColumnWidth(0, 400)
         parent.left_tree.setUpdatesEnabled(True)
-        parent.status_label.setText(f"✓ {len(grouped)} partner kész.")
+        parent.status_label.setText(f"✓ {len(grouped)} partner sikeresen betöltve.")
+        
     except Exception as e:
-        if hasattr(parent, 'left_tree'): parent.left_tree.setUpdatesEnabled(True)
-        QMessageBox.critical(parent, "Hiba", str(e))
+        if hasattr(parent, 'left_tree'): 
+            parent.left_tree.setUpdatesEnabled(True)
+        QMessageBox.critical(parent, "Hiba", f"Hiba az adatok beolvasásakor. Ellenőrizze az oszlopok beállítását!\n{str(e)}")
+
