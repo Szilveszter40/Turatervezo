@@ -1,11 +1,11 @@
 import pandas as pd
 import re
-import numpy as np
+import json
 import os
 from PyQt6.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout, QTreeWidget, 
-                             QTreeWidgetItem, QLabel, QPushButton, QMessageBox, QComboBox)
+                             QTreeWidgetItem, QLabel, QPushButton, QMessageBox, QComboBox, QFileDialog)
 from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QColor, QFont
+from PyQt6.QtGui import QColor
 from fixmod_konfig import szuper_tisztito, megjelenitesre_vago, suly_szamolo
 from fixmod_adatkezeles import intenzitas_szamolo
 
@@ -13,191 +13,206 @@ class SzetosztasDialog(QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.parent = parent
-        self.setWindowTitle("Havi Kapacitás Tervező (4 hét szimuláció)")
-        self.resize(1300, 850)
+        self.setWindowTitle("Kapacitás Tervező")
+        self.resize(1450, 850)
         self.MAX_BESZALLITAS = 2100
-        self.minden_partner_adat = [] # Itt tároljuk a teljes listát
+        self.MAX_CIM = 25
+        self.minden_partner_adat = []
         
+        # Tanult adatok
+        self.tura_irsz_lefedettseg = {} 
+        self.uj_auto_lefedettseg = self.iranyitoszamok_betoltese()
+
         self.init_ui_elements()
-        self.adatok_elokeszitese() # Csak egyszer fut le az elején
-        self.terkep_frissitese()   # Kirajzolja az aktuális hét alapján
+        self.adatok_elokeszitese() 
+        self.terkep_frissitese()
 
-    def init_ui_elements(self):
-        layout = QVBoxLayout(self)
-        
-        # --- HETI VÁLASZTÓ PANEL ---
-        szuro_layout = QHBoxLayout()
-        szuro_layout.addWidget(QLabel("<b>Szimulált időszak:</b>"))
-        
-        self.het_valaszto = QComboBox()
-        self.het_valaszto.addItems([
-            "Átlagos terhelés (Súlyozott)",
-            "1. HÉT (Páratlan)",
-            "2. HÉT (Páros)",
-            "3. HÉT (Páratlan)",
-            "4. HÉT (Páros)"
-        ])
-        self.het_valaszto.currentIndexChanged.connect(self.terkep_frissitese)
-        szuro_layout.addWidget(self.het_valaszto)
-        
-        szuro_layout.addStretch()
-        layout.addLayout(szuro_layout)
+    def irsz_kinyeres(self, szoveg):
+        """A GitHub-os kódod egyszerű és biztos módszere: az első 4 jegyű szám."""
+        match = re.search(r'\d{4}', str(szoveg))
+        return match.group(0) if match else None
 
-        self.info_label = QLabel("Túrák várható telítettsége a választott héten")
-        layout.addWidget(self.info_label)
-
-        self.tree = QTreeWidget()
-        self.tree.setColumnCount(6)
-        self.tree.setHeaderLabels(["Túra / Partner", "Megállók", "Beszáll (kg)", "Kiszáll (kg)", "Intenzitás", "Heti státusz"])
-        self.tree.setColumnWidth(0, 400)
-        layout.addWidget(self.tree)
-
-        self.btn_export = QPushButton("💾 AKTUÁLIS HÉT EXPORTÁLÁSA")
-        self.btn_export.setStyleSheet("background-color: #2c3e50; color: white; font-weight: bold; height: 40px;")
-        self.btn_export.clicked.connect(self.export_to_excel)
-        layout.addWidget(self.btn_export)
-
-    def is_active_on_week(self, intenz, het_idx):
-        """Meghatározza, hogy a partner aktív-e az adott héten (1-4)."""
-        if het_idx == 0: return True # Átlagos nézetnél mindenki 'félig' aktív (szorzóval)
-        
-        s = str(intenz).upper()
-        if "HETI" in s and "2" not in s: return True # Minden héten
-        
-        if "2 HETI" in s or "KÉTHETI" in s:
-            if het_idx in [1, 3]: return True # Páratlan hetek
-            return False # Páros heteken pihen
-            
-        if "HAVI" in s:
-            return het_idx == 1 # Csak az első héten (példa)
-            
-        if "ESETI" in s:
-            return False # Esetit nem tervezünk be fix hétre
-            
-        return True
+    def iranyitoszamok_betoltese(self):
+        lefedettseg = {} 
+        fajl = "iranyitoszamok.xlsx"
+        if not os.path.exists(fajl): return {}
+        try:
+            xls = pd.ExcelFile(fajl)
+            for sheet in xls.sheet_names:
+                df = pd.read_excel(xls, sheet_name=sheet, dtype=str)
+                for col in df.columns:
+                    for irsz in df[col].dropna():
+                        s = self.irsz_kinyeres(irsz)
+                        if s:
+                            if s not in lefedettseg: lefedettseg[s] = {}
+                            if sheet not in lefedettseg[s]: lefedettseg[s][sheet] = []
+                            lefedettseg[s][sheet].append(col)
+            return lefedettseg
+        except: return {}
 
     def adatok_elokeszitese(self):
-        """Kiszámolja a partnereket és túrákat a régi és új adatokból egyszer."""
-        if not hasattr(self.parent, 'df_regi_raw') or not hasattr(self.parent, 'df_uj_raw'): return
-        
-        c_r, c_u = self.parent.r_cols, self.parent.u_cols
-        regi_partnerek_kulcsai = set()
-        tura_irsz_lefedettseg = {}
-        
-        # 1. RÉGI PARTNEREK
+        if not hasattr(self.parent, 'df_regi_raw'): return
+        c_r = self.parent.r_cols
+        c_u = getattr(self.parent, 'u_cols', {})
+        regi_p_kulcsok = set()
+
         df_r = self.parent.df_regi_raw
-        regi_kulcsok = df_r.apply(lambda x: szuper_tisztito(megjelenitesre_vago(str(x.iloc[c_r['p']]))), axis=1)
-        
-        for ck, group in df_r.groupby(regi_kulcsok):
-            regi_partnerek_kulcsai.add(ck)
-            turaszam = str(group.iloc[0, c_r['t']]).replace('.0', '')
+        # 1. LÉPÉS: Tanulás a régi adatokból (A GitHub-os logikával)
+        for _, row in df_r.iterrows():
+            p_nev = str(row.iloc[c_r['p']])
+            turaszam = str(row.iloc[c_r['t']]).replace('.0', '').strip()
+            irsz = self.irsz_kinyeres(p_nev)
+            if irsz and turaszam and turaszam != "nan":
+                if irsz not in self.tura_irsz_lefedettseg:
+                    self.tura_irsz_lefedettseg[irsz] = turaszam
+
+        # 2. LÉPÉS: Régi partnerek betöltése
+        for ck, group in df_r.groupby(df_r.apply(lambda x: szuper_tisztito(megjelenitesre_vago(str(x.iloc[c_r['p']]))), axis=1)):
             nyers_p = str(group.iloc[0, c_r['p']])
-            irsz = re.search(r'\d{4}', nyers_p).group(0) if re.search(r'\d{4}', nyers_p) else None
+            turaszam = str(group.iloc[0, c_r['t']]).replace('.0', '').strip()
+            regi_p_kulcsok.add(ck)
             
-            intenz = intenzitas_szamolo(group.iloc[:, c_r['d']])
-            
-            # Alap súly (átlagolva, mielőtt a heti szorzót megkapná)
-            napok = {}
+            alkalmak = max(1, group.iloc[:, c_r['d']].nunique())
+            p_b, temp_t = 0, {}
             for _, row in group.iterrows():
-                d = str(row.iloc[c_r['d']])
-                t_n, _, t_s = suly_szamolo(str(row.iloc[c_r['f']]), row.iloc[c_r['m']], "60 l")
-                if d not in napok: napok[d] = {'b': 0, 'k': 0}
-                if any(x in t_n for x in ["HSO", "ÉH", "ZSÍR"]): napok[d]['b'] += t_s
-                else: napok[d]['k'] += t_s
+                t_n, t_db, t_s = suly_szamolo(str(row.iloc[c_r['f']]), row.iloc[c_r['m']], "60 l")
+                if t_n not in temp_t: temp_t[t_n] = {'db': 0, 'e': t_s/t_db if t_db>0 else t_s}
+                temp_t[t_n]['db'] += t_db
             
-            l_n = max(1, len(napok))
+            tetelek = []
+            for n, a in temp_t.items():
+                k_db = int((a['db']/alkalmak) + 0.5) if (a['db']/alkalmak) >= 1 else 1
+                tetelek.append({'nev': n, 'db': k_db, 'suly': k_db * a['e']})
+                if any(x in n for x in ["HSO", "ÉH", "ZSÍR"]): p_b += (k_db * a['e'])
+            
             self.minden_partner_adat.append({
-                'Túra': turaszam, 'Partner': nyers_p, 'Intenz': intenz,
-                'Alap_B': sum(n['b'] for n in napok.values()) / l_n,
-                'Alap_K': sum(n['k'] for n in napok.values()) / l_n,
-                'Statusz': 'RÉGI'
+                'Túra': turaszam, 'Partner': nyers_p, 'Statusz': 'RÉGI',
+                'Intenz': intenzitas_szamolo(group.iloc[:, c_r['d']]), 'Alap_B': p_b, 'Tetel': tetelek
             })
-            if irsz and turaszam != "nan": tura_irsz_lefedettseg[irsz] = turaszam
 
-        # 2. ÚJ PARTNEREK
-        for _, row in self.parent.df_uj_raw.iterrows():
-            nyers_c = str(row.iloc[c_u['c']])
-            kl = szuper_tisztito(megjelenitesre_vago(nyers_c))
-            if kl in regi_partnerek_kulcsai: continue 
+        # 3. LÉPÉS: Új partnerek besorolása
+        if hasattr(self.parent, 'df_uj_raw'):
+            for _, row in self.parent.df_uj_raw.iterrows():
+                nyers_n = str(row.iloc[c_u['n']])
+                nyers_c = str(row.iloc[c_u['c']])
+                if szuper_tisztito(megjelenitesre_vago(nyers_c)) in regi_p_kulcsok: continue 
+                
+                irsz = self.irsz_kinyeres(nyers_c) or self.irsz_kinyeres(nyers_n)
+                vonal = self.tura_irsz_lefedettseg.get(irsz, "KIOSZTATLAN")
+                
+                t_n, t_db, t_s = suly_szamolo(str(row.iloc[c_u['f']]), row.iloc[c_u['m']], str(row.iloc[c_u['e']]))
+                self.minden_partner_adat.append({
+                    'Túra': vonal, 'Partner': nyers_n, 'Cim': nyers_c, 'Statusz': 'ÚJ', 
+                    'Intenz': str(row.iloc[c_u['i']]), 'Alap_B': t_s, 'IRSZ': irsz, 
+                    'Tetel': [{'nev': t_n, 'db': t_db, 'suly': t_s}]
+                })
 
-            nyers_n = str(row.iloc[c_u['n']])
-            intenz_uj = str(row.iloc[c_u['i']])
-            irsz = re.search(r'\d{4}', nyers_c).group(0) if re.search(r'\d{4}', nyers_c) else None
-            
-            t_n, t_db, t_s = suly_szamolo(str(row.iloc[c_u['f']]), row.iloc[c_u['m']], str(row.iloc[c_u['e']]))
-            is_beszall = any(x in t_n for x in ["HSO", "ÉH", "ZSÍR"])
-            
-            vonal = tura_irsz_lefedettseg.get(irsz, "KIOSZTATLAN")
-
-            self.minden_partner_adat.append({
-                'Túra': vonal, 'Partner': nyers_n, 'Intenz': intenz_uj,
-                'Alap_B': t_s if is_beszall else 0,
-                'Alap_K': t_s if not is_beszall else 0,
-                'Statusz': 'ÚJ'
-            })
+    def is_active_on_week(self, intenz, het_idx):
+        if het_idx == 0: return True
+        s = str(intenz).upper()
+        if "HETI" in s and "2" not in s: return True
+        p = het_idx in [1, 3]
+        if "2 HETI" in s or "KÉTHETI" in s:
+            return p if ("PÁRATLAN" in s or "1" in s) else not p
+        if "HAVI" in s: return het_idx == 1
+        return False
 
     def terkep_frissitese(self):
-        """Újrarajzolja a fát a kiválasztott hét (Combo index) alapján."""
         self.tree.clear()
         het_idx = self.het_valaszto.currentIndex()
         turasorok = {}
         
-        for p in self.minden_partner_adat:
-            # Ellenőrizzük az aktivitást az adott héten
-            is_active = self.is_active_on_week(p['Intenz'], het_idx)
+        for p in sorted(self.minden_partner_adat, key=lambda x: x['Statusz'] == 'ÚJ'):
+            if not self.is_active_on_week(p['Intenz'], het_idx): continue
             
-            # Súlyozás: Ha 'Átlag' nézet (0), akkor a korábbi szorzót használjuk
-            if het_idx == 0:
-                s = p['Intenz'].upper()
-                szorzo = 1.0
-                if "2 HETI" in s: szorzo = 0.5
-                elif "HAVI" in s: szorzo = 0.25
-                elif "ESETI" in s: szorzo = 0.1
-                valos_b, valos_k = p['Alap_B'] * szorzo, p['Alap_K'] * szorzo
-                heti_megj = "Statisztikai átlag"
-            else:
-                # Konkrét héten vagy 100% súly van, vagy 0%
-                valos_b = p['Alap_B'] if is_active else 0
-                valos_k = p['Alap_K'] if is_active else 0
-                heti_megj = "AKTÍV" if is_active else "NINCS ÜRÍTÉS"
+            vonal = p['Túra']
+            irsz = p.get('IRSZ')
 
-            t = p['Túra']
-            if t not in turasorok: turasorok[t] = {'b': 0, 'k': 0, 'cnt': 0, 'items': []}
-            
-            turasorok[t]['b'] += valos_b
-            turasorok[t]['k'] += valos_k
-            if is_active: 
-                turasorok[t]['cnt'] += 1
-                turasorok[t]['items'].append({**p, 'v_b': valos_b, 'v_k': valos_k, 'h_m': heti_megj})
+            if p['Statusz'] == 'ÚJ':
+                # Ha nincs túra, vagy tele van a jelenlegi
+                if vonal == "KIOSZTATLAN" or (vonal in turasorok and (turasorok[vonal]['b'] + p['Alap_B'] > self.MAX_BESZALLITAS)):
+                    if irsz in self.uj_auto_lefedettseg:
+                        found = False
+                        for auto, napok in self.uj_auto_lefedettseg[irsz].items():
+                            for nap in napok:
+                                proba = f"{auto} - {nap}"
+                                if proba not in turasorok or (turasorok[proba]['b'] + p['Alap_B'] <= self.MAX_BESZALLITAS):
+                                    vonal = proba; found = True; break
+                            if found: break
+                    elif irsz in self.tura_irsz_lefedettseg:
+                        vonal = self.tura_irsz_lefedettseg[irsz]
+                    else:
+                        vonal = f"❓ ISMERETLEN ({irsz})"
 
-        # Megjelenítés
-        for t_nev in sorted(turasorok.keys(), key=lambda x: turasorok[x]['b'], reverse=True):
+            if vonal not in turasorok: turasorok[vonal] = {'b': 0, 'cnt': 0, 'items': []}
+            turasorok[vonal]['b'] += p['Alap_B']; turasorok[vonal]['cnt'] += 1; turasorok[vonal]['items'].append(p)
+
+        for t_nev in sorted(turasorok.keys()):
             dat = turasorok[t_nev]
-            szaz = (dat['b'] / self.MAX_BESZALLITAS) * 100
-            
             p_item = QTreeWidgetItem(self.tree)
-            p_item.setText(0, f"🚚 {t_nev}")
-            p_item.setText(1, f"{dat['cnt']} aktív megálló")
-            p_item.setText(2, f"{int(dat['b'])} kg")
-            p_item.setText(3, f"{int(dat['k'])} kg")
-            p_item.setText(5, f"{szaz:.1f}%")
-            
-            if dat['b'] > self.MAX_BESZALLITAS:
-                p_item.setBackground(5, QColor("#e74c3c"))
-                p_item.setForeground(5, Qt.GlobalColor.white)
-
+            p_item.setText(0, f"🚚 {t_nev}"); p_item.setText(1, f"{dat['cnt']} megálló"); p_item.setText(2, f"{int(dat['b'])} kg")
             for s in dat['items']:
                 child = QTreeWidgetItem(p_item)
-                icon = "✨" if s['Statusz'] == 'ÚJ' else "👤"
-                child.setText(0, f"  {icon} {s['Partner']}")
-                child.setText(2, f"{int(s['v_b'])} kg")
-                child.setText(4, s['Intenz'])
-                child.setText(5, s['h_m'])
+                prefix = f"✨ [ÚJ] {s['Partner']}" if s['Statusz'] == 'ÚJ' else f"👤 {s['Partner']}"
+                child.setText(0, f"  {prefix}"); child.setText(2, f"{int(s['Alap_B'])} kg")
+                if s['Statusz'] == 'ÚJ': child.setForeground(0, QColor("#3498db"))
+
+    def init_ui_elements(self):
+        layout = QVBoxLayout(self)
+        felső_gombok = QHBoxLayout()
+        self.btn_kezi = QPushButton("📝 KÉZI SZERKESZTÉS")
+        self.btn_kezi.setStyleSheet("""
+            background-color: #f39c12; 
+            color: white; 
+            font-weight: bold; 
+            height: 40px; 
+            margin-bottom: 10px;
+            border-radius: 5px;
+        """)
+        self.btn_kezi.clicked.connect(self.megnyit_kezi_szerkeszto)
+        felső_gombok.addWidget(self.btn_kezi)
+        layout.addLayout(felső_gombok)
+        self.het_valaszto = QComboBox(); self.het_valaszto.addItems(["Átlag", "1. Hét", "2. Hét", "3. Hét", "4. Hét"])
+        self.het_valaszto.currentIndexChanged.connect(self.terkep_frissitese); layout.addWidget(self.het_valaszto)
+        self.tree = QTreeWidget(); self.tree.setColumnCount(3); self.tree.setHeaderLabels(["Túra", "Címek", "Súly"]); layout.addWidget(self.tree)
+        self.tree.setColumnWidth(0, 600)
+        btns = QHBoxLayout(); btn_e = QPushButton("EXPORT"); btn_i = QPushButton("IMPORT")
+        btns.addWidget(btn_e); btns.addWidget(btn_i); layout.addLayout(btns)
+        btn_e.clicked.connect(self.export_to_excel); btn_i.clicked.connect(self.excel_beolvasas)
+
+    def megnyit_kezi_szerkeszto(self):
+        """Bezárja a szétosztást és elmenti az adatokat a főablakba a szerkesztőnek."""
+        try:
+            import fixmod_szerkesztes
+            
+            # KRITIKUS LÉPÉS: Átadjuk a listát a főablaknak, hogy a szerkesztő megtalálja
+            self.parent.minden_partner_adat = self.minden_partner_adat
+            
+            # Bezárjuk a szétosztás ablakot
+            self.accept() 
+
+            # Elindítjuk az új szerkesztő ablakot
+            dialog = fixmod_szerkesztes.KeziszerkesztoAblak(self.parent)
+            dialog.exec()
+                
+        except Exception as e:
+            QMessageBox.critical(self, "Hiba", f"Hiba a szerkesztő megnyitásakor: {str(e)}")
+
+   
 
     def export_to_excel(self):
-        # A megjelenített szűrt listát exportálja
-        QMessageBox.information(self, "Export", "Az aktuális heti nézet elmentve!")
+        path, _ = QFileDialog.getSaveFileName(self, "Mentés", "", "Excel (*.xlsx)")
+        if path:
+            df = pd.DataFrame(self.minden_partner_adat)
+            df['Tetel_JSON'] = df['Tetel'].apply(json.dumps)
+            df.drop(columns=['Tetel']).to_excel(path, index=False)
+
+    def excel_beolvasas(self):
+        path, _ = QFileDialog.getOpenFileName(self, "Import", "", "Excel (*.xlsx)")
+        if path:
+            df = pd.read_excel(path)
+            if 'Tetel_JSON' in df.columns: df['Tetel'] = df['Tetel_JSON'].apply(json.loads)
+            self.minden_partner_adat = df.to_dict('records'); self.terkep_frissitese()
 
 def szetosztas_ablak_megnyitasa(parent):
-    dialog = SzetosztasDialog(parent)
-    dialog.exec()
+    dialog = SzetosztasDialog(parent); dialog.exec()
