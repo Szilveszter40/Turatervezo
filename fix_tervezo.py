@@ -20,6 +20,7 @@ class FixTervezoApp(QWidget):
         self.regi_nev_tar = {}
         self.regi_oszlopok = {'tura': 0, 'datum': 1, 'partner': 3, 'tetel': 5}
         self.uj_oszlopok = {'cim': 2, 'tetel': 5}
+        self.minden_partner_adat = []
         self.initUI()
 
     def initUI(self):
@@ -37,6 +38,7 @@ class FixTervezoApp(QWidget):
         self.btn_print = self.create_menu_button("🖨️ NYOMTATÁS", "#e67e22")
         self.btn_szetosztas = self.create_menu_button("🚀 SZÉTOSZTÁS", "#27ae60")
         self.btn_config = self.create_menu_button("⚙️ EXCEL LÉTREHOZÁS", "#7f8c8d")
+        self.btn_szerkeszto = self.create_menu_button("📝 KÉZI SZERKESZTÉS", "#e74c3c") # Pirosas szín
 
         self.btn_regi.clicked.connect(lambda: fixmod_adatkezeles.partner_betoltes_regi(self))
         self.btn_irsz.clicked.connect(lambda: fixmod_irsz_szerkeszto.indit_irsz_szerkeszto(self))
@@ -44,6 +46,7 @@ class FixTervezoApp(QWidget):
         self.btn_uj.clicked.connect(lambda: fixmod_uj_partnerek.betoltes_es_feldolgozas(self))
         self.btn_config.clicked.connect(lambda: fixmod_konfig.indit_konfiguracio(self))
         self.btn_szetosztas.clicked.connect(lambda: fixmod_szetosztas.szetosztas_ablak_megnyitasa(self))
+        self.btn_szerkeszto.clicked.connect(self.megnyit_kezi_szerkeszto)
 
         top_menu.addWidget(self.btn_regi)
         top_menu.addWidget(self.btn_uj)
@@ -52,6 +55,7 @@ class FixTervezoApp(QWidget):
         top_menu.addStretch()
         top_menu.addWidget(self.btn_print)
         top_menu.addWidget(self.btn_szetosztas)
+        top_menu.addWidget(self.btn_szerkeszto)
         main_layout.addLayout(top_menu)
 
         self.splitter = QSplitter(Qt.Orientation.Horizontal)
@@ -85,6 +89,19 @@ class FixTervezoApp(QWidget):
         self.status_label = QLabel("Készenlét")
         main_layout.addWidget(self.status_label)
         self.setLayout(main_layout)
+
+    def megnyit_kezi_szerkeszto(self):
+        try:
+            import fixmod_szerkesztes
+            # Elindítjuk az ablakot, átadva a főprogram példányát (self)
+            # Így a szerkesztő eléri a self.minden_partner_adat listát
+            self.szerkeszto_ablak = fixmod_szerkesztes.KeziszerkesztoAblak(self)
+            self.szerkeszto_ablak.show()
+        except Exception as e:
+            from PyQt6.QtWidgets import QMessageBox
+            import traceback
+            print(traceback.format_exc())
+            QMessageBox.critical(self, "Hiba", f"Szerkesztő indítási hiba: {e}")
 
     def create_menu_button(self, text, color):
         btn = QPushButton(text)

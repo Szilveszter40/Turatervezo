@@ -203,12 +203,6 @@ class SzetosztasDialog(QDialog):
 
     def init_ui_elements(self):
         layout = QVBoxLayout(self)
-        
-        self.btn_kezi = QPushButton("📝 KÉZI SZERKESZTÉS ÉS SORREND")
-        self.btn_kezi.setFixedHeight(45)
-        self.btn_kezi.setStyleSheet("background-color: #f39c12; color: white; font-weight: bold; border-radius: 5px;")
-        self.btn_kezi.clicked.connect(self.megnyit_kezi_szerkeszto)
-        layout.addWidget(self.btn_kezi)
 
         self.het_valaszto = QComboBox()
         self.het_valaszto.addItems(["Összesített Átlag", "1. Hét (Páratlan)", "2. Hét (Páros)", "3. Hét (Páratlan)", "4. Hét (Páros)"])
@@ -225,54 +219,6 @@ class SzetosztasDialog(QDialog):
         btn_e.clicked.connect(self.export_to_excel); btn_i.clicked.connect(self.excel_beolvasas)
         btns.addWidget(btn_e); btns.addWidget(btn_i)
         layout.addLayout(btns)
-
-    def megnyit_kezi_szerkeszto(self):
-        try:
-            import fixmod_szerkesztes
-            het_idx = self.het_valaszto.currentIndex()
-            turasulyok_ideiglenes = {}
-            frissitett_adatok = []
-
-            # 1. TÚRÁK ÁTVEZETÉSE AZ ADATOKBA
-            for p in sorted(self.minden_partner_adat, key=lambda x: x['Statusz'] == 'ÚJ'):
-                vonal = p.get('Túra', 'KIOSZTATLAN')
-                irsz = p.get('IRSZ')
-
-                if p['Statusz'] == 'ÚJ':
-                    if vonal == "KIOSZTATLAN" or (vonal in turasulyok_ideiglenes and (turasulyok_ideiglenes[vonal] + p['Alap_B'] > self.MAX_BESZALLITAS)):
-                        if irsz in self.uj_auto_lefedettseg:
-                            found = False
-                            for auto, napok in self.uj_auto_lefedettseg[irsz].items():
-                                for nap in napok:
-                                    proba = f"{auto} - {nap}"
-                                    if proba not in turasulyok_ideiglenes or (turasulyok_ideiglenes[proba] + p['Alap_B'] <= self.MAX_BESZALLITAS):
-                                        vonal = proba; found = True; break
-                                if found: break
-                        elif irsz in self.tura_irsz_lefedettseg:
-                            vonal = self.tura_irsz_lefedettseg[irsz]
-                        else:
-                            vonal = f"ISMERETLEN ({irsz})"
-                
-                p['Túra'] = vonal
-                if vonal not in turasulyok_ideiglenes: turasulyok_ideiglenes[vonal] = 0
-                turasulyok_ideiglenes[vonal] += p['Alap_B']
-
-                # Csak az aktuális hét partnereit visszük át (vagy mindenkit, ha átlag)
-                if self.is_active_on_week(p['Intenz'], het_idx):
-                    p_masolat = copy.deepcopy(p)
-                    # JSON fix a szerkesztőnek
-                    if 'Tetel' in p_masolat:
-                        p_masolat['Tetel_JSON_FIX'] = json.dumps(p_masolat['Tetel'])
-                    frissitett_adatok.append(p_masolat)
-
-            self.parent.minden_partner_adat = frissitett_adatok
-            self.accept() 
-
-            dialog = fixmod_szerkesztes.KeziszerkesztoAblak(self.parent)
-            dialog.exec()
-            
-        except Exception as e:
-            QMessageBox.critical(self, "Hiba", f"Szerkesztő hiba: {str(e)}")
 
     def export_to_excel(self):
         path, _ = QFileDialog.getSaveFileName(self, "Mentés", "Tura_Terv_Uj.xlsx", "Excel (*.xlsx)")
