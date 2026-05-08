@@ -3,9 +3,11 @@ import pandas as pd
 from PyQt6.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout, QTreeWidget, 
                              QTreeWidgetItem, QLabel, QPushButton, QMessageBox, 
                              QListWidget, QListWidgetItem, QAbstractItemView, QFrame, 
-                             QSizePolicy, QHeaderView, QComboBox)
+                             QSizePolicy, QHeaderView, QComboBox, QFileDialog)
 from PyQt6.QtCore import Qt, QTimer
 from PyQt6.QtGui import QColor, QFont
+from PyQt6.QtWidgets import QTreeWidget, QAbstractItemView, QTreeWidgetItem
+from PyQt6.QtCore import Qt, QTimer
 
 class DraggableTree(QTreeWidget):
     def __init__(self, parent=None):
@@ -15,13 +17,62 @@ class DraggableTree(QTreeWidget):
         self.setDragDropMode(QAbstractItemView.DragDropMode.DragDrop)
         self.setDefaultDropAction(Qt.DropAction.MoveAction)
         self.setDropIndicatorShown(True)
-        self.setIndentation(20) 
+        self.setIndentation(20)
         self.setAnimated(True)
+        self.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
+        self.customContextMenuRequested.connect(self.show_context_menu)
+
+    def show_context_menu(self, position):
+        item = self.itemAt(position)
+        if not item or item.data(0, Qt.ItemDataRole.UserRole) != "TURA":
+            return
+
+        from PyQt6.QtWidgets import QMenu
+        menu = QMenu()
+        delete_action = menu.addAction("Túra törlése")
+        
+        # Csak akkor engedjük a kattintást, ha nincs benne partner
+        is_empty = item.childCount() == 0
+        delete_action.setEnabled(is_empty)
+        
+        if not is_empty:
+            delete_action.setText("Túra törlése (nem üres!)")
+
+        action = menu.exec(self.viewport().mapToGlobal(position))
+        
+        if action == delete_action and is_empty:
+            # Törlés a fából
+            root = self.invisibleRootItem()
+            (item.parent() or root).removeChild(item)
+            
+            # Frissítés hívása, ha szükséges
+            main_win = self.window()
+            while main_win and not hasattr(main_win, 'suly_frissites'):
+                main_win = main_win.parent()
+            if main_win:
+                main_win.suly_frissites()    
+
+    def dragEnterEvent(self, event):
+        if event.source():
+            event.accept()
+        else:
+            super().dragEnterEvent(event)
+
+    def dragMoveEvent(self, event):
+        if event.source():
+            event.setDropAction(Qt.DropAction.MoveAction)
+            event.accept()
+        else:
+            super().dragMoveEvent(event)
 
     def dropEvent(self, event):
         source_tree = event.source()
+        if not source_tree:
+            event.ignore()
+            return
+
         source_item = source_tree.currentItem()
-        
+
         if not source_item or source_item.data(0, Qt.ItemDataRole.UserRole) != "PARTNER":
             event.ignore()
             return
@@ -33,28 +84,58 @@ class DraggableTree(QTreeWidget):
 
         p_adat = source_item.data(1, Qt.ItemDataRole.UserRole)
         target_type = target_item.data(0, Qt.ItemDataRole.UserRole)
-        
+
+        dest_root = None
+        index = 0
+
         if target_type == "TURA":
             dest_root = target_item
             index = dest_root.childCount()
         elif target_type == "PARTNER":
             dest_root = target_item.parent()
             index = dest_root.indexOfChild(target_item)
-        else:
-            partner_item = target_item.parent()
-            dest_root = partner_item.parent()
-            index = dest_root.indexOfChild(partner_item)
+        elif target_item.parent() and target_item.parent().data(0, Qt.ItemDataRole.UserRole) == "PARTNER":
+            partner_node = target_item.parent()
+            dest_root = partner_node.parent()
+            index = dest_root.indexOfChild(partner_node)
 
-        if dest_root:
-            self.window().partner_sor_letrehozas(dest_root, p_adat)
-            new_row = dest_root.takeChild(dest_root.childCount()-1)
-            dest_root.insertChild(index, new_row)
-            if source_item.parent():
-                source_item.parent().removeChild(source_item)
-            event.accept()
-            QTimer.singleShot(50, self.window().suly_frissites)
-        else:
+        if not dest_root or dest_root.data(0, Qt.ItemDataRole.UserRole) != "TURA":
             event.ignore()
+            return
+
+        main_win = self.window()
+        while main_win and not hasattr(main_win, 'partner_sor_letrehozas'):
+            main_win = main_win.parent()
+
+        if source_tree == self:
+            # --- PANELEN BELÜLI MOZGATÁS ---
+            old_parent = source_item.parent()
+            if old_parent:
+                old_index = old_parent.indexOfChild(source_item)
+                if old_parent == dest_root and index > old_index:
+                    index -= 1
+                
+                moving_item = old_parent.takeChild(old_index)
+                dest_root.insertChild(index, moving_item)
+                self.setCurrentItem(moving_item)
+                dest_root.setExpanded(True)
+        else:
+            # --- PANELEK KÖZÖTTI MOZGATÁS ---
+            if main_win:
+                main_win.partner_sor_letrehozas(dest_root, p_adat)
+                uj_item = dest_root.takeChild(dest_root.childCount() - 1)
+                dest_root.insertChild(index, uj_item)
+                
+                if source_item.parent():
+                    source_item.parent().removeChild(source_item)
+                dest_root.setExpanded(True)
+
+        # Itt a javítás: IgnoreAction-t kell használni
+        event.setDropAction(Qt.DropAction.IgnoreAction)
+        event.accept()
+
+        if main_win:
+            QTimer.singleShot(100, main_win.suly_frissites)
 
 class KeziszerkesztoAblak(QDialog):
     def __init__(self, parent=None):
@@ -80,37 +161,30 @@ class KeziszerkesztoAblak(QDialog):
     def initUI(self):
         main_layout = QVBoxLayout(self)
         main_layout.setContentsMargins(10, 10, 10, 10)
+        main_layout.setSpacing(10)
 
-        # --- ÚJ: FELSŐ VEZÉRLŐSÁV (FELEZVE) ---
+        # --- FELSŐ VEZÉRLŐSÁV (FELEZVE) ---
         top_control_layout = QHBoxLayout()
-        
-        # Bal oldali rész: GOMB
         self.btn_frissit = QPushButton("📂 AKTUÁLIS BETÖLTÉSE (SZÉTOSZTÁSBÓL)")
         self.btn_frissit.setFixedHeight(45)
         self.btn_frissit.setStyleSheet("background-color: #2ecc71; color: white; font-weight: bold; border-radius: 5px;")
         self.btn_frissit.clicked.connect(self.aktualis_betoltese_fajlbol)
-        top_control_layout.addWidget(self.btn_frissit, 1) # Az '1' jelenti az arányt
+        top_control_layout.addWidget(self.btn_frissit, 1)
 
-        # Jobb oldali rész: HÉT VÁLASZTÓ (egy kis belső elrendezéssel)
         het_layout = QHBoxLayout()
         het_label = QLabel("<b>SZŰRÉS HÉTRE:</b>")
         het_label.setAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
-        
         self.combo_het = QComboBox()
         self.combo_het.addItems(["Mind (Összes adat)", "1. Hét", "2. Hét", "3. Hét", "4. Hét"])
         self.combo_het.setFixedHeight(45)
         self.combo_het.setStyleSheet("padding: 5px; font-weight: bold;")
         self.combo_het.currentIndexChanged.connect(self.adatok_betoltese)
-        
         het_layout.addWidget(het_label)
         het_layout.addWidget(self.combo_het)
-        
-        # A het_layout-ot egy konténerbe tesszük, hogy ez legyen a jobb oldal
-        top_control_layout.addLayout(het_layout, 1) # Ez is '1', így lesz 50-50%
-
+        top_control_layout.addLayout(het_layout, 1)
         main_layout.addLayout(top_control_layout)
-        # --- FELSŐ VEZÉRLŐSÁV VÉGE ---
-        
+
+        # --- TÚRA VÁLASZTÓK ---
         top_row = QHBoxLayout()
         for title, attr in [("Bal oldali túrák:", "list_bal"), ("Jobb oldali túrák:", "list_jobb")]:
             f = QFrame()
@@ -119,7 +193,8 @@ class KeziszerkesztoAblak(QDialog):
             v.addWidget(QLabel(f"<b>{title}</b>"))
             lw = QListWidget()
             lw.setMaximumHeight(100)
-            for t in self.osszes_tura_neve:
+            # Itt fontos, hogy ha a betöltés után üres, a setup_ui_content tölti majd fel
+            for t in getattr(self, 'osszes_tura_neve', []):
                 it = QListWidgetItem(t)
                 it.setFlags(it.flags() | Qt.ItemFlag.ItemIsUserCheckable | Qt.ItemFlag.ItemIsEnabled)
                 it.setCheckState(Qt.CheckState.Unchecked)
@@ -135,14 +210,26 @@ class KeziszerkesztoAblak(QDialog):
         btn_load.clicked.connect(self.adatok_betoltese)
         main_layout.addWidget(btn_load)
 
+        # --- DRAGGABLE TREES (BAL ÉS JOBB) ---
         h_trees = QHBoxLayout()
         self.tree_bal = DraggableTree(self)
         self.tree_jobb = DraggableTree(self)
+        
         for t in [self.tree_bal, self.tree_jobb]:
             t.setColumnCount(3)
             t.setHeaderLabels(["Partner / Tétel", "Intenzitás / Db", "Súly"])
+            t.setColumnWidth(0, 400) # Elég hely az ikonoknak és a fának
             t.header().setSectionResizeMode(0, QHeaderView.ResizeMode.Stretch)
+            
+            # Drag & Drop viselkedés szabályozása
+            t.setDragEnabled(True)
+            t.setAcceptDrops(True)
+            t.setDragDropMode(QTreeWidget.DragDropMode.InternalMove)
+            t.setDropIndicatorShown(True)
+            t.setIndentation(20) # Látható legyen a fa eltolása
+            
             h_trees.addWidget(t)
+        
         main_layout.addLayout(h_trees, 1)
 
         btn_save = QPushButton("💾 VÁLTOZÁSOK VÉGLEGESÍTÉSE")
@@ -152,79 +239,80 @@ class KeziszerkesztoAblak(QDialog):
         main_layout.addWidget(btn_save)
 
     def aktualis_betoltese_fajlbol(self):
-        import os
-        import pandas as pd
-        import json
-        from PyQt6.QtWidgets import QMessageBox, QFileDialog # QFileDialog kell a választáshoz
-        
-        # 1. ELŐSZÖR MEGKÉRDEZZÜK, MIT TÖLTSÖN BE
-        # Alapértelmezettnek felkínáljuk az átmeneti fájlt, de választhat mást is
-        default_fajl = "Tura_Terv.xlsx"
-        
-        path, _ = QFileDialog.getOpenFileName(
-            self, 
-            "Túra betöltése szerkesztésre", 
-            default_fajl if os.path.exists(default_fajl) else "", 
-            "Excel Files (*.xlsx)"
-        )
-        
-        if not path:
-            return # Ha mégsem választott semmit, kilépünk
+        import os, pandas as pd, json, io, time, shutil, uuid
+        from PyQt6.QtWidgets import QMessageBox, QFileDialog
+
+        # 1. Tallózás (vagy alapértelmezett)
+        path, _ = QFileDialog.getOpenFileName(self, "Túra betöltése", "", "Excel Files (*.xlsx)")
+        if not path: return
+
+        # Cache elkerülése egyedi ideiglenes fájllal
+        temp_path = f"temp_read_{uuid.uuid4().hex}.xlsx"
 
         try:
-            df = pd.read_excel(path)
-            friss_adatok = []
+            shutil.copy2(path, temp_path)
+            with open(temp_path, "rb") as f:
+                df = pd.read_excel(io.BytesIO(f.read()), engine='openpyxl')
             
+            # Töröljük a temp fájlt azonnal
+            if os.path.exists(temp_path): os.remove(temp_path)
+
+            friss_adatok = []
             for _, row in df.iterrows():
                 p = row.to_dict()
-                # JSON visszaalakítás (kezeljük az üres vagy hibás mezőket is)
+                # JSON visszaalakítás
                 if 'Tetel_JSON_FIX' in p and isinstance(p['Tetel_JSON_FIX'], str):
-                    try:
-                        p['Tetel'] = json.loads(p['Tetel_JSON_FIX'])
-                    except:
-                        p['Tetel'] = []
+                    try: p['Tetel'] = json.loads(p['Tetel_JSON_FIX'])
+                    except: p['Tetel'] = []
                 elif 'Tetel' not in p:
                     p['Tetel'] = []
+                
+                # IRSZ tisztítás (hogy ne legyen .0 hiba)
+                if 'IRSZ' in p:
+                    p['IRSZ'] = str(p['IRSZ']).replace('.0', '').strip()
+                
                 friss_adatok.append(p)
 
-            # 2. ADATOK ÁTADÁSA
-            self.main_parent.minden_partner_adat = friss_adatok
-            
-            # 3. FRISSÍTÉSEK
-            self.setup_ui_content() # Túralisták frissítése
-            self.tree_bal.clear()   # Fák ürítése
+            # --- A LEGFONTOSABB RÉSZ: TELJES MEMÓRIA-CSERE ---
+            # Kiürítjük a főprogram listáját és feltöltjük az Excel tartalmával
+            self.main_parent.minden_partner_adat.clear()
+            self.main_parent.minden_partner_adat.extend(friss_adatok)
+
+            # GUI ürítése és a választható túrák (Autó - Nap) kigyűjtése a fájlból
+            self.tree_bal.clear()
             self.tree_jobb.clear()
-            
-            QMessageBox.information(self, "Siker", f"Betöltve: {len(friss_adatok)} partner a(z) {os.path.basename(path)} fájlból.")
-            
+            self.setup_ui_content() 
+
+            QMessageBox.information(self, "Siker", f"Betöltve: {len(friss_adatok)} partner.\nAz autók és napok listája frissült!")
+
         except Exception as e:
-            import traceback
-            print(traceback.format_exc())
+            if os.path.exists(temp_path): os.remove(temp_path)
             QMessageBox.critical(self, "Hiba", f"Beolvasási hiba: {e}")
 
+        
     def setup_ui_content(self):
-        """Frissíti a túra-kijelölő listákat az új adatok alapján"""
-        # Megkeressük az összes egyedi túranevet a frissen betöltött adatokban
-        turak = set()
+        # Ürítjük a választó listákat
+        self.list_bal.clear()
+        self.list_jobb.clear()
+
+        uj_turak = set()
         for p in self.main_parent.minden_partner_adat:
-            t = str(p.get('Túra', 'KIOSZTATLAN'))
-            if t and t != 'nan':
-                turak.add(t)
-        
-        uj_list = sorted(list(turak))
-        
-        # Frissítjük a két listWidget-et (bal és jobb oldali túraválasztó)
-        for lw_attr in ['list_bal', 'list_jobb']:
-            lw = getattr(self, lw_attr)
-            lw.clear()
-            for t in uj_list:
+            t_nev = str(p.get('Túra', 'KIOSZTATLAN'))
+            if t_nev and t_nev != 'nan':
+                uj_turak.add(t_nev)
+
+        # ABC sorrendben feltöltjük a listákat az új túranevekkel
+        for t in sorted(list(uj_turak)):
+            for lw in [self.list_bal, self.list_jobb]:
                 it = QListWidgetItem(t)
                 it.setFlags(it.flags() | Qt.ItemFlag.ItemIsUserCheckable | Qt.ItemFlag.ItemIsEnabled)
-                it.setCheckState(Qt.CheckState.Unchecked)
+                it.setCheckState(Qt.CheckState.Unchecked) # NINCS AUTOMATIKUS PIPA
                 lw.addItem(it)
-   
 
     def partner_sor_letrehozas(self, parent_item, p):
+        # DEBUG kiegészítve a túra nevével
+        print(f"DEBUG RAJZOLÁS: {p['Partner']} - {p.get('Túra')}")
+        
         p_item = QTreeWidgetItem(parent_item)
         p_nev = str(p.get('Partner', 'Ismeretlen')).replace('\n', ' ')
         p_statusz = str(p.get('Statusz', '')).upper()
@@ -240,30 +328,42 @@ class KeziszerkesztoAblak(QDialog):
         p_item.setText(1, str(p.get('Intenz', '')))
         p_item.setText(2, f"{int(p.get('Alap_B', 0))} kg")
         
-        p_font = QFont(); p_font.setBold(True); p_item.setFont(0, p_font)
+        p_font = QFont()
+        p_font.setBold(True)
+        p_item.setFont(0, p_font)
+        
+        # ADATOK TÁROLÁSA
         p_item.setData(0, Qt.ItemDataRole.UserRole, "PARTNER")
-        p_item.setData(1, Qt.ItemDataRole.UserRole, p)
+        # Nagyon fontos: a mentés funkció a data(1, ...) részt nézi!
+        p_item.setData(1, Qt.ItemDataRole.UserRole, p) 
+
+        # DRAG & DROP FIX: 
+        # Csak ItemIsDragEnabled van, NINCS ItemIsDropEnabled! 
+        # Így nem tudod a partnerbe "belepottyantani" a másikat.
         p_item.setFlags(Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsSelectable | Qt.ItemFlag.ItemIsDragEnabled)
+        
         p_item.setChildIndicatorPolicy(QTreeWidgetItem.ChildIndicatorPolicy.ShowIndicator)
 
-        # Tételek listázása a JSON-ból (nev, db, suly kulcsokkal)
-        tetelek = []
-        json_adat = p.get('Tetel_JSON_FIX', '')
-        if isinstance(json_adat, str) and json_adat.strip():
-            try:
-                tetelek = json.loads(json_adat)
-            except:
-                pass
+        # TÉTELEK LISTÁZÁSA
+        tetelek = p.get('Tetel', [])
+        if not tetelek:
+            json_adat = p.get('Tetel_JSON_FIX', '')
+            if isinstance(json_adat, str) and json_adat.strip():
+                try:
+                    tetelek = json.loads(json_adat)
+                except:
+                    tetelek = []
 
         if not tetelek:
             t_item = QTreeWidgetItem(p_item)
             t_item.setText(0, f"   📍 {p_cim}")
             t_item.setForeground(0, QColor("#95a5a6"))
             t_item.setData(0, Qt.ItemDataRole.UserRole, "TETEL")
+            # JAVÍTÁS: Legyen engedélyezve és kijelölhető, de ne legyen Drop (befogadás) célpont
+            t_item.setFlags(Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsSelectable) 
         else:
             for t_adat in tetelek:
                 t_item = QTreeWidgetItem(p_item)
-                # Pontos kulcsok a beküldött kép alapján: nev, db, suly
                 t_nev = t_adat.get('nev', 'Ismeretlen termék')
                 t_db = t_adat.get('db', 0)
                 t_suly = t_adat.get('suly', 0)
@@ -273,26 +373,51 @@ class KeziszerkesztoAblak(QDialog):
                 t_item.setText(2, f"{t_suly} kg")
                 t_item.setForeground(0, QColor("#2c3e50"))
                 t_item.setData(0, Qt.ItemDataRole.UserRole, "TETEL")
+                # JAVÍTÁS: Ugyanaz itt is (IsEnabled + IsSelectable)
+                t_item.setFlags(Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsSelectable)
+
+
         return p_item
 
     def adatok_betoltese(self):
-        for tree, lw in [(self.tree_bal, self.list_bal), (self.tree_jobb, self.list_jobb)]:
-            tree.clear()
-            kijelolt = [lw.item(i).text() for i in range(lw.count()) if lw.item(i).checkState() == Qt.CheckState.Checked]
-            for t_nev in kijelolt:
+        self.tree_bal.clear()
+        self.tree_jobb.clear()
+        het_idx = self.combo_het.currentIndex()
+
+        # Kijelöltek begyűjtése
+        kijelolt_bal = [self.list_bal.item(i).text() for i in range(self.list_bal.count()) if self.list_bal.item(i).checkState() == Qt.CheckState.Checked]
+        kijelolt_jobb = [self.list_jobb.item(i).text() for i in range(self.list_jobb.count()) if self.list_jobb.item(i).checkState() == Qt.CheckState.Checked]
+
+        friss_lista = list(reversed(self.main_parent.minden_partner_adat))
+        
+        # FONTOS: Azért tűnik el, mert a 'volt_mar' globális volt a két fára. 
+        # Most külön kezeljük őket, hogy mindkét oldalon megjelenhessenek, ha kell.
+        
+        for tree, kijeloltek in [(self.tree_bal, kijelolt_bal), (self.tree_jobb, kijelolt_jobb)]:
+            for t_nev in kijeloltek:
+                # Létrehozzuk a TÚRA (ROOT) elemet - Ez adja a fa szerkezetet!
                 root = QTreeWidgetItem(tree)
-                root.setText(0, f"🚚 {t_nev}"); root.setData(0, Qt.ItemDataRole.UserRole, "TURA")
-                root.setChildIndicatorPolicy(QTreeWidgetItem.ChildIndicatorPolicy.ShowIndicator)
-                for c in range(3): root.setBackground(c, QColor("#dfe6e9"))
-                root.setFlags(Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsDropEnabled)
-                
-                for p in self.main_parent.minden_partner_adat:
-                    p_t = str(p.get('Túra', 'ISMERETLEN'))
-                    if p_t.lower() in ['nan', '']: p_t = 'ISMERETLEN'
-                    if p_t == t_nev:
+                root.setText(0, f"🚚 {t_nev}")
+                root.setData(0, Qt.ItemDataRole.UserRole, "TURA")
+                root.setFlags(Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsSelectable | Qt.ItemFlag.ItemIsDropEnabled)
+                root.setBackground(0, QColor("#dfe6e9"))
+                root.setBackground(1, QColor("#dfe6e9"))
+                root.setBackground(2, QColor("#dfe6e9"))
+
+                for p in friss_lista:
+                    # Heti szűrés
+                    if het_idx != 0 and not self.is_active_on_week(p.get('Intenz', ''), het_idx):
+                        continue
+
+                    p_t = str(p.get('Túra', 'KIOSZTATLAN')).replace('.0', '').strip()
+                    if p_t == t_nev.strip():
+                        # A partner_sor_letrehozas-t hívjuk, ami a root alá teszi a partnert
                         self.partner_sor_letrehozas(root, p)
+                
                 root.setExpanded(True)
-        self.suly_frissites()
+        
+        if hasattr(self, 'suly_frissites'):
+            self.suly_frissites()
 
     def suly_frissites(self):
         for tree in [self.tree_bal, self.tree_jobb]:
@@ -303,16 +428,56 @@ class KeziszerkesztoAblak(QDialog):
                 root.setText(2, f"Össz: {int(total)} kg")
 
     def mentes_es_vissza(self):
-        for tree in [self.tree_bal, self.tree_jobb]:
-            for i in range(tree.topLevelItemCount()):
-                root = tree.topLevelItem(i)
-                t_nev = root.text(0).replace("🚚 ", "").strip()
-                for j in range(root.childCount()):
-                    p_item = root.child(j)
-                    p_adat = p_item.data(1, Qt.ItemDataRole.UserRole)
-                    if p_adat: p_adat['Túra'] = t_nev
-        QMessageBox.information(self, "Kész", "Változások mentve!")
-        self.accept()
+        try:
+            import json
+            import pandas as pd
+
+            # 1. ADATOK ÖSSZEGYŰJTÉSE A FÁKBÓL
+            frissitett_lista = []
+            
+            # Végigmegyünk mindkét fán (bal és jobb)
+            for tree in [self.tree_bal, self.tree_jobb]:
+                # Végigmegyünk a túrákon (root elemek)
+                for i in range(tree.topLevelItemCount()):
+                    tura_item = tree.topLevelItem(i)
+                    # Kiszedjük a túra nevét az ikon nélkül (pl. "1. autó - Hétfő")
+                    tura_nev = tura_item.text(0).replace("🚚 ", "").strip()
+                    
+                    # Végigmegyünk a túra alatti partnereken
+                    for j in range(tura_item.childCount()):
+                        partner_item = tura_item.child(j)
+                        # A setData-val korábban elmentett eredeti partner objektumot kérjük le
+                        p_adat = partner_item.data(1, Qt.ItemDataRole.UserRole)
+                        
+                        if p_adat:
+                            # Frissítjük a túra nevét arra, amilyen mappa alatt most van
+                            p_adat['Túra'] = tura_nev
+                            frissitett_lista.append(p_adat)
+
+            # 2. SZINKRONIZÁCIÓ A FŐPROGRAMMAL
+            # Csak azokat írjuk felül, amiket szerkesztettünk
+            # (Vagy a teljes listát cseréljük, ha mindenkit betöltöttünk)
+            if frissitett_lista:
+                self.main_parent.minden_partner_adat = frissitett_lista
+
+            # 3. MENTÉS EXCELBE (hogy megmaradjon a kézi sorrend)
+            path, _ = QFileDialog.getSaveFileName(self, "Szerkesztett túra mentése", "Tura_Terv_Szerkesztett.xlsx", "Excel (*.xlsx)")
+            
+            if path:
+                df_save = pd.DataFrame(frissitett_lista)
+                if 'Tetel' in df_save.columns:
+                    df_save['Tetel_JSON_FIX'] = df_save['Tetel'].apply(lambda x: json.dumps(x))
+                    df_save = df_save.drop(columns=['Tetel'])
+                
+                df_save.to_excel(path, index=False)
+                QMessageBox.information(self, "Siker", "A módosítások mentve a fájlba és a memóriába is!")
+                self.close() # Bezárjuk a szerkesztőt
+
+        except Exception as e:
+            import traceback
+            print(traceback.format_exc())
+            QMessageBox.critical(self, "Hiba", f"Hiba a véglegesítéskor: {e}")
+
 
 def indit_szerkeszto(parent):
     dialog = KeziszerkesztoAblak(parent)

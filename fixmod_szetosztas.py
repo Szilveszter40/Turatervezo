@@ -261,33 +261,29 @@ class SzetosztasDialog(QDialog):
         layout.addLayout(btns)
 
     def export_to_excel(self):
+        # --- 1. LÉPÉS: ADATOK FRISSÍTÉSE A LISTÁBAN ---
+        # Lefuttatjuk a frissítést, ami most már beleírja a p['Túra']-t a listába
+        self.terkep_frissitese() 
+
+        # --- 2. LÉPÉS: MENTÉS ---
         path, _ = QFileDialog.getSaveFileName(self, "Mentés", "Tura_Terv.xlsx", "Excel (*.xlsx)")
         if path:
             try:
-                import os
-                # Ha a fájl létezik, megpróbáljuk törölni, hogy ne maradjon benne régi adat
-                if os.path.exists(path):
-                    try:
-                        os.remove(path)
-                    except:
-                        QMessageBox.warning(self, "Figyelem", "A fájl nyitva van valahol! Zárd be az Excelt!")
-                        return
-
+                # Készítünk egy DataFrame-et a frissített listából
                 df_to_save = pd.DataFrame(self.minden_partner_adat)
                 
-                # JSON mező generálása mentés előtt
+                # JSON fix a tételeknek
                 if 'Tetel' in df_to_save.columns:
                     df_to_save['Tetel_JSON_FIX'] = df_to_save['Tetel'].apply(lambda x: json.dumps(x) if x else "[]")
-                    # Töröljük a komplex 'Tetel' oszlopot, amit az Excel nem szeret
                     df_to_save = df_to_save.drop(columns=['Tetel'])
                 
-                # Mentés
-                with pd.ExcelWriter(path, engine='openpyxl') as writer:
-                    df_to_save.to_excel(writer, index=False, sheet_name='TuraTerv')
+                # Mentés az Excelbe
+                df_to_save.to_excel(path, index=False, sheet_name='TuraTerv')
                 
-                QMessageBox.information(self, "Siker", "A mentés valóban megtörtént!")
+                QMessageBox.information(self, "Siker", "A szétosztott túrák mentése megtörtént!")
             except Exception as e:
                 QMessageBox.critical(self, "Hiba", f"Hiba mentéskor: {e}")
+
 
     def excel_beolvasas(self):
         path, _ = QFileDialog.getOpenFileName(self, "Import", "", "Excel (*.xlsx)")
