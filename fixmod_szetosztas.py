@@ -261,7 +261,7 @@ class SzetosztasDialog(QDialog):
         layout.addLayout(btns)
 
     def export_to_excel(self):
-        path, _ = QFileDialog.getSaveFileName(self, "Mentés", "Tura_Terv_Uj.xlsx", "Excel (*.xlsx)")
+        path, _ = QFileDialog.getSaveFileName(self, "Mentés", "Tura_Terv.xlsx", "Excel (*.xlsx)")
         if path:
             try:
                 import os
