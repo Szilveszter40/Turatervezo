@@ -3,7 +3,7 @@ import pandas as pd
 from PyQt6.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout, QTreeWidget, 
                              QTreeWidgetItem, QLabel, QPushButton, QMessageBox, 
                              QListWidget, QListWidgetItem, QAbstractItemView, QFrame, 
-                             QSizePolicy, QHeaderView)
+                             QSizePolicy, QHeaderView, QComboBox)
 from PyQt6.QtCore import Qt, QTimer
 from PyQt6.QtGui import QColor, QFont
 
@@ -80,6 +80,36 @@ class KeziszerkesztoAblak(QDialog):
     def initUI(self):
         main_layout = QVBoxLayout(self)
         main_layout.setContentsMargins(10, 10, 10, 10)
+
+        # --- ÚJ: FELSŐ VEZÉRLŐSÁV (FELEZVE) ---
+        top_control_layout = QHBoxLayout()
+        
+        # Bal oldali rész: GOMB
+        self.btn_frissit = QPushButton("📂 AKTUÁLIS BETÖLTÉSE (SZÉTOSZTÁSBÓL)")
+        self.btn_frissit.setFixedHeight(45)
+        self.btn_frissit.setStyleSheet("background-color: #2ecc71; color: white; font-weight: bold; border-radius: 5px;")
+        self.btn_frissit.clicked.connect(self.aktualis_betoltese_fajlbol)
+        top_control_layout.addWidget(self.btn_frissit, 1) # Az '1' jelenti az arányt
+
+        # Jobb oldali rész: HÉT VÁLASZTÓ (egy kis belső elrendezéssel)
+        het_layout = QHBoxLayout()
+        het_label = QLabel("<b>SZŰRÉS HÉTRE:</b>")
+        het_label.setAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
+        
+        self.combo_het = QComboBox()
+        self.combo_het.addItems(["Mind (Összes adat)", "1. Hét", "2. Hét", "3. Hét", "4. Hét"])
+        self.combo_het.setFixedHeight(45)
+        self.combo_het.setStyleSheet("padding: 5px; font-weight: bold;")
+        self.combo_het.currentIndexChanged.connect(self.adatok_betoltese)
+        
+        het_layout.addWidget(het_label)
+        het_layout.addWidget(self.combo_het)
+        
+        # A het_layout-ot egy konténerbe tesszük, hogy ez legyen a jobb oldal
+        top_control_layout.addLayout(het_layout, 1) # Ez is '1', így lesz 50-50%
+
+        main_layout.addLayout(top_control_layout)
+        # --- FELSŐ VEZÉRLŐSÁV VÉGE ---
         
         top_row = QHBoxLayout()
         for title, attr in [("Bal oldali túrák:", "list_bal"), ("Jobb oldali túrák:", "list_jobb")]:
@@ -120,6 +150,79 @@ class KeziszerkesztoAblak(QDialog):
         btn_save.setStyleSheet("background-color: #27ae60; color: white; font-weight: bold;")
         btn_save.clicked.connect(self.mentes_es_vissza)
         main_layout.addWidget(btn_save)
+
+    def aktualis_betoltese_fajlbol(self):
+        import os
+        import pandas as pd
+        import json
+        from PyQt6.QtWidgets import QMessageBox, QFileDialog # QFileDialog kell a választáshoz
+        
+        # 1. ELŐSZÖR MEGKÉRDEZZÜK, MIT TÖLTSÖN BE
+        # Alapértelmezettnek felkínáljuk az átmeneti fájlt, de választhat mást is
+        default_fajl = "Tura_Terv.xlsx"
+        
+        path, _ = QFileDialog.getOpenFileName(
+            self, 
+            "Túra betöltése szerkesztésre", 
+            default_fajl if os.path.exists(default_fajl) else "", 
+            "Excel Files (*.xlsx)"
+        )
+        
+        if not path:
+            return # Ha mégsem választott semmit, kilépünk
+
+        try:
+            df = pd.read_excel(path)
+            friss_adatok = []
+            
+            for _, row in df.iterrows():
+                p = row.to_dict()
+                # JSON visszaalakítás (kezeljük az üres vagy hibás mezőket is)
+                if 'Tetel_JSON_FIX' in p and isinstance(p['Tetel_JSON_FIX'], str):
+                    try:
+                        p['Tetel'] = json.loads(p['Tetel_JSON_FIX'])
+                    except:
+                        p['Tetel'] = []
+                elif 'Tetel' not in p:
+                    p['Tetel'] = []
+                friss_adatok.append(p)
+
+            # 2. ADATOK ÁTADÁSA
+            self.main_parent.minden_partner_adat = friss_adatok
+            
+            # 3. FRISSÍTÉSEK
+            self.setup_ui_content() # Túralisták frissítése
+            self.tree_bal.clear()   # Fák ürítése
+            self.tree_jobb.clear()
+            
+            QMessageBox.information(self, "Siker", f"Betöltve: {len(friss_adatok)} partner a(z) {os.path.basename(path)} fájlból.")
+            
+        except Exception as e:
+            import traceback
+            print(traceback.format_exc())
+            QMessageBox.critical(self, "Hiba", f"Beolvasási hiba: {e}")
+
+    def setup_ui_content(self):
+        """Frissíti a túra-kijelölő listákat az új adatok alapján"""
+        # Megkeressük az összes egyedi túranevet a frissen betöltött adatokban
+        turak = set()
+        for p in self.main_parent.minden_partner_adat:
+            t = str(p.get('Túra', 'KIOSZTATLAN'))
+            if t and t != 'nan':
+                turak.add(t)
+        
+        uj_list = sorted(list(turak))
+        
+        # Frissítjük a két listWidget-et (bal és jobb oldali túraválasztó)
+        for lw_attr in ['list_bal', 'list_jobb']:
+            lw = getattr(self, lw_attr)
+            lw.clear()
+            for t in uj_list:
+                it = QListWidgetItem(t)
+                it.setFlags(it.flags() | Qt.ItemFlag.ItemIsUserCheckable | Qt.ItemFlag.ItemIsEnabled)
+                it.setCheckState(Qt.CheckState.Unchecked)
+                lw.addItem(it)
+   
 
     def partner_sor_letrehozas(self, parent_item, p):
         p_item = QTreeWidgetItem(parent_item)

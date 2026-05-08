@@ -128,25 +128,51 @@ class SzetosztasDialog(QDialog):
         return False
 
     def terkep_frissitese(self):
-        from PyQt6.QtGui import QColor # Biztonsági import, ha nem lenne ott
+        from PyQt6.QtGui import QColor
         self.tree.clear()
         het_idx = self.het_valaszto.currentIndex()
         
         rendszerezett = {} 
         egyeb = {}        
 
+        # 1. Tanulás a már meglévő adatokból
+        for p in self.minden_partner_adat:
+            v_tmp = str(p.get('Túra', ''))
+            i_tmp = str(p.get('IRSZ', '')).split('.')[0].strip()
+            if i_tmp and v_tmp and v_tmp not in ["KIOSZTATLAN", "nan"] and "ISMERETLEN" not in v_tmp:
+                self.tura_irsz_lefedettseg[i_tmp] = v_tmp
+
+        # 2. Partnerek feldolgozása és kiosztása
         for p in sorted(self.minden_partner_adat, key=lambda x: x['Statusz'] == 'ÚJ'):
             if not self.is_active_on_week(p['Intenz'], het_idx): continue
             
             vonal = str(p.get('Túra', 'KIOSZTATLAN'))
-            p['Túra'] = vonal 
+            irsz = str(p.get('IRSZ', '')).split('.')[0].strip()
 
-            # JAVÍTÁS: Csak akkor csoportosít, ha a név számmal kezdődik ÉS van benne " - "
-            # A vonal[0].isdigit() nézi az első karaktert
+            if p['Statusz'] == 'ÚJ' and (vonal == 'KIOSZTATLAN' or "ISMERETLEN" in vonal):
+                found = False
+                if irsz in self.uj_auto_lefedettseg:
+                    for auto, napok in self.uj_auto_lefedettseg[irsz].items():
+                        for nap in napok:
+                            vonal = f"{auto} - {nap}"
+                            found = True
+                            break
+                        if found: break
+                
+                if not found and irsz in self.tura_irsz_lefedettseg:
+                    vonal = self.tura_irsz_lefedettseg[irsz]
+                    found = True
+                
+                if not found:
+                    vonal = f"❓ ISMERETLEN ({irsz})"
+            
+            p['Túra'] = vonal
+
+            # CSOPORTOSÍTÁS
             if len(vonal) > 0 and vonal[0].isdigit() and " - " in vonal:
                 reszek = vonal.split(" - ", 1)
-                auto_nev = reszek[0] # JAVÍTVA: index hozzáadva
-                nap_nev = reszek[1]  # JAVÍTVA: index hozzáadva
+                auto_nev = reszek[0]
+                nap_nev = reszek[1]
                 
                 if auto_nev not in rendszerezett: rendszerezett[auto_nev] = {}
                 if nap_nev not in rendszerezett[auto_nev]:
@@ -162,8 +188,7 @@ class SzetosztasDialog(QDialog):
                 egyeb[vonal]['db'] += 1
                 egyeb[vonal]['lista'].append(p)
 
-        # 1. SZÁMMAL KEZDŐDŐK MEGJELENÍTÉSE
-        # A kulcs szerinti rendezésnél kiszedjük a számokat az autó nevéből
+        # 3. MEGJELENÍTÉS - SZÁMMAL KEZDŐDŐK (Hierarchia: Autó -> Nap -> Partner)
         for auto in sorted(rendszerezett.keys()):
             auto_item = QTreeWidgetItem(self.tree)
             auto_suly = sum(n['suly'] for n in rendszerezett[auto].values())
@@ -179,13 +204,20 @@ class SzetosztasDialog(QDialog):
                 nap_item.setText(2, f"{int(dat['suly'])} kg")
                 
                 for s in dat['lista']:
-                    child = QTreeWidgetItem(nap_item)
-                    prefix = f"✨ [ÚJ] {s['Partner']}" if s['Statusz'] == 'ÚJ' else f"👤 {s['Partner']}"
+                    child = QTreeWidgetItem(nap_item) 
+                    partner_cim = s.get('Cim') or s.get('Cím') or ""
+                    cim_text = f" | {partner_cim}" if partner_cim else ""
+                    
+                    if s['Statusz'] == 'ÚJ':
+                        prefix = f"✨ [ÚJ] {s['Partner']}{cim_text}"
+                        child.setForeground(0, QColor("#3498db"))
+                    else:
+                        prefix = f"👤 {s['Partner']}{cim_text}"
+                    
                     child.setText(0, f"    {prefix}")
                     child.setText(2, f"{int(s['Alap_B'])} kg")
-                    if s['Statusz'] == 'ÚJ': child.setForeground(0, QColor("#3498db"))
 
-        # 2. EGYÉB TÚRÁK MEGJELENÍTÉSE
+        # 4. MEGJELENÍTÉS - EGYÉB TÚRÁK (Hierarchia: Túra -> Partner)
         for t_nev in sorted(egyeb.keys()):
             dat = egyeb[t_nev]
             root_item = QTreeWidgetItem(self.tree)
@@ -196,10 +228,18 @@ class SzetosztasDialog(QDialog):
             
             for s in dat['lista']:
                 child = QTreeWidgetItem(root_item)
-                prefix = f"✨ [ÚJ] {s['Partner']}" if s['Statusz'] == 'ÚJ' else f"👤 {s['Partner']}"
+                partner_cim = s.get('Cim') or s.get('Cím') or ""
+                cim_text = f" | {partner_cim}" if partner_cim else ""
+                
+                if s['Statusz'] == 'ÚJ':
+                    prefix = f"✨ [ÚJ] {s['Partner']}{cim_text}"
+                    child.setForeground(0, QColor("#3498db"))
+                else:
+                    prefix = f"👤 {s['Partner']}{cim_text}"
+                    
                 child.setText(0, f"  {prefix}")
                 child.setText(2, f"{int(s['Alap_B'])} kg")
-                if s['Statusz'] == 'ÚJ': child.setForeground(0, QColor("#3498db"))
+
 
     def init_ui_elements(self):
         layout = QVBoxLayout(self)
