@@ -378,6 +378,56 @@ class KeziszerkesztoAblak(QDialog):
 
 
         return p_item
+    
+    def is_active_on_week(self, intenzitas, het_idx):
+        if not intenzitas or "minden" in str(intenzitas).lower():
+           return True
+    
+        intenzitas_str = str(intenzitas).replace(" ", "").lower()
+    
+        if "páratlan" in intenzitas_str:
+           return het_idx in [1, 3]
+        if "páros" in intenzitas_str:
+           return het_idx in [2, 4]
+    
+        if "+" in intenzitas_str:
+           hetek = intenzitas_str.split("+")
+           return str(het_idx) in hetek
+        
+        if intenzitas_str.isdigit():
+           return int(intenzitas_str) == het_idx
+
+        return True
+
+    
+    def is_active_on_week(self, intenzitas, het_idx):
+        """
+        Eldönti, hogy az adott intenzitás alapján a partner aktív-e az adott héten.
+        intenzitas: pl. '1+3', '2+4', 'Páratlan', 'Páros', 'Minden héten' vagy üres
+        het_idx: 1, 2, 3 vagy 4
+        """
+        if not intenzitas or intenzitas == "" or "minden" in intenzitas.lower():
+           return True
+    
+        intenzitas = intenzitas.replace(" ", "")
+    
+        # Konkrét hetek kezelése (pl. 1+3)
+        if "+" in intenzitas:
+           hetek = intenzitas.split("+")
+           return str(het_idx) in hetek
+
+        # Szöveges típusok kezelése
+        if "páratlan" in intenzitas.lower():
+           return het_idx in [1, 3]
+        if "páros" in intenzitas.lower():
+           return het_idx in [2, 4]
+        
+        # Ha csak egy szám van megadva
+        if intenzitas.isdigit():
+           return int(intenzitas) == het_idx
+
+        return True
+
 
     def adatok_betoltese(self):
         self.tree_bal.clear()
@@ -414,7 +464,7 @@ class KeziszerkesztoAblak(QDialog):
                         # A partner_sor_letrehozas-t hívjuk, ami a root alá teszi a partnert
                         self.partner_sor_letrehozas(root, p)
                 
-                root.setExpanded(True)
+                root.setExpanded(False)
         
         if hasattr(self, 'suly_frissites'):
             self.suly_frissites()
@@ -477,7 +527,6 @@ class KeziszerkesztoAblak(QDialog):
             import traceback
             print(traceback.format_exc())
             QMessageBox.critical(self, "Hiba", f"Hiba a véglegesítéskor: {e}")
-
 
 def indit_szerkeszto(parent):
     dialog = KeziszerkesztoAblak(parent)
