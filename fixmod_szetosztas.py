@@ -128,51 +128,77 @@ class SzetosztasDialog(QDialog):
         return False
 
     def terkep_frissitese(self):
-        # --- ÚJ RÉSZ: Lefedettség újratöltése a már meglévő adatokból ---
-        for p in self.minden_partner_adat:
-            vonal = str(p.get('Túra', ''))
-            irsz = str(p.get('IRSZ', '')).split('.')[0].strip()
-            # Ha van érvényes túrája és irányítószáma, mentsük el a szótárba
-            if irsz and vonal and vonal not in ["KIOSZTATLAN", "nan", "None"] and "ISMERETLEN" not in vonal:
-                self.tura_irsz_lefedettseg[irsz] = vonal
-        # --- IDÁIG ---
+        from PyQt6.QtGui import QColor # Biztonsági import, ha nem lenne ott
         self.tree.clear()
         het_idx = self.het_valaszto.currentIndex()
-        turasorok = {}
         
+        rendszerezett = {} 
+        egyeb = {}        
+
         for p in sorted(self.minden_partner_adat, key=lambda x: x['Statusz'] == 'ÚJ'):
             if not self.is_active_on_week(p['Intenz'], het_idx): continue
             
-            vonal = p['Túra']
-            irsz = p.get('IRSZ')
+            vonal = str(p.get('Túra', 'KIOSZTATLAN'))
+            p['Túra'] = vonal 
 
-            if p['Statusz'] == 'ÚJ':
-                if vonal == "KIOSZTATLAN" or (vonal in turasorok and (turasorok[vonal]['b'] + p['Alap_B'] > self.MAX_BESZALLITAS)):
-                    if irsz in self.uj_auto_lefedettseg:
-                        found = False
-                        for auto, napok in self.uj_auto_lefedettseg[irsz].items():
-                            for nap in napok:
-                                proba = f"{auto} - {nap}"
-                                if proba not in turasorok or (turasorok[proba]['b'] + p['Alap_B'] <= self.MAX_BESZALLITAS):
-                                    vonal = proba; found = True; break
-                            if found: break
-                    elif irsz in self.tura_irsz_lefedettseg:
-                        vonal = self.tura_irsz_lefedettseg[irsz]
-                    else:
-                        vonal = f"❓ ISMERETLEN ({irsz})"
-            p['Túra'] = vonal
-            if vonal not in turasorok: turasorok[vonal] = {'b': 0, 'cnt': 0, 'items': []}
-            turasorok[vonal]['b'] += p['Alap_B']; turasorok[vonal]['cnt'] += 1; turasorok[vonal]['items'].append(p)
+            # JAVÍTÁS: Csak akkor csoportosít, ha a név számmal kezdődik ÉS van benne " - "
+            # A vonal[0].isdigit() nézi az első karaktert
+            if len(vonal) > 0 and vonal[0].isdigit() and " - " in vonal:
+                reszek = vonal.split(" - ", 1)
+                auto_nev = reszek[0] # JAVÍTVA: index hozzáadva
+                nap_nev = reszek[1]  # JAVÍTVA: index hozzáadva
+                
+                if auto_nev not in rendszerezett: rendszerezett[auto_nev] = {}
+                if nap_nev not in rendszerezett[auto_nev]:
+                    rendszerezett[auto_nev][nap_nev] = {'suly': 0, 'db': 0, 'lista': []}
+                
+                target = rendszerezett[auto_nev][nap_nev]
+                target['suly'] += p['Alap_B']
+                target['db'] += 1
+                target['lista'].append(p)
+            else:
+                if vonal not in egyeb: egyeb[vonal] = {'suly': 0, 'db': 0, 'lista': []}
+                egyeb[vonal]['suly'] += p['Alap_B']
+                egyeb[vonal]['db'] += 1
+                egyeb[vonal]['lista'].append(p)
 
-        for t_nev in sorted(turasorok.keys()):
-            dat = turasorok[t_nev]
+        # 1. SZÁMMAL KEZDŐDŐK MEGJELENÍTÉSE
+        # A kulcs szerinti rendezésnél kiszedjük a számokat az autó nevéből
+        for auto in sorted(rendszerezett.keys()):
+            auto_item = QTreeWidgetItem(self.tree)
+            auto_suly = sum(n['suly'] for n in rendszerezett[auto].values())
+            auto_item.setText(0, f"🚚 {auto}")
+            auto_item.setText(2, f"{int(auto_suly)} kg össz.")
+            auto_item.setBackground(0, QColor("#dfe6e9")) 
+
+            for nap in sorted(rendszerezett[auto].keys()):
+                dat = rendszerezett[auto][nap]
+                nap_item = QTreeWidgetItem(auto_item)
+                nap_item.setText(0, f"  📅 {nap}")
+                nap_item.setText(1, f"{dat['db']} megálló")
+                nap_item.setText(2, f"{int(dat['suly'])} kg")
+                
+                for s in dat['lista']:
+                    child = QTreeWidgetItem(nap_item)
+                    prefix = f"✨ [ÚJ] {s['Partner']}" if s['Statusz'] == 'ÚJ' else f"👤 {s['Partner']}"
+                    child.setText(0, f"    {prefix}")
+                    child.setText(2, f"{int(s['Alap_B'])} kg")
+                    if s['Statusz'] == 'ÚJ': child.setForeground(0, QColor("#3498db"))
+
+        # 2. EGYÉB TÚRÁK MEGJELENÍTÉSE
+        for t_nev in sorted(egyeb.keys()):
+            dat = egyeb[t_nev]
             root_item = QTreeWidgetItem(self.tree)
-            root_item.setText(0, f"🚚 {t_nev}"); root_item.setText(1, f"{dat['cnt']} megálló"); root_item.setText(2, f"{int(dat['b'])} kg")
+            root_item.setText(0, f"🚚 {t_nev}")
+            root_item.setText(1, f"{dat['db']} megálló")
+            root_item.setText(2, f"{int(dat['suly'])} kg")
             root_item.setBackground(0, QColor("#dfe6e9"))
-            for s in dat['items']:
+            
+            for s in dat['lista']:
                 child = QTreeWidgetItem(root_item)
                 prefix = f"✨ [ÚJ] {s['Partner']}" if s['Statusz'] == 'ÚJ' else f"👤 {s['Partner']}"
-                child.setText(0, f"  {prefix}"); child.setText(2, f"{int(s['Alap_B'])} kg")
+                child.setText(0, f"  {prefix}")
+                child.setText(2, f"{int(s['Alap_B'])} kg")
                 if s['Statusz'] == 'ÚJ': child.setForeground(0, QColor("#3498db"))
 
     def init_ui_elements(self):
