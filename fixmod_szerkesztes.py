@@ -3,7 +3,7 @@ import pandas as pd
 from PyQt6.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout, QTreeWidget, 
                              QTreeWidgetItem, QLabel, QPushButton, QMessageBox, 
                              QListWidget, QListWidgetItem, QAbstractItemView, QFrame, 
-                             QSizePolicy, QHeaderView, QComboBox, QFileDialog)
+                             QSizePolicy, QHeaderView, QComboBox, QFileDialog, QLineEdit)
 from PyQt6.QtCore import Qt, QTimer
 from PyQt6.QtGui import QColor, QFont
 from PyQt6.QtWidgets import QTreeWidget, QAbstractItemView, QTreeWidgetItem
@@ -175,7 +175,7 @@ class KeziszerkesztoAblak(QDialog):
         het_label = QLabel("<b>SZŰRÉS HÉTRE:</b>")
         het_label.setAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
         self.combo_het = QComboBox()
-        self.combo_het.addItems(["Mind (Összes adat)", "1. Hét", "2. Hét", "3. Hét", "4. Hét"])
+        self.combo_het.addItems(["Mind (Összes adat)", "Páratlan Hét", "Páros Hét"])
         self.combo_het.setFixedHeight(45)
         self.combo_het.setStyleSheet("padding: 5px; font-weight: bold;")
         self.combo_het.currentIndexChanged.connect(self.adatok_betoltese)
@@ -210,6 +210,29 @@ class KeziszerkesztoAblak(QDialog):
         btn_load.clicked.connect(self.adatok_betoltese)
         main_layout.addWidget(btn_load)
 
+        # --- ÚJ: TÚRA LÉTREHOZÁSA SZEKCIÓ ---
+        uj_tura_frame = QFrame()
+        uj_tura_frame.setStyleSheet("QFrame { background-color: #fcf3cf; border: 1px solid #f39c12; border-radius: 5px; }")
+        uj_tura_layout = QHBoxLayout(uj_tura_frame)
+        
+        self.uj_tura_nev_input = QLineEdit()
+        self.uj_tura_nev_input.setPlaceholderText("Új túra neve (pl. Budapest Páros)")
+        self.uj_tura_nev_input.setFixedHeight(30)
+        self.uj_tura_nev_input.setStyleSheet("background: white; border: 1px solid #ccc;")
+        
+        btn_uj_tura = QPushButton("➕ ÚJ TÚRA")
+        btn_uj_tura.setFixedWidth(120)
+        btn_uj_tura.setFixedHeight(30)
+        btn_uj_tura.setStyleSheet("background-color: #f39c12; color: white; font-weight: bold;")
+        btn_uj_tura.clicked.connect(self.uj_tura_letrehozasa_esemeny)
+        
+        uj_tura_layout.addWidget(QLabel("<b>Új túra hozzáadása:</b>"))
+        uj_tura_layout.addWidget(self.uj_tura_nev_input)
+        uj_tura_layout.addWidget(btn_uj_tura)
+        main_layout.addWidget(uj_tura_frame)
+
+        # --- Ezután jön a DRAGGABLE TREES rész ---
+
         # --- DRAGGABLE TREES (BAL ÉS JOBB) ---
         h_trees = QHBoxLayout()
         self.tree_bal = DraggableTree(self)
@@ -237,6 +260,33 @@ class KeziszerkesztoAblak(QDialog):
         btn_save.setStyleSheet("background-color: #27ae60; color: white; font-weight: bold;")
         btn_save.clicked.connect(self.mentes_es_vissza)
         main_layout.addWidget(btn_save)
+
+    def uj_tura_letrehozasa_esemeny(self):
+        uj_nev = self.uj_tura_nev_input.text().strip()
+        
+        if not uj_nev:
+            return
+            
+        if uj_nev in self.osszes_tura_neve:
+            self.uj_tura_nev_input.clear()
+            return
+
+        # 1. Hozzáadás a belső listához
+        self.osszes_tura_neve.append(uj_nev)
+        self.osszes_tura_neve.sort()
+        
+        # 2. Hozzáadás a választó listákhoz (bejelölve)
+        for list_widget in [self.list_bal, self.list_jobb]:
+            it = QListWidgetItem(uj_nev)
+            it.setFlags(it.flags() | Qt.ItemFlag.ItemIsUserCheckable | Qt.ItemFlag.ItemIsEnabled)
+            it.setCheckState(Qt.CheckState.Checked) 
+            list_widget.addItem(it)
+            
+        self.uj_tura_nev_input.clear()
+        
+        # 3. Frissítés, hogy megjelenjen az üres túra a fában
+        self.adatok_betoltese()
+
 
     def aktualis_betoltese_fajlbol(self):
         import os, pandas as pd, json, io, time, shutil, uuid
@@ -376,30 +426,28 @@ class KeziszerkesztoAblak(QDialog):
                 # JAVÍTÁS: Ugyanaz itt is (IsEnabled + IsSelectable)
                 t_item.setFlags(Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsSelectable)
 
-
         return p_item
     
     def is_active_on_week(self, intenzitas, het_idx):
-        if not intenzitas or "minden" in str(intenzitas).lower():
+        # het_idx: 0=Mind, 1=Páratlan, 2=Páros
+        if het_idx == 0: return True
+    
+        s = str(intenzitas).upper()
+    
+        # HETI: minden héten ott van
+        if "HETI" in s and "2" not in s and "KÉTHETI" not in s: 
            return True
     
-        intenzitas_str = str(intenzitas).replace(" ", "").lower()
+        # PÁRATLAN szűrés
+        if het_idx == 1:
+           return any(x in s for x in ["PÁRATLAN", "1", "1+3"])
     
-        if "páratlan" in intenzitas_str:
-           return het_idx in [1, 3]
-        if "páros" in intenzitas_str:
-           return het_idx in [2, 4]
-    
-        if "+" in intenzitas_str:
-           hetek = intenzitas_str.split("+")
-           return str(het_idx) in hetek
+        # PÁROS szűrés
+        if het_idx == 2:
+           return any(x in s for x in ["PÁROS", "2", "2+4"])
         
-        if intenzitas_str.isdigit():
-           return int(intenzitas_str) == het_idx
-
-        return True
-
-    
+        return False
+  
     def is_active_on_week(self, intenzitas, het_idx):
         """
         Eldönti, hogy az adott intenzitás alapján a partner aktív-e az adott héten.
@@ -434,40 +482,49 @@ class KeziszerkesztoAblak(QDialog):
         self.tree_jobb.clear()
         het_idx = self.combo_het.currentIndex()
 
+        print(f"DEBUG: Hét váltva, aktuális index: {het_idx}")
+
         # Kijelöltek begyűjtése
         kijelolt_bal = [self.list_bal.item(i).text() for i in range(self.list_bal.count()) if self.list_bal.item(i).checkState() == Qt.CheckState.Checked]
         kijelolt_jobb = [self.list_jobb.item(i).text() for i in range(self.list_jobb.count()) if self.list_jobb.item(i).checkState() == Qt.CheckState.Checked]
 
+        # Fordított sorrend az adatoknál, ha szükséges
         friss_lista = list(reversed(self.main_parent.minden_partner_adat))
         
-        # FONTOS: Azért tűnik el, mert a 'volt_mar' globális volt a két fára. 
-        # Most külön kezeljük őket, hogy mindkét oldalon megjelenhessenek, ha kell.
-        
+        # A két panel (fa) és a hozzájuk tartozó kijelölt túrák feldolgozása
         for tree, kijeloltek in [(self.tree_bal, kijelolt_bal), (self.tree_jobb, kijelolt_jobb)]:
             for t_nev in kijeloltek:
-                # Létrehozzuk a TÚRA (ROOT) elemet - Ez adja a fa szerkezetet!
+                # Létrehozzuk a TÚRA (ROOT) elemet
                 root = QTreeWidgetItem(tree)
                 root.setText(0, f"🚚 {t_nev}")
                 root.setData(0, Qt.ItemDataRole.UserRole, "TURA")
+                # Drop engedélyezése a túrára
                 root.setFlags(Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsSelectable | Qt.ItemFlag.ItemIsDropEnabled)
-                root.setBackground(0, QColor("#dfe6e9"))
-                root.setBackground(1, QColor("#dfe6e9"))
-                root.setBackground(2, QColor("#dfe6e9"))
+                
+                # Színek beállítása
+                for col in range(3): # Feltételezve hogy 3 oszlopod van
+                    root.setBackground(col, QColor("#dfe6e9"))
 
+                # Partnerek szűrése és hozzáadása ehhez a túrához
                 for p in friss_lista:
-                    # Heti szűrés
+                    # 1. Heti szűrés (ha nem a 0. 'Összes' index van kiválasztva)
                     if het_idx != 0 and not self.is_active_on_week(p.get('Intenz', ''), het_idx):
                         continue
-
+                    
+                    # 2. Ellenőrizzük, hogy a partner ehhez a túrához tartozik-e
                     p_t = str(p.get('Túra', 'KIOSZTATLAN')).replace('.0', '').strip()
+                    
                     if p_t == t_nev.strip():
-                        # A partner_sor_letrehozas-t hívjuk, ami a root alá teszi a partnert
+                        # A partner_sor_letrehozas a 'root' (az aktuális túra) alá teszi a partnert
                         self.partner_sor_letrehozas(root, p)
                 
+                # Alapból ne legyen lenyitva
                 root.setExpanded(False)
         
+        # Súlyok újraszámolása a betöltés végén
         if hasattr(self, 'suly_frissites'):
             self.suly_frissites()
+
 
     def suly_frissites(self):
         for tree in [self.tree_bal, self.tree_jobb]:

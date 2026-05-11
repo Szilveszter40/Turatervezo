@@ -148,10 +148,11 @@ class TuraApp(QMainWindow):
         self.mod_b.setMenu(self.mod_menu)
         
         self.i_b = QPushButton("EXCEL BETÖLTÉSE"); self.i_b.setStyleSheet("background-color: #FF8C00; color: white; font-weight: bold; padding: 8px;")
+        self.i_fix = QPushButton("📥 FIX IMPORT"); self.i_fix.setStyleSheet("background-color: #2c3e50; color: white; font-weight: bold; padding: 8px; border: 1px solid #ecf0f1;");self.i_fix.setToolTip("A Fix Tervezőben elmentett túrák visszatöltése") 
         self.e_b = QPushButton("TÚRÁK MENTÉSE"); self.e_b.setStyleSheet("background-color: #4CAF50; color: white; font-weight: bold; padding: 8px;")
         self.p_b = QPushButton("NYOMTATÁS"); self.p_b.setStyleSheet("background-color: #0078d7; color: white; font-weight: bold; padding: 8px;")
-        self.i_b.clicked.connect(self.betoltes); self.e_b.clicked.connect(self.mentes_ex); self.p_b.clicked.connect(self.show_print)
-        t_b.addWidget(self.mod_b); t_b.addWidget(self.i_b); t_b.addWidget(self.e_b); t_b.addStretch(); t_b.addWidget(self.p_b); l.addLayout(t_b)
+        self.i_b.clicked.connect(self.betoltes); self.i_fix.clicked.connect(self.betoltes_fix_excelbol); self.e_b.clicked.connect(self.mentes_ex); self.p_b.clicked.connect(self.show_print)
+        t_b.addWidget(self.mod_b); t_b.addWidget(self.i_b); t_b.addWidget(self.i_fix); t_b.addWidget(self.e_b); t_b.addStretch(); t_b.addWidget(self.p_b); l.addLayout(t_b)
 
         self.s = QSplitter(Qt.Orientation.Horizontal)
         l_p = QWidget(); l_l = QVBoxLayout(l_p); self.s_l = QLineEdit(); self.s_l.setPlaceholderText("Keresés..."); l_l.addWidget(self.s_l)
@@ -306,6 +307,18 @@ class TuraApp(QMainWindow):
                     for _, r in group.iterrows(): QTreeWidgetItem(p_item, ["", r['Tetel'], f"{r['Db']:.0f}", f"{r['Kg']:.1f} kg", ""])
                 self.left_tree.sortByColumn(0, Qt.SortOrder.AscendingOrder)
             except Exception as e: QMessageBox.critical(self, "Hiba", str(e))
+
+    def betoltes_fix_excelbol(self):
+        from PyQt6.QtWidgets import QFileDialog, QMessageBox
+        import mod_fix_import # Az új modulod
+
+        fajl, _ = QFileDialog.getOpenFileName(self, "Fix Excel megnyitása", self.alap_m, "Excel fájlok (*.xlsx)")
+        if fajl:
+            siker, uzenet = mod_fix_import.FixImportMotor.importalas_es_megjelenites(self, fajl)
+            if not siker:
+                QMessageBox.warning(self, "Hiba", uzenet)
+            else:
+                if hasattr(self, 'szures_bal'): self.szures_bal(self.s_l.text())
 
     def szures_bal(self, t):
         for i in range(self.left_tree.topLevelItemCount()): self.left_tree.topLevelItem(i).setHidden(t.lower() not in self.left_tree.topLevelItem(i).text(0).lower())

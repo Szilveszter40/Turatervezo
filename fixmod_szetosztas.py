@@ -118,14 +118,31 @@ class SzetosztasDialog(QDialog):
                 })
 
     def is_active_on_week(self, intenz, het_idx):
+        # het_idx: 0 = Mind, 1 = Páratlan, 2 = Páros
         if het_idx == 0: return True
+    
         s = str(intenz).upper()
-        if "HETI" in s and "2" not in s: return True
-        p = het_idx in [1, 3]
-        if "2 HETI" in s or "KÉTHETI" in s:
-            return p if ("PÁRATLAN" in s or "1" in s) else not p
-        if "HAVI" in s: return het_idx == 1
+    
+        # 1. HETI szállítás: minden héten ott van
+        if "HETI" in s and "2" not in s and "KÉTHETI" not in s: 
+           return True
+    
+        # 2. PÁRATLAN hét (a ComboBox 1-es indexe)
+        if het_idx == 1:
+           # Akkor aktív, ha a névben benne van a PÁRATLAN, az 1-es, vagy az 1+3
+           return any(x in s for x in ["PÁRATLAN", "1", "1+3"])
+    
+        # 3. PÁROS hét (a ComboBox 2-es indexe)
+        if het_idx == 2:
+           # Akkor aktív, ha a névben benne van a PÁROS, a 2-es, vagy a 2+4
+           return any(x in s for x in ["PÁROS", "2", "2+4"])
+    
+        # Havi szállítás: döntsd el, melyik héten jelenjen meg (pl. mindig a páratlanon)
+        if "HAVI" in s: 
+           return het_idx == 1
+
         return False
+
 
     def terkep_frissitese(self):
         from PyQt6.QtGui import QColor

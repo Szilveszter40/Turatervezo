@@ -1,5 +1,7 @@
 import sys
 import subprocess
+import tervezo_stabil 
+import fix_tervezo
 from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLabel, QFrame
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFont, QColor
@@ -69,17 +71,18 @@ class TuraLauncher(QWidget):
         """
 
     def indit_napi(self):
-        subprocess.Popen([sys.executable, "tervezo_stabil.py"])
+        # Feltételezve, hogy a tervezo_stabil.py-ban MainWindow vagy hasonló az osztály neve
+        self.napi_ablak = tervezo_stabil.TuraApp() 
+        self.napi_ablak.show()
         self.close()
 
     def indit_fix(self):
-        # Ha még nincs meg a fájl, létrehozzuk üresen
-        with open("fix_tervezo.py", "a"): pass
-        subprocess.Popen([sys.executable, "fix_tervezo.py"])
+        # Itt is az osztályt hívjuk meg közvetlenül
+        self.fix_ablak = fix_tervezo.FixTervezoApp() 
+        self.fix_ablak.show()
         self.close()
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     ex = TuraLauncher()
     ex.show()
     sys.exit(app.exec())
-
