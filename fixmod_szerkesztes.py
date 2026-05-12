@@ -607,25 +607,6 @@ class KeziszerkesztoAblak(QDialog):
 
                 t_nev_aktualis = root.text(0).replace("🚚 ", "").strip()
 
-                # --- 1. ALAP SÚLY KERESÉSE ---
-                alap_suly_atlag = 0
-                t_nev_aktualis = root.text(0).replace("🚚 ", "").strip()
-                
-                # Végigmegyünk a partnereken, és keressük a túra eredeti átlagsúlyát
-                for j in range(root.childCount()):
-                    p_adat = root.child(j).data(1, Qt.ItemDataRole.UserRole)
-                    if p_adat and p_adat.get('Statusz') == 'RÉGI':
-                        # Megnézzük, hogy ez a partner eredetileg ehhez a túrához tartozott-e
-                        p_t_eredeti = str(p_adat.get('Túra', '')).replace('.0', '').strip()
-                        
-                        # Ha van egyezés, kinyerjük az Alap_B-t (ami a túra átlaga)
-                        if p_t_eredeti == t_nev_aktualis:
-                            s_ertek = float(p_adat.get('Alap_B', 0) or 0)
-                            # Csak akkor fogadjuk el, ha reális túrasúly (pl. > 100 kg)
-                            if s_ertek > 100:
-                                alap_suly_atlag = s_ertek
-                                break # Megvan az alap, mehetünk a következő lépésre
-
                 # --- 1. ALAP ÁTLAGOK KINYERÉSE (Megálló és Súly) ---
                 alap_megallo_atlag = 0
                 alap_suly_atlag = 0
@@ -635,47 +616,50 @@ class KeziszerkesztoAblak(QDialog):
                     if p_adat and 'Atlag_Megallo' in p_adat:
                         p_t_eredeti = str(p_adat.get('Túra', '')).replace('.0', '').strip()
                         if p_t_eredeti == t_nev_aktualis:
-                            # Megálló átlag (B oszlop)
                             alap_megallo_atlag = float(p_adat['Atlag_Megallo'])
-                            # Súly átlag (G oszlop - Alap_B-ként mentve a szétosztásnál)
-                            # Feltételezzük, hogy az 'Alap_B' a régi partnereknél a túra átlaga volt mentéskor
                             alap_suly_atlag = float(p_adat.get('Alap_B', 0))
                             break
 
-                # --- 2. VÁLTOZÁSOK SZÁMÍTÁSA (Csak az ÚJ partnerek alapján) ---
-                uj_megallok_szama = 0
-                uj_partnerek_sulya = 0
+                # --- 2. VÁLTOZÁSOK SZÁMÍTÁSA ---
+                plusz_megallo_ertek = 0 # Az átlagot növelő érték
+                plusz_suly_ertek = 0    # A heti súlyt növelő érték
                 
-                # Ha alap_atlag 0, akkor mindenki számít, ha nem 0, akkor csak az ÚJAK
                 for j in range(root.childCount()):
                     item = root.child(j)
                     if item.data(0, Qt.ItemDataRole.UserRole) == "PARTNER":
                         p_adat = item.data(1, Qt.ItemDataRole.UserRole)
                         is_uj = str(p_adat.get('Statusz', '')).upper() == 'ÚJ'
                         
-                        if alap_megallo_atlag == 0: # Új manuális túra esetén mindenki számít
-                            uj_megallok_szama += 1
-                            uj_partnerek_sulya += float(p_adat.get('Alap_B', 0))
-                        elif is_uj: # Régi túra esetén csak az ÚJ partner módosít
-                            uj_megallok_szama += 1
-                            uj_partnerek_sulya += float(p_adat.get('Alap_B', 0))
+                        # Kinyerjük a partner egyéni szorzóját (Heti=1.0, Havi=0.23, stb.)
+                        # Ha új, akkor fixen 1.0
+                        szorzo = float(p_adat.get('Atlag_Egyeni', 1.0))
+                        p_suly = float(p_adat.get('Alap_B', 0))
+
+                        if alap_megallo_atlag == 0:
+                            # TELJESEN ÚJ (Manuális) túra: mindenki súlyozva számít bele
+                            plusz_megallo_ertek += szorzo
+                            plusz_suly_ertek += (p_suly * szorzo)
+                        elif is_uj:
+                            # RÉGI túra: csak az ÚJ partnerek módosítják az alapot (súlyozva)
+                            plusz_megallo_ertek += szorzo
+                            plusz_suly_ertek += (p_suly * szorzo)
 
                 # --- 3. MEGJELENÍTÉS FRISSÍTÉSE ---
                 
-                # A MEGÁLLÓKHOZ NEM NYÚLTUNK (maradt a korábbi működő logika)
-                vegleges_megallo = int(round(alap_megallo_atlag + uj_megallok_szama))
+                # Megállók (Kerekítve, ahogy kérted)
+                vegleges_megallo = int(round(alap_megallo_atlag + plusz_megallo_ertek))
                 root.setText(1, f"Átlag: {vegleges_megallo} cím")
 
-                # A SÚLY most már követi ugyanezt az elvet
-                # Régi túra átlagsúlya + az új partnerek súlya
-                vegleges_suly = int(round(alap_suly_atlag + uj_partnerek_sulya))
-                root.setText(2, f"Össz: {vegleges_suly} kg")
+                # Súly (A heti várható súlyterhelés)
+                vegleges_suly = int(round(alap_suly_atlag + plusz_suly_ertek))
+                root.setText(2, f"Várható: {vegleges_suly} kg")
 
-                # Színezés a megálló alapján (Változatlan)
+                # Színezés a megálló alapján
                 if vegleges_megallo > 25:
                     root.setForeground(1, QColor("#e74c3c"))
                 else:
                     root.setForeground(1, QColor("black"))
+
 
     def mentes_es_vissza(self):
         try:

@@ -11,6 +11,18 @@ from PyQt6.QtGui import QColor
 from fixmod_konfig import szuper_tisztito, megjelenitesre_vago, suly_szamolo
 from fixmod_adatkezeles import intenzitas_szamolo
 
+def get_gyakorisagi_szorzo(intenzitas_szoveg):
+    s = str(intenzitas_szoveg).upper()
+    if "HETI" in s and "2" not in s and "KÉTHETI" not in s:
+        return 1.0
+    if "2 HETI" in s or "KÉTHETI" in s or "2/4" in s or "1/3" in s:
+        return 0.5
+    if "HAVI" in s or "4 HETI" in s:
+        return 0.23
+    # Ha ismeretlen vagy nagyon ritka
+    return 0.1
+
+
 class SzetosztasDialog(QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -75,11 +87,19 @@ class SzetosztasDialog(QDialog):
         c_r = self.parent.r_cols
         df_r = self.parent.df_regi_raw
 
+        # --- SEGÉDFÜGGVÉNY A SZORZÓHOZ (Helyben definiálva) ---
+        def get_szorzo(intenz):
+            s = str(intenz).upper()
+            if "HETI" in s and "2" not in s and "KÉTHETI" not in s: return 1.0
+            if "2 HETI" in s or "KÉTHETI" in s: return 0.5
+            if "HAVI" in s: return 0.23
+            return 0.4 # Alapértelmezett, ha bizonytalan
+
         # --- 1. TÚRA STATISZTIKA (VÁLTOZATLAN) ---
         for (t_nev, datum), nap_adatok in df_r.groupby([df_r.columns[c_r['t']], df_r.columns[c_r['d']]]):
             t_nev = str(t_nev).replace('.0', '').strip()
             if not t_nev or t_nev == "nan": continue
-            
+             
             if t_nev not in self.tura_statisztika:
                 self.tura_statisztika[t_nev] = {'napok': 0, 'napi_osszsulyok': [], 'napi_megallok': []}
            
@@ -97,7 +117,7 @@ class SzetosztasDialog(QDialog):
             self.tura_statisztika[t]['atlag_cim'] = round(sum(self.tura_statisztika[t]['napi_megallok']) / n)
             self.tura_statisztika[t]['atlag_suly'] = sum(self.tura_statisztika[t]['napi_osszsulyok']) / n
 
-         # --- 2. RÉGI PARTNEREK (Átlagolt és kerekített tételekkel) ---
+        # --- 2. RÉGI PARTNEREK (Átlagolt tételek + SZORZÓ hozzáadása) ---
         group_cols = df_r.apply(lambda x: (szuper_tisztito(megjelenitesre_vago(str(x.iloc[c_r['p']]))), 
                                           str(x.iloc[c_r['t']]).replace('.0', '').strip()), axis=1)
         
@@ -106,53 +126,67 @@ class SzetosztasDialog(QDialog):
             irsz = self.irsz_kinyeres_pontos(nyers_p)
             alkalmak = max(1, group.iloc[:, c_r['d']].nunique())
 
-            # 1. LÉPÉS: LÉTREHOZZUK a gyűjtőt (Ez hiányzott!)
             temp_tetelek = {} 
-
-            # 2. LÉPÉS: FELTÖLTJÜK a gyűjtőt a csoport sorai alapján
             for _, sor in group.iterrows():
                 t_nev, t_db, t_s = suly_szamolo(sor.iloc[c_r['f']], sor.iloc[c_r['m']])
                 if t_nev not in temp_tetelek:
                     temp_tetelek[t_nev] = {'ossz_db': 0}
                 temp_tetelek[t_nev]['ossz_db'] += t_db
 
-            # 3. LÉPÉS: ÁTLAGOLÁS ÉS SPECIÁLIS KEREKÍTÉS (Most már nem lesz aláhúzva!)
             partner_tetelei = []
             osszsuly_atlag = 0
             for nev, adat in temp_tetelek.items():
                 nyers_atlag = adat['ossz_db'] / alkalmak
-                
-                # Speciális kerekítés: 0-1 között 1, amúgy 0.3 felett felfelé
                 egesz_resz = int(nyers_atlag)
                 tort_resz = nyers_atlag - egesz_resz
                 
-                if 0 < nyers_atlag < 1:
-                    vegleges_db = 1
-                elif tort_resz > 0.3:
-                    vegleges_db = egesz_resz + 1
-                else:
-                    vegleges_db = egesz_resz
+                if 0 < nyers_atlag < 1: vegleges_db = 1
+                elif tort_resz > 0.3: vegleges_db = egesz_resz + 1
+                else: vegleges_db = egesz_resz
 
-                # Súly újraszámolása a kerekített db alapján
                 _, _, s_atlag = suly_szamolo(nev, vegleges_db)
                 osszsuly_atlag += s_atlag
-                
-                partner_tetelei.append({
-                    'nev': nev,
-                    'db': int(vegleges_db),
-                    'suly': int(s_atlag)
-                })
+                partner_tetelei.append({'nev': nev, 'db': int(vegleges_db), 'suly': int(s_atlag)})
 
-            # Adatok mentése a listába
+            # GYAKORISÁG SZÁMÍTÁSA
+            intenz = intenzitas_szamolo(group.iloc[:, c_r['d']])
+            szorzo = get_szorzo(intenz)
+
             self.minden_partner_adat.append({
                 'Túra': t_szam, 
                 'Partner': nyers_p, 
                 'Statusz': 'RÉGI',
-                'Intenzitás': intenzitas_szamolo(group.iloc[:, c_r['d']]),
+                'Intenzitás': intenz,
+                'Atlag_Egyeni': szorzo, # Ez a heti "megálló-értéke"
                 'Alap_B': osszsuly_atlag,
                 'IRSZ': irsz,
                 'Tetel': partner_tetelei 
             })
+
+            if irsz and t_szam not in ["KIOSZTATLAN", "nan", ""]:
+                self.tura_irsz_lefedettseg[str(irsz)] = str(t_szam)
+
+        # --- 3. ÚJ PARTNEREK (VÁLTOZATLAN + SZORZÓ) ---
+        if hasattr(self.parent, 'df_uj_raw'):
+            df_u = self.parent.df_uj_raw
+            c_u = self.parent.u_cols
+            for p_nev, group in df_u.groupby(df_u.columns[c_u.get('p', 0)]):
+                uj_tetelek = []
+                for _, row in group.iterrows():
+                    t_nev, t_db, t_s = suly_szamolo(row.iloc[c_u['f']], row.iloc[c_u['m']])
+                    uj_tetelek.append({'Megnevezés': t_nev, 'Mennyiség': t_db, 'Súly': t_s})
+                
+                p_cim = str(group.iloc[0, c_u['c']])
+                irsz = self.irsz_kinyeres_pontos(str(p_nev)) or self.irsz_kinyeres_pontos(p_cim) or p_cim[:4]
+
+                self.minden_partner_adat.append({
+                    'Túra': 'KIOSZTATLAN', 'Partner': str(p_nev), 'Cim': p_cim, 'Statusz': 'ÚJ',
+                    'Intenzitás': str(group.iloc[0, c_u['i']]), 
+                    'Atlag_Egyeni': 1.0, # Az ÚJ partner mindig 1-et ér, mert biztos jön
+                    'Alap_B': sum(p['Súly'] for p in uj_tetelek), 
+                    'IRSZ': str(irsz).strip(),
+                    'Tetel': uj_tetelek
+                })
 
             if irsz and t_szam not in ["KIOSZTATLAN", "nan", ""]:
                 self.tura_irsz_lefedettseg[str(irsz)] = str(t_szam)
