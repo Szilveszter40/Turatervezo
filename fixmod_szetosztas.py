@@ -71,11 +71,11 @@ class SzetosztasDialog(QDialog):
         self.minden_partner_adat = []
         self.tura_statisztika = {}
         self.tura_irsz_lefedettseg = {}
+        
         c_r = self.parent.r_cols
         df_r = self.parent.df_regi_raw
 
-        # --- 1. TÚRA STATISZTIKA (Napi összsúlyok átlagolása) ---
-        # Csoportosítás túra és dátum szerint
+        # --- 1. TÚRA STATISZTIKA (VÁLTOZATLAN) ---
         for (t_nev, datum), nap_adatok in df_r.groupby([df_r.columns[c_r['t']], df_r.columns[c_r['d']]]):
             t_nev = str(t_nev).replace('.0', '').strip()
             if not t_nev or t_nev == "nan": continue
@@ -92,64 +92,64 @@ class SzetosztasDialog(QDialog):
             self.tura_statisztika[t_nev]['napi_osszsulyok'].append(napi_suly)
             self.tura_statisztika[t_nev]['napi_megallok'].append(nap_adatok.iloc[:, c_r['p']].nunique())
 
-        # Átlagok véglegesítése: (Napi összsúlyok összege / Napok száma)
         for t in self.tura_statisztika:
             n = max(1, self.tura_statisztika[t]['napok'])
             self.tura_statisztika[t]['atlag_cim'] = round(sum(self.tura_statisztika[t]['napi_megallok']) / n)
             self.tura_statisztika[t]['atlag_suly'] = sum(self.tura_statisztika[t]['napi_osszsulyok']) / n
 
-        # IRSZ TÉRKÉP FELTÖLTÉSE (Régiek alapján)
-        self.tura_irsz_lefedettseg = {}
-        group_cols = df_r.apply(lambda x: (
-            szuper_tisztito(megjelenitesre_vago(str(x.iloc[c_r['p']]))), 
-            str(x.iloc[c_r['t']]).replace('.0', '').strip()
-        ), axis=1)
-
-        for (p_nev, t_szam), group in df_r.groupby(group_cols):
+        # --- 2. RÉGI PARTNEREK (KIEGÉSZÍTVE TÉTEL GYŰJTÉSSEL) ---
+        group_cols = df_r.apply(lambda x: (szuper_tisztito(megjelenitesre_vago(str(x.iloc[c_r['p']]))), 
+                                          str(x.iloc[c_r['t']]).replace('.0', '').strip()), axis=1)
+        
+        for (p_nev_tiszta, t_szam), group in df_r.groupby(group_cols):
             nyers_p = str(group.iloc[0, c_r['p']])
             irsz = self.irsz_kinyeres_pontos(nyers_p)
+            
             if irsz and t_szam not in ["KIOSZTATLAN", "nan", ""]:
                 self.tura_irsz_lefedettseg[str(irsz)] = str(t_szam)
 
+            # Tételek kigyűjtése (EZ KELL A MENTÉSHEZ)
+            partner_tetelei = []
+            for _, sor in group.iterrows():
+                t_nev, t_db, t_s = suly_szamolo(sor.iloc[c_r['f']], sor.iloc[c_r['m']])
+                partner_tetelei.append({
+                    'Megnevezés': t_nev,
+                    'Mennyiség': t_db,
+                    'Súly': t_s
+                })
 
+            alkalmak = max(1, group.iloc[:, c_r['d']].nunique())
             self.minden_partner_adat.append({
-                'Túra': t_szam, 'Partner': nyers_p, 'Statusz': 'RÉGI',
+                'Túra': t_szam, 
+                'Partner': nyers_p, 
+                'Statusz': 'RÉGI',
                 'Intenzitás': intenzitas_szamolo(group.iloc[:, c_r['d']]),
-                'Alap_B': (sum([suly_szamolo(r.iloc[c_r['f']], r.iloc[c_r['m']])[2] for _, r in group.iterrows()]) / 
-                           max(1, group.iloc[:, c_r['d']].nunique())),
-                'IRSZ': irsz
+                'Alap_B': sum(p['Súly'] for p in partner_tetelei) / alkalmak,
+                'IRSZ': irsz,
+                'Tetel': partner_tetelei # Elmentjük a JSON mentéshez
             })
 
-        # ÚJ PARTNEREK BEOLVASÁSA (Címmel együtt)
+        # --- 3. ÚJ PARTNEREK (KIEGÉSZÍTVE TÉTEL GYŰJTÉSSEL) ---
         if hasattr(self.parent, 'df_uj_raw'):
             df_u = self.parent.df_uj_raw
-            c_u = self.parent.u_cols  # CSAK c_u-t használunk itt!
-            
-            for _, row in df_u.iterrows():
-                # Biztonságos indexelés: ha nincs megadva, alapértelmezett indexeket használunk
-                p_nev = str(row.iloc[c_u.get('p', 0)])
-                p_cim = str(row.iloc[c_u.get('c', 1)]) if len(row) > 1 else ""
+            c_u = self.parent.u_cols
+            for p_nev, group in df_u.groupby(df_u.columns[c_u.get('p', 0)]):
+                uj_tetelek = []
+                for _, row in group.iterrows():
+                    t_nev, t_db, t_s = suly_szamolo(row.iloc[c_u['f']], row.iloc[c_u['m']])
+                    uj_tetelek.append({'Megnevezés': t_nev, 'Mennyiség': t_db, 'Súly': t_s})
                 
-                # Súlyszámítás javítása: c_u-t használunk c_r helyett!
-                f_val = row.iloc[c_u.get('f', 2)] if len(row) > 2 else ""
-                m_val = row.iloc[c_u.get('m', 3)] if len(row) > 3 else 1
-                
-                _, _, s = suly_szamolo(f_val, m_val)
-
-                # IRSZ kinyerése
-                irsz = self.irsz_kinyeres_pontos(p_nev)
-                if not irsz:
-                    irsz = self.irsz_kinyeres_pontos(p_cim)
+                p_cim = str(group.iloc[0, c_u['c']])
+                irsz = self.irsz_kinyeres_pontos(str(p_nev)) or self.irsz_kinyeres_pontos(p_cim) or p_cim[:4]
 
                 self.minden_partner_adat.append({
-                    'Túra': 'KIOSZTATLAN', 
-                    'Partner': p_nev, 
-                    'Cim': p_cim, 
-                    'Statusz': 'ÚJ', 
-                    'Intenzitás': 'HETI',
-                    'Alap_B': s, 
-                    'IRSZ': str(irsz)
+                    'Túra': 'KIOSZTATLAN', 'Partner': str(p_nev), 'Cim': p_cim, 'Statusz': 'ÚJ',
+                    'Intenzitás': str(group.iloc[0, c_u['i']]), 
+                    'Alap_B': sum(p['Súly'] for p in uj_tetelek), 
+                    'IRSZ': str(irsz).strip(),
+                    'Tetel': uj_tetelek # Elmentjük a JSON mentéshez
                 })
+
 
     def is_active_on_week(self, intenzitas, het_idx):
         if het_idx == 0: return True
@@ -254,10 +254,52 @@ class SzetosztasDialog(QDialog):
         layout.addLayout(btns)
 
     def export_to_excel(self):
-        path, _ = QFileDialog.getSaveFileName(self, "Mentés", "Tura_Terv.xlsx", "Excel (*.xlsx)")
+        # 1. Frissítjük a nézetet, hogy mindenki a legfrissebb túrájában legyen
+        self.terkep_frissitese() 
+
+        path, _ = QFileDialog.getSaveFileName(self, "Exportálás", "Tura_Terv_Reszletes.xlsx", "Excel (*.xlsx)")
         if path:
-            pd.DataFrame(self.minden_partner_adat).to_excel(path, index=False)
-            QMessageBox.information(self, "Siker", "Excel mentve!")
+            try:
+                # Készítünk egy listát a mentéshez
+                export_lista = []
+                for p in self.minden_partner_adat:
+                    # Alapadatok másolása
+                    rekord = copy.deepcopy(p)
+                    
+                    # Tételek kezelése: ha van 'Tetel' lista, JSON-né alakítjuk a mentéshez
+                    # Ez kritikus a másik modulod számára (Tetel_JSON_FIX oszlop)
+                    if 'Tetel' in rekord:
+                        rekord['Tetel_JSON_FIX'] = json.dumps(rekord['Tetel'], ensure_ascii=False)
+                        # Kiszámoljuk az összesített darabszámot is
+                        rekord['Ossz_DB'] = sum([float(t.get('Mennyiseg', 0)) for t in rekord['Tetel'] if isinstance(t, dict)])
+                    else:
+                        rekord['Tetel_JSON_FIX'] = "[]"
+                        rekord['Ossz_DB'] = 0
+
+                    export_lista.append(rekord)
+
+                df_export = pd.DataFrame(export_lista)
+
+                # Meghatározzuk a kimeneti oszlopok sorrendjét
+                # Úgy állítottam be, hogy a "Végleges Túra" legyen az első
+                oszlop_sorrend = [
+                    'Túra', 'Partner', 'Cim', 'Statusz', 'Intenzitás', 
+                    'Alap_B', 'Ossz_DB', 'IRSZ', 'Tetel_JSON_FIX'
+                ]
+                
+                # Csak azokat az oszlopokat tartjuk meg, amik tényleg léteznek
+                meglevo_oszlopok = [o for o in oszlop_sorrend if o in df_export.columns]
+                df_export = df_export[meglevo_oszlopok]
+                
+                # Mentés (sheet_name='Tura_Terv', hogy az importálód felismerje)
+                with pd.ExcelWriter(path) as writer:
+                    df_export.to_excel(writer, sheet_name='Tura_Terv', index=False)
+                
+                QMessageBox.information(self, "Siker", f"Sikeres mentés: {len(df_export)} sor.")
+            except Exception as e:
+                import traceback
+                print(traceback.format_exc())
+                QMessageBox.critical(self, "Hiba", f"Mentési hiba: {e}")
 
     def excel_beolvasas(self):
         path, _ = QFileDialog.getOpenFileName(self, "Import", "", "Excel (*.xlsx)")
