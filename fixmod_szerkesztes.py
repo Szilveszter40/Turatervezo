@@ -394,12 +394,13 @@ class KeziszerkesztoAblak(QDialog):
         
         p_item.setChildIndicatorPolicy(QTreeWidgetItem.ChildIndicatorPolicy.ShowIndicator)
 
-        # TÉTELEK LISTÁZÁSA
+        # TÉTELEK LISTÁZÁSA A JSON-BŐL
         tetelek = p.get('Tetel', [])
         if not tetelek:
             json_adat = p.get('Tetel_JSON_FIX', '')
             if isinstance(json_adat, str) and json_adat.strip():
                 try:
+                    # Itt olvassuk be a JSON-t az Excel cellából
                     tetelek = json.loads(json_adat)
                 except:
                     tetelek = []
@@ -407,23 +408,26 @@ class KeziszerkesztoAblak(QDialog):
         if not tetelek:
             t_item = QTreeWidgetItem(p_item)
             t_item.setText(0, f"   📍 {p_cim}")
-            t_item.setForeground(0, QColor("#95a5a6"))
             t_item.setData(0, Qt.ItemDataRole.UserRole, "TETEL")
-            # JAVÍTÁS: Legyen engedélyezve és kijelölhető, de ne legyen Drop (befogadás) célpont
-            t_item.setFlags(Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsSelectable) 
         else:
             for t_adat in tetelek:
                 t_item = QTreeWidgetItem(p_item)
-                t_nev = t_adat.get('nev', 'Ismeretlen termék')
-                t_db = t_adat.get('db', 0)
-                t_suly = t_adat.get('suly', 0)
+                
+                # --- JAVÍTÁS A JSON KULCSOKHOZ ---
+                # Megnézzük a 'nev' kulcsot, ha nincs, a 'Megnevezés'-t (ÚJ partnerekhez)
+                t_nev = t_adat.get('nev') or t_adat.get('Megnevezés') or 'Ismeretlen termék'
+                
+                # Megnézzük a 'db' kulcsot, ha nincs, a 'Mennyiség'-et
+                t_db = t_adat.get('db') or t_adat.get('Mennyiség') or 0
+                
+                # Megnézzük a 'suly' kulcsot, ha nincs, a 'Súly'-t
+                t_suly = t_adat.get('suly') or t_adat.get('Súly') or 0
                 
                 t_item.setText(0, f"   📦 {t_nev}")
                 t_item.setText(1, f"{t_db} db")
-                t_item.setText(2, f"{t_suly} kg")
-                t_item.setForeground(0, QColor("#2c3e50"))
+                t_item.setText(2, f"{int(t_suly)} kg")
+                
                 t_item.setData(0, Qt.ItemDataRole.UserRole, "TETEL")
-                # JAVÍTÁS: Ugyanaz itt is (IsEnabled + IsSelectable)
                 t_item.setFlags(Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsSelectable)
 
         return p_item
@@ -494,31 +498,43 @@ class KeziszerkesztoAblak(QDialog):
         # A két panel (fa) és a hozzájuk tartozó kijelölt túrák feldolgozása
         for tree, kijeloltek in [(self.tree_bal, kijelolt_bal), (self.tree_jobb, kijelolt_jobb)]:
             for t_nev in kijeloltek:
+                # --- ÁTLAG ÉS SÚLY KISZÁMÍTÁSA ---
+                # Megkeressük a túrához tartozó partnereket az összesített súlyhoz és az átlaghoz
+                tura_partnerei = [p for p in friss_lista if str(p.get('Túra', '')).replace('.0', '').strip() == t_nev.strip()]
+                
+                atlag_megallo = 0
+                pillanatnyi_suly = 0
+                if tura_partnerei:
+                    # Az átlag megállót az első partnertől vesszük (mert az Excel mentésnél mindenkié ugyanaz)
+                    atlag_megallo = tura_partnerei[0].get('Atlag_Megallo', 0)
+                    # A pillanatnyi súlyt pedig összeadjuk
+                    pillanatnyi_suly = sum(float(p.get('Alap_B', 0)) for p in tura_partnerei)
+
                 # Létrehozzuk a TÚRA (ROOT) elemet
                 root = QTreeWidgetItem(tree)
                 root.setText(0, f"🚚 {t_nev}")
+                # Itt állítjuk be az átlagot és a súlyt az oszlopokba:
+                root.setText(1, f"Átlag: {atlag_megallo} cím")
+                root.setText(2, f"{int(pillanatnyi_suly)} kg")
+                
                 root.setData(0, Qt.ItemDataRole.UserRole, "TURA")
-                # Drop engedélyezése a túrára
                 root.setFlags(Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsSelectable | Qt.ItemFlag.ItemIsDropEnabled)
                 
-                # Színek beállítása
-                for col in range(3): # Feltételezve hogy 3 oszlopod van
+                # Színek és stílus
+                for col in range(3):
                     root.setBackground(col, QColor("#dfe6e9"))
+                
+                # Piros szín, ha a pillanatnyi megállószám (nem az átlag!) több mint 25
+                if len(tura_partnerei) > 25:
+                    root.setForeground(0, QColor("#e74c3c"))
 
-                # Partnerek szűrése és hozzáadása ehhez a túrához
-                for p in friss_lista:
-                    # 1. Heti szűrés (ha nem a 0. 'Összes' index van kiválasztva)
+                # Partnerek hozzáadása (VÁLTOZATLAN)
+                for p in tura_partnerei:
+                    # 1. Heti szűrés
                     if het_idx != 0 and not self.is_active_on_week(p.get('Intenz', ''), het_idx):
                         continue
-                    
-                    # 2. Ellenőrizzük, hogy a partner ehhez a túrához tartozik-e
-                    p_t = str(p.get('Túra', 'KIOSZTATLAN')).replace('.0', '').strip()
-                    
-                    if p_t == t_nev.strip():
-                        # A partner_sor_letrehozas a 'root' (az aktuális túra) alá teszi a partnert
-                        self.partner_sor_letrehozas(root, p)
+                    self.partner_sor_letrehozas(root, p)
                 
-                # Alapból ne legyen lenyitva
                 root.setExpanded(False)
         
         # Súlyok újraszámolása a betöltés végén
@@ -530,9 +546,40 @@ class KeziszerkesztoAblak(QDialog):
         for tree in [self.tree_bal, self.tree_jobb]:
             for i in range(tree.topLevelItemCount()):
                 root = tree.topLevelItem(i)
+                if root.data(0, Qt.ItemDataRole.UserRole) != "TURA":
+                    continue
+
+                # 1. Kinyerjük az Excel szerinti ALAP ÁTLAGOT (B oszlop értéke)
+                # Ezt az első olyan partnertől vesszük, akinek van 'Atlag_Megallo' adata
+                alap_atlag = 0
+                for j in range(root.childCount()):
+                    p_adat = root.child(j).data(1, Qt.ItemDataRole.UserRole)
+                    if p_adat and 'Atlag_Megallo' in p_adat:
+                        alap_atlag = float(p_adat['Atlag_Megallo'])
+                        break
+
+                # 2. Kiszámoljuk a változást: csak az ÚJ partnereket adjuk hozzá
+                # Feltételezzük: a régi partnerek már benne vannak az 'alap_atlag'-ban
+                uj_megallok_szama = sum(1 for j in range(root.childCount()) 
+                                        if root.child(j).data(0, Qt.ItemDataRole.UserRole) == "PARTNER" 
+                                        and str(root.child(j).data(1, Qt.ItemDataRole.UserRole).get('Statusz', '')).upper() == 'ÚJ')
+
+                # A végleges szám: Excel Átlag + Új partnerek száma
+                vegleges_megallo = int(round(alap_atlag + uj_megallok_szama))
+                
+                # Megjelenítés a középső oszlopban
+                root.setText(1, f"Átlag: {vegleges_megallo} cím")
+
+                # --- SÚLY RÉSZ (VÁLTOZATLAN) ---
                 total = sum(root.child(j).data(1, Qt.ItemDataRole.UserRole).get('Alap_B', 0) 
                             for j in range(root.childCount()) if root.child(j).data(0, Qt.ItemDataRole.UserRole) == "PARTNER")
                 root.setText(2, f"Össz: {int(total)} kg")
+
+                # Színezés
+                if vegleges_megallo > 25:
+                    root.setForeground(1, QColor("#e74c3c"))
+                else:
+                    root.setForeground(1, QColor("black"))
 
     def mentes_es_vissza(self):
         try:
