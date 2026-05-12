@@ -24,33 +24,89 @@ class DraggableTree(QTreeWidget):
 
     def show_context_menu(self, position):
         item = self.itemAt(position)
-        if not item or item.data(0, Qt.ItemDataRole.UserRole) != "TURA":
+        if not item:
             return
 
         from PyQt6.QtWidgets import QMenu
         menu = QMenu()
-        delete_action = menu.addAction("Túra törlése")
-        
-        # Csak akkor engedjük a kattintást, ha nincs benne partner
-        is_empty = item.childCount() == 0
-        delete_action.setEnabled(is_empty)
-        
-        if not is_empty:
-            delete_action.setText("Túra törlése (nem üres!)")
+        user_role = item.data(0, Qt.ItemDataRole.UserRole)
 
-        action = menu.exec(self.viewport().mapToGlobal(position))
-        
-        if action == delete_action and is_empty:
-            # Törlés a fából
-            root = self.invisibleRootItem()
-            (item.parent() or root).removeChild(item)
+        # --- 1. TÚRA TÖRLÉSE (A te meglévő kódod) ---
+        if user_role == "TURA":
+            delete_action = menu.addAction("Túra törlése")
+            is_empty = item.childCount() == 0
+            delete_action.setEnabled(is_empty)
+            if not is_empty:
+                delete_action.setText("Túra törlése (nem üres!)")
+
+            action = menu.exec(self.viewport().mapToGlobal(position))
             
-            # Frissítés hívása, ha szükséges
-            main_win = self.window()
-            while main_win and not hasattr(main_win, 'suly_frissites'):
-                main_win = main_win.parent()
-            if main_win:
-                main_win.suly_frissites()    
+            if action == delete_action and is_empty:
+                root = self.invisibleRootItem()
+                (item.parent() or root).removeChild(item)
+                self._hiv_suly_frissites()
+
+        # --- 2. PARTNER TÖRLÉSE (Áthelyezés Töröltekbe) ---
+        elif user_role == "PARTNER":
+            move_action = menu.addAction("🗑 Partner törlése (Áthelyezés)")
+            action = menu.exec(self.viewport().mapToGlobal(position))
+            
+            if action == move_action:
+                self.partner_athelyezese_toroltekbe(item)
+
+    def _hiv_suly_frissites(self):
+        """Segédfüggvény a súlyfrissítés eléréséhez"""
+        main_win = self.window()
+        while main_win and not hasattr(main_win, 'suly_frissites'):
+            parent = main_win.parent()
+            if not parent: break
+            main_win = parent
+        if main_win and hasattr(main_win, 'suly_frissites'):
+            main_win.suly_frissites()
+
+    def partner_athelyezese_toroltekbe(self, item):
+        # 1. Megkeressük, létezik-e már a "Töröltek" túra ebben a fában
+        toroltek_node = None
+        for i in range(self.topLevelItemCount()):
+            node = self.topLevelItem(i)
+            if "Töröltek" in node.text(0):
+                toroltek_node = node
+                break
+        
+        # 2. Ha nem találjuk, LÉTREHOZZUK és kényszerítjük a megjelenítést
+        if not toroltek_node:
+            toroltek_node = QTreeWidgetItem(self) # Közvetlenül a fához adjuk
+            toroltek_node.setText(0, "🚚 Töröltek")
+            toroltek_node.setText(1, "Átlag: 0 cím")
+            toroltek_node.setText(2, "Össz: 0 kg")
+            toroltek_node.setData(0, Qt.ItemDataRole.UserRole, "TURA")
+            toroltek_node.setBackground(0, QColor("#dfe6e9"))
+            # Engedélyezzük, hogy lehessen bele pakolni
+            toroltek_node.setFlags(Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsSelectable | Qt.ItemFlag.ItemIsDropEnabled)
+            
+            # Kényszerített láthatóság
+            self.addTopLevelItem(toroltek_node)
+
+        # 3. ÁTHELYEZÉS
+        regi_szulo = item.parent()
+        if regi_szulo:
+            # Kivesszük a régi helyéről
+            index = regi_szulo.indexOfChild(item)
+            kivett_item = regi_szulo.takeChild(index)
+            # Betesszük az újba
+            toroltek_node.addChild(kivett_item)
+            
+            # Adat frissítése a partneren belül (hogy a mentés is tudja)
+            p_adat = kivett_item.data(1, Qt.ItemDataRole.UserRole)
+            if p_adat:
+                p_adat['Túra'] = "Töröltek"
+                kivett_item.setData(1, Qt.ItemDataRole.UserRole, p_adat)
+            
+            # Túra kinyitása, hogy látszódjon a törölt partner
+            toroltek_node.setExpanded(True)
+            
+            # Számok frissítése (hogy az eredeti túra súlya csökkenjen)
+            self._hiv_suly_frissites()
 
     def dragEnterEvent(self, event):
         if event.source():
@@ -549,47 +605,77 @@ class KeziszerkesztoAblak(QDialog):
                 if root.data(0, Qt.ItemDataRole.UserRole) != "TURA":
                     continue
 
-                # --- 1. ALAP ÁTLAG KINYERÉSE (Módosítva) ---
-                alap_atlag = 0
-                t_nev_aktualis = root.text(0).replace("🚚 ", "").strip() 
+                t_nev_aktualis = root.text(0).replace("🚚 ", "").strip()
+
+                # --- 1. ALAP SÚLY KERESÉSE ---
+                alap_suly_atlag = 0
+                t_nev_aktualis = root.text(0).replace("🚚 ", "").strip()
+                
+                # Végigmegyünk a partnereken, és keressük a túra eredeti átlagsúlyát
+                for j in range(root.childCount()):
+                    p_adat = root.child(j).data(1, Qt.ItemDataRole.UserRole)
+                    if p_adat and p_adat.get('Statusz') == 'RÉGI':
+                        # Megnézzük, hogy ez a partner eredetileg ehhez a túrához tartozott-e
+                        p_t_eredeti = str(p_adat.get('Túra', '')).replace('.0', '').strip()
+                        
+                        # Ha van egyezés, kinyerjük az Alap_B-t (ami a túra átlaga)
+                        if p_t_eredeti == t_nev_aktualis:
+                            s_ertek = float(p_adat.get('Alap_B', 0) or 0)
+                            # Csak akkor fogadjuk el, ha reális túrasúly (pl. > 100 kg)
+                            if s_ertek > 100:
+                                alap_suly_atlag = s_ertek
+                                break # Megvan az alap, mehetünk a következő lépésre
+
+                # --- 1. ALAP ÁTLAGOK KINYERÉSE (Megálló és Súly) ---
+                alap_megallo_atlag = 0
+                alap_suly_atlag = 0
                 
                 for j in range(root.childCount()):
                     p_adat = root.child(j).data(1, Qt.ItemDataRole.UserRole)
                     if p_adat and 'Atlag_Megallo' in p_adat:
-                        # Csak akkor vesszük át az átlagot, ha a partner eredeti túrája megegyezik a mostanival
                         p_t_eredeti = str(p_adat.get('Túra', '')).replace('.0', '').strip()
                         if p_t_eredeti == t_nev_aktualis:
-                            alap_atlag = float(p_adat['Atlag_Megallo'])
+                            # Megálló átlag (B oszlop)
+                            alap_megallo_atlag = float(p_adat['Atlag_Megallo'])
+                            # Súly átlag (G oszlop - Alap_B-ként mentve a szétosztásnál)
+                            # Feltételezzük, hogy az 'Alap_B' a régi partnereknél a túra átlaga volt mentéskor
+                            alap_suly_atlag = float(p_adat.get('Alap_B', 0))
                             break
 
-                # --- 2. VÁLTOZÁS KISZÁMÍTÁSA (Módosítva) ---
-                if alap_atlag == 0:
-                    # ÚJ TÚRA: mindenkit 1-nek számolunk (régi és új partnert is)
-                    uj_megallok_szama = sum(1 for j in range(root.childCount()) 
-                                            if root.child(j).data(0, Qt.ItemDataRole.UserRole) == "PARTNER")
-                else:
-                    # RÉGI TÚRA: Csak az ÚJ státuszúak növelik a statisztikai átlagot
-                    uj_megallok_szama = sum(1 for j in range(root.childCount()) 
-                                            if root.child(j).data(0, Qt.ItemDataRole.UserRole) == "PARTNER" 
-                                            and str(root.child(j).data(1, Qt.ItemDataRole.UserRole).get('Statusz', '')).upper() == 'ÚJ')
-
-                # A végleges szám: Excel Átlag + Új partnerek száma
-                vegleges_megallo = int(round(alap_atlag + uj_megallok_szama))
+                # --- 2. VÁLTOZÁSOK SZÁMÍTÁSA (Csak az ÚJ partnerek alapján) ---
+                uj_megallok_szama = 0
+                uj_partnerek_sulya = 0
                 
-                # Megjelenítés a középső oszlopban
+                # Ha alap_atlag 0, akkor mindenki számít, ha nem 0, akkor csak az ÚJAK
+                for j in range(root.childCount()):
+                    item = root.child(j)
+                    if item.data(0, Qt.ItemDataRole.UserRole) == "PARTNER":
+                        p_adat = item.data(1, Qt.ItemDataRole.UserRole)
+                        is_uj = str(p_adat.get('Statusz', '')).upper() == 'ÚJ'
+                        
+                        if alap_megallo_atlag == 0: # Új manuális túra esetén mindenki számít
+                            uj_megallok_szama += 1
+                            uj_partnerek_sulya += float(p_adat.get('Alap_B', 0))
+                        elif is_uj: # Régi túra esetén csak az ÚJ partner módosít
+                            uj_megallok_szama += 1
+                            uj_partnerek_sulya += float(p_adat.get('Alap_B', 0))
+
+                # --- 3. MEGJELENÍTÉS FRISSÍTÉSE ---
+                
+                # A MEGÁLLÓKHOZ NEM NYÚLTUNK (maradt a korábbi működő logika)
+                vegleges_megallo = int(round(alap_megallo_atlag + uj_megallok_szama))
                 root.setText(1, f"Átlag: {vegleges_megallo} cím")
 
-                # --- SÚLY RÉSZ (VÁLTOZATLAN) ---
-                total = sum(root.child(j).data(1, Qt.ItemDataRole.UserRole).get('Alap_B', 0) 
-                            for j in range(root.childCount()) if root.child(j).data(0, Qt.ItemDataRole.UserRole) == "PARTNER")
-                root.setText(2, f"Össz: {int(total)} kg")
+                # A SÚLY most már követi ugyanezt az elvet
+                # Régi túra átlagsúlya + az új partnerek súlya
+                vegleges_suly = int(round(alap_suly_atlag + uj_partnerek_sulya))
+                root.setText(2, f"Össz: {vegleges_suly} kg")
 
-                # Színezés
+                # Színezés a megálló alapján (Változatlan)
                 if vegleges_megallo > 25:
                     root.setForeground(1, QColor("#e74c3c"))
                 else:
                     root.setForeground(1, QColor("black"))
-
 
     def mentes_es_vissza(self):
         try:
