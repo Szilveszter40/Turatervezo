@@ -97,37 +97,65 @@ class SzetosztasDialog(QDialog):
             self.tura_statisztika[t]['atlag_cim'] = round(sum(self.tura_statisztika[t]['napi_megallok']) / n)
             self.tura_statisztika[t]['atlag_suly'] = sum(self.tura_statisztika[t]['napi_osszsulyok']) / n
 
-        # --- 2. RÉGI PARTNEREK (KIEGÉSZÍTVE TÉTEL GYŰJTÉSSEL) ---
+         # --- 2. RÉGI PARTNEREK (Átlagolt és kerekített tételekkel) ---
         group_cols = df_r.apply(lambda x: (szuper_tisztito(megjelenitesre_vago(str(x.iloc[c_r['p']]))), 
                                           str(x.iloc[c_r['t']]).replace('.0', '').strip()), axis=1)
         
         for (p_nev_tiszta, t_szam), group in df_r.groupby(group_cols):
             nyers_p = str(group.iloc[0, c_r['p']])
             irsz = self.irsz_kinyeres_pontos(nyers_p)
-            
-            if irsz and t_szam not in ["KIOSZTATLAN", "nan", ""]:
-                self.tura_irsz_lefedettseg[str(irsz)] = str(t_szam)
+            alkalmak = max(1, group.iloc[:, c_r['d']].nunique())
 
-            # Tételek kigyűjtése (EZ KELL A MENTÉSHEZ)
-            partner_tetelei = []
+            # 1. LÉPÉS: LÉTREHOZZUK a gyűjtőt (Ez hiányzott!)
+            temp_tetelek = {} 
+
+            # 2. LÉPÉS: FELTÖLTJÜK a gyűjtőt a csoport sorai alapján
             for _, sor in group.iterrows():
                 t_nev, t_db, t_s = suly_szamolo(sor.iloc[c_r['f']], sor.iloc[c_r['m']])
+                if t_nev not in temp_tetelek:
+                    temp_tetelek[t_nev] = {'ossz_db': 0}
+                temp_tetelek[t_nev]['ossz_db'] += t_db
+
+            # 3. LÉPÉS: ÁTLAGOLÁS ÉS SPECIÁLIS KEREKÍTÉS (Most már nem lesz aláhúzva!)
+            partner_tetelei = []
+            osszsuly_atlag = 0
+            for nev, adat in temp_tetelek.items():
+                nyers_atlag = adat['ossz_db'] / alkalmak
+                
+                # Speciális kerekítés: 0-1 között 1, amúgy 0.3 felett felfelé
+                egesz_resz = int(nyers_atlag)
+                tort_resz = nyers_atlag - egesz_resz
+                
+                if 0 < nyers_atlag < 1:
+                    vegleges_db = 1
+                elif tort_resz > 0.3:
+                    vegleges_db = egesz_resz + 1
+                else:
+                    vegleges_db = egesz_resz
+
+                # Súly újraszámolása a kerekített db alapján
+                _, _, s_atlag = suly_szamolo(nev, vegleges_db)
+                osszsuly_atlag += s_atlag
+                
                 partner_tetelei.append({
-                    'Megnevezés': t_nev,
-                    'Mennyiség': t_db,
-                    'Súly': t_s
+                    'nev': nev,
+                    'db': int(vegleges_db),
+                    'suly': int(s_atlag)
                 })
 
-            alkalmak = max(1, group.iloc[:, c_r['d']].nunique())
+            # Adatok mentése a listába
             self.minden_partner_adat.append({
                 'Túra': t_szam, 
                 'Partner': nyers_p, 
                 'Statusz': 'RÉGI',
                 'Intenzitás': intenzitas_szamolo(group.iloc[:, c_r['d']]),
-                'Alap_B': sum(p['Súly'] for p in partner_tetelei) / alkalmak,
+                'Alap_B': osszsuly_atlag,
                 'IRSZ': irsz,
-                'Tetel': partner_tetelei # Elmentjük a JSON mentéshez
+                'Tetel': partner_tetelei 
             })
+
+            if irsz and t_szam not in ["KIOSZTATLAN", "nan", ""]:
+                self.tura_irsz_lefedettseg[str(irsz)] = str(t_szam)
 
         # --- 3. ÚJ PARTNEREK (KIEGÉSZÍTVE TÉTEL GYŰJTÉSSEL) ---
         if hasattr(self.parent, 'df_uj_raw'):
@@ -169,6 +197,7 @@ class SzetosztasDialog(QDialog):
         for p in self.minden_partner_adat:
             vonal = str(p.get('Túra', 'KIOSZTATLAN'))
             irsz = str(p.get('IRSZ', '')).strip()
+            p_suly = float(p.get('Alap_B', 0))
 
             if p['Statusz'] == 'ÚJ' and (vonal == 'KIOSZTATLAN' or vonal == "nan"):
                 if irsz in self.tura_irsz_lefedettseg:
@@ -176,42 +205,44 @@ class SzetosztasDialog(QDialog):
                     if aktualis_stat.get(cel, {}).get('atlag_cim', 0) < self.MAX_CIM:
                         vonal = cel
                         aktualis_stat[vonal]['atlag_cim'] += 1
+                        # SÚLY ÖSSZESÍTÉSE A RÉGI TÚRÁNÁL
+                        aktualis_stat[vonal]['atlag_suly'] += p_suly
                         p['Túra'] = vonal
 
             if vonal not in megjelenitendo_turak: megjelenitendo_turak[vonal] = []
             megjelenitendo_turak[vonal].append(p)
 
         # --- 2. LÉPÉS: A maradék KIOSZTATLAN szétosztása az iranyitoszamok.xlsx alapján ---
-        maradek = megjelenitendo_turak["KIOSZTATLAN"][:] # Másolat a maradékról
-        megjelenitendo_turak["KIOSZTATLAN"] = [] # Kiürítjük, hogy újra töltsük
+        maradek = megjelenitendo_turak["KIOSZTATLAN"][:] 
+        megjelenitendo_turak["KIOSZTATLAN"] = [] 
 
         for p in maradek:
             vonal = "KIOSZTATLAN"
             irsz = str(p.get('IRSZ', '')).strip()
+            p_suly = float(p.get('Alap_B', 0))
 
             if irsz in self.uj_auto_lefedettseg:
-                # Kivesszük az Autót és a Napot az Excelből
                 auto_nev = list(self.uj_auto_lefedettseg[irsz].keys())[0]
                 nap_nev = self.uj_auto_lefedettseg[irsz][auto_nev]
                 cel_vonal = f"{auto_nev} | {nap_nev}"
                 
-                # Itt nem nézünk limitet (vagy magasabb limitet nézünk), hogy mindenképp bekerüljön
                 if cel_vonal not in aktualis_stat:
                     aktualis_stat[cel_vonal] = {'atlag_cim': 0, 'atlag_suly': 0}
                 
                 vonal = cel_vonal
                 aktualis_stat[vonal]['atlag_cim'] += 1
+                # SÚLY ÖSSZESÍTÉSE AZ ÚJ TÚRÁNÁL
+                aktualis_stat[vonal]['atlag_suly'] += p_suly
                 p['Túra'] = vonal
 
             if vonal not in megjelenitendo_turak: megjelenitendo_turak[vonal] = []
             megjelenitendo_turak[vonal].append(p)
 
-        # MEGJELENÍTÉS
+        # MEGJELENÍTÉS (Hierarchikus bontás nélkül, az eredeti oszlopos nézetben)
         for t_nev in sorted(megjelenitendo_turak.keys()):
             stat = aktualis_stat.get(t_nev, {'atlag_cim': 0, 'atlag_suly': 0})
             root = QTreeWidgetItem(self.tree)
             
-            # Túra neve (🚚 Régi név vagy 🚚 Autó | Nap)
             root.setText(0, f"🚚 {t_nev}")
             root.setText(1, f"Átlag: {int(round(stat['atlag_cim']))} megálló")
             root.setText(2, f"{int(stat['atlag_suly'])} kg")
@@ -254,52 +285,55 @@ class SzetosztasDialog(QDialog):
         layout.addLayout(btns)
 
     def export_to_excel(self):
-        # 1. Frissítjük a nézetet, hogy mindenki a legfrissebb túrájában legyen
+        # 1. Frissítjük a nézetet, hogy a statisztikák naprakészek legyenek
         self.terkep_frissitese() 
 
         path, _ = QFileDialog.getSaveFileName(self, "Exportálás", "Tura_Terv.xlsx", "Excel (*.xlsx)")
         if path:
             try:
-                # Készítünk egy listát a mentéshez
                 export_lista = []
                 for p in self.minden_partner_adat:
-                    # Alapadatok másolása
                     rekord = copy.deepcopy(p)
                     
-                    # Tételek kezelése: ha van 'Tetel' lista, JSON-né alakítjuk a mentéshez
-                    # Ez kritikus a másik modulod számára (Tetel_JSON_FIX oszlop)
-                    if 'Tetel' in rekord:
+                    # --- TÉTELEK ÉS DARABSZÁM KEZELÉSE ---
+                    if 'Tetel' in rekord and rekord['Tetel']:
+                        # JSON mentése a szerkesztő modulnak
                         rekord['Tetel_JSON_FIX'] = json.dumps(rekord['Tetel'], ensure_ascii=False)
-                        # Kiszámoljuk az összesített darabszámot is
-                        rekord['Ossz_DB'] = sum([float(t.get('Mennyiseg', 0)) for t in rekord['Tetel'] if isinstance(t, dict)])
+                        # Összesített (már kerekített) darabszám
+                        rekord['Ossz_DB'] = sum([float(t.get('db', 0)) for t in rekord['Tetel']])
                     else:
                         rekord['Tetel_JSON_FIX'] = "[]"
                         rekord['Ossz_DB'] = 0
+
+                    # --- TÚRA ÁTLAGOS MEGÁLLÓSZÁMÁNAK MENTÉSE ---
+                    vonal = str(rekord.get('Túra', 'KIOSZTATLAN'))
+                    # Kivesszük a statisztikából az átlagot (ha van)
+                    stat = self.tura_statisztika.get(vonal, {'atlag_cim': 0})
+                    # Egész számra kerekítve mentjük el
+                    rekord['Atlag_Megallo'] = int(round(stat.get('atlag_cim', 0)))
 
                     export_lista.append(rekord)
 
                 df_export = pd.DataFrame(export_lista)
 
-                # Meghatározzuk a kimeneti oszlopok sorrendjét
-                # Úgy állítottam be, hogy a "Végleges Túra" legyen az első
+                # Oszlopok rendezése a mentéshez
                 oszlop_sorrend = [
-                    'Túra', 'Partner', 'Cim', 'Statusz', 'Intenzitás', 
-                    'Alap_B', 'Ossz_DB', 'IRSZ', 'Tetel_JSON_FIX'
+                    'Túra', 'Atlag_Megallo', 'Partner', 'Cim', 'Statusz', 
+                    'Intenzitás', 'Alap_B', 'Ossz_DB', 'IRSZ', 'Tetel_JSON_FIX'
                 ]
                 
-                # Csak azokat az oszlopokat tartjuk meg, amik tényleg léteznek
-                meglevo_oszlopok = [o for o in oszlop_sorrend if o in df_export.columns]
-                df_export = df_export[meglevo_oszlopok]
+                # Csak a létező oszlopokat tartjuk meg
+                meglevo = [o for o in oszlop_sorrend if o in df_export.columns]
+                df_export = df_export[meglevo]
                 
-                # Mentés (sheet_name='Tura_Terv', hogy az importálód felismerje)
+                # Mentés a 'Tura_Terv' munkalapra
                 with pd.ExcelWriter(path) as writer:
                     df_export.to_excel(writer, sheet_name='Tura_Terv', index=False)
                 
                 QMessageBox.information(self, "Siker", f"Sikeres mentés: {len(df_export)} sor.")
             except Exception as e:
-                import traceback
-                print(traceback.format_exc())
                 QMessageBox.critical(self, "Hiba", f"Mentési hiba: {e}")
+
 
     def excel_beolvasas(self):
         path, _ = QFileDialog.getOpenFileName(self, "Import", "", "Excel (*.xlsx)")
