@@ -257,7 +257,7 @@ class SzetosztasDialog(QDialog):
         # 1. Frissítjük a nézetet, hogy mindenki a legfrissebb túrájában legyen
         self.terkep_frissitese() 
 
-        path, _ = QFileDialog.getSaveFileName(self, "Exportálás", "Tura_Terv_Reszletes.xlsx", "Excel (*.xlsx)")
+        path, _ = QFileDialog.getSaveFileName(self, "Exportálás", "Tura_Terv.xlsx", "Excel (*.xlsx)")
         if path:
             try:
                 # Készítünk egy listát a mentéshez
