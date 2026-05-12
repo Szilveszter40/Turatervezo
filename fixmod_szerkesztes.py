@@ -549,20 +549,29 @@ class KeziszerkesztoAblak(QDialog):
                 if root.data(0, Qt.ItemDataRole.UserRole) != "TURA":
                     continue
 
-                # 1. Kinyerjük az Excel szerinti ALAP ÁTLAGOT (B oszlop értéke)
-                # Ezt az első olyan partnertől vesszük, akinek van 'Atlag_Megallo' adata
+                # --- 1. ALAP ÁTLAG KINYERÉSE (Módosítva) ---
                 alap_atlag = 0
+                t_nev_aktualis = root.text(0).replace("🚚 ", "").strip() 
+                
                 for j in range(root.childCount()):
                     p_adat = root.child(j).data(1, Qt.ItemDataRole.UserRole)
                     if p_adat and 'Atlag_Megallo' in p_adat:
-                        alap_atlag = float(p_adat['Atlag_Megallo'])
-                        break
+                        # Csak akkor vesszük át az átlagot, ha a partner eredeti túrája megegyezik a mostanival
+                        p_t_eredeti = str(p_adat.get('Túra', '')).replace('.0', '').strip()
+                        if p_t_eredeti == t_nev_aktualis:
+                            alap_atlag = float(p_adat['Atlag_Megallo'])
+                            break
 
-                # 2. Kiszámoljuk a változást: csak az ÚJ partnereket adjuk hozzá
-                # Feltételezzük: a régi partnerek már benne vannak az 'alap_atlag'-ban
-                uj_megallok_szama = sum(1 for j in range(root.childCount()) 
-                                        if root.child(j).data(0, Qt.ItemDataRole.UserRole) == "PARTNER" 
-                                        and str(root.child(j).data(1, Qt.ItemDataRole.UserRole).get('Statusz', '')).upper() == 'ÚJ')
+                # --- 2. VÁLTOZÁS KISZÁMÍTÁSA (Módosítva) ---
+                if alap_atlag == 0:
+                    # ÚJ TÚRA: mindenkit 1-nek számolunk (régi és új partnert is)
+                    uj_megallok_szama = sum(1 for j in range(root.childCount()) 
+                                            if root.child(j).data(0, Qt.ItemDataRole.UserRole) == "PARTNER")
+                else:
+                    # RÉGI TÚRA: Csak az ÚJ státuszúak növelik a statisztikai átlagot
+                    uj_megallok_szama = sum(1 for j in range(root.childCount()) 
+                                            if root.child(j).data(0, Qt.ItemDataRole.UserRole) == "PARTNER" 
+                                            and str(root.child(j).data(1, Qt.ItemDataRole.UserRole).get('Statusz', '')).upper() == 'ÚJ')
 
                 # A végleges szám: Excel Átlag + Új partnerek száma
                 vegleges_megallo = int(round(alap_atlag + uj_megallok_szama))
@@ -580,6 +589,7 @@ class KeziszerkesztoAblak(QDialog):
                     root.setForeground(1, QColor("#e74c3c"))
                 else:
                     root.setForeground(1, QColor("black"))
+
 
     def mentes_es_vissza(self):
         try:
