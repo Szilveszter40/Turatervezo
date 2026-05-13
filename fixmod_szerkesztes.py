@@ -1,5 +1,6 @@
 import json
 import pandas as pd
+import fixmod_heti
 from PyQt6.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout, QTreeWidget, 
                              QTreeWidgetItem, QLabel, QPushButton, QMessageBox, 
                              QListWidget, QListWidgetItem, QAbstractItemView, QFrame, 
@@ -9,6 +10,7 @@ from PyQt6.QtGui import QColor, QFont
 from PyQt6.QtWidgets import QTreeWidget, QAbstractItemView, QTreeWidgetItem
 from PyQt6.QtCore import Qt, QTimer
 from fixmod_nyomtatas import modul_nyomtatas
+
 
 class DraggableTree(QTreeWidget):
     def __init__(self, parent=None):
@@ -234,17 +236,12 @@ class KeziszerkesztoAblak(QDialog):
         self.btn_nyomtatas.clicked.connect(self.nyomtatas_inditasa)
         top_control_layout.addWidget(self.btn_nyomtatas, 1)
 
-        het_layout = QHBoxLayout()
-        het_label = QLabel("<b>SZŰRÉS HÉTRE:</b>")
-        het_label.setAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
-        self.combo_het = QComboBox()
-        self.combo_het.addItems(["Mind (Összes adat)", "Páratlan Hét", "Páros Hét"])
-        self.combo_het.setFixedHeight(45)
-        self.combo_het.setStyleSheet("padding: 5px; font-weight: bold;")
-        self.combo_het.currentIndexChanged.connect(self.adatok_betoltese)
-        het_layout.addWidget(het_label)
-        het_layout.addWidget(self.combo_het)
-        top_control_layout.addLayout(het_layout, 1)
+        self.btn_heti_bontas = QPushButton("📅 HETI BONTÁS")
+        self.btn_heti_bontas.setFixedHeight(45)
+        self.btn_heti_bontas.setStyleSheet("background-color: #7f8c8d; color: white; font-weight: bold; border-radius: 5px;")
+        self.btn_heti_bontas.clicked.connect(self.heti_bontas_megnyitasa)
+        top_control_layout.addWidget(self.btn_heti_bontas, 1)
+        
         main_layout.addLayout(top_control_layout)
 
         # --- TÚRA VÁLASZTÓK ---
@@ -327,6 +324,34 @@ class KeziszerkesztoAblak(QDialog):
     def nyomtatas_inditasa(self):
         """Meghívja a fixmod_nyomtatas fájlban lévő előnézetet."""
         modul_nyomtatas(self)    
+
+    def heti_bontas_megnyitasa(self):
+     """Automatikusan megkeresi és elindítja a modulban lévő QDialog osztályt."""
+     try:
+         import inspect
+         from PyQt6.QtWidgets import QDialog
+
+         # Megkeressük az első QDialog (vagy QWidget) osztályt a fixmod_heti.py fájlon belül
+         osztaly_objektum = None
+         for nev, obj in inspect.getmembers(fixmod_heti, inspect.isclass):
+             if issubclass(obj, QDialog) and obj.__module__ == 'fixmod_heti':
+                 osztaly_objektum = obj
+                 break
+
+         if osztaly_objektum:
+             # Elindítjuk az ablakot, megpróbálva átadni a szülőt
+             try:
+                 self.heti_ablak = osztaly_objektum(self)
+             except TypeError:
+                 self.heti_ablak = osztaly_objektum() # Ha nem fogad szülőt az __init__
+
+             self.heti_ablak.exec()
+         else:
+             QMessageBox.critical(self, "Hiba", "Nem található indítható QDialog ablak osztály a fixmod_heti.py fájlban!")
+
+     except Exception as e:
+         QMessageBox.critical(self, "Hiba", f"Nem sikerült elindítani a Heti Bontás modult:\n{e}")
+
 
     def uj_tura_letrehozasa_esemeny(self):
         uj_nev = self.uj_tura_nev_input.text().strip()
@@ -429,11 +454,17 @@ class KeziszerkesztoAblak(QDialog):
     def partner_sor_letrehozas(self, parent_item, p):
         # DEBUG kiegészítve a túra nevével
         print(f"DEBUG RAJZOLÁS: {p['Partner']} - {p.get('Túra')}")
-        
         p_item = QTreeWidgetItem(parent_item)
         p_nev = str(p.get('Partner', 'Ismeretlen')).replace('\n', ' ')
         p_statusz = str(p.get('Statusz', '')).upper()
         p_cim = str(p.get('Cim', 'Nincs cím')).replace('\n', ' ')
+
+        # --- JAVÍTÁS: Intenzitás kulcs kezelése az Excel F oszlopa alapján ---
+        # Megpróbáljuk leszedni 'Intenzitás', 'Intenzitas' vagy 'Intenz' néven is, ha az Excel fejléce eltérne
+        intenzitas_ertek = p.get('Intenzitás') or p.get('Intenzitas') or p.get('Intenz') or ''
+        intenzitas_str = str(intenzitas_ertek).replace('.0', '').strip()
+        if intenzitas_str.lower() in ['nan', 'none']: 
+            intenzitas_str = ''
 
         # ÚJ partner kékkel + címmel
         if p_statusz == 'ÚJ':
@@ -441,24 +472,20 @@ class KeziszerkesztoAblak(QDialog):
             p_item.setForeground(0, QColor("#3498db"))
         else:
             p_item.setText(0, f"👤 {p_nev}")
-
-        p_item.setText(1, str(p.get('Intenz', '')))
+            
+        # AZ INTENZITÁS MEGJELENÍTÉSE A PARTNER SORÁBAN (1-es oszlop)
+        p_item.setText(1, intenzitas_str)
         p_item.setText(2, f"{int(p.get('Alap_B', 0))} kg")
         
         p_font = QFont()
         p_font.setBold(True)
         p_item.setFont(0, p_font)
-        
+
         # ADATOK TÁROLÁSA
         p_item.setData(0, Qt.ItemDataRole.UserRole, "PARTNER")
-        # Nagyon fontos: a mentés funkció a data(1, ...) részt nézi!
-        p_item.setData(1, Qt.ItemDataRole.UserRole, p) 
+        p_item.setData(1, Qt.ItemDataRole.UserRole, p)
 
-        # DRAG & DROP FIX: 
-        # Csak ItemIsDragEnabled van, NINCS ItemIsDropEnabled! 
-        # Így nem tudod a partnerbe "belepottyantani" a másikat.
         p_item.setFlags(Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsSelectable | Qt.ItemFlag.ItemIsDragEnabled)
-        
         p_item.setChildIndicatorPolicy(QTreeWidgetItem.ChildIndicatorPolicy.ShowIndicator)
 
         # TÉTELEK LISTÁZÁSA A JSON-BŐL
@@ -467,37 +494,31 @@ class KeziszerkesztoAblak(QDialog):
             json_adat = p.get('Tetel_JSON_FIX', '')
             if isinstance(json_adat, str) and json_adat.strip():
                 try:
-                    # Itt olvassuk be a JSON-t az Excel cellából
                     tetelek = json.loads(json_adat)
                 except:
                     tetelek = []
-
+                    
         if not tetelek:
             t_item = QTreeWidgetItem(p_item)
-            t_item.setText(0, f"   📍 {p_cim}")
+            t_item.setText(0, f" 📍 {p_cim}")
             t_item.setData(0, Qt.ItemDataRole.UserRole, "TETEL")
         else:
             for t_adat in tetelek:
                 t_item = QTreeWidgetItem(p_item)
                 
-                # --- JAVÍTÁS A JSON KULCSOKHOZ ---
-                # Megnézzük a 'nev' kulcsot, ha nincs, a 'Megnevezés'-t (ÚJ partnerekhez)
                 t_nev = t_adat.get('nev') or t_adat.get('Megnevezés') or 'Ismeretlen termék'
-                
-                # Megnézzük a 'db' kulcsot, ha nincs, a 'Mennyiség'-et
                 t_db = t_adat.get('db') or t_adat.get('Mennyiség') or 0
-                
-                # Megnézzük a 'suly' kulcsot, ha nincs, a 'Súly'-t
                 t_suly = t_adat.get('suly') or t_adat.get('Súly') or 0
                 
-                t_item.setText(0, f"   📦 {t_nev}")
+                t_item.setText(0, f" 📦 {t_nev}")
+                # A TERMÉK ALATT MARAD A DARABSZÁM (1-es oszlop)
                 t_item.setText(1, f"{t_db} db")
                 t_item.setText(2, f"{int(t_suly)} kg")
-                
                 t_item.setData(0, Qt.ItemDataRole.UserRole, "TETEL")
                 t_item.setFlags(Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsSelectable)
-
+                
         return p_item
+
     
     def is_active_on_week(self, intenzitas, het_idx):
         # het_idx: 0=Mind, 1=Páratlan, 2=Páros
@@ -549,65 +570,92 @@ class KeziszerkesztoAblak(QDialog):
 
 
     def adatok_betoltese(self):
+        # 1. Teljesen kiürítjük mindkét fát az újrarajzolás előtt
         self.tree_bal.clear()
         self.tree_jobb.clear()
-        het_idx = self.combo_het.currentIndex()
 
-        print(f"DEBUG: Hét váltva, aktuális index: {het_idx}")
+        # 2. Begyűjtjük a bepipált túrák neveit a listákból
+        kijelolt_bal = [self.list_bal.item(i).text().strip() for i in range(self.list_bal.count()) if self.list_bal.item(i).checkState() == Qt.CheckState.Checked]
+        kijelolt_jobb = [self.list_jobb.item(i).text().strip() for i in range(self.list_jobb.count()) if self.list_jobb.item(i).checkState() == Qt.CheckState.Checked]
 
-        # Kijelöltek begyűjtése
-        kijelolt_bal = [self.list_bal.item(i).text() for i in range(self.list_bal.count()) if self.list_bal.item(i).checkState() == Qt.CheckState.Checked]
-        kijelolt_jobb = [self.list_jobb.item(i).text() for i in range(self.list_jobb.count()) if self.list_jobb.item(i).checkState() == Qt.CheckState.Checked]
-
-        # Fordított sorrend az adatoknál, ha szükséges
-        friss_lista = list(reversed(self.main_parent.minden_partner_adat))
+        # 3. Készítünk egy tiszta, egyedi listát a memóriában lévő adatokból (Duplikációk szűrése a memóriában)
+        latott_partnerek_memoria = set()
+        tiszta_partner_adatok = []
         
-        # A két panel (fa) és a hozzájuk tartozó kijelölt túrák feldolgozása
-        for tree, kijeloltek in [(self.tree_bal, kijelolt_bal), (self.tree_jobb, kijelolt_jobb)]:
-            for t_nev in kijeloltek:
-                # --- ÁTLAG ÉS SÚLY KISZÁMÍTÁSA ---
-                # Megkeressük a túrához tartozó partnereket az összesített súlyhoz és az átlaghoz
-                tura_partnerei = [p for p in friss_lista if str(p.get('Túra', '')).replace('.0', '').strip() == t_nev.strip()]
-                
-                atlag_megallo = 0
-                pillanatnyi_suly = 0
-                if tura_partnerei:
-                    # Az átlag megállót az első partnertől vesszük (mert az Excel mentésnél mindenkié ugyanaz)
-                    atlag_megallo = tura_partnerei[0].get('Atlag_Megallo', 0)
-                    # A pillanatnyi súlyt pedig összeadjuk
-                    pillanatnyi_suly = sum(float(p.get('Alap_B', 0)) for p in tura_partnerei)
+        for p in self.main_parent.minden_partner_adat:
+            # Létrehozunk egy egyedi azonosítót a partner neve és címe alapján
+            p_kulcs = f"{p.get('Partner', '')}_{p.get('Cim', '')}".strip()
+            if p_kulcs not in latott_partnerek_memoria:
+                tiszta_partner_adatok.append(p)
+                latott_partnerek_memoria.add(p_kulcs)
 
-                # Létrehozzuk a TÚRA (ROOT) elemet
+        # 4. Biztonsági halmaz a képernyőre rajzoláshoz
+        # Ez garantálja, hogy a BAL és JOBB panel együttesen sem tartalmazhatja ugyanazt a partnert kétszer
+        kirajzolt_a_kepernyore = set()
+
+        # 5. Végigmegyünk a két panelen
+        for tree, kijeloltek, is_bal in [(self.tree_bal, kijelolt_bal, True), (self.tree_jobb, kijelolt_jobb, False)]:
+            for t_nev in kijeloltek:
+                
+                # Kigyűjtjük az adott túrához tartozó partnereket az egyedi listából
+                tura_partnerei_alap = [p for p in tiszta_partner_adatok if str(p.get('Túra', '')).replace('.0', '').strip() == t_nev]
+                
+                tura_partnerei = []
+                for p in tura_partnerei_alap:
+                    p_kulcs = f"{p.get('Partner', '')}_{p.get('Cim', '')}".strip()
+                    
+                    # Ha a partner már ki lett rajzolva valahova a képernyőn, szigorúan kihagyjuk
+                    if p_kulcs in kirajzolt_a_kepernyore:
+                        continue
+                        
+                    # ÚJ / RÉGI elosztási logika, ha ugyanaz a túra mindkét oldalon be van pipálva
+                    is_uj = str(p.get('Statusz', '')).upper() == 'ÚJ'
+                    if t_nev in kijelolt_bal and t_nev in kijelolt_jobb:
+                        if is_uj and not is_bal: 
+                            continue  # Az ÚJ partnerek csak a bal oldalra mehetnek
+                        if not is_uj and is_bal: 
+                            continue  # A RÉGI partnerek csak a jobb oldalra mehetnek
+                    
+                    # Ha minden ellenőrzésen átment, hozzáadjuk a rajzolandó listához
+                    tura_partnerei.append(p)
+
+                # Ha a túrához nem maradt rajzolható partner, magát a teherautó ikont (szülőt) sem hozzuk létre feleslegesen
+                if not tura_partnerei:
+                    continue
+
+                # --- 🚚 TÚRA (ROOT) ELEM LÉTREHOZÁSA ---
+                atlag_megallo = tura_partnerei[0].get('Atlag_Megallo', 0) if 'Atlag_Megallo' in tura_partnerei[0] else 0
+                pillanatnyi_suly = sum(float(p.get('Alap_B', 0)) for p in tura_partnerei)
+
                 root = QTreeWidgetItem(tree)
                 root.setText(0, f"🚚 {t_nev}")
-                # Itt állítjuk be az átlagot és a súlyt az oszlopokba:
                 root.setText(1, f"Átlag: {atlag_megallo} cím")
                 root.setText(2, f"{int(pillanatnyi_suly)} kg")
-                
                 root.setData(0, Qt.ItemDataRole.UserRole, "TURA")
                 root.setFlags(Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsSelectable | Qt.ItemFlag.ItemIsDropEnabled)
-                
-                # Színek és stílus
+
                 for col in range(3):
                     root.setBackground(col, QColor("#dfe6e9"))
-                
-                # Piros szín, ha a pillanatnyi megállószám (nem az átlag!) több mint 25
+
                 if len(tura_partnerei) > 25:
                     root.setForeground(0, QColor("#e74c3c"))
 
-                # Partnerek hozzáadása (VÁLTOZATLAN)
+                # --- 👤 PARTNEREK BEILLESZTÉSE A TÚRA ALÁ ---
                 for p in tura_partnerei:
-                    # 1. Heti szűrés
-                    if het_idx != 0 and not self.is_active_on_week(p.get('Intenz', ''), het_idx):
-                        continue
+                    # Heti szűrés (ha be van kapcsolva a combo_het)
+                    
+                    # Kirajzoljuk a felületre
                     self.partner_sor_letrehozas(root, p)
-                
+                    
+                    # Elmentjük a kulcsot, hogy soha többé ne rajzolhassa le újra a program semelyik oldalon
+                    p_kulcs = f"{p.get('Partner', '')}_{p.get('Cim', '')}".strip()
+                    kirajzolt_a_kepernyore.add(p_kulcs)
+                    
                 root.setExpanded(False)
-        
-        # Súlyok újraszámolása a betöltés végén
+
+        # 6. Súlyok és átlagok újraszámítása a felületen
         if hasattr(self, 'suly_frissites'):
             self.suly_frissites()
-
 
     def suly_frissites(self):
         for tree in [self.tree_bal, self.tree_jobb]:
