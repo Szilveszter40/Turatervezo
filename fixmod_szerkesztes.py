@@ -8,6 +8,7 @@ from PyQt6.QtCore import Qt, QTimer
 from PyQt6.QtGui import QColor, QFont
 from PyQt6.QtWidgets import QTreeWidget, QAbstractItemView, QTreeWidgetItem
 from PyQt6.QtCore import Qt, QTimer
+from fixmod_nyomtatas import modul_nyomtatas
 
 class DraggableTree(QTreeWidget):
     def __init__(self, parent=None):
@@ -197,7 +198,7 @@ class KeziszerkesztoAblak(QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.main_parent = parent
-        self.setWindowTitle("Kézi Túra Szerkesztő - Stabil Verzió")
+        self.setWindowTitle("Túra Terv")
         self.resize(1300, 900)
         self.osszes_tura_neve = self._turak_kigyujtese()
         self.initUI()
@@ -226,6 +227,12 @@ class KeziszerkesztoAblak(QDialog):
         self.btn_frissit.setStyleSheet("background-color: #2ecc71; color: white; font-weight: bold; border-radius: 5px;")
         self.btn_frissit.clicked.connect(self.aktualis_betoltese_fajlbol)
         top_control_layout.addWidget(self.btn_frissit, 1)
+
+        self.btn_nyomtatas = QPushButton("📄 NYOMTATÁS")
+        self.btn_nyomtatas.setFixedHeight(45)
+        self.btn_nyomtatas.setStyleSheet("background-color: #34495e; color: white; font-weight: bold; border-radius: 5px;")
+        self.btn_nyomtatas.clicked.connect(self.nyomtatas_inditasa)
+        top_control_layout.addWidget(self.btn_nyomtatas, 1)
 
         het_layout = QHBoxLayout()
         het_label = QLabel("<b>SZŰRÉS HÉTRE:</b>")
@@ -316,6 +323,10 @@ class KeziszerkesztoAblak(QDialog):
         btn_save.setStyleSheet("background-color: #27ae60; color: white; font-weight: bold;")
         btn_save.clicked.connect(self.mentes_es_vissza)
         main_layout.addWidget(btn_save)
+
+    def nyomtatas_inditasa(self):
+        """Meghívja a fixmod_nyomtatas fájlban lévő előnézetet."""
+        modul_nyomtatas(self)    
 
     def uj_tura_letrehozasa_esemeny(self):
         uj_nev = self.uj_tura_nev_input.text().strip()
