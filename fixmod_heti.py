@@ -14,39 +14,40 @@ from fixmod_nyomtatas import modul_nyomtatas
 
 
 class DraggableTree(QTreeWidget):
+    """
+    Kiterjesztett fa szerkezet, amely kikényszeríti és engedélyezi a teljes 
+    túrák (TopLevel) és partnerek panelek közötti fizikai mozgatását.
+    """
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setDragEnabled(True)
         self.setAcceptDrops(True)
         self.setDragDropMode(QTreeWidget.DragDropMode.DragDrop)
         self.setDefaultDropAction(Qt.DropAction.MoveAction)
+        self.setSelectionMode(QTreeWidget.SelectionMode.SingleSelection)
         self.setDropIndicatorShown(True)
         self.setIndentation(20)
         self.setAnimated(True)
         
-        # Egér jobb klikk esemény engedélyezése a törléshez
         self.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self.customContextMenuRequested.connect(self.show_context_menu)
 
-    def show_context_menu(self, position):
-        """Jobb klikkes törlési menü kezelése"""
-        item = self.itemAt(position)
-        if not item: 
-            return
+    def supportedDropActions(self):
+        """Kifejezetten engedélyezi a Move (áthelyezés) akciót a Qt felé"""
+        return Qt.DropAction.MoveAction
 
+    def show_context_menu(self, position):
+        item = self.itemAt(position)
+        if not item: return
         menu = QMenu()
         item_type = item.data(0, Qt.ItemDataRole.UserRole)
         main_win = self.window()
-
         if item_type == "TURA":
-            # Töröltek mappát magát ne lehessen törölni
-            if "🗑️ töröltek" in item.text(0).lower():
-                return
+            if "🗑️ töröltek" in item.text(0).lower(): return
             delete_action = menu.addAction("🗑️ Teljes túra törlése")
             action = menu.exec(self.viewport().mapToGlobal(position))
             if action == delete_action and main_win and hasattr(main_win, 'tura_athelyezese_toroltekbe'):
                 main_win.tura_athelyezese_toroltekbe(self, item)
-
         elif item_type == "PARTNER":
             delete_action = menu.addAction("🗑️ Partner törlése")
             action = menu.exec(self.viewport().mapToGlobal(position))
@@ -71,39 +72,55 @@ class DraggableTree(QTreeWidget):
 
             for item in selected_items:
                 item_type = item.data(0, Qt.ItemDataRole.UserRole)
-                if item_type == "TURA" and target_item is not None: continue
 
-                # Töröltek csomópontba ne lehessen manuálisan áthúzni semmit kívülről, csak menüből
-                if target_item and "🗑️ töröltek" in target_item.text(0).lower():
-                    continue
+                if item_type == "TURA" and "🗑️ töröltek" in item.text(0).lower(): continue
+                if target_item and "🗑️ töröltek" in target_item.text(0).lower(): continue
 
+                # Eltávolítás a régi fából
                 old_parent = item.parent()
                 if old_parent: old_parent.removeChild(item)
                 else: source_tree.invisibleRootItem().removeChild(item)
 
-                if target_item:
-                    target_type = target_item.data(0, Qt.ItemDataRole.UserRole)
-                    if target_type == "TURA": target_item.insertChild(0, item)
-                    elif target_type == "PARTNER":
-                        tura_parent = target_item.parent()
-                        if tura_parent: tura_parent.insertChild(tura_parent.indexOfChild(target_item), item)
-                        else: self.addTopLevelItem(item)
+                # --- 🚚 TELJES TÚRA MOZGATÁSA ---
+                if item_type == "TURA":
+                    if target_item:
+                        target_root = target_item
+                        while target_root.parent():
+                            target_root = target_root.parent()
+                        root_node = self.invisibleRootItem()
+                        idx = root_node.indexOfChild(target_root)
+                        root_node.insertChild(idx, item)
                     else:
-                        partner_parent = target_item.parent()
-                        if partner_parent:
-                            tura_parent = partner_parent.parent()
-                            if tura_parent: tura_parent.insertChild(tura_parent.indexOfChild(partner_parent), item)
+                        self.addTopLevelItem(item)
+
+                # --- 👤 PARTNER MOZGATÁSA ---
+                elif item_type == "PARTNER":
+                    if target_item:
+                        target_type = target_item.data(0, Qt.ItemDataRole.UserRole)
+                        if target_type == "TURA": target_item.insertChild(0, item)
+                        elif target_type == "PARTNER":
+                            t_parent = target_item.parent()
+                            if t_parent: t_parent.insertChild(t_parent.indexOfChild(target_item), item)
                             else: self.addTopLevelItem(item)
-                        else: self.addTopLevelItem(item)
+                        else:
+                            p_parent = target_item.parent()
+                            if p_parent:
+                                t_parent = p_parent.parent()
+                                if t_parent: t_parent.insertChild(t_parent.indexOfChild(p_parent), item)
+                                else: self.addTopLevelItem(item)
+                            else: self.addTopLevelItem(item)
+                    else:
+                        self.addTopLevelItem(item)
                 else:
                     self.addTopLevelItem(item)
                     
             event.acceptProposedAction()
-            main_win = self.window()
-            if main_win and hasattr(main_win, 'suly_frissites'): main_win.suly_frissites()
+            
+            # Súlyok frissítése mindkét érintett panelen
+            if hasattr(self.window(), 'suly_frissites'): 
+                self.window().suly_frissites()
         else:
             super().dropEvent(event)
-
 
 class HetiBontasAblak(QDialog):
     def __init__(self, parent=None):
@@ -412,8 +429,10 @@ class HetiBontasAblak(QDialog):
                     root_item.setText(0, f"🚚 {t_nev}")
                     root_item.setText(1, f"Átlag: {atlag_megallo} cím")
                     root_item.setText(2, f"{int(ossz_suly)} kg")
+                    # ÚJ, JAVÍTOTT SOROK (Engedélyezi a túra megfogását és vonszolását is):
                     root_item.setData(0, Qt.ItemDataRole.UserRole, "TURA")
-                    root_item.setFlags(Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsSelectable | Qt.ItemFlag.ItemIsDropEnabled)
+                    root_item.setFlags(Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsSelectable | Qt.ItemFlag.ItemIsDropEnabled | Qt.ItemFlag.ItemIsDragEnabled)
+
                     for col in range(3): root_item.setBackground(col, QColor("#dfe6e9"))
 
                 # Partnerek berakása
