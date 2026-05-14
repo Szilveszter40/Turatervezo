@@ -92,74 +92,118 @@ class DraggableTree( QTreeWidget):
                 if item_type == "TURA" and "🗑 töröltek" in item.text(0).lower(): continue
                 if target_item and "🗑 töröltek" in target_item.text(0).lower(): continue
 
-                # 👤 PARTNER MOZGATÁSA (Helyreállított, biztonságos hierarchia-kezeléssel)
+                # 👤 PARTNER MOZGATÁSA (Egyenkénti áthelyezés)
                 if item_type == "PARTNER":
-                    # Eltávolítás a régi helyéről
-                    if item.parent(): item.parent().removeChild(item)
-                    else: source_tree.invisibleRootItem().removeChild(item)
+                    # 1. LÉPÉS: Biztonságos leválasztás a régi helyéről
+                    old_parent = item.parent()
+                    if old_parent:
+                        idx = old_parent.indexOfChild(item)
+                        if idx != -1: old_parent.takeChild(idx)
+                    else:
+                        idx = source_tree.invisibleRootItem().indexOfChild(item)
+                        if idx != -1: source_tree.invisibleRootItem().takeChild(idx)
                     
+                    # 2. LÉPÉS: Beszúrás a cél helyre és a céltúra megkeresése
+                    target_tura = None
                     if target_item:
                         target_type = target_item.data(0, Qt.ItemDataRole.UserRole)
                         
-                        # 1. Eset: Közvetlenül egy TÚRA fejlécre dobtuk -> bekerül az első helyre
                         if target_type == "TURA":
                             target_item.insertChild(0, item)
                             target_item.setExpanded(True)
+                            target_tura = target_item
                             
-                        # 2. Eset: Egy másik PARTNERRE dobtuk -> a túrába kerül, a partner mellé
                         elif target_type == "PARTNER":
                             t_parent = target_item.parent()
                             if t_parent:
-                                t_parent.insertChild(t_parent.indexOfChild(target_item), item)
+                                insert_idx = t_parent.indexOfChild(target_item)
+                                t_parent.insertChild(insert_idx, item)
+                                t_parent.setExpanded(True)
+                                target_tura = t_parent
                             else:
                                 self.addTopLevelItem(item)
                                 
-                        # 3. Eset: Egy TÉTELRE (cím/csomag) dobtuk -> megkeressük a fő túrát, oda rakjuk
                         elif target_type == "TETEL":
-                            p_parent = target_item.parent() # A tétel szülője (egy partner)
+                            p_parent = target_item.parent()
                             if p_parent:
-                                t_parent = p_parent.parent() # A partner szülője (a túra)
+                                t_parent = p_parent.parent()
                                 if t_parent:
-                                    t_parent.insertChild(t_parent.indexOfChild(p_parent), item)
+                                    insert_idx = t_parent.indexOfChild(p_parent)
+                                    t_parent.insertChild(insert_idx, item)
+                                    t_parent.setExpanded(True)
+                                    target_tura = t_parent
                                 else:
                                     self.addTopLevelItem(item)
                             else:
                                 self.addTopLevelItem(item)
                     else:
-                        # Ha üres területre dobtuk, a panel legtetejére/aljára szúrja be főelemként
                         self.addTopLevelItem(item)
 
-                # 🚚 KOMPLETT TÚRA MOZGATÁSA ÉS AUTOMATIKUS KÉTOLDALI MÁSOLÁSA (Megtartva)
+                    # 🎯 HA A KÖZÖS PANELEBŐL HÚZUNK EGYEDIKÉNT EGY PARTNERT, 
+                    # és sikeresen bedobtuk egy létező oldalsó túrába:
+                    if source_tree == main_win.tree_kozos and self in [main_win.tree_paratlan, main_win.tree_paros] and target_tura:
+                        # Dinamikusan lekérjük a túra nevét, így nem lesz definiálatlan a változó!
+                        aktualis_tura_neve = target_tura.text(0).strip()
+                        aktualis_panel_nev = "PARATLAN" if self == main_win.tree_paratlan else "PAROS"
+                        
+                        # Átbélyegezzük a partner háttéradatát
+                        p_adat = item.data(1, Qt.ItemDataRole.UserRole)
+                        if isinstance(p_adat, dict):
+                            p_adat['Heti_Panel_Statusz'] = aktualis_panel_nev
+
+                # 🚚 KOMPLETT TÚRA MOZGATÁSA ÉS AUTOMATIKUS KÉTOLDALI MÁSOLÁSA
                 elif item_type == "TURA":
+                    # Itt hozzuk létre a változót, mert a TURA ágon vagyunk
                     tura_neve = item.text(0)
                     atlag_megallo = item.text(1)
                     ossz_suly = item.text(2)
 
-                    # Áthelyezzük a túrát az aktuális panelre, ahova dobtuk
-                    if item.parent(): item.parent().removeChild(item)
-                    else: source_tree.invisibleRootItem().removeChild(item)
+                    aktualis_panel_nev = "KOZOS"
+                    if self == main_win.tree_paratlan: aktualis_panel_nev = "PARATLAN"
+                    elif self == main_win.tree_paros: aktualis_panel_nev = "PAROS"
+
+                    # Leválasztás a régi fáról
+                    old_parent = item.parent()
+                    if old_parent:
+                        idx = old_parent.indexOfChild(item)
+                        if idx != -1: old_parent.takeChild(idx)
+                    else:
+                        idx = source_tree.invisibleRootItem().indexOfChild(item)
+                        if idx != -1: source_tree.invisibleRootItem().takeChild(idx)
                     
+                    # Beillesztés a cél fába
                     if target_item:
                         target_root = target_item
                         while target_root.parent(): target_root = target_root.parent()
                         root_node = self.invisibleRootItem()
-                        idx = root_node.indexOfChild(target_root)
-                        root_node.insertChild(idx, item)
+                        insert_idx = root_node.indexOfChild(target_root)
+                        root_node.insertChild(insert_idx, item)
                     else:
                         self.addTopLevelItem(item)
                     item.setExpanded(True)
 
-                    # DUPLIKÁLÁS A TÚLOLDALRA (Csak ha a KÖZÖS listából indult az áthúzás)
+                    # ÁTBÉLYEGZÉS: A bedobott túra összes partnerének háttéradatát átírjuk az új hétre
+                    for j in range(item.childCount()):
+                        p_item = item.child(j)
+                        if p_item and p_item.data(0, Qt.ItemDataRole.UserRole) == "PARTNER":
+                            p_adat = p_item.data(1, Qt.ItemDataRole.UserRole)
+                            if isinstance(p_adat, dict):
+                                p_adat['Heti_Panel_Statusz'] = aktualis_panel_nev
+
+                    # MÁSOLÁS A TÚLOLDALRA (Csak ha a KÖZÖS listából indult az áthúzás)
                     if source_tree == main_win.tree_kozos and self in [main_win.tree_paratlan, main_win.tree_paros]:
                         tulszo_tree = main_win.tree_paros if self == main_win.tree_paratlan else main_win.tree_paratlan
+                        tulszo_panel_nev = "PAROS" if self == main_win.tree_paratlan else "PARATLAN"
                         tulszo_root = tulszo_tree.invisibleRootItem()
 
                         mar_letezik_tulszo = False
                         for i in range(tulszo_root.childCount()):
+                            # Itt a 'tura_neve' biztonságosan használható, mert fentebb kapott értéket!
                             if tulszo_root.child(i).text(0) == tura_neve:
                                 mar_letezik_tulszo = True
                                 break
 
+                        # Ha a túloldalon még nincs meg a túra, felépítjük a komplett klónt
                         if not mar_letezik_tulszo:
                             klon_tura = QTreeWidgetItem(tulszo_tree)
                             klon_tura.setText(0, tura_neve)
@@ -182,8 +226,13 @@ class DraggableTree( QTreeWidget):
                                     klon_partner.setForeground(0, eredeti_partner.foreground(0))
                                 
                                 klon_partner.setData(0, Qt.ItemDataRole.UserRole, "PARTNER")
-                                p_adat = eredeti_partner.data(1, Qt.ItemDataRole.UserRole)
-                                if p_adat: klon_partner.setData(1, Qt.ItemDataRole.UserRole, p_adat.copy())
+                                
+                                p_adat_eredeti = eredeti_partner.data(1, Qt.ItemDataRole.UserRole)
+                                if p_adat_eredeti and isinstance(p_adat_eredeti, dict):
+                                    p_adat_klon = p_adat_eredeti.copy()
+                                    p_adat_klon['Heti_Panel_Statusz'] = tulszo_panel_nev
+                                    klon_partner.setData(1, Qt.ItemDataRole.UserRole, p_adat_klon)
+                                
                                 klon_partner.setFlags(eredeti_partner.flags())
 
                                 for k in range(eredeti_partner.childCount()):
@@ -198,6 +247,8 @@ class DraggableTree( QTreeWidget):
                             klon_tura.setExpanded(True)
 
             event.acceptProposedAction()
+            
+            # Késleltetett súlyfrissítés a tiszta elrendeződés után
             if main_win and hasattr(main_win, 'suly_frissites'):
                 QTimer.singleShot(50, main_win.suly_frissites)
         else:
