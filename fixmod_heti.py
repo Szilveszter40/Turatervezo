@@ -105,59 +105,78 @@ class DraggableTree( QTreeWidget):
                 if item_type == "TURA" and "🗑 töröltek" in item.text(0).lower(): continue
                 if target_item and "🗑 töröltek" in target_item.text(0).lower(): continue
 
-                # 👤 PARTNER MOZGATÁSA (Egyenkénti áthelyezés)
+                # 👤 PARTNER MOZGATÁSA (Garantáltan stabil, klónozásos technika)
                 if item_type == "PARTNER":
-                    # 1. LÉPÉS: A cél helyzet és a céltúra pontos meghatározása a dobás pozíciója alapján
                     target_tura = None
                     insert_idx = 0
                     
+                    # 1. LÉPÉS: Pozíció kiszámítása, amíg minden elem a fix helyén van
                     if target_item:
                         target_type = target_item.data(0, Qt.ItemDataRole.UserRole)
                         
                         if target_type == "TURA":
-                            # Ha közvetlenül a túra fejlécére dobjuk, a lista legtetejére szúrjuk be
                             target_tura = target_item
-                            insert_idx = 0
+                            insert_idx = 0  # A túra legtetejére szúrja be
                         elif target_type == "PARTNER":
-                            # Ha egy másik partnerre dobjuk, lekérjük a szülő túrát és a partner indexét
                             target_tura = target_item.parent()
                             if target_tura:
-                                insert_idx = target_tura.indexOfChild(target_item) # Így pontosan FÖLÉ kerül
+                                insert_idx = target_tura.indexOfChild(target_item)  # Pontosan FÖLÉ
                         elif target_type == "TETEL":
-                            # Ha a tételre dobjuk, a tétel szülője a partner, annak a szülője a túra
                             p_parent = target_item.parent()
                             if p_parent:
                                 target_tura = p_parent.parent()
                                 if target_tura:
                                     insert_idx = target_tura.indexOfChild(p_parent)
 
-                    # Ha nem találtunk érvényes céltúrát (pl. üres térre lett dobva), az aktuális fa gyökerébe tesszük
+                    # Ha üres térre dobtuk, a cél panel legtetejére kerül
                     if not target_tura:
-                        target_tree = self
                         insert_idx = self.topLevelItemCount()
 
-                    # 2. LÉPÉS: BIZTONSÁGOS LEVÁLASZTÁS A FORRÁSBÓL
-                    # Csak azután választjuk le, miután az indexeket és a célokat pontosan kiszámoltuk!
-                    old_parent = item.parent()
-                    if old_parent:
-                        idx = old_parent.indexOfChild(item)
-                        if idx != -1: old_parent.takeChild(idx)
-                    else:
-                        idx = source_tree.indexOfTopLevelItem(item)
-                        if idx != -1: source_tree.takeTopLevelItem(idx)
+                    # 2. LÉPÉS: Biztonsági jelzés-blokkolás az elcsúszások ellen
+                    source_tree.blockSignals(True)
+                    self.blockSignals(True)
 
-                    # 3. LÉPÉS: FIZIKAI BESZÚRÁS A KÍVÁNT POZÍCIÓRA
-                    if target_tura:
-                        target_tura.insertChild(insert_idx, item)
-                    else:
-                        self.insertTopLevelItem(insert_idx, item)
+                    try:
+                        # 3. LÉPÉS: Biztonságos KLÓNOZÁS a memóriahibák elkerülésére
+                        klon_partner = item.clone()
+                        
+                        # Ha a közös panelből húzzuk át egy oldalsó heti panelbe, frissítjük a belső státuszt
+                        if source_tree == main_win.tree_kozos and self in [main_win.tree_paratlan, main_win.tree_paros]:
+                            p_panel_nev = "PARATLAN" if self == main_win.tree_paratlan else "PAROS"
+                            p_adat = klon_partner.data(1, Qt.ItemDataRole.UserRole)
+                            if isinstance(p_adat, dict):
+                                p_adat_uj = p_adat.copy()
+                                p_adat_uj['Heti_Panel_Statusz'] = p_panel_nev
+                                klon_partner.setData(1, Qt.ItemDataRole.UserRole, p_adat_uj)
 
-                    # 4. LÉPÉS: HÁTTÉRADATOK ÁTÍRÁSA (Ha a Közös panelből indult)
-                    if source_tree == main_win.tree_kozos and self in [main_win.tree_paratlan, main_win.tree_paros] and target_tura:
-                        p_panel_nev = "PARATLAN" if self == main_win.tree_paratlan else "PAROS"
-                        p_adat = item.data(1, Qt.ItemDataRole.UserRole)
-                        if isinstance(p_adat, dict):
-                            p_adat['Heti_Panel_Statusz'] = p_panel_nev
+                        # 4. LÉPÉS: A klón beszúrása a kiszámolt pontos indexre
+                        if target_tura:
+                            target_tura.insertChild(insert_idx, klon_partner)
+                        else:
+                            self.insertTopLevelItem(insert_idx, klon_partner)
+
+                        # 5. LÉPÉS: Az eredeti régi elem fizikai megsemmisítése a forrásból
+                        old_parent = item.parent()
+                        if old_parent:
+                            idx = old_parent.indexOfChild(item)
+                            if idx != -1: old_parent.takeChild(idx)
+                        else:
+                            idx = source_tree.indexOfTopLevelItem(item)
+                            if idx != -1: source_tree.takeTopLevelItem(idx)
+
+                    finally:
+                        # Jelzések visszakapcsolása
+                        source_tree.blockSignals(False)
+                        self.blockSignals(False)
+
+                    # 🎯 A legfontosabb rész: Megmondjuk a Qt-nak, hogy KÉZZEL elintéztük, 
+                    # ne csináljon semmi automatikus dolgot a háttérben, ami eltüntetné az elemet.
+                    event.setDropAction(Qt.DropAction.IgnoreAction)
+                    event.accept()
+                    
+                    if main_win and hasattr(main_win, 'suly_frissites'):
+                        QTimer.singleShot(50, main_win.suly_frissites)
+                    return  # Kilépünk a metódusból, hogy a függvény végi kód ne fusson le duplán!
 
 
                 # 🚚 KOMPLETT TÚRA MOZGATÁSA (Azonnali leválasztásos technika)
