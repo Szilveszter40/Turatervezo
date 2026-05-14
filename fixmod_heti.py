@@ -8,7 +8,7 @@ import pandas as pd
 from PyQt6.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout, QTreeWidget, 
                              QTreeWidgetItem, QLabel, QPushButton, QMessageBox, 
                              QFrame, QHeaderView, QFileDialog, QMenu)
-from PyQt6.QtCore import Qt
+from PyQt6.QtCore import Qt, QTimer
 from PyQt6.QtGui import QColor, QFont
 from fixmod_nyomtatas import modul_nyomtatas
 
@@ -199,7 +199,7 @@ class DraggableTree( QTreeWidget):
 
             event.acceptProposedAction()
             if main_win and hasattr(main_win, 'suly_frissites'):
-                main_win.suly_frissites()
+                QTimer.singleShot(50, main_win.suly_frissites)
         else:
             super().dropEvent(event)
 
@@ -350,27 +350,63 @@ class HetiBontasAblak(QDialog):
         self.suly_frissites()
 
     def suly_frissites(self):
-        if self.is_updating: return
+        """
+        Újraépíti a túrák összsúlyát a fák aktuális állapota alapján.
+        Ha az Excel betöltés folyamatban van, azonnal kilép a lefagyás megelőzésére.
+        """
+        # ✨ HA AZ EXCEL BETÖLTÉS FUT, AZONNAL LÉPJEN KI (Ez akadályozza meg a fagyást!)
+        if getattr(self, 'is_updating', False):
+            return
+
         self.is_updating = True
-        try:
-            for tree in [self.tree_paratlan, self.tree_kozos, self.tree_paros]:
-                root = tree.invisibleRootItem()
-                for i in range(root.childCount()):
-                    tura_item = root.child(i)
-                    if tura_item.data(0, Qt.ItemDataRole.UserRole) == "TURA":
-                        uj_szumma_suly = 0.0
-                        for j in range(tura_item.childCount()):
-                            partner_item = tura_item.child(j)
-                            if partner_item.data(0, Qt.ItemDataRole.UserRole) == "PARTNER":
-                                suly_szoveg = partner_item.text(2)
-                                tisztitott_suly = re.sub(r'[^\d.,]', '', suly_szoveg).replace(',', '.')
-                                try: uj_szumma_suly += float(tisztitott_suly) if '.' in tisztitott_suly else int(tisztitott_suly)
-                                except: pass
-                        tura_item.setText(2, f"{int(uj_szumma_suly)} kg")
-                        if tura_item.childCount() > 25 and "töröltek" not in tura_item.text(0).lower():
-                            tura_item.setForeground(0, QColor("#e74c3c"))
-                        else: tura_item.setForeground(0, QColor("#2c3e50"))
-        finally: self.is_updating = False
+        
+        for tree in [self.tree_paratlan, self.tree_kozos, self.tree_paros]:
+            root = tree.invisibleRootItem()
+            if not root:
+                continue
+            
+            for i in range(root.childCount()):
+                tura_item = root.child(i)
+                if not tura_item or tura_item.data(0, Qt.ItemDataRole.UserRole) != "TURA":
+                    continue
+                if "🗑 töröltek" in tura_item.text(0).lower():
+                    continue
+
+                tura_osszsuly = 0.0
+                partner_szamlalo = 0
+                
+                # Végigmegyünk a túra pillanatnyi valós gyerekein
+                for j in range(tura_item.childCount()):
+                    partner_item = tura_item.child(j)
+                    if not partner_item or partner_item.data(0, Qt.ItemDataRole.UserRole) != "PARTNER":
+                        continue
+                    
+                    partner_szamlalo += 1
+                    
+                    # Közvetlenül a partner mellett megjelenített súlyt olvassuk le
+                    suly_szoveg = partner_item.text(2).replace("kg", "").replace(",", ".").strip()
+                    try:
+                        partner_sulya = float(suly_szoveg) if suly_szoveg else 0.0
+                    except ValueError:
+                        partner_sulya = 0.0
+                    
+                    tura_osszsuly += partner_sulya
+
+                uj_megallo_szoveg = f"{partner_szamlalo} megálló"
+                uj_suly_szoveg = f"{int(round(tura_osszsuly))} kg"
+                
+                # Csak akkor írjuk át, ha ténylegesen változott az érték
+                if tura_item.text(1) != uj_megallo_szoveg:
+                    tura_item.setText(1, uj_megallo_szoveg)
+                if tura_item.text(2) != uj_suly_szoveg:
+                    tura_item.setText(2, uj_suly_szoveg)
+                
+                font = QFont()
+                font.setBold(True)
+                tura_item.setFont(0, font)
+                tura_item.setFont(2, font)
+
+        self.is_updating = False
 
         # =====================================================================
     # JAVÍTOTT: EXCEL EXPORT (AZ AKTUÁLIS ÁLLAPOT MENTÉSE)
@@ -435,31 +471,58 @@ class HetiBontasAblak(QDialog):
     # 📂 EXCEL VISSZATÖLTÉSE (KIEGÉSZÍTVE A MENTETT MODULLAL)
     # =====================================================================
     def excel_beolvasas_heti(self):
-        path, _ = QFileDialog.getOpenFileName(self, "Heti adatok betöltése", "", "Excel Files (*.xlsx)")
-        if not path: return
+        import os, pandas as pd, json, io, shutil, uuid
+        from PyQt6.QtWidgets import QFileDialog, QMessageBox, QTreeWidgetItem
+        from PyQt6.QtGui import QColor, QFont
+        from PyQt6.QtCore import Qt, QTimer
 
-        temp_path = f"temp_read_heti_{uuid.uuid4().hex}.xlsx"
+        path, _ = QFileDialog.getOpenFileName(self, "Heti adatok betöltése", "", "Excel Files (*.xlsx)")
+        if not path: 
+            return
+
+        biztonsagos_path = os.path.abspath(path)
+
         self.is_updating = True
+        self.tree_paratlan.blockSignals(True)
+        self.tree_kozos.blockSignals(True)
+        self.tree_paros.blockSignals(True)
+
         try:
-            shutil.copy2(path, temp_path)
-            with open(temp_path, "rb") as f:
-                df = pd.read_excel(io.BytesIO(f.read()), engine='openpyxl')
-            if os.path.exists(temp_path): os.remove(temp_path)
+            with open(biztonsagos_path, "rb") as f:
+                file_bytes = f.read()
+                df = pd.read_excel(io.BytesIO(file_bytes), engine='openpyxl')
 
             self.tree_paratlan.clear()
             self.tree_kozos.clear()
             self.tree_paros.clear()
             
-            turak_szotar = {}
+            # Előkészítjük a négy elkülönített memóriafészket
+            turak_szotar = {
+                "PARATLAN": {},
+                "PAROS": {},
+                "KOZOS": {},
+                "TOROLT": {}
+            }
+
+            # Megnézzük, hogy létezik-e egyáltalán az 'E' oszlop a fájlban (Heti_Panel_Statusz néven vagy az 5. oszlopként)
+            e_oszlop_kulcs = None
+            if 'Heti_Panel_Statusz' in df.columns:
+                e_oszlop_kulcs = 'Heti_Panel_Statusz'
+            elif df.shape[1] > 4:
+                # Ha név alapján nincs meg, de van legalább 5 oszlop, akkor a 4-es indexű (E) oszlopot nézzük
+                e_oszlop_kulcs = df.columns[4]
+
             for _, row in df.iterrows():
                 p = row.to_dict()
                 t_nev = str(p.get('Túra neve') or p.get('Túra') or p.get('J', 'ISMERETLEN TÚRA')).strip()
-                if t_nev.lower() in ['nan', '', 'none']: t_nev = 'ISMERETLEN TÚRA'
+                if t_nev.lower() in ['nan', '', 'none']: 
+                    t_nev = 'ISMERETLEN TÚRA'
                 
                 p_nev = str(p.get('Partner', ''))
-                p_cim = str(p.get('Cim', ''))
+                p_cim = str(p.get('Cim') or p.get('Cím', ''))
                 p_id = f"{p_nev}_{p_cim}".strip()
-                if not p_id or p_id == "_": continue
+                if not p_id or p_id == "_": 
+                    continue
 
                 uj_tetelek = []
                 json_adat = p.get('Tetel_JSON_FIX')
@@ -468,94 +531,137 @@ class HetiBontasAblak(QDialog):
                     except: pass
                 p['Tetel'] = uj_tetelek
 
-                if 'IRSZ' in p: p['IRSZ'] = str(p['IRSZ']).replace('.0', '').strip()
+                if 'IRSZ' in p: 
+                    p['IRSZ'] = str(p['IRSZ']).replace('.0', '').strip()
 
-                if t_nev not in turak_szotar:
-                    turak_szotar[t_nev] = {'partnerek': {}, 'mentett_panel': p.get('Heti_Panel_Statusz', '')}
+                # 🎯 A KÍVÁNT LOGIKA: Szigorúan az E oszlop tartalmát elemezzük magyar vagy angol kulcsszavakkal
+                m_statusz_nyers = "KOZOS" # Alapértelmezett, ha a fájl még szűz
                 
-                if p_id in turak_szotar[t_nev]['partnerek']:
-                    if uj_tetelek: turak_szotar[t_nev]['partnerek'][p_id]['Tetel'].extend(uj_tetelek)
-                else: turak_szotar[t_nev]['partnerek'][p_id] = p
-
-            # Kirajzolás a mentett panelállapot figyelembevételével
-            for t_nev, t_adat in turak_szotar.items():
-                partnerek_listaja = list(t_adat['partnerek'].values())
-                if not partnerek_listaja: continue
-
-                ossz_suly = sum(float(p.get('Súly') or p.get('Alap_B') or p.get('A', 0)) for p in partnerek_listaja)
-                atlag_megallo = 0
-                for p in partnerek_listaja:
-                    m_ertek = p.get('Átlag megálló') or p.get('Atlag_Megallo') or p.get('B')
-                    if m_ertek and str(m_ertek).lower() != 'nan':
-                        atlag_megallo = m_ertek
-                        break
-
-                # Panel kiválasztása: Először a mentett státuszt nézzük, ha az nincs, akkor a nevet
-                m_statusz = str(t_adat['mentett_panel']).upper()
-                if m_statusz == "PARATLAN": target_tree = self.tree_paratlan
-                elif m_statusz == "PAROS": target_tree = self.tree_paros
-                elif m_statusz == "TOROLT" or t_nev == "TÖRÖLTEK":
-                    target_tree = self.tree_kozos
-                    # Automatikusan a töröltek csomópontot adjuk meg célként
-                    root_item = self._toroltek_csomopont_lekerese()
-                else:
-                    t_nev_kisbetus = t_nev.lower()
-                    if 'páratlan' in t_nev_kisbetus or 'paratlan' in t_nev_kisbetus: target_tree = self.tree_paratlan
-                    elif 'páros' in t_nev_kisbetus or 'paros' in t_nev_kisbetus: target_tree = self.tree_paros
-                    else: target_tree = self.tree_kozos
-
-                # Ha nem a töröltek listáról van szó, létrehozzuk a normál túrafejlécet
-                if m_statusz != "TOROLT" and t_nev != "TÖRÖLTEK":
-                    root_item = QTreeWidgetItem(target_tree)
-                    root_item.setText(0, f"🚚 {t_nev}")
-                    root_item.setText(1, f"Átlag: {atlag_megallo} cím")
-                    root_item.setText(2, f"{int(ossz_suly)} kg")
-                    # ÚJ, JAVÍTOTT SOROK (Engedélyezi a túra megfogását és vonszolását is):
-                    root_item.setData(0, Qt.ItemDataRole.UserRole, "TURA")
-                    root_item.setFlags(Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsSelectable | Qt.ItemFlag.ItemIsDropEnabled | Qt.ItemFlag.ItemIsDragEnabled)
-
-                    for col in range(3): root_item.setBackground(col, QColor("#dfe6e9"))
-
-                # Partnerek berakása
-                for p in partnerek_listaja:
-                    p_item = QTreeWidgetItem(root_item)
-                    p_nev = str(p.get('Partner', 'Ismeretlen'))
-                    p_statusz = str(p.get('Partner statusza') or p.get('Statusz') or p.get('H', '')).upper().strip()
-                    p_cim = str(p.get('Cim') or p.get('Cím', 'Nincs cím'))
+                if e_oszlop_kulcs:
+                    cella_ertek = str(p.get(e_oszlop_kulcs, '')).upper().strip()
                     
-                    if 'ÚJ' in p_statusz:
-                        p_item.setText(0, f"✨ [ÚJ] {p_nev} ({p_cim})")
-                        p_item.setForeground(0, QColor("#3498db"))
-                    else: p_item.setText(0, f"👤 {p_nev}")
-
-                    p_item.setText(1, str(p.get('Intenzitás') or p.get('Intenz', '')))
-                    p_item.setText(2, f"{int(p.get('Súly') or p.get('Alap_B') or p.get('A', 0))} kg")
-                    
-                    p_font = QFont(); p_font.setBold(True); p_item.setFont(0, p_font)
-                    p_item.setData(0, Qt.ItemDataRole.UserRole, "PARTNER")
-                    p_item.setData(1, Qt.ItemDataRole.UserRole, p)
-                    p_item.setFlags(Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsSelectable | Qt.ItemFlag.ItemIsDragEnabled)
-
-                    tetelek = p.get('Tetel', [])
-                    if not tetelek:
-                        t_item = QTreeWidgetItem(p_item)
-                        t_item.setText(0, f" 📍 {p_cim}")
-                        t_item.setData(0, Qt.ItemDataRole.UserRole, "TETEL")
+                    if "PÁRATLAN" in cella_ertek or "PARATLAN" in cella_ertek: 
+                        m_statusz_nyers = "PARATLAN"
+                    elif "PÁROS" in cella_ertek or "PAROS" in cella_ertek: 
+                        m_statusz_nyers = "PAROS"
+                    elif "TÖRÖLT" in cella_ertek or "TOROLT" in cella_ertek: 
+                        m_statusz_nyers = "TOROLT"
+                    elif "KÖZÖS" in cella_ertek or "KOZOS" in cella_ertek: 
+                        m_statusz_nyers = "KOZOS"
                     else:
-                        for t in tetelek:
+                        # Ha van E oszlop, de az adott cella üres/érvénytelen, akkor is Közösbe kényszerítjük
+                        m_statusz_nyers = "KOZOS"
+
+                # Mentés a szigorúan meghatározott csoportba a memóriában
+                if t_nev not in turak_szotar[m_statusz_nyers]:
+                    turak_szotar[m_statusz_nyers][t_nev] = {}
+                
+                if p_id in turak_szotar[m_statusz_nyers][t_nev]:
+                    if uj_tetelek: 
+                        turak_szotar[m_statusz_nyers][t_nev][p_id]['Tetel'].extend(uj_tetelek)
+                else: 
+                    turak_szotar[m_statusz_nyers][t_nev][p_id] = p
+
+            # 🎯 RAJZOLÁS PANELENKÉNT SZELETELVE
+            for panel_kulcs, tura_csoportok in turak_szotar.items():
+                
+                # Kiválasztjuk a fizikai panel célpontját
+                if panel_kulcs == "PARATLAN": 
+                    target_tree = self.tree_paratlan
+                elif panel_kulcs == "PAROS": 
+                    target_tree = self.tree_paros
+                else: 
+                    # A Közös és a Törölt adatok is a középső panelre futnak rá
+                    target_tree = self.tree_kozos
+
+                for t_nev, partnerek_dict in tura_csoportok.items():
+                    partnerek_listaja = list(partnerek_dict.values())
+                    if not partnerek_listaja: 
+                        continue
+
+                    # Súly és darabszám kalkuláció a szétválasztott szeletre
+                    ossz_suly = sum(float(p.get('Súly') or p.get('Alap_B') or p.get('A', 0)) for p in partnerek_listaja)
+                    atlag_megallo = 0
+                    for p in partnerek_listaja:
+                        m_ertek = p.get('Átlag megálló') or p.get('Atlag_Megallo') or p.get('B')
+                        if m_ertek and str(m_ertek).lower() != 'nan':
+                            atlag_megallo = m_ertek
+                            break
+
+                    # Csomópont elhelyezése
+                    if panel_kulcs == "TOROLT" or "töröltek" in t_nev.lower():
+                        if hasattr(self, '_toroltek_csomopont_lekerese'):
+                            root_item = self._toroltek_csomopont_lekerese()
+                        else:
+                            root_item = QTreeWidgetItem(target_tree)
+                            root_item.setText(0, "🗑 töröltek")
+                            root_item.setData(0, Qt.ItemDataRole.UserRole, "TURA")
+                    else:
+                        root_item = QTreeWidgetItem(target_tree)
+                        root_item.setText(0, f"🚚 {t_nev}")
+                        root_item.setText(1, f"Átlag: {atlag_megallo} cím")
+                        root_item.setText(2, f"{int(ossz_suly)} kg")
+                        root_item.setData(0, Qt.ItemDataRole.UserRole, "TURA")
+                        root_item.setFlags(Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsSelectable | Qt.ItemFlag.ItemIsDropEnabled | Qt.ItemFlag.ItemIsDragEnabled)
+                        for col in range(3): 
+                            root_item.setBackground(col, QColor("#dfe6e9"))
+
+                    # Partnerek hozzáadása
+                    for p in partnerek_listaja:
+                        p_item = QTreeWidgetItem(root_item)
+                        p_nev = str(p.get('Partner', 'Ismeretlen'))
+                        p_statusz = str(p.get('Partner statusza') or p.get('Statusz') or p.get('H', '')).upper().strip()
+                        p_cim = str(p.get('Cim') or p.get('Cím', 'Nincs cím'))
+                        
+                        if 'ÚJ' in p_statusz:
+                            p_item.setText(0, f"✨ [ÚJ] {p_nev} ({p_cim})")
+                            p_item.setForeground(0, QColor("#3498db"))
+                        else: 
+                            p_item.setText(0, f"👤 {p_nev}")
+
+                        p_item.setText(1, str(p.get('Intenzitás') or p.get('Intenz', '')))
+                        p_item.setText(2, f"{int(p.get('Súly') or p.get('Alap_B') or p.get('A', 0))} kg")
+                        
+                        p_font = QFont()
+                        p_font.setBold(True)
+                        p_item.setFont(0, p_font)
+                        p_item.setData(0, Qt.ItemDataRole.UserRole, "PARTNER")
+                        p_item.setData(1, Qt.ItemDataRole.UserRole, p)
+                        p_item.setFlags(Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsSelectable | Qt.ItemFlag.ItemIsDragEnabled)
+
+                        tetelek = p.get('Tetel', [])
+                        if not tetelek:
                             t_item = QTreeWidgetItem(p_item)
-                            t_item.setText(0, f" 📦 {t.get('nev') or t.get('Megnevezés') or 'Termék'}")
-                            t_item.setText(1, str(t.get('db') or t.get('Mennyiség') or p.get('Db szám', 0)))
-                            t_item.setText(2, f"{int(t.get('suly') or t.get('Súly') or 0)} kg")
+                            t_item.setText(0, f" 📍 {p_cim}")
                             t_item.setData(0, Qt.ItemDataRole.UserRole, "TETEL")
-                            t_item.setFlags(Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsSelectable)
+                        else:
+                            for t in tetelek:
+                                t_item = QTreeWidgetItem(p_item)
+                                t_item.setText(0, f" 📦 {t.get('nev') or t.get('Megnevezés') or 'Termék'}")
+                                t_item.setText(1, str(t.get('db') or t.get('Mennyiség') or p.get('Db szám', 0)))
+                                t_item.setText(2, f"{int(t.get('suly') or t.get('Súly') or 0)} kg")
+                                t_item.setData(0, Qt.ItemDataRole.UserRole, "TETEL")
+                                t_item.setFlags(Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsSelectable)
 
-                if m_statusz != "TOROLT" and t_nev != "TÖRÖLTEK":
-                    root_item.setExpanded(False)
+                    if panel_kulcs != "TOROLT" and "töröltek" not in t_nev.lower():
+                        root_item.setExpanded(False)
 
-            self.is_updating = False
-            self.suly_frissites()
-            QMessageBox.information(self, "Siker", "Az adatok (és az archívum) sikeresen betöltve!")
+            # Mentési útvonalak fixálása a friss fájlra
+            for var_name in ['aktualis_fajl_utvonal', 'current_file', 'fajl_utvonal', 'path']:
+                if hasattr(self, var_name):
+                    setattr(self, var_name, biztonsagos_path)
+
+            QMessageBox.information(self, "Siker", "Az adatok szigorúan az Excel struktúra alapján betöltve!")
+
         except Exception as e:
+            QMessageBox.critical(self, "Hiba", f"Beolvasási hiba: {e}")
+            
+        finally:
+            self.tree_paratlan.blockSignals(False)
+            self.tree_kozos.blockSignals(False)
+            self.tree_paros.blockSignals(False)
             self.is_updating = False
-            QMessageBox.critical(self, "Hiba", f"Hiba: {e}")
+            
+            QTimer.singleShot(150, self.suly_frissites)
+
+
