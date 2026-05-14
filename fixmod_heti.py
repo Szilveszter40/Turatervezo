@@ -229,6 +229,13 @@ class HetiBontasAblak(QDialog):
         self.btn_excel_load.clicked.connect(self.excel_beolvasas_heti)
         top_bar_layout.addWidget(self.btn_excel_load, 1)
 
+        # 🆕 ÚJ TÚRA LÉTREHOZÁSA GOMB BEILLESZTÉSE
+        self.btn_uj_tura = QPushButton("🆕 ÚJ TÚRA LÉTREHOZÁSA")
+        self.btn_uj_tura.setFixedHeight(45)
+        self.btn_uj_tura.setStyleSheet("background-color: #f39c12; color: white; font-weight: bold; border-radius: 5px;")
+        self.btn_uj_tura.clicked.connect(self.uj_tura_letrehozasa)
+        top_bar_layout.addWidget(self.btn_uj_tura, 1)
+
         self.btn_terkep_megnyit = QPushButton("🗺️ TÉRKÉPES TERVEZŐ")
         self.btn_terkep_megnyit.setFixedHeight(45)
         self.btn_terkep_megnyit.setStyleSheet("background-color: #3498db; color: white; font-weight: bold; border-radius: 5px;")
@@ -664,4 +671,69 @@ class HetiBontasAblak(QDialog):
             
             QTimer.singleShot(150, self.suly_frissites)
 
+    def uj_tura_letrehozasa(self):
+        """
+        Egy új, üres túrafejléc létrehozása a felhasználó által megadott névvel és panelválasztással.
+        """
+        from PyQt6.QtWidgets import QInputDialog, QMessageBox, QTreeWidgetItem
+        from PyQt6.QtGui import QColor, QFont
+        from PyQt6.QtCore import Qt
+        
+        # 1. Bekérjük az új túra nevét
+        tura_nev, ok = QInputDialog.getText(self, "Új túra", "Add meg az új túra nevét (pl. Budapest_3):")
+        if not ok or not tura_nev.strip():
+            return
+            
+        t_nev_tisztitott = tura_nev.strip()
+
+        # 2. Megkérdezzük, hogy melyik panelre kerüljön
+        panelek = ["Páratlan hét", "Közös panel", "Páros hét"]
+        panel_valasztas, ok2 = QInputDialog.getItem(self, "Panel kiválasztása", 
+                                                    f"Melyik panelen jöjjön létre a '{t_nev_tisztitott}' túra?", 
+                                                    panelek, 1, False) # Alapértelmezetten a Közös (1-es index) van kijelölve
+        if not ok2:
+            return
+
+        # Kiválasztjuk a fizikai célpanelt
+        if panel_valasztas == "Páratlan hét":
+            target_tree = self.tree_paratlan
+        elif panel_valasztas == "Páros hét":
+            target_tree = self.tree_paros
+        else:
+            target_tree = self.tree_kozos
+
+        # 3. Duplikáció ellenőrzése az adott panelen
+        root = target_tree.invisibleRootItem()
+        for i in range(root.childCount()):
+            if root.child(i).text(0).replace("🚚", "").strip() == t_nev_tisztitott:
+                QMessageBox.warning(self, "Figyelem", f"Ezen a panelen már létezik '{t_nev_tisztitott}' nevű túra!")
+                return
+
+        # 4. A felületi elem felépítése és formázása az eredeti stílusod alapján
+        uj_tura_item = QTreeWidgetItem(target_tree)
+        uj_tura_item.setText(0, f"🚚 {t_nev_tisztitott}")
+        uj_tura_item.setText(1, "0 megálló")
+        uj_tura_item.setText(2, "0 kg")
+        
+        # Metaadatok és flag-ek beállítása a Drag & Drop-hoz
+        uj_tura_item.setData(0, Qt.ItemDataRole.UserRole, "TURA")
+        uj_tura_item.setFlags(Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsSelectable | 
+                              Qt.ItemFlag.ItemIsDropEnabled | Qt.ItemFlag.ItemIsDragEnabled)
+
+        # Háttérszín szürkére állítása (#dfe6e9) a meglévő stílusod alapján
+        for col in range(3): 
+            uj_tura_item.setBackground(col, QColor("#dfe6e9"))
+            
+        font = QFont()
+        font.setBold(True)
+        uj_tura_item.setFont(0, font)
+        uj_tura_item.setFont(2, font)
+
+        # Kibontjuk, hogy ha behúzol egy partnert, azonnal látszódjon benne
+        uj_tura_item.setExpanded(True)
+        
+        # Frissítjük a súlyokat
+        self.suly_frissites()
+        
+        QMessageBox.information(self, "Siker", f"A(z) '{t_nev_tisztitott}' túra létrehozva a {panel_valasztas} listában!")
 
