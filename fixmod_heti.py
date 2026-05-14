@@ -13,112 +13,193 @@ from PyQt6.QtGui import QColor, QFont
 from fixmod_nyomtatas import modul_nyomtatas
 
 
-class DraggableTree(QTreeWidget):
+class DraggableTree( QTreeWidget):
     """
-    Kiterjesztett fa szerkezet, amely kikényszeríti és engedélyezi a teljes 
-    túrák (TopLevel) és partnerek panelek közötti fizikai mozgatását.
+    Kiterjesztett fa szerkezet, amely kikényszeríti és engedélyezi a teljes
+    túrák (TopLevel) és partnerek panelek közötti fizikai mozgatását és másolását.
     """
-    def __init__(self, parent=None):
-        super().__init__(parent)
-        self.setDragEnabled(True)
-        self.setAcceptDrops(True)
-        self.setDragDropMode(QTreeWidget.DragDropMode.DragDrop)
-        self.setDefaultDropAction(Qt.DropAction.MoveAction)
-        self.setSelectionMode(QTreeWidget.SelectionMode.SingleSelection)
-        self.setDropIndicatorShown(True)
-        self.setIndentation(20)
-        self.setAnimated(True)
-        
-        self.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
-        self.customContextMenuRequested.connect(self.show_context_menu)
+    def __init__( self, parent= None):
+        super(). __init__( parent)
+        self. setDragEnabled( True)
+        self. setAcceptDrops( True)
+        self. setDragDropMode( QTreeWidget. DragDropMode. DragDrop)
+        self. setDefaultDropAction( Qt. DropAction. MoveAction)
+        self. setSelectionMode( QTreeWidget. SelectionMode. SingleSelection)
+        self. setDropIndicatorShown( True)
+        self. setIndentation( 20)
+        self. setAnimated( True)
+        self. setContextMenuPolicy( Qt. ContextMenuPolicy. CustomContextMenu)
+        self. customContextMenuRequested. connect( self. show_context_menu)
 
     def supportedDropActions(self):
-        """Kifejezetten engedélyezi a Move (áthelyezés) akciót a Qt felé"""
-        return Qt.DropAction.MoveAction
+        """Engedélyezi a másolást és a mozgatást is a Qt felé"""
+        return Qt.DropAction.MoveAction | Qt.DropAction.CopyAction
 
-    def show_context_menu(self, position):
-        item = self.itemAt(position)
+    def show_context_menu( self, position):
+        item = self. itemAt( position)
         if not item: return
         menu = QMenu()
-        item_type = item.data(0, Qt.ItemDataRole.UserRole)
-        main_win = self.window()
+        item_type = item. data( 0, Qt. ItemDataRole. UserRole)
+        main_win = self. window()
         if item_type == "TURA":
-            if "🗑️ töröltek" in item.text(0).lower(): return
-            delete_action = menu.addAction("🗑️ Teljes túra törlése")
-            action = menu.exec(self.viewport().mapToGlobal(position))
-            if action == delete_action and main_win and hasattr(main_win, 'tura_athelyezese_toroltekbe'):
-                main_win.tura_athelyezese_toroltekbe(self, item)
+            if "🗑 töröltek" in item. text( 0). lower(): return
+            delete_action = menu. addAction("🗑 Teljes túra törlése")
+            action = menu. exec( self. viewport(). mapToGlobal( position))
+            if action == delete_action and main_win and hasattr( main_win, 'tura_athelyezese_toroltekbe'):
+                main_win. tura_athelyezese_toroltekbe( self, item)
         elif item_type == "PARTNER":
-            delete_action = menu.addAction("🗑️ Partner törlése")
-            action = menu.exec(self.viewport().mapToGlobal(position))
-            if action == delete_action and main_win and hasattr(main_win, 'partner_athelyezese_toroltekbe'):
-                main_win.partner_athelyezese_toroltekbe(self, item)
+            delete_action = menu. addAction("🗑 Partner törlése")
+            action = menu. exec( self. viewport(). mapToGlobal( position))
+            if action == delete_action and main_win and hasattr( main_win, 'partner_athelyezese_toroltekbe'):
+                main_win. partner_athelyezese_toroltekbe( self, item)
 
     def dragEnterEvent(self, event):
-        if isinstance(event.source(), QTreeWidget): event.acceptProposedAction()
-        else: super().dragEnterEvent(event)
+        if isinstance(event.source(), QTreeWidget):
+            main_win = self.window()
+            # Ha a KÖZÉPSŐ panelről húzzuk az OLDALSÓKRA, jelezzük a Qt-nak, hogy ez MÁSOLÁS (Copy)
+            if event.source() == main_win.tree_kozos and self in [main_win.tree_paratlan, main_win.tree_paros]:
+                event.setDropAction(Qt.DropAction.CopyAction)
+            else:
+                event.setDropAction(Qt.DropAction.MoveAction)
+            event.acceptProposedAction()
+        else:
+            super().dragEnterEvent(event)
 
     def dragMoveEvent(self, event):
-        if isinstance(event.source(), QTreeWidget): event.acceptProposedAction()
-        else: super().dragMoveEvent(event)
+        if isinstance(event.source(), QTreeWidget):
+            main_win = self.window()
+            if event.source() == main_win.tree_kozos and self in [main_win.tree_paratlan, main_win.tree_paros]:
+                event.setDropAction(Qt.DropAction.CopyAction)
+            else:
+                event.setDropAction(Qt.DropAction.MoveAction)
+            event.acceptProposedAction()
+        else:
+            super().dragMoveEvent(event)
 
     def dropEvent(self, event):
         source_tree = event.source()
         if isinstance(source_tree, QTreeWidget):
             selected_items = source_tree.selectedItems()
-            if not selected_items: return
+            if not selected_items:
+                return
 
             target_item = self.itemAt(event.position().toPoint())
-
+            main_win = self.window()
+            
             for item in selected_items:
                 item_type = item.data(0, Qt.ItemDataRole.UserRole)
+                
+                if item_type == "TURA" and "🗑 töröltek" in item.text(0).lower(): continue
+                if target_item and "🗑 töröltek" in target_item.text(0).lower(): continue
 
-                if item_type == "TURA" and "🗑️ töröltek" in item.text(0).lower(): continue
-                if target_item and "🗑️ töröltek" in target_item.text(0).lower(): continue
+                # 👤 PARTNER MOZGATÁSA (Helyreállított, biztonságos hierarchia-kezeléssel)
+                if item_type == "PARTNER":
+                    # Eltávolítás a régi helyéről
+                    if item.parent(): item.parent().removeChild(item)
+                    else: source_tree.invisibleRootItem().removeChild(item)
+                    
+                    if target_item:
+                        target_type = target_item.data(0, Qt.ItemDataRole.UserRole)
+                        
+                        # 1. Eset: Közvetlenül egy TÚRA fejlécre dobtuk -> bekerül az első helyre
+                        if target_type == "TURA":
+                            target_item.insertChild(0, item)
+                            target_item.setExpanded(True)
+                            
+                        # 2. Eset: Egy másik PARTNERRE dobtuk -> a túrába kerül, a partner mellé
+                        elif target_type == "PARTNER":
+                            t_parent = target_item.parent()
+                            if t_parent:
+                                t_parent.insertChild(t_parent.indexOfChild(target_item), item)
+                            else:
+                                self.addTopLevelItem(item)
+                                
+                        # 3. Eset: Egy TÉTELRE (cím/csomag) dobtuk -> megkeressük a fő túrát, oda rakjuk
+                        elif target_type == "TETEL":
+                            p_parent = target_item.parent() # A tétel szülője (egy partner)
+                            if p_parent:
+                                t_parent = p_parent.parent() # A partner szülője (a túra)
+                                if t_parent:
+                                    t_parent.insertChild(t_parent.indexOfChild(p_parent), item)
+                                else:
+                                    self.addTopLevelItem(item)
+                            else:
+                                self.addTopLevelItem(item)
+                    else:
+                        # Ha üres területre dobtuk, a panel legtetejére/aljára szúrja be főelemként
+                        self.addTopLevelItem(item)
 
-                # Eltávolítás a régi fából
-                old_parent = item.parent()
-                if old_parent: old_parent.removeChild(item)
-                else: source_tree.invisibleRootItem().removeChild(item)
+                # 🚚 KOMPLETT TÚRA MOZGATÁSA ÉS AUTOMATIKUS KÉTOLDALI MÁSOLÁSA (Megtartva)
+                elif item_type == "TURA":
+                    tura_neve = item.text(0)
+                    atlag_megallo = item.text(1)
+                    ossz_suly = item.text(2)
 
-                # --- 🚚 TELJES TÚRA MOZGATÁSA ---
-                if item_type == "TURA":
+                    # Áthelyezzük a túrát az aktuális panelre, ahova dobtuk
+                    if item.parent(): item.parent().removeChild(item)
+                    else: source_tree.invisibleRootItem().removeChild(item)
+                    
                     if target_item:
                         target_root = target_item
-                        while target_root.parent():
-                            target_root = target_root.parent()
+                        while target_root.parent(): target_root = target_root.parent()
                         root_node = self.invisibleRootItem()
                         idx = root_node.indexOfChild(target_root)
                         root_node.insertChild(idx, item)
                     else:
                         self.addTopLevelItem(item)
+                    item.setExpanded(True)
 
-                # --- 👤 PARTNER MOZGATÁSA ---
-                elif item_type == "PARTNER":
-                    if target_item:
-                        target_type = target_item.data(0, Qt.ItemDataRole.UserRole)
-                        if target_type == "TURA": target_item.insertChild(0, item)
-                        elif target_type == "PARTNER":
-                            t_parent = target_item.parent()
-                            if t_parent: t_parent.insertChild(t_parent.indexOfChild(target_item), item)
-                            else: self.addTopLevelItem(item)
-                        else:
-                            p_parent = target_item.parent()
-                            if p_parent:
-                                t_parent = p_parent.parent()
-                                if t_parent: t_parent.insertChild(t_parent.indexOfChild(p_parent), item)
-                                else: self.addTopLevelItem(item)
-                            else: self.addTopLevelItem(item)
-                    else:
-                        self.addTopLevelItem(item)
-                else:
-                    self.addTopLevelItem(item)
-                    
+                    # DUPLIKÁLÁS A TÚLOLDALRA (Csak ha a KÖZÖS listából indult az áthúzás)
+                    if source_tree == main_win.tree_kozos and self in [main_win.tree_paratlan, main_win.tree_paros]:
+                        tulszo_tree = main_win.tree_paros if self == main_win.tree_paratlan else main_win.tree_paratlan
+                        tulszo_root = tulszo_tree.invisibleRootItem()
+
+                        mar_letezik_tulszo = False
+                        for i in range(tulszo_root.childCount()):
+                            if tulszo_root.child(i).text(0) == tura_neve:
+                                mar_letezik_tulszo = True
+                                break
+
+                        if not mar_letezik_tulszo:
+                            klon_tura = QTreeWidgetItem(tulszo_tree)
+                            klon_tura.setText(0, tura_neve)
+                            klon_tura.setText(1, atlag_megallo)
+                            klon_tura.setText(2, ossz_suly)
+                            klon_tura.setData(0, Qt.ItemDataRole.UserRole, "TURA")
+                            klon_tura.setFlags(item.flags())
+                            for col in range(3): klon_tura.setBackground(col, QColor("#dfe6e9"))
+
+                            for j in range(item.childCount()):
+                                eredeti_partner = item.child(j)
+                                if eredeti_partner.data(0, Qt.ItemDataRole.UserRole) != "PARTNER": continue
+
+                                klon_partner = QTreeWidgetItem(klon_tura)
+                                klon_partner.setText(0, eredeti_partner.text(0))
+                                klon_partner.setText(1, eredeti_partner.text(1))
+                                klon_partner.setText(2, eredeti_partner.text(2))
+                                klon_partner.setFont(0, eredeti_partner.font(0))
+                                if eredeti_partner.foreground(0): 
+                                    klon_partner.setForeground(0, eredeti_partner.foreground(0))
+                                
+                                klon_partner.setData(0, Qt.ItemDataRole.UserRole, "PARTNER")
+                                p_adat = eredeti_partner.data(1, Qt.ItemDataRole.UserRole)
+                                if p_adat: klon_partner.setData(1, Qt.ItemDataRole.UserRole, p_adat.copy())
+                                klon_partner.setFlags(eredeti_partner.flags())
+
+                                for k in range(eredeti_partner.childCount()):
+                                    eredeti_tetel = eredeti_partner.child(k)
+                                    klon_tetel = QTreeWidgetItem(klon_partner)
+                                    klon_tetel.setText(0, eredeti_tetel.text(0))
+                                    klon_tetel.setText(1, eredeti_tetel.text(1))
+                                    klon_tetel.setText(2, eredeti_tetel.text(2))
+                                    klon_tetel.setData(0, Qt.ItemDataRole.UserRole, eredeti_tetel.data(0, Qt.ItemDataRole.UserRole))
+                                    klon_tetel.setFlags(eredeti_tetel.flags())
+
+                            klon_tura.setExpanded(True)
+
             event.acceptProposedAction()
-            
-            # Súlyok frissítése mindkét érintett panelen
-            if hasattr(self.window(), 'suly_frissites'): 
-                self.window().suly_frissites()
+            if main_win and hasattr(main_win, 'suly_frissites'):
+                main_win.suly_frissites()
         else:
             super().dropEvent(event)
 
